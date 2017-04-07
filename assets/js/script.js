@@ -25,9 +25,10 @@ $(function() {
     });
 
     $('form').on('submit', function() {
-        //console.log(shoppingList);
+        console.log(shoppingList);
         $('form').slideUp();
         $('#recap-list').text(shoppingList);
+        return false;
     });
 
 });
