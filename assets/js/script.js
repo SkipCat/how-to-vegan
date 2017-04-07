@@ -1,4 +1,4 @@
-window.onload = function() {
+/*window.onload = function() {
     var form = document.querySelector("form");
     var product = document.querySelectorAll("select");
     var listProducts = [];
@@ -13,15 +13,27 @@ window.onload = function() {
         console.log(product[i].value);
     }
 
-/*
     buttonAdProduct.onclick = function(event) {
-        event.preventDefault();
-        var newProduct = form.insertBefore(product[0], buttonAdProduct);
-        return false;
+        console.log('jvklrjglr');
+        //event.preventDefault();
+        form.insertBefore(product[0], buttonAdProduct);
+        //return false;
     };
-*/
 
     form.onsubmit = function() {
         console.log('form submitted');
     };
-}
+};
+*/
+
+$(function() {
+    var buttonAdProduct = document.querySelectorAll('select');
+    var product = $('select');
+    var text = $('input[type="text"]');
+    console.log(text);
+
+    $(document).on('click', '#add-product', function() {
+        product.clone().insertAfter(text); // add <br> ?
+    });
+
+});
