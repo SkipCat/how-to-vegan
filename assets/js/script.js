@@ -7,26 +7,37 @@ $(function() {
     buttonAddProduct.on('click', function() { // error if buttonAddProduct
         var newProduct = product.clone().insertBefore(this); // insert select before button
         newProduct.after('<br>'); // add space after new select
+        console.log($('select'));
     });
 
 /*
     // add newProduct clicking on product
-    $(document).on('click', 'select', function() { 
+    $('select').on('click', function() { 
         var newProduct = product.clone().insertAfter(this);
         newProduct.after('<br>');
     });
 */
-    
 
-    product.on('click', function() {
-        if (product.val() != 'NULL') {
-            shoppingList.push(product.val());
+/*
+    $('select').each(function() {
+        $(this).on('click', function() {
+            if ($(this).val() != 'NULL') {
+                shoppingList.push($(this).val());
+                console.log($(this).val());
+            }
+        });
+    });
+*/
+
+    $('select').on('click', function() {
+        if ($(this).val() != 'NULL') {
+            shoppingList.push($(this).val());
+            console.log($(this).val());
         }
     });
 
     $('form').on('submit', function() {
-        console.log(shoppingList);
-        $('form').slideUp();
+        $('form').slideUp(); // $('form').hide();
         $('#recap-list').text(shoppingList);
         return false;
     });
