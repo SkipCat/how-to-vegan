@@ -1,21 +1,45 @@
-window.onload = function() {
-    var form = document.querySelector("form");
-    var product = document.querySelectorAll("select");
-    var listProducts = [];
-    var buttonAdProduct = document.querySelector("#add-product");
+$(function() {
+    var buttonAddProduct = $('#add-product');
+    var product = $('select');
+    var shoppingList = [];
 
-    for (var i = 0; i < product.length; i ++) {
-        listProducts.push(product[i].value);
-        console.log(product[i].value);
-    }
+    // add new product clicking on button
+    buttonAddProduct.on('click', function() { // error if buttonAddProduct
+        var newProduct = product.clone().insertBefore(this); // insert select before button
+        newProduct.after('<br>'); // add space after new select
+        newProduct.each(function() {
+            $(this).on('click', function() {
+                if ($(this).val() != 'NULL') {
+                    shoppingList.push($(this).val());
+                    console.log($(this).val());
+                    console.log(shoppingList);
+                }
+            });
+        });
+    });
+    
+    $('select').each(function() {
+        $(this).on('click', function() {
+            if ($(this).val() != 'NULL') {
+                shoppingList.push($(this).val());
+                console.log($(this).val());
+                console.log(shoppingList);
+            }
+        });
+    });
 
-    buttonAdProduct.onclick = function(event) {
-        event.preventDefault();
-        var newProduct = form.insertBefore(product[0], buttonAdProduct);
+    $('form').on('submit', function() {
+        $('form').slideUp(); // $('form').hide();
+        $('#recap-list').text(shoppingList);
         return false;
-    };
+    });
 
-    form.onsubmit = function() {
-        console.log('form submitted');
-    };
-}
+    /*
+    // add newProduct clicking on product
+    $('select').on('click', function() { 
+        var newProduct = product.clone().insertAfter(this);
+        newProduct.after('<br>');
+    });
+    */
+
+});
