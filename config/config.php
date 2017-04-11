@@ -10,8 +10,8 @@ $routes = [
 ];
 
 $db_config = [
-    'name' => 'mvc',
+    'name' => 'projet_transversal',
     'host' => 'localhost',
-    'user' => 'mvc',
-    'pass' => 'mvcpass'
+    'user' => 'root',
+    'pass' => 'root'
 ];
