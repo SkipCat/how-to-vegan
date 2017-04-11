@@ -43,5 +43,5 @@ function register_action()
             $error = "Invalid data";
         }    
     }
-    require('views/register.php');
+    require('views/register.html');
 }

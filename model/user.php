@@ -38,6 +38,7 @@ function user_register($data)
     $user['username'] = $data['username'];
     $user['password'] = user_hash($data['password']);
     $user['email'] = $data['email'];
+    $user['admin'] = $data['admin'];
     db_insert('users', $user);
 }
 
