@@ -17,7 +17,7 @@ function login_action()
             $error = "Invalid username or password";
         }
     }
-    require('views/login.php');
+    require('views/login.html');
 }
 
 function logout_action()

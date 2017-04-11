@@ -13,5 +13,5 @@ $db_config = [
     'name' => 'mvc',
     'host' => 'localhost',
     'user' => 'mvc',
-    'pass' => 'mvcpass'
+    'pass' => ''
 ];
