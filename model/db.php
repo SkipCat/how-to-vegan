@@ -8,13 +8,13 @@ function connect_to_db()
     $dsn = 'mysql:dbname='.$db_config['name'].';host='.$db_config['host'];
     $user = $db_config['user'];
     $password = $db_config['pass'];
-
+    
     try {
         $dbh = new PDO($dsn, $user, $password);
     } catch (PDOException $e) {
         echo 'Connexion échouée : ' . $e->getMessage();
     }
-
+    
     return $dbh;
 }
 
@@ -78,3 +78,4 @@ function find_all_secure($query, $data = [])
     $result = $sth->fetchAll(PDO::FETCH_ASSOC);
     return $result;
 }
+

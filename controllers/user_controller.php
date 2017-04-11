@@ -17,7 +17,7 @@ function login_action()
             $error = "Invalid username or password";
         }
     }
-    require('views/login.php');
+    require('views/login.html');
 }
 
 function logout_action()
@@ -43,5 +43,5 @@ function register_action()
             $error = "Invalid data";
         }    
     }
-    require('views/register.php');
+    require('views/register.html');
 }
