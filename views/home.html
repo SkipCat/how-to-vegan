@@ -5,6 +5,7 @@
         <title>How To Vegan</title>
         <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
         <script src="assets/js/script.js"></script>
+        <link rel="stylesheet" href="assets/css/style.css">
         <style>
             form {
                 width: 150px;
@@ -19,8 +20,10 @@
     </head>
     <body>
         <form name="shoppping-list">
-            <input type="checkbox" name="filter" value="Bio">Bio
-            <input type="checkbox" name="filter" value="Gluten-free">Gluten-free
+            <div class="filters">
+                <input type="checkbox" name="filter" value="Bio">Bio
+                <input type="checkbox" name="filter" value="Gluten-free">Gluten-free
+            </div>
             <select name="products-list">
                 <option value="NULL"></option>
                 <option value="Oeufs">Oeufs</option>

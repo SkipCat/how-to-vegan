@@ -1,6 +1,9 @@
 body {
-    background-color: #BBBBBB;
+    background-color: white;
     font-family: "Calibri";
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
 }
 
 form {
