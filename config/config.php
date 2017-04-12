@@ -13,5 +13,5 @@ $db_config = [
     'name' => 'projet_transversal',
     'host' => 'localhost',
     'user' => 'root',
-    'pass' => 'root'
+    'pass' => ''
 ];
