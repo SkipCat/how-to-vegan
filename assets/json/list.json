@@ -1,200 +1,200 @@
 {
   "Pâtes": {
-    "Vegan": "Pâtes sans oeufs",
-    "Bio": "Pâtes Bio",
-    "Gluten-Free": "Soba",
-    "BG": "Soba Bio"
+    "vegan": "Pâtes sans oeufs",
+    "bio": "Pâtes bio",
+    "gluten": "Soba",
+    "BG": "Soba bio"
   },
   "Riz": {
-    "Vegan": "Riz",
-    "Bio": "Riz Bio",
-    "Gluten-Free": "Riz",
+    "vegan": "Riz",
+    "bio": "Riz bio",
+    "gluten": "Riz",
     "BG": "Riz"
   },
   "Maïs": {
-    "Vegan": "Maïs",
-    "Bio": "Maïs Bio",
-    "Gluten-Free": "",
-    "BG": ""
+    "vegan": "Maïs",
+    "bio": "Maïs bio",
+    "gluten": "Maïs",
+    "BG": "Maïs bio"
   },
   "Blé": {
-    "Vegan": "Blé",
-    "Bio": "Blé Bio",
-    "Gluten-Free": "",
-    "BG": ""
+    "vegan": "Blé",
+    "bio": "Blé bio",
+    "gluten": "Sarrasin",
+    "BG": "Sarrasin bio"
   },
   "Corn Flakes": {
-    "Vegan": "Corn Flakes",
-    "Bio": "Corn Flakes Bio",
-    "Gluten-Free": "",
-    "BG": ""
+    "vegan": "Corn Flakes",
+    "bio": "Corn Flakes bio",
+    "gluten": "Corn Flakes au maïs",
+    "BG": "Corn Flakes bio au maïs"
   },
   "Oeufs": {
-    "Vegan": "Veg Egg",
-    "Bio": "Galettines bio",
-    "Gluten-Free": "Veg Egg",
+    "vegan": "Veg Egg",
+    "bio": "Galettines bio",
+    "gluten": "Veg Egg",
     "BG": "NULL"
   },
   "Poisson": {
-    "Vegan": "Poisson Végétal",
-    "Bio": "Poisson Végétal Bio",
-    "Gluten-Free": "Poisson Végétal",
-    "BG": "Poisson Végétal Bio"
+    "vegan": "Poisson végétal",
+    "bio": "Poisson végétal bio",
+    "gluten": "Poisson végétal",
+    "BG": "Poisson végétal bio"
   },
   "Viande Hachée": {
-    "Vegan": "Seitan",
-    "Bio": "Seitan Bio",
-    "Gluten-Free": "Viande Végétale",
-    "BG": "Steak de Tofu"
+    "vegan": "Seitan",
+    "bio": "Seitan bio",
+    "gluten": "Viande végétale",
+    "BG": "Steak de tofu"
   },
   "Poulet": {
-    "Vegan": "Seitan",
-    "Bio": "Seitan Bio",
-    "Gluten-Free": "Viande Végétale",
-    "BG": "Steak de Tofu"
+    "vegan": "Seitan",
+    "bio": "Seitan bio",
+    "gluten": "Viande végétale",
+    "BG": "Steak de tofu"
   },
   "Steak": {
-    "Vegan": "Galette Soja",
-    "Bio": "Galette Soja Bio",
-    "Gluten-Free": "Viande Végétale",
-    "BG": "Viande végétale Bio"
+    "vegan": "Galette soja",
+    "bio": "Galette soja bio",
+    "gluten": "Viande végétale",
+    "BG": "Viande végétale bio"
   },
   "Lait": {
-    "Vegan": "Lait végétal",
-    "Bio": "Lait de Soja Bio",
-    "Gluten-Free": "Lait d'amandes",
+    "vegan": "Lait végétal",
+    "bio": "Lait de soja bio",
+    "gluten": "Lait d'amandes",
     "BG": "Lait d'amandes bio"
   },
   "Beurre": {
-    "Vegan": "Beurre Végétal",
-    "Bio": "Ghee bio",
-    "Gluten-Free": "Ghee",
+    "vegan": "Beurre végétal",
+    "bio": "Ghee bio",
+    "gluten": "Ghee",
     "BG": "Ghee"
   },
   "Yaourt": {
-    "Vegan": "Sojasun",
-    "Bio": "Sojasun",
-    "Gluten-Free": "Sojasun",
+    "vegan": "Sojasun",
+    "bio": "Sojasun",
+    "gluten": "Sojasun",
     "BG": "Sojasun"
   },
   "Fromage": {
-    "Vegan": "Mousse tofu",
-    "Bio": "Moousse Tofu Bio",
-    "Gluten-Free": "Mousse tofu",
-    "BG": "Mousse Tofu Bio"
+    "vegan": "Mousse de tofu",
+    "bio": "Moousse de tofu bio",
+    "gluten": "Mousse de tofu",
+    "BG": "Mousse de tofu bio"
   },
   "Pommes": {
-    "Vegan": "Pommes",
-    "Bio": "Pommes Bio",
-    "Gluten-Free": "Pommes",
+    "vegan": "Pommes",
+    "bio": "Pommes bio",
+    "gluten": "Pommes",
     "BG": "Pommes bio"
   },
   "Bananes": {
-    "Vegan": "Bananes",
-    "Bio": "Bananes Bio",
-    "Gluten-Free": "Bananes",
-    "BG": "Bananes Bio"
+    "vegan": "Bananes",
+    "bio": "Bananes bio",
+    "gluten": "Bananes",
+    "BG": "Bananes bio"
   },
   "Clémentines": {
-    "Vegan": "Clémentines",
-    "Bio": "Clémentines Bio",
-    "Gluten-Free": "Clémentines",
-    "BG": "Clémentines Bio"
+    "vegan": "Clémentines",
+    "bio": "Clémentines bio",
+    "gluten": "Clémentines",
+    "BG": "Clémentines bio"
   },
   "Avocat": {
-    "Vegan": "Avocat",
-    "Bio": "Avocat Bio",
-    "Gluten-Free": "Avocat",
-    "BG": "Avocat Bio"
+    "vegan": "Avocat",
+    "bio": "Avocat bio",
+    "gluten": "Avocat",
+    "BG": "Avocat bio"
   },
   "Ananas": {
-    "Vegan": "Ananas",
-    "Bio": "Ananas",
-    "Gluten-Free": "Ananas",
-    "BG": "Ananas Bio"
+    "vegan": "Ananas",
+    "bio": "Ananas",
+    "gluten": "Ananas",
+    "BG": "Ananas bio"
   },
   "Tomate": {
-    "Vegan": "Tomate",
-    "Bio": "Tomate Bio",
-    "Gluten-Free": "Tomate",
-    "BG": "Tomate Bio"
+    "vegan": "Tomate",
+    "bio": "Tomate bio",
+    "gluten": "Tomate",
+    "BG": "Tomate bio"
   },
   "Concombre": {
-    "Vegan": "Concombre",
-    "Bio": "Concombre Bio",
-    "Gluten-Free": "Concombre",
-    "BG": "Concombre Bio"
+    "vegan": "Concombre",
+    "bio": "Concombre bio",
+    "gluten": "Concombre",
+    "BG": "Concombre bio"
   },
   "Poireau": {
-    "Vegan": "Poireau",
-    "Bio": "Poireau Bio",
-    "Gluten-Free": "Poireau",
-    "BG": "Poireau Bio"
+    "vegan": "Poireau",
+    "bio": "Poireau bio",
+    "gluten": "Poireau",
+    "BG": "Poireau bio"
   },
   "Courgette": {
-    "Vegan": "Courgette",
-    "Bio": "Courgette Bio",
-    "Gluten-Free": "Courgette",
-    "BG": "Courgette Bio"
+    "vegan": "Courgette",
+    "bio": "Courgette bio",
+    "gluten": "Courgette",
+    "BG": "Courgette bio"
   },
   "Haricots": {
-    "Vegan": "Haricots",
-    "Bio": "Haricots Bio",
-    "Gluten-Free": "Haricots",
-    "BG": "Haricots Bio"
+    "vegan": "Haricots",
+    "bio": "Haricots bio",
+    "gluten": "Haricots",
+    "BG": "Haricots bio"
   },
   "Chocolat": {
-    "Vegan": "Chocolat lait de riz",
-    "Bio": "Chocolat lait de riz Bio",
-    "Gluten-Free": "Chocolat lait de riz",
-    "BG": "Chocolat lait de riz Bio"
+    "vegan": "Chocolat lait de riz",
+    "bio": "Chocolat lait de riz bio",
+    "gluten": "Chocolat lait de riz",
+    "BG": "Chocolat lait de riz bio"
   },
   "Saucisse": {
-    "Vegan": "Saucisse de Tofu",
-    "Bio": "Saucisse de Tofu Bio",
-    "Gluten-Free": "Saucisse de Tofu",
-    "BG": "Saucisse de Tofu Bio"
+    "vegan": "Saucisse de tofu",
+    "bio": "Saucisse de tofu bio",
+    "gluten": "Saucisse de tofu",
+    "BG": "Saucisse de tofu bio"
   },
   "Saucisson": {
-    "Vegan": "Tranche simili viande (Vegusto)",
-    "Bio": "Gran chorizo Bio",
-    "Gluten-Free": "Tranche simili sans viande (Vegusto)",
+    "vegan": "Tranche simili viande (Vegusto)",
+    "bio": "Gran chorizo bio",
+    "gluten": "Tranche simili sans viande (Vegusto)",
     "BG": "NULL"
   },
   "Jambon": {
-    "Vegan": "Herta Végétal",
-    "Bio": "Simili Jambon Végétal Bio",
-    "Gluten-Free": "Simili jambon végétal",
-    "BG": ""
+    "vegan": "Herta végétal",
+    "bio": "Simili jambon végétal bio",
+    "gluten": "Simili jambon végétal",
+    "BG": "Simili jambon végétal"
   },
   "Huile": {
-    "Vegan": "Huiles",
-    "Bio": "Huiles Bio",
-    "Gluten-Free": "Huile de coco",
+    "vegan": "Huiles",
+    "bio": "Huiles bio",
+    "gluten": "Huile de coco",
     "BG": "Huils de coco bio"
   },
   "Mayonnaise": {
-    "Vegan": "Vegenaise",
-    "Bio": "Vegenaise ",
-    "Gluten-Free": "Vegenaise",
+    "vegan": "Vegenaise",
+    "bio": "Vegenaise ",
+    "gluten": "Vegenaise",
     "BG": "Vegenaise"
   },
   "Moutarde": {
-    "Vegan": "Vegenaise piquante",
-    "Bio": "Vegenaise piquante",
-    "Gluten-Free": "Vegenaise piquante",
+    "vegan": "Vegenaise piquante",
+    "bio": "Vegenaise piquante",
+    "gluten": "Vegenaise piquante",
     "BG": "Vegenaise piquante"
   },
   "Ketchup": {
-    "Vegan": "",
-    "Bio": "",
-    "Gluten-Free": "",
-    "BG": ""
+    "vegan": "Ketchup",
+    "bio": "Ketchup bio",
+    "gluten": "Ketchup",
+    "BG": "Ketchup bio"
   },
   "Bonbons": {
-    "Vegan": "Dragibus",
-    "Bio": "",
-    "Gluten-Free": "",
-    "BG": ""
+    "vegan": "Dragibus",
+    "bio": "?",
+    "gluten": "Dragibus",
+    "BG": "?"
   }
 }

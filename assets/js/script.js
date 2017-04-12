@@ -61,6 +61,7 @@ $(function() {
         });
     });
 
+    // form submit and conversion
     $('form').on('submit', function() {
         $('form').slideUp(); // OR $('form').hide();
 
@@ -69,18 +70,30 @@ $(function() {
             type: 'GET',
             dataType: 'json',
             success: function(result) { // CAUTION: json already parsed
+                $('#recap-list').append('Your shopping list:<br><br>');
+                console.log(filterList);
+
                 for (var i in result) {
                     for(var j in shoppingList) {
                         if (i == shoppingList[j]) {
-                            $('#recap-list').html('Your shopping list:<br>');
-                            
                             if (filterList.length > 0) { // if filter(s) checked
-                                 $('#recap-list').append(result[i].Vegan + '<br>'); // DISPLAY FIRST PRODUCT AS LAST
-                                //$('#recap-list').html('Your shopping list:<br>' + shoppingList + '<br><br>with filters:<br>' + filterList); 
+                                if ($.inArray('Bio', filterList) !== -1 && $.inArray('Gluten-free', filterList) !== -1) {
+                                    if (result[i].BG == "NULL") {
+                                        $('#recap-list').append('Your product doesn\'t exist with the filter(s) selected. Here is the basic vegan equivalent: ' + result[i].Vegan + '<br>');
+                                    }
+                                    else {
+                                         $('#recap-list').append(result[i].BG + '<br>'); // DISPLAY FIRST PRODUCT AS LAST
+                                    }
+                                }
+                                else if ($.inArray('Bio', filterList) !== -1) {
+                                    $('#recap-list').append(result[i].bio + '<br>'); // DISPLAY FIRST PRODUCT AS LAST
+                                }
+                                else if ($.inArray('Gluten-free', filterList) !== -1) {
+                                    $('#recap-list').append(result[i].gluten + '<br>'); // DISPLAY FIRST PRODUCT AS LAST
+                                }
                             }
                             else {
-                                $('#recap-list').append(result[i].Vegan + '<br>'); // DISPLAY FIRST PRODUCT AS LAST
-                                //$('#recap-list').html('Your shopping list:<br>' + shoppingList);
+                                $('#recap-list').append(result[i].vegan + '<br>'); // DISPLAY FIRST PRODUCT AS LAST
                             }
                            
                         }
