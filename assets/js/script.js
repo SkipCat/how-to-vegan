@@ -64,12 +64,34 @@ $(function() {
     $('form').on('submit', function() {
         $('form').slideUp(); // OR $('form').hide();
 
-        if (filterList.length > 0) { // if filter(s) checked
-            $('#recap-list').html('Your shopping list:<br>' + shoppingList + '<br><br>with filters:<br>' + filterList); 
-        }
-        else {
-            $('#recap-list').html('Your shopping list:<br>' + shoppingList);
-        }
+        $.ajax({
+            url: 'assets/json/list.json',//'?action=adminlogin'
+            type: 'GET',
+            dataType: 'json',
+            success: function(result) { // CAUTION: json already parsed
+                for (var i in result) {
+                    for(var j in shoppingList) {
+                        if (i == shoppingList[j]) {
+                            $('#recap-list').html('Your shopping list:<br>');
+                            
+                            if (filterList.length > 0) { // if filter(s) checked
+                                 $('#recap-list').append(result[i].Vegan + '<br>'); // DISPLAY FIRST PRODUCT AS LAST
+                                //$('#recap-list').html('Your shopping list:<br>' + shoppingList + '<br><br>with filters:<br>' + filterList); 
+                            }
+                            else {
+                                $('#recap-list').append(result[i].Vegan + '<br>'); // DISPLAY FIRST PRODUCT AS LAST
+                                //$('#recap-list').html('Your shopping list:<br>' + shoppingList);
+                            }
+                           
+                        }
+                    }
+                }
+            },
+            error: function(err, stat, mess) {
+                console.log('an error occurred');
+                console.log(err, stat, mess);
+            }
+        });
 
         return false;
     });
