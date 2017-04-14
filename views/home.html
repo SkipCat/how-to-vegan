@@ -5,7 +5,6 @@
         <title>How To Vegan</title>
         <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
         <script src="assets/js/script.js"></script>
-        <link rel="stylesheet" href="assets/css/style.css">
         <style>
             form {
                 width: 150px;
@@ -20,13 +19,10 @@
     </head>
     <body>
         <form name="shoppping-list">
-            <div class="filters">
-                <input type="checkbox" name="filter" value="Bio">Bio
-                <input type="checkbox" name="filter" value="Gluten-free">Gluten-free
-            </div>
+            <input type="checkbox" name="filter" value="Bio">Bio
+            <input type="checkbox" name="filter" value="Gluten-free">Gluten-free
             <select name="products-list">
                 <option value="NULL"></option>
-                <option value="Oeufs">Oeufs</option>
                 <optgroup label="Céréales">
                     <option value="Pâtes">Pâtes</option>
                     <option value="Riz">Riz</option>
@@ -34,7 +30,8 @@
                     <option value="Blé">Blé</option>
                     <option value="Corn Flakes">Corn Flakes</option>
                 </optgroup>
-                <optgroup label="Viandes">
+                <optgroup label="Viandes et protéines">
+                    <option value="Oeufs">Oeufs</option>
                     <option value="Poisson">Poisson</option>
                     <option value="Viande hachée">Viande hachée</option>
                     <option value="Poulet">Poulet</option>
@@ -50,6 +47,7 @@
                     <option value="Pommes">Pommes</option>
                     <option value="Bananes">Bananes</option>
                     <option value="Clémentines">Clémentines</option>
+                    <option value="Ananas">Ananas</option>
                 </optgroup>
                 <optgroup label="Légumes">
                     <option value="Tomates">Tomates</option>
@@ -61,18 +59,19 @@
                 <optgroup label="Chocolat">
                     <option value="Chocolat noir">Chocolat noir</option>
                     <option value="Chocolat au lait">Chocolat au lait</option>
-                    <option value="Chocolat blanc">Chocolat blanc</option>
                 </optgroup>
                 <optgroup label="Charcuterie"> 
-                    <option value="saucisse">Saucisse</option>
-                    <option value="saucisson">Saucisson</option>
+                    <option value="Saucisse">Saucisse</option>
+                    <option value="Saucisson">Saucisson</option>
+                    <option value="Jambon">Jambon</option>
                 </optgroup>
                 <optgroup label="Assaisonnement">
-                    <option value="huile">Huile</option>
-                    <option value="sauce">Sauce</option>
-                    <option value="mayonnaise">Mayonnaise</option>
-                    <option value="moutarde">Moutarde</option>
+                    <option value="Huile">Huile</option>
+                    <option value="Mayonnaise">Mayonnaise</option>
+                    <option value="Moutarde">Moutarde</option>
+                    <option value="Ketchup">Ketchup</option>
                 </optgroup>
+                <option value="Bonbons">Bonbons</option>
             </select>
             <br>
             <a href="#" id="add-product">Ajouter un produit</a>
