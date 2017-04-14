@@ -1,7 +1,7 @@
 {
   "Pâtes": {
     "vegan": "Pâtes sans oeufs",
-    "bio": "Pâtes bio",
+    "bio": "Pâtes sans oeufs bio",
     "gluten": "Soba",
     "BG": "Soba bio"
   },
@@ -9,7 +9,7 @@
     "vegan": "Riz",
     "bio": "Riz bio",
     "gluten": "Riz",
-    "BG": "Riz"
+    "BG": "Riz bio"
   },
   "Maïs": {
     "vegan": "Maïs",
@@ -41,7 +41,7 @@
     "gluten": "Poisson végétal",
     "BG": "Poisson végétal bio"
   },
-  "Viande Hachée": {
+  "Viande hachée": {
     "vegan": "Seitan",
     "bio": "Seitan bio",
     "gluten": "Viande végétale",
@@ -54,22 +54,22 @@
     "BG": "Steak de tofu"
   },
   "Steak": {
-    "vegan": "Galette soja",
-    "bio": "Galette soja bio",
+    "vegan": "Galette de soja",
+    "bio": "Galette de soja bio",
     "gluten": "Viande végétale",
     "BG": "Viande végétale bio"
   },
   "Lait": {
     "vegan": "Lait végétal",
-    "bio": "Lait de soja bio",
-    "gluten": "Lait d'amandes",
-    "BG": "Lait d'amandes bio"
+    "bio": "Lait végétal bio",
+    "gluten": "Lait végétal",
+    "BG": "Lait végétal bio"
   },
   "Beurre": {
     "vegan": "Beurre végétal",
     "bio": "Ghee bio",
     "gluten": "Ghee",
-    "BG": "Ghee"
+    "BG": "Ghee bio"
   },
   "Yaourt": {
     "vegan": "Sojasun",
@@ -79,7 +79,7 @@
   },
   "Fromage": {
     "vegan": "Mousse de tofu",
-    "bio": "Moousse de tofu bio",
+    "bio": "Mousse de tofu bio",
     "gluten": "Mousse de tofu",
     "BG": "Mousse de tofu bio"
   },
@@ -101,23 +101,17 @@
     "gluten": "Clémentines",
     "BG": "Clémentines bio"
   },
-  "Avocat": {
-    "vegan": "Avocat",
-    "bio": "Avocat bio",
-    "gluten": "Avocat",
-    "BG": "Avocat bio"
-  },
   "Ananas": {
     "vegan": "Ananas",
-    "bio": "Ananas",
+    "bio": "Ananas bio",
     "gluten": "Ananas",
     "BG": "Ananas bio"
   },
-  "Tomate": {
-    "vegan": "Tomate",
-    "bio": "Tomate bio",
-    "gluten": "Tomate",
-    "BG": "Tomate bio"
+  "Tomates": {
+    "vegan": "Tomates",
+    "bio": "Tomates bio",
+    "gluten": "Tomates",
+    "BG": "Tomates bio"
   },
   "Concombre": {
     "vegan": "Concombre",
@@ -143,11 +137,17 @@
     "gluten": "Haricots",
     "BG": "Haricots bio"
   },
-  "Chocolat": {
-    "vegan": "Chocolat lait de riz",
-    "bio": "Chocolat lait de riz bio",
-    "gluten": "Chocolat lait de riz",
-    "BG": "Chocolat lait de riz bio"
+  "Chocolat noir": {
+    "vegan": "Chocolat noir",
+    "bio": "Chocolat noir bio",
+    "gluten": "Chocolat noir",
+    "BG": "Chocolat noir bio"
+  },
+  "Chocolat au lait": {
+    "vegan": "Chocolat au lait de riz",
+    "bio": "Chocolat au lait de riz bio",
+    "gluten": "Chocolat au lait de riz",
+    "BG": "Chocolat au lait de riz bio"
   },
   "Saucisse": {
     "vegan": "Saucisse de tofu",
@@ -168,10 +168,10 @@
     "BG": "Simili jambon végétal"
   },
   "Huile": {
-    "vegan": "Huiles",
-    "bio": "Huiles bio",
-    "gluten": "Huile de coco",
-    "BG": "Huils de coco bio"
+    "vegan": "Huile",
+    "bio": "Huile bio",
+    "gluten": "Huile",
+    "BG": "Huile bio"
   },
   "Mayonnaise": {
     "vegan": "Vegenaise",
