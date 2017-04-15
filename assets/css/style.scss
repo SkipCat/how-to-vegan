@@ -1,6 +1,8 @@
+$font: 'Calibri';
+
 body {
-    background-color: #BBBBBB;
-    font-family: "Calibri";
+    background-color: white;
+    font-family: $font;
 }
 
 form {
@@ -13,4 +15,7 @@ form {
 select {
     height: 28px;
     background-color: transparent;
+    border: none;
+    border-radius: 2px;
+    font-family: 'Arial';
 }

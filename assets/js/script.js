@@ -9,7 +9,6 @@ $(function() {
 
     // lock buttons by default to avoid empty submitted form
     $('input[type="submit"]').prop('disabled', true);
-    $("#add-product").css({'pointer-events': 'none'});
 
     // get chosen filters
     filter.each(function() {
@@ -32,23 +31,18 @@ $(function() {
         });
     });
 
-    // add new product clicking on button
-    $('#add-product').on('click', function() {
-        var newProduct = product.clone().insertBefore(this); // insert select before button
-        newProduct.after('<br>'); // add space after new select
-        $("#add-product").css({'pointer-events': 'none'}); // lock link
-
-        // for new selects
+    function createSelect() {
+        var newProduct = product.clone().insertBefore($('input[type="submit"]')).after('<br>');
         newProduct.each(function() {
             $(this).on('click', function() {
                 if ($(this).val() != 'NULL' && $.inArray($(this).val(), shoppingList) == -1) {
                 // product not NULL and doesn't already exist
                     shoppingList.push($(this).val());
-                    $("#add-product").css({'pointer-events': 'auto'}); // unlock link
+                    createSelect();
                 }
             });
-        });      
-    });
+        });
+    }
     
     // for 1rst select
     product.each(function() {
@@ -56,7 +50,7 @@ $(function() {
             if ($(this).val() != 'NULL' && shoppingList.length == 0) {
                 shoppingList.push($(this).val());
                 $('input[type="submit"]').prop('disabled', false); // unlock button submit
-                $("#add-product").css({'pointer-events': 'auto'});
+                createSelect();
             }
         });
     });
