@@ -5,7 +5,6 @@ $(function() {
     
     var filter = $('input[type="checkbox"]');
     var filterList = [];
-    var filterAlreadyExist = [];
 
     // lock buttons by default to avoid empty submitted form
     $('input[type="submit"]').prop('disabled', true);
