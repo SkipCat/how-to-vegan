@@ -1,18 +1,18 @@
 body {
-    background-color: white;
-    font-family: "Calibri";
-    display: flex;
-    justify-content: center;
-    align-items: space-between;
-}
+  background-color: white;
+  font-family: "Calibri"; }
 
 form {
-    width: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
+  width: 150px;
+  /*display: flex;
+  flex-direction: column;
+  justify-content: space-between;*/ }
 
 select {
-    height: 28px;
-}
+  height: 28px;
+  background-color: transparent;
+  border: none;
+  border-radius: 2px;
+  font-family: 'Arial'; }
+
+/*# sourceMappingURL=style.css.map */
