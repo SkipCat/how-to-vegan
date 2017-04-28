@@ -63,7 +63,7 @@ $(function() {
             type: 'GET',
             dataType: 'json',
             success: function(result) { // CAUTION: json already parsed
-                $('#recap-list').append('Your shopping list:<br><br>');
+                $('#recap-list').append('Votre liste de courses : <br><br>');
                 console.log(filterList);
 
                 for (var i in result) {
@@ -72,7 +72,7 @@ $(function() {
                             if (filterList.length > 0) { // if filter(s) checked
                                 if ($.inArray('Bio', filterList) !== -1 && $.inArray('Gluten-free', filterList) !== -1) {
                                     if (result[i].BG == "NULL") {
-                                        $('#recap-list').append('Your product doesn\'t exist with the filter(s) selected. Here is the basic vegan equivalent: ' + result[i].Vegan + '<br>');
+                                        $('#recap-list').append('Ce produit n\'existe pas pour les filtres sélectionnés. Equivalent vegan de base : ' + result[i].vegan + '<br>');
                                     }
                                     else {
                                          $('#recap-list').append(result[i].BG + '<br>'); // DISPLAY FIRST PRODUCT AS LAST
