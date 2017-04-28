@@ -1,15 +1,13 @@
 $(function() {
     var product = $('select');
     var shoppingList = [];
-    var productAlreadyExist = []; 
-    
+    var productAlreadyExist = [];
+
     var filter = $('input[type="checkbox"]');
     var filterList = [];
-    var filterAlreadyExist = [];
 
     // lock buttons by default to avoid empty submitted form
     $('input[type="submit"]').prop('disabled', true);
-    $("#add-product").css({'pointer-events': 'none'});
 
     // get chosen filters
     filter.each(function() {
@@ -32,31 +30,26 @@ $(function() {
         });
     });
 
-    // add new product clicking on button
-    $('#add-product').on('click', function() {
-        var newProduct = product.clone().insertBefore(this); // insert select before button
-        newProduct.after('<br>'); // add space after new select
-        $("#add-product").css({'pointer-events': 'none'}); // lock link
-
-        // for new selects
+    function createSelect() {
+        var newProduct = product.clone().insertBefore($('input[type="submit"]')).after('<br>');
         newProduct.each(function() {
             $(this).on('click', function() {
                 if ($(this).val() != 'NULL' && $.inArray($(this).val(), shoppingList) == -1) {
                 // product not NULL and doesn't already exist
                     shoppingList.push($(this).val());
-                    $("#add-product").css({'pointer-events': 'auto'}); // unlock link
+                    createSelect();
                 }
             });
-        });      
-    });
-    
+        });
+    }
+
     // for 1rst select
     product.each(function() {
         $(this).on('click', function() {
             if ($(this).val() != 'NULL' && shoppingList.length == 0) {
                 shoppingList.push($(this).val());
                 $('input[type="submit"]').prop('disabled', false); // unlock button submit
-                $("#add-product").css({'pointer-events': 'auto'});
+                createSelect();
             }
         });
     });
@@ -70,7 +63,7 @@ $(function() {
             type: 'GET',
             dataType: 'json',
             success: function(result) { // CAUTION: json already parsed
-                $('#recap-list').append('Your shopping list:<br><br>');
+                $('#recap-list').append('Votre liste de courses : <br><br>');
                 console.log(filterList);
 
                 for (var i in result) {
@@ -79,7 +72,7 @@ $(function() {
                             if (filterList.length > 0) { // if filter(s) checked
                                 if ($.inArray('Bio', filterList) !== -1 && $.inArray('Gluten-free', filterList) !== -1) {
                                     if (result[i].BG == "NULL") {
-                                        $('#recap-list').append('Your product doesn\'t exist with the filter(s) selected. Here is the basic vegan equivalent: ' + result[i].Vegan + '<br>');
+                                        $('#recap-list').append('Ce produit n\'existe pas pour les filtres sélectionnés. Equivalent vegan de base : ' + result[i].vegan + '<br>');
                                     }
                                     else {
                                          $('#recap-list').append(result[i].BG + '<br>'); // DISPLAY FIRST PRODUCT AS LAST
@@ -95,7 +88,7 @@ $(function() {
                             else {
                                 $('#recap-list').append(result[i].vegan + '<br>'); // DISPLAY FIRST PRODUCT AS LAST
                             }
-                           
+
                         }
                     }
                 }
