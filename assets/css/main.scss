@@ -1,0 +1,83 @@
+@import 'partials/mixin';
+@import 'partials/fonts';
+@import 'partials/var';
+
+@import 'pages/home';
+
+
+html {
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+body {
+    margin: 0;
+    background-color: $bg-color;
+
+    a {
+        text-decoration: none;
+    }
+    input, button {
+        border: none;
+        background-color: transparent;
+    }
+    .img-to-resize {
+        width: 100%;
+    }
+}
+
+header {
+    background: transparent url('../img/menu_background.png') no-repeat;
+    background-size: 100% 100%;
+    @include flex(column, center, space-around, nowrap);
+    height: 225px;
+    padding-bottom: 20px;
+
+    .icons-menu {
+        @include flex(row, center, center, nowrap);
+        img:first-child {
+            @include resize(120px, auto);
+        }
+        img:last-child {
+            position: absolute;
+            @include resize(20px, auto);
+            right: 50px;
+        }
+    }
+
+    nav {
+        width: 100%;
+        @include flex(row, center, space-around, nowrap);
+
+        a {
+            @include policy($bold-font, white, 18px, unset, unset);
+            text-transform: uppercase;
+            text-shadow: 0px 0px 1px darkgrey;
+        }
+    }
+}
+
+footer {
+    background-color: $bg-footer;
+    @include flex(row, center, space-between, nowrap);
+    padding: 10px;
+
+    img {
+        @include resize(50px, auto);
+    }
+
+    nav {
+        width: 80%;
+        @include flex(row, unset, space-between, wrap);
+    }
+    a {
+        @include policy($light-font, white, 12px, lighter, unset);
+        //text-shadow: 0px 0px 1px darkgrey;
+        letter-spacing: 1px;        
+
+        span {
+            @include policy(inherit, $link-website, inherit, bold, inherit);
+            text-shadow: none;
+        }
+    }
+}

@@ -1,0 +1,141 @@
+.frame-elt {
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+main {
+    flex-grow: 1;
+    @include flex(column, unset, space-between, nowrap);
+
+    .brush {
+        margin-top: -20px;
+    }
+
+    p.desc {
+        text-align: justify;
+        margin: 0px 13%;
+        @include policy($text-font, $text-color, 18px, unset, italic);
+    }
+}
+
+#form-list {
+    margin: 100px 0px;
+}
+
+.list {
+    height: 550px;
+    background: url('../img/list.png') no-repeat;
+    background-size: 95% auto;
+    background-origin: border-box;
+    @include flex(column, unset, space-between, nowrap);
+    margin-top: 50px;
+
+    img:not(#img-leaf) {
+        @include resize(25px, auto);
+    }
+
+    #img-pin {
+        //margin: 57px 50px 0px auto;
+        @include position(relative, 50px, 0, 0, 335px);
+    }
+
+    span#img-delete-skip {
+        margin: auto 50px -50px auto;
+        width: 70px;
+        @include flex(row, center, space-between, nowrap);
+    }
+
+    ul {
+        margin-top: 38px;
+        margin-left: 25px;
+        
+        select {
+            background-color: transparent;
+            border: none;
+            @include policy($list-font, $text-color, 20px, unset, unset);
+            letter-spacing: 2px;
+        }    
+    }
+    
+}
+
+#img-leaf {
+    @include resize(100px, auto);
+    @include position(relative, 25px, 0, 0, 0);
+}
+
+.convert {
+    @include resize(260px, 100px);
+    margin-left: auto;
+
+    .filters, .submit {
+        @include flex(row, center, space-between, nowrap);
+
+        h3, input[type="submit"] {
+            text-transform: uppercase;
+            @include policy($main-font, $text-color, 18px, unset, unset);
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+        input[type="checkbox"]:checked + label,
+        input[type="checkbox"] + label:active {
+            color: white;
+            background-color: $light-green;
+            border-color: none;
+        }
+
+        label {
+            background-color: #e6e6e6;
+            border: 1px solid #c9c9c9;
+            border-radius: 5px;
+            padding: 5px 15px;
+            @include policy($main-font, $text-font, 16px, unset, unset);
+        }
+    }
+
+    .submit {
+        @include input(2px, inherit, $dark-green, 5px);
+        padding: 5px 5px 5px 10px;
+        text-align: left;
+
+        h3 {
+            margin: 0;
+            font-family: $bold-font;
+            letter-spacing: 1px;            
+        }
+
+        input[type="image"] {
+            @include resize(30px, auto);
+            @include position(relative, 0, 5px, 0, 0);
+        }
+    }
+}
+
+
+.mapping {
+    margin-top: 50px;
+
+    p {
+        @include policy($main-font, $text-color, 20px, unset, unset);
+    }
+
+    .input-text-img {
+        @include flex(row, center, left, nowrap);
+        @include input(1px, #cdcdcd, #cdcdcd, 1px);
+        padding: 10px;
+        margin-bottom: 30px;
+    }
+
+    input[type="text"] {
+        border: none;
+        text-align: left;
+        @include policy($light-font, #cdcdcd, 20px, unset, unset);
+        @include resize(100%, auto);
+    }
+
+    input[type="image"] {
+        @include resize(30px, auto);
+    }
+}

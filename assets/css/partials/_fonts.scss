@@ -1,0 +1,19 @@
+@font-face {
+    @include fontface('DK Pimpernel', '../font/DK_Pimpernel.otf');
+}
+@font-face {
+    @include fontface('Lucida Fax Italic', '../font/Lucida_Fax_Italic.ttf');
+}
+
+@font-face {
+    @include fontface('Signika Bold', '../font/Signika-Bold.ttf');
+}
+@font-face {
+    @include fontface('Signika Light', '../font/Signika-Light.ttf');
+}
+@font-face {
+    @include fontface('Signika Regular', '../font/Signika-Regular.ttf');
+}
+@font-face {
+    @include fontface('Signika Semibold', '../font/Signika-Semibold.ttf');
+}

@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		watch: {
 			css: {
-				files: 'assets/css/style.scss',
+				files: 'assets/css/main.scss',
 				tasks: ['sass'],
 				options: {
 				livereload: true,
@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         sass: {
             prod: {
 				files: {
-					'assets/css/style.css': ['assets/css/style.scss']
+					'assets/css/style.css': ['assets/css/main.scss']
 				}
             }
         },
