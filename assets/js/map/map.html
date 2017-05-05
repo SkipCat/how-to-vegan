@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.googlemap.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTGxKCB3EqfvE2dT3iPY8ZyWIxGMsr2VU"></script>
+  </head>
+  <body>
+  		<input type="text" name="address" placeholder="Adresse voulue" id="adress">
+  		<input type="submit" id="submit">
+  		<div id="map" style="width: 600px; height: 600px;"></div>
+
+
+		<script type="text/javascript">
+            $(function() {
+                $("#map").googleMap();
+
+                // Marker 1
+                $("#map").addMarker({
+                    coords: [48.895651, 2.290569],
+					//url: 'http://www.biocop.com',
+					title: 'Biocop',
+                    text: 'Magasin bio de ouuuuuuuuuuuuuuuf',
+					url: 'www.biocop.fr	'
+                });
+
+                // Marker 2
+                $("#map").addMarker({
+                    coords: [48.869439, 2.308664]
+                });
+
+                // Marker 3
+                $("#map").addMarker({
+                    coords: [48.888846, 2.198674]
+                });
+            })
+    </script>
+
+  </body>
+</html>
