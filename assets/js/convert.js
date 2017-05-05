@@ -140,11 +140,4 @@ $(function() {
 
         return false;
     });
-
-    // localization
-    /*
-    formLocalization.on('submit', function() {
-
-    });*/
-
 });
