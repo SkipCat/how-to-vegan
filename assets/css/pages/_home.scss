@@ -19,7 +19,7 @@ main {
 }
 
 #form-list {
-    margin: 100px 0px;
+    margin: 50px 0px;
 }
 
 .list {
@@ -28,7 +28,7 @@ main {
     background-size: 95% auto;
     background-origin: border-box;
     @include flex(column, unset, space-between, nowrap);
-    margin-top: 50px;
+    @include policy($list-font, $text-color, 20px, unset, unset);
 
     img:not(#img-leaf) {
         @include resize(25px, auto);
@@ -48,6 +48,16 @@ main {
     ul {
         margin-top: 38px;
         margin-left: 25px;
+
+        .shop-li {
+            margin-bottom: 23px;
+        }
+
+        .result-li {
+            @include policy($list-font, $text-color, 22px, unset, unset);
+            margin-bottom: 21.5px;
+            letter-spacing: 2px;
+        }
         
         select {
             background-color: transparent;
@@ -101,9 +111,12 @@ main {
         text-align: left;
 
         h3 {
-            margin: 0;
+            margin: 0;       
+        }
+
+        input[type="submit"] {
             font-family: $bold-font;
-            letter-spacing: 1px;            
+            letter-spacing: 1px;     
         }
 
         input[type="image"] {
@@ -121,7 +134,7 @@ main {
         @include policy($main-font, $text-color, 20px, unset, unset);
     }
 
-    .input-text-img {
+    #form-localization {
         @include flex(row, center, left, nowrap);
         @include input(1px, #cdcdcd, #cdcdcd, 1px);
         padding: 10px;
@@ -137,5 +150,9 @@ main {
 
     input[type="image"] {
         @include resize(30px, auto);
+    }
+
+    #map {
+        @include resize(auto, 300px);
     }
 }

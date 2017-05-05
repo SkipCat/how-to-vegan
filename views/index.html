@@ -10,7 +10,12 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/i18n/fr.js"></script>
         <script src="assets/js/script.js"></script>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBnZiYklw780--bZb4kJ1i6rMLaLOOHU-I"></script>
+        <script src="assets/js/map/jquery.googlemap.js"></script>
+        <script src="assets/js/map/map.js"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
     <body>
@@ -32,13 +37,12 @@
                 How to Vegan est un outil qui vous permet de convertir automatiquement votre liste de
                 courses traditionnelle en liste de courses vegan.
                 Vous pouvez également ajouter les filtres "bio" et/ou "gluten-free" à votre sélection.
-                <br><br>A vous de jouer !
             </p>
-            <form name="shoppping-list" id="form-list frame-elt">
+            <form name="shoppping-list" id="form-list" class="frame-elt">
                 <div class="list">
-                    <img src="assets/img/pin_list.png" alt="icon pin" id="img-pin">
+                    <img src="assets/img/pin_list.png" alt="icon pin" id="img-pin" title="Epingler cette liste">
                     <ul>
-                        <li>
+                        <li class="shop-li">
                             <select name="products-list">
                                 <option value="NULL">Sélectionnez un produit</option>
                                 <optgroup label="Céréales">
@@ -92,11 +96,11 @@
                                 <option value="Bonbons">Bonbons</option>
                             </select>
                         </li>
+                        <div id="recap-list"></div>
                     </ul>
-                    <div id="recap-list"></div>
                     <span id="img-delete-skip">
-                        <img src="assets/img/delete_list.png" alt="icon delete">
-                        <img src="assets/img/arrow_list.png" alt="arrow" id="img-list-skip">
+                        <img src="assets/img/delete_list.png" alt="icon delete" title="Supprimer cette liste">
+                        <img src="assets/img/arrow_list.png" alt="arrow" id="img-list-skip" title="Tourner la page pour continuer">
                     </span>
                     <img src="assets/img/leaf.png" alt="leaf" id="img-leaf">
                 </div>
@@ -104,22 +108,25 @@
                 <div class="convert frame-elt">
                     <span class="filters">
                         <h3>Filtres :</h3>
-                        <input type="checkbox" id="filter-bio"><label for="filter-bio" >Bio</label>
-                        <input type="checkbox" id="filter-gluten"><label for="filter-gluten">Gluten Free</label>
+                        <input type="checkbox" id="filter-bio" value="Bio">
+                        <label for="filter-bio" >Bio</label>
+                        <input type="checkbox" id="filter-gluten" value="Gluten-free">
+                        <label for="filter-gluten">Gluten Free</label>
                     </span>
                     <span class="submit">
-                        <h3>Convertir ma liste</h3>
+                        <h3>
+                            <input type="submit" value="Convertir ma liste">
+                        </h3>
                         <input type="image" src="assets/img/arrow_convert.png" alt="green arrow" disabled>
                     </span>
                 </div>
             </form>
             <div class="mapping">
                 <p class="frame-elt">Situez les boutiques vegan les plus proches de chez vous :</p>
-                <div class="input-text-img frame-elt">
-                    <input type="text" placeholder="Indiquez votre adresse">
-                    <input type="image" src="assets/img/green_arrow.png">
-                </div>
-                <!--<img src="assets/img/map" alt="map" class="img-to-resize">-->
+                <form class="localization frame-elt" id="form-localization">
+                    <input type="text" placeholder="Indiquez votre adresse" id="input-adress">
+                    <input type="image" src="assets/img/green_arrow.png" id="submit-localization">
+                </form>
                 <div id="map" class="img-to-resize"></div>
             </div>
         </main>

@@ -39,7 +39,7 @@ main {
     font-style: italic; }
 
 #form-list {
-  margin: 100px 0px; }
+  margin: 50px 0px; }
 
 .list {
   height: 550px;
@@ -51,7 +51,11 @@ main {
   align-items: unset;
   justify-content: space-between;
   flex-wrap: nowrap;
-  margin-top: 50px; }
+  font-family: "DK Pimpernel";
+  color: #444444;
+  font-size: 20px;
+  font-weight: unset;
+  font-style: unset; }
   .list img:not(#img-leaf) {
     width: 25px;
     height: auto; }
@@ -72,6 +76,16 @@ main {
   .list ul {
     margin-top: 38px;
     margin-left: 25px; }
+    .list ul .shop-li {
+      margin-bottom: 23px; }
+    .list ul .result-li {
+      font-family: "DK Pimpernel";
+      color: #444444;
+      font-size: 22px;
+      font-weight: unset;
+      font-style: unset;
+      margin-bottom: 21.5px;
+      letter-spacing: 2px; }
     .list ul select {
       background-color: transparent;
       border: none;
@@ -133,7 +147,8 @@ main {
     padding: 5px 5px 5px 10px;
     text-align: left; }
     .convert .submit h3 {
-      margin: 0;
+      margin: 0; }
+    .convert .submit input[type="submit"] {
       font-family: "Signika Semibold";
       letter-spacing: 1px; }
     .convert .submit input[type="image"] {
@@ -153,7 +168,7 @@ main {
     font-size: 20px;
     font-weight: unset;
     font-style: unset; }
-  .mapping .input-text-img {
+  .mapping #form-localization {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -177,6 +192,9 @@ main {
   .mapping input[type="image"] {
     width: 30px;
     height: auto; }
+  .mapping #map {
+    width: auto;
+    height: 300px; }
 
 html {
   min-height: 100vh;
@@ -204,6 +222,7 @@ header {
   height: 225px;
   padding-bottom: 20px; }
   header .icons-menu {
+    margin-top: -20px;
     display: flex;
     flex-direction: row;
     align-items: center;
