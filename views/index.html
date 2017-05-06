@@ -3,141 +3,24 @@
     <head>
         <meta charset="UTF-8">
         <title>How To Vegan</title>
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
+
+        <script type="text/javascript" src="assets/js/script.js"></script>
         
         <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/i18n/fr.js"></script>
-        <script src="assets/js/script.js"></script>
+        <script type="text/javascript" src="assets/js/convert.js"></script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBnZiYklw780--bZb4kJ1i6rMLaLOOHU-I"></script>
         <script src="assets/js/map/jquery.googlemap.js"></script>
-        <script src="assets/js/map/map.js"></script>
+        <script type="text/javascript" src="assets/js/map/map.js"></script>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
     <body>
-        <header>
-            <div class="icons-menu">
-                <img src="assets/img/logo.png" alt="logo">
-                <img src="assets/img/profile.png" alt="icon profile">
-            </div>
-            <nav>
-                <a>Accueil</a>
-                <a>Panier type</a>
-                <a>Recettes</a>
-                <a>A propos</a>
-            </nav>
-        </header>
-        <main>
-            <img src="assets/img/brush.png" alt="brush-text" class="img-to-resize brush">
-            <p class="desc">
-                How to Vegan est un outil qui vous permet de convertir automatiquement votre liste de
-                courses traditionnelle en liste de courses vegan.
-                Vous pouvez également ajouter les filtres "bio" et/ou "gluten-free" à votre sélection.
-            </p>
-            <form name="shoppping-list" id="form-list" class="frame-elt">
-                <div class="list">
-                    <img src="assets/img/pin_list.png" alt="icon pin" id="img-pin" title="Epingler cette liste">
-                    <ul>
-                        <li class="shop-li">
-                            <select name="products-list">
-                                <option value="NULL">Sélectionnez un produit</option>
-                                <optgroup label="Céréales">
-                                    <option value="Pâtes">Pâtes</option>
-                                    <option value="Riz">Riz</option>
-                                    <option value="Maïs">Maïs</option>
-                                    <option value="Blé">Blé</option>
-                                    <option value="Corn Flakes">Corn Flakes</option>
-                                </optgroup>
-                                <optgroup label="Viandes et protéines">
-                                    <option value="Oeufs">Oeufs</option>
-                                    <option value="Poisson">Poisson</option>
-                                    <option value="Viande hachée">Viande hachée</option>
-                                    <option value="Poulet">Poulet</option>
-                                    <option value="Steak">Steak</option>
-                                </optgroup>
-                                <optgroup label="Produits laitiers">
-                                    <option value="Lait">Lait</option>
-                                    <option value="Beurre">Beurre</option>
-                                    <option value="Yaourt">Yaourt</option>
-                                    <option value="Fromage">Fromage</option>
-                                </optgroup>
-                                <optgroup label="Fruits">
-                                    <option value="Pommes">Pommes</option>
-                                    <option value="Bananes">Bananes</option>
-                                    <option value="Clémentines">Clémentines</option>
-                                    <option value="Ananas">Ananas</option>
-                                </optgroup>
-                                <optgroup label="Légumes">
-                                    <option value="Tomates">Tomates</option>
-                                    <option value="Concombre">Concombre</option>
-                                    <option value="Poireau">Poireau</option>
-                                    <option value="Courgette">Courgette</option>
-                                    <option value="Haricots">Haricots</option>
-                                </optgroup>
-                                <optgroup label="Chocolat">
-                                    <option value="Chocolat noir">Chocolat noir</option>
-                                    <option value="Chocolat au lait">Chocolat au lait</option>
-                                </optgroup>
-                                <optgroup label="Charcuterie"> 
-                                    <option value="Saucisse">Saucisse</option>
-                                    <option value="Saucisson">Saucisson</option>
-                                    <option value="Jambon">Jambon</option>
-                                </optgroup>
-                                <optgroup label="Assaisonnement">
-                                    <option value="Huile">Huile</option>
-                                    <option value="Mayonnaise">Mayonnaise</option>
-                                    <option value="Moutarde">Moutarde</option>
-                                    <option value="Ketchup">Ketchup</option>
-                                </optgroup>
-                                <option value="Bonbons">Bonbons</option>
-                            </select>
-                        </li>
-                        <div id="recap-list"></div>
-                    </ul>
-                    <span id="img-delete-skip">
-                        <img src="assets/img/delete_list.png" alt="icon delete" title="Supprimer cette liste">
-                        <img src="assets/img/arrow_list.png" alt="arrow" id="img-list-skip" title="Tourner la page pour continuer">
-                    </span>
-                    <img src="assets/img/leaf.png" alt="leaf" id="img-leaf">
-                </div>
-                
-                <div class="convert frame-elt">
-                    <span class="filters">
-                        <h3>Filtres :</h3>
-                        <input type="checkbox" id="filter-bio" value="Bio">
-                        <label for="filter-bio" >Bio</label>
-                        <input type="checkbox" id="filter-gluten" value="Gluten-free">
-                        <label for="filter-gluten">Gluten Free</label>
-                    </span>
-                    <span class="submit">
-                        <h3>
-                            <input type="submit" value="Convertir ma liste">
-                        </h3>
-                        <input type="image" src="assets/img/arrow_convert.png" alt="green arrow" disabled>
-                    </span>
-                </div>
-            </form>
-            <div class="mapping">
-                <p class="frame-elt">Situez les boutiques vegan les plus proches de chez vous :</p>
-                <form class="localization frame-elt" id="form-localization">
-                    <input type="text" placeholder="Indiquez votre adresse" id="input-adress">
-                    <input type="image" src="assets/img/green_arrow.png" id="submit-localization">
-                </form>
-                <div id="map" class="img-to-resize"></div>
-            </div>
-        </main>
-        <footer>
-            <img src="assets/img/logo_footer.png" alt="logo">
-            <nav>
-                <a href="">Conditions d'utilisation</a>
-                <a href="">Politiques de confidentialité</a>
-                <a href="">Nous contacter</a>
-                <a href="">&copy; 2017 <span>howtovegan.fr</span>, tous droits réservés</a>
-            </nav>
-        </footer>
+        PAGE HOME
     </body>
 </html>

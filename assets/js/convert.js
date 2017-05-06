@@ -1,13 +1,12 @@
 $(function() {
     var formConvert = $('#form-list');
-    var formLocalization = $('#form-localization');
-
     var product = $('select');
+    var filter = $('input[type="checkbox"]');
+
     var shoppingList = [];
     var productAlreadyExist = [];
-
-    var filter = $('input[type="checkbox"]');
     var filterList = [];
+    var disabled = [];
 
     // lock buttons by default to avoid empty submitted form
     $('input[type="submit"]').prop('disabled', true);
@@ -33,9 +32,7 @@ $(function() {
         });
     });
 
-    var disabled = [];
     function disableOptions() {
-      console.log(disabled);
         $('option').prop('disabled', false);
         $.each(disabled, function(key, val) {
             $('option[value="' + val + '"]').prop('disabled', true);
@@ -48,6 +45,7 @@ $(function() {
         $('<li></li>').addClass('shop-li').insertBefore($('#recap-list'));
         ($('li').last()).append(newProduct);
 
+        // select click
         newProduct.each(function() {
             $(this).on('click', function() {
                 if ($('select').last().val() != 'NULL'){
@@ -88,7 +86,6 @@ $(function() {
         });
     });
 
-    // form conversion
     formConvert.on('submit', function() {
         $('select').each(function(){
             var value =  $(this).find("option:selected").text();
@@ -96,7 +93,7 @@ $(function() {
         });
 
         $.ajax({
-            url: 'assets/json/list.json',//'?action=adminlogin'
+            url: 'assets/json/list.json', //'?action=adminlogin'
             type: 'GET',
             dataType: 'json',
             success: function(result) { // CAUTION: json already parsed
@@ -128,7 +125,6 @@ $(function() {
                                 $('#recap-list').append('<li></li>').addClass('result-li');
                                 ($('li').last()).addClass('result-li').append(result[i].vegan + '<br>');
                             }
-
                         }
                     }
                 }
@@ -140,11 +136,4 @@ $(function() {
 
         return false;
     });
-
-    // localization
-    /*
-    formLocalization.on('submit', function() {
-
-    });*/
-
 });

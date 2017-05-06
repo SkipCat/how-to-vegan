@@ -128,8 +128,6 @@ main {
 
 
 .mapping {
-    margin-top: 50px;
-
     p {
         @include policy($main-font, $text-color, 20px, unset, unset);
     }
