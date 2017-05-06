@@ -2,10 +2,8 @@
 
 require_once('model/user.php');
 
-function home_action()
-{
-    if (!empty($_SESSION['user_id']))
-    {
+function home_action() {
+    if (!empty($_SESSION['user_id'])) {
         $user = get_user_by_id($_SESSION['user_id']);
         //$user = get_user_by_id(1);
         $username = $user['username'];
@@ -17,12 +15,22 @@ function home_action()
     }
 }
 
-function about_action()
-{
+function convert_action() {
+    require('views/convert.html');
+}
+
+function basket_action() {
+    require('views/basket.html');
+}
+
+function recipe_action() {
+    require('views/recipe.html');
+}
+
+function about_action() {
     require('views/about.html');
 }
 
-function contact_action()
-{
+function contact_action() {
     require('views/contact.html');
 }

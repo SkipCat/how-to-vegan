@@ -2,6 +2,9 @@
 
 $routes = [
     'home'     => 'default',
+    'convert'  => 'default',
+    'basket'   => 'default',
+    'recipe'   => 'default',
     'about'    => 'default',
     'contact'  => 'default',
     'register' => 'user',
