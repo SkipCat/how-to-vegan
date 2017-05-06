@@ -4,7 +4,6 @@ $(function() {
     var filter = $('input[type="checkbox"]');
 
     var shoppingList = [];
-    var productAlreadyExist = [];
     var filterList = [];
     var disabled = [];
 
@@ -77,7 +76,7 @@ $(function() {
                     $('select').each(function(){
                         if($(this).val() != 'NULL'){
                             $('option').prop('disabled', false);
-                            disabled.push( $(this).val() );
+                            disabled.push($(this).val());
                         }
                     });
                     disableOptions();

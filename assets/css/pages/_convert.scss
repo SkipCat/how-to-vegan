@@ -142,7 +142,7 @@ main {
     input[type="text"] {
         border: none;
         text-align: left;
-        @include policy($light-font, #cdcdcd, 20px, unset, unset);
+        @include policy($light-font, #444444, 20px, unset, unset);
         @include resize(100%, auto);
     }
 
