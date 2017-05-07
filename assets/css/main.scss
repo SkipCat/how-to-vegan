@@ -4,6 +4,7 @@
 
 @import 'pages/convert';
 
+////////////////////////////////////
 
 html {
     min-height: 100vh;
@@ -30,21 +31,31 @@ header {
     background: transparent url('../img/menu_background.png') no-repeat;
     background-size: 100% 100%;
     @include flex(column, center, space-around, nowrap);
-    height: 200px;
+    height: 180px;
     padding-bottom: 20px;
 
     .icons-menu {
         margin-top: -15px;
         @include flex(row, center, center, nowrap);
         
-        #logo {
-            @include resize(120px, auto);
-        }
-        #profile {
+        .btn-menu {
             position: absolute;
             @include resize(20px, auto);
-            right: 50px;
+            right: 40px;
         }
+        .btn-menu + a {
+            display: none;
+            @include policy($main-font, white, 16px, unset, unset);
+        }
+    }
+
+    .btn-menu + a {
+        text-transform: none;
+        @include policy($main-font, white, 16px, unset, unset);
+    }
+
+    .logo img {
+        @include resize(100px, auto);
     }
 
     nav {
@@ -52,7 +63,7 @@ header {
         @include flex(row, baseline, space-around, nowrap);
 
         a {
-            @include policy($bold-font, white, 18px, unset, unset);
+            @include policy($bold-font, white, 14px, unset, unset);
             text-transform: uppercase;
             text-shadow: 0px 0px 1px darkgrey;
             letter-spacing: 1px;
@@ -62,30 +73,169 @@ header {
             padding-top: 5px;
             border-top: 5px solid $bookmark;
         }
+
+        .logo {
+            display: none;
+        }
+    }
+
+    .profile-login {
+        display: none;
+        align-self: flex-start;
+        @include position(absolute, 120px, 40px, initial, initial);
+        
+        .btn-menu {
+            @include resize(20px, 21px);
+        }
     }
 }
 
 footer {
     background-color: $bg-footer;
+    span.howtovegan {
+        @include policy(inherit, $link-website, inherit, bold, inherit);
+    }
+}
+
+#footer-mobile {
     @include flex(row, center, space-between, nowrap);
     padding: 10px;
 
     img {
-        @include resize(50px, auto);
+        @include resize(45px, auto);
     }
-
     nav {
         width: 80%;
         @include flex(row, unset, space-between, wrap);
     }
     a {
-        @include policy($light-font, white, 12px, lighter, unset);
+        @include policy($light-font, white, 8px, lighter, unset);
         //text-shadow: 0px 0px 1px darkgrey;
         letter-spacing: 1px;        
+    }
+}
 
-        span {
-            @include policy(inherit, $link-website, inherit, bold, inherit);
-            text-shadow: none;
+#footer-desktop {
+    @include flex(row, unset, center, nowrap);
+    display: none;
+    padding: 30px;
+    @include policy($light-font, white, 14px, lighter, unset);
+
+    .aside {
+        width: 235px;
+
+        span.howtovegan {
+            border-bottom: 3px solid;
+            padding-bottom: 10px;
         }
+        p:first-child {
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        .line {
+            @include flex(row, baseline, unset, nowrap);
+            img {
+                margin-right: 15px;
+            }
+            p {
+                margin-top: 0;
+            }
+        }
+    }
+    .center {
+        @include flex(column, center, space-between, wrap);
+        text-align: center;
+        padding-top: 20px;
+        margin: 0 5%;
+    }
+}
+
+////////////////////////////////////
+
+// mobile medium
+@media screen and (min-width: 321px) {
+    #footer-mobile nav a {
+        font-size: 10px;
+    }
+}
+
+// mobile large
+@media screen and (min-width: 376px) {
+    #footer-mobile {
+        img {
+            @include resize(60px, auto);
+        }
+        nav a {
+            font-size: 12px;
+        }
+    }
+}
+
+// tablet
+@media screen and (min-width: 641px) {
+    header {
+        background-image: url('../img/bg_desktop.png');
+        height: 250px;
+        flex-direction: row;
+        padding: 0;
+
+        .icons-menu {
+            display: none;
+        }
+
+        nav {
+            align-items: center; // problem with link of active page
+            align-self: flex-start;
+            margin-top: 20px;
+            width: 80%;
+
+            .logo {
+                display: block;
+            }
+        }
+
+        .profile-login {
+            display: flex;
+
+            .btn-menu {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    #footer-mobile {
+        display: none;
+    }
+
+    #footer-desktop {
+        display: flex;
+    }
+
+    //#active-page
+
+}
+
+// desktop
+@media screen and (min-width: 769px) {
+    header {
+        height: 330px;
+
+        nav {
+            width: 60%;
+        }
+
+        .profile-login {
+            @include position(absolute, 47px, 50px, initial, initial);
+            a {
+                display: block;
+            }
+        }
+    }
+}
+
+// desktop large
+@media screen and (min-width: 1025px) {
+    header {
+        height: 400px;
     }
 }

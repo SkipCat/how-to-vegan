@@ -11,10 +11,14 @@ main {
         margin-top: -20px;
     }
 
+    .big-brush {
+        display: none;
+    }
+
     p.desc {
         text-align: justify;
         margin: 0px 13%;
-        @include policy($text-font, $text-color, 18px, unset, italic);
+        @include policy($text-font, $text-color, 14px, unset, italic);
     }
 }
 
@@ -31,26 +35,26 @@ main {
     @include policy($list-font, $text-color, 20px, unset, unset);
 
     img:not(#img-leaf) {
-        @include resize(25px, auto);
+        @include resize(22px, auto);
     }
 
     #img-pin {
-        //margin: 57px 50px 0px auto;
-        @include position(relative, 50px, 0, 0, 335px);
+        @include position(relative, 8%, 0, 0, 80%);
     }
 
-    span#img-delete-skip {
-        margin: auto 50px -50px auto;
-        width: 70px;
+    #img-delete-skip {
+        position: absolute;
+        margin-left: 68%;
+        margin-top: 112%;
+        width: 60px;
         @include flex(row, center, space-between, nowrap);
     }
 
     ul {
-        margin-top: 38px;
-        margin-left: 25px;
+        margin: 23px 0 auto 15px;
 
         .shop-li {
-            margin-bottom: 23px;
+            //margin-bottom: 23px;
         }
 
         .result-li {
@@ -58,11 +62,11 @@ main {
             margin-bottom: 21.5px;
             letter-spacing: 2px;
         }
-        
+
         select {
             background-color: transparent;
             border: none;
-            @include policy($list-font, $text-color, 20px, unset, unset);
+            @include policy($list-font, $text-color, 18px, unset, unset);
             letter-spacing: 2px;
         }    
     }
@@ -71,24 +75,26 @@ main {
 
 #img-leaf {
     @include resize(100px, auto);
-    @include position(relative, 25px, 0, 0, 0);
+    @include position(relative, initial, 0, 90px, 0);
 }
 
 .convert {
-    @include resize(260px, 100px);
+    @include resize(210px, 100px);
     margin-left: auto;
+    margin-top: -110px;
 
     .filters, .submit {
         @include flex(row, center, space-between, nowrap);
 
         h3, input[type="submit"] {
             text-transform: uppercase;
-            @include policy($main-font, $text-color, 18px, unset, unset);
+            @include policy($main-font, $text-color, 16px, unset, unset);
         }
 
         input[type="checkbox"] {
             display: none;
         }
+
         input[type="checkbox"]:checked + label,
         input[type="checkbox"] + label:active {
             color: white;
@@ -100,14 +106,14 @@ main {
             background-color: #e6e6e6;
             border: 1px solid #c9c9c9;
             border-radius: 5px;
-            padding: 5px 15px;
-            @include policy($main-font, $text-font, 16px, unset, unset);
+            padding: 5px 10px;
+            @include policy($main-font, $text-color, 14px, unset, unset);
         }
     }
 
     .submit {
         @include input(2px, inherit, $dark-green, 5px);
-        padding: 5px 5px 5px 10px;
+        padding: 5px ;
         text-align: left;
 
         h3 {
@@ -115,8 +121,8 @@ main {
         }
 
         input[type="submit"] {
-            font-family: $bold-font;
-            letter-spacing: 1px;     
+            @include policy($bold-font, inherit, 14px, inherit, inherit);
+            letter-spacing: 1px;
         }
 
         input[type="image"] {
@@ -129,28 +135,193 @@ main {
 
 .mapping {
     p {
-        @include policy($main-font, $text-color, 20px, unset, unset);
+        @include policy($main-font, $text-color, 16px, unset, unset);
     }
 
     #form-localization {
         @include flex(row, center, left, nowrap);
         @include input(1px, #cdcdcd, #cdcdcd, 1px);
-        padding: 10px;
+        padding: 5px;
         margin-bottom: 30px;
     }
 
     input[type="text"] {
         border: none;
         text-align: left;
-        @include policy($light-font, #cdcdcd, 20px, unset, unset);
+        @include policy($light-font, #444444, 16px, unset, unset);
         @include resize(100%, auto);
     }
 
     input[type="image"] {
-        @include resize(30px, auto);
+        @include resize(20px, auto);
     }
 
     #map {
         @include resize(auto, 300px);
+    }
+}
+
+/////////////////////////////////
+
+@media screen and (min-width: 321px) {
+    .list {
+        ul {
+            margin-left: 20px;
+            margin-top: 35px;
+        }
+
+        #img-delete-skip {
+            margin-left: 70%;
+        }
+    }
+
+    #img-leaf {
+        bottom: 25px;
+    }
+
+    .convert {
+        margin-top: -50px;
+    }
+}
+
+@media screen and (min-width: 376px) {
+    .list {
+        height: 562px;
+
+        #img-pin {
+            @include position(relative, 11%, 0, 0, 81%);
+        }
+
+        #img-delete-skip {
+            margin-top: 114%;
+            margin-left: 73%;
+        }
+
+        ul {
+            margin-left: 25px;
+            margin-top: 44px;
+        }
+    }
+
+    #img-leaf {
+        bottom: 0;
+        top: 20px;
+    }
+
+    .convert {
+        margin-top: 0;
+    }
+}
+
+@media screen and (min-width: 641px) {
+    main {
+        @include resize(310px, auto);
+        margin: 20px auto 50px 50%;
+
+        .brush {
+            display: none;
+        }
+        .big-brush {
+            display: block;
+            @include position(absolute, 30%, initial, initial, 53%);
+            width: 300px;
+        }
+        #form-list {
+            margin: 0;
+            @include position(absolute, 23%, 0, 0, 5%);
+
+            .list {
+                @include resize(300px, 400px);
+                ul {
+                    margin-left: 15px;
+                    margin-top: 38px;
+                }
+                #img-delete-skip {
+                    margin-top: 46%;
+                    margin-left: 28%;
+                }
+            }
+            .convert {
+                margin-left: 60px;
+            }
+        }
+        p.desc {
+            margin: 0;
+        }
+        .frame-elt {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .mapping {
+            p {
+                margin-top: 50px;
+            }
+            #form-localization {
+                margin-bottom: 15px;
+            }
+            #map {
+                @include resize(auto, 220px);
+            }
+
+        }
+    }
+}
+
+@media screen and (min-width: 769px) {
+    main {
+        margin: 0 auto 50px 55%;;
+
+        .big-brush {
+            width: 350px;
+            @include position(absolute, 34%, initial, initial, 55%);
+        }
+
+        #form-list {
+            @include position(absolute, 25%, 0, 0, 6%);
+
+            .list {
+                @include resize(380px, 510px);
+
+                #img-delete-skip {
+                    margin-top: 45%;
+                    margin-left: 28.5%;
+                }
+
+                ul {
+                    margin-left: 22px;
+                    margin-top: 34px;
+                    
+                    select {
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            .convert {
+                margin-left: 14%;
+            }
+
+            #img-leaf {
+                @include resize(150px, auto);
+                @include position(relative, 60px, 0, 0, -40px);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    main {
+        .big-brush {
+            @include position(absolute, 38%, initial, initial, 60%);   
+        }
+
+        #form-list {
+            @include position(absolute, 25%, 0, 0, 15%);
+
+            .list #img-delete-skip {
+                margin-top: 38%;
+                margin-left: 24%;   
+            }
+        }
     }
 }
