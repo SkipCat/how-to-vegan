@@ -316,6 +316,22 @@ main {
         right: 0;
         bottom: 0;
         left: -40px; } }
+@media screen and (min-width: 1025px) {
+  main .big-brush {
+    position: absolute;
+    top: 38%;
+    right: initial;
+    bottom: initial;
+    left: 60%; }
+  main #form-list {
+    position: absolute;
+    top: 25%;
+    right: 0;
+    bottom: 0;
+    left: 15%; }
+    main #form-list .list #img-delete-skip {
+      margin-top: 38%;
+      margin-left: 24%; } }
 html {
   min-height: 100vh;
   min-width: 100vw; }
@@ -525,5 +541,8 @@ footer {
       left: initial; }
       header .profile-login a {
         display: block; } }
+@media screen and (min-width: 1025px) {
+  header {
+    height: 400px; } }
 
 /*# sourceMappingURL=style.css.map */

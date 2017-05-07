@@ -163,7 +163,6 @@ main {
 
 /////////////////////////////////
 
-// mobile medium
 @media screen and (min-width: 321px) {
     .list {
         ul {
@@ -185,7 +184,6 @@ main {
     }
 }
 
-// mobile large
 @media screen and (min-width: 376px) {
     .list {
         height: 562px;
@@ -306,6 +304,23 @@ main {
             #img-leaf {
                 @include resize(150px, auto);
                 @include position(relative, 60px, 0, 0, -40px);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    main {
+        .big-brush {
+            @include position(absolute, 38%, initial, initial, 60%);   
+        }
+
+        #form-list {
+            @include position(absolute, 25%, 0, 0, 15%);
+
+            .list #img-delete-skip {
+                margin-top: 38%;
+                margin-left: 24%;   
             }
         }
     }

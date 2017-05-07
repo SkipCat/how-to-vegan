@@ -182,7 +182,7 @@ footer {
         .icons-menu {
             display: none;
         }
-        
+
         nav {
             align-items: center; // problem with link of active page
             align-self: flex-start;
@@ -230,5 +230,12 @@ footer {
                 display: block;
             }
         }
+    }
+}
+
+// desktop large
+@media screen and (min-width: 1025px) {
+    header {
+        height: 400px;
     }
 }
