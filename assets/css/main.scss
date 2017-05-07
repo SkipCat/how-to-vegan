@@ -145,8 +145,11 @@ footer {
     .center {
         @include flex(column, center, space-between, wrap);
         text-align: center;
-        padding-top: 20px;
         margin: 0 5%;
+
+        img {
+            @include resize(100px, auto);
+        }
     }
 }
 

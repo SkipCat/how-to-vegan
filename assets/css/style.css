@@ -28,7 +28,8 @@ main {
   justify-content: space-between;
   flex-wrap: nowrap; }
   main .brush {
-    margin-top: -20px; }
+    width: 300px;
+    margin: 0 auto 0 auto; }
   main .big-brush {
     display: none; }
   main p.desc {
@@ -244,7 +245,7 @@ main {
     main .big-brush {
       display: block;
       position: absolute;
-      top: 30%;
+      top: 25%;
       right: initial;
       bottom: initial;
       left: 53%;
@@ -491,8 +492,10 @@ footer {
     justify-content: space-between;
     flex-wrap: wrap;
     text-align: center;
-    padding-top: 20px;
     margin: 0 5%; }
+    #footer-desktop .center img {
+      width: 100px;
+      height: auto; }
 
 @media screen and (min-width: 321px) {
   #footer-mobile nav a {
