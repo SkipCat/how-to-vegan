@@ -29,12 +29,14 @@ main {
   flex-wrap: nowrap; }
   main .brush {
     margin-top: -20px; }
+  main .big-brush {
+    display: none; }
   main p.desc {
     text-align: justify;
     margin: 0px 13%;
     font-family: "Lucida Fax Italic";
     color: #444444;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: unset;
     font-style: italic; }
 
@@ -57,27 +59,26 @@ main {
   font-weight: unset;
   font-style: unset; }
   .list img:not(#img-leaf) {
-    width: 25px;
+    width: 22px;
     height: auto; }
   .list #img-pin {
     position: relative;
-    top: 50px;
+    top: 8%;
     right: 0;
     bottom: 0;
-    left: 335px; }
-  .list span#img-delete-skip {
-    margin: auto 50px -50px auto;
-    width: 70px;
+    left: 80%; }
+  .list #img-delete-skip {
+    position: absolute;
+    margin-left: 68%;
+    margin-top: 112%;
+    width: 60px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap; }
   .list ul {
-    margin-top: 38px;
-    margin-left: 25px; }
-    .list ul .shop-li {
-      margin-bottom: 23px; }
+    margin: 23px 0 auto 15px; }
     .list ul .result-li {
       font-family: "DK Pimpernel";
       color: #444444;
@@ -91,7 +92,7 @@ main {
       border: none;
       font-family: "DK Pimpernel";
       color: #444444;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: unset;
       font-style: unset;
       letter-spacing: 2px; }
@@ -100,15 +101,16 @@ main {
   width: 100px;
   height: auto;
   position: relative;
-  top: 25px;
+  top: initial;
   right: 0;
-  bottom: 0;
+  bottom: 90px;
   left: 0; }
 
 .convert {
-  width: 260px;
+  width: 210px;
   height: 100px;
-  margin-left: auto; }
+  margin-left: auto;
+  margin-top: -110px; }
   .convert .filters, .convert .submit {
     display: flex;
     flex-direction: row;
@@ -119,7 +121,7 @@ main {
       text-transform: uppercase;
       font-family: "Signika Regular";
       color: #444444;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: unset;
       font-style: unset; }
     .convert .filters input[type="checkbox"], .convert .submit input[type="checkbox"] {
@@ -134,22 +136,26 @@ main {
       background-color: #e6e6e6;
       border: 1px solid #c9c9c9;
       border-radius: 5px;
-      padding: 5px 15px;
+      padding: 5px 10px;
       font-family: "Signika Regular";
-      color: "Lucida Fax Italic";
-      font-size: 16px;
+      color: #444444;
+      font-size: 14px;
       font-weight: unset;
       font-style: unset; }
   .convert .submit {
     color: inherit;
     border: 2px solid #78a514;
     border-radius: 5px;
-    padding: 5px 5px 5px 10px;
+    padding: 5px;
     text-align: left; }
     .convert .submit h3 {
       margin: 0; }
     .convert .submit input[type="submit"] {
       font-family: "Signika Semibold";
+      color: inherit;
+      font-size: 14px;
+      font-weight: inherit;
+      font-style: inherit;
       letter-spacing: 1px; }
     .convert .submit input[type="image"] {
       width: 30px;
@@ -163,7 +169,7 @@ main {
 .mapping p {
   font-family: "Signika Regular";
   color: #444444;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: unset;
   font-style: unset; }
 .mapping #form-localization {
@@ -175,25 +181,141 @@ main {
   color: #cdcdcd;
   border: 1px solid #cdcdcd;
   border-radius: 1px;
-  padding: 10px;
+  padding: 5px;
   margin-bottom: 30px; }
 .mapping input[type="text"] {
   border: none;
   text-align: left;
   font-family: "Signika Light";
   color: #444444;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: unset;
   font-style: unset;
   width: 100%;
   height: auto; }
 .mapping input[type="image"] {
-  width: 30px;
+  width: 20px;
   height: auto; }
 .mapping #map {
   width: auto;
   height: 300px; }
 
+@media screen and (min-width: 321px) {
+  .list ul {
+    margin-left: 20px;
+    margin-top: 35px; }
+  .list #img-delete-skip {
+    margin-left: 70%; }
+
+  #img-leaf {
+    bottom: 25px; }
+
+  .convert {
+    margin-top: -50px; } }
+@media screen and (min-width: 376px) {
+  .list {
+    height: 562px; }
+    .list #img-pin {
+      position: relative;
+      top: 11%;
+      right: 0;
+      bottom: 0;
+      left: 81%; }
+    .list #img-delete-skip {
+      margin-top: 114%;
+      margin-left: 73%; }
+    .list ul {
+      margin-left: 25px;
+      margin-top: 44px; }
+
+  #img-leaf {
+    bottom: 0;
+    top: 20px; }
+
+  .convert {
+    margin-top: 0; } }
+@media screen and (min-width: 641px) {
+  main {
+    width: 310px;
+    height: auto;
+    margin: 20px auto 50px 50%; }
+    main .brush {
+      display: none; }
+    main .big-brush {
+      display: block;
+      position: absolute;
+      top: 30%;
+      right: initial;
+      bottom: initial;
+      left: 53%;
+      width: 300px; }
+    main #form-list {
+      margin: 0;
+      position: absolute;
+      top: 23%;
+      right: 0;
+      bottom: 0;
+      left: 5%; }
+      main #form-list .list {
+        width: 300px;
+        height: 400px; }
+        main #form-list .list ul {
+          margin-left: 15px;
+          margin-top: 38px; }
+        main #form-list .list #img-delete-skip {
+          margin-top: 46%;
+          margin-left: 28%; }
+      main #form-list .convert {
+        margin-left: 60px; }
+    main p.desc {
+      margin: 0; }
+    main .frame-elt {
+      margin-left: 0;
+      margin-right: 0; }
+    main .mapping p {
+      margin-top: 50px; }
+    main .mapping #form-localization {
+      margin-bottom: 15px; }
+    main .mapping #map {
+      width: auto;
+      height: 220px; } }
+@media screen and (min-width: 769px) {
+  main {
+    margin: 0 auto 50px 55%; }
+    main .big-brush {
+      width: 350px;
+      position: absolute;
+      top: 34%;
+      right: initial;
+      bottom: initial;
+      left: 55%; }
+    main #form-list {
+      position: absolute;
+      top: 25%;
+      right: 0;
+      bottom: 0;
+      left: 6%; }
+      main #form-list .list {
+        width: 380px;
+        height: 510px; }
+        main #form-list .list #img-delete-skip {
+          margin-top: 45%;
+          margin-left: 28.5%; }
+        main #form-list .list ul {
+          margin-left: 22px;
+          margin-top: 34px; }
+          main #form-list .list ul select {
+            font-size: 20px; }
+      main #form-list .convert {
+        margin-left: 14%; }
+      main #form-list #img-leaf {
+        width: 150px;
+        height: auto;
+        position: relative;
+        top: 60px;
+        right: 0;
+        bottom: 0;
+        left: -40px; } }
 html {
   min-height: 100vh;
   min-width: 100vw; }
@@ -217,7 +339,7 @@ header {
   align-items: center;
   justify-content: space-around;
   flex-wrap: nowrap;
-  height: 200px;
+  height: 180px;
   padding-bottom: 20px; }
   header .icons-menu {
     margin-top: -15px;
@@ -226,14 +348,28 @@ header {
     align-items: center;
     justify-content: center;
     flex-wrap: nowrap; }
-    header .icons-menu #logo {
-      width: 120px;
-      height: auto; }
-    header .icons-menu #profile {
+    header .icons-menu .btn-menu {
       position: absolute;
       width: 20px;
       height: auto;
-      right: 50px; }
+      right: 40px; }
+    header .icons-menu .btn-menu + a {
+      display: none;
+      font-family: "Signika Regular";
+      color: white;
+      font-size: 16px;
+      font-weight: unset;
+      font-style: unset; }
+  header .btn-menu + a {
+    text-transform: none;
+    font-family: "Signika Regular";
+    color: white;
+    font-size: 16px;
+    font-weight: unset;
+    font-style: unset; }
+  header .logo img {
+    width: 100px;
+    height: auto; }
   header nav {
     width: 100%;
     display: flex;
@@ -244,7 +380,7 @@ header {
     header nav a {
       font-family: "Signika Semibold";
       color: white;
-      font-size: 18px;
+      font-size: 14px;
       font-weight: unset;
       font-style: unset;
       text-transform: uppercase;
@@ -253,38 +389,141 @@ header {
     header nav #active-page {
       padding-top: 5px;
       border-top: 5px solid #e74a18; }
+    header nav .logo {
+      display: none; }
+  header .profile-login {
+    display: none;
+    align-self: flex-start;
+    position: absolute;
+    top: 120px;
+    right: 40px;
+    bottom: initial;
+    left: initial; }
+    header .profile-login .btn-menu {
+      width: 20px;
+      height: 21px; }
 
 footer {
-  background-color: #e74919;
+  background-color: #e74919; }
+  footer span.howtovegan {
+    font-family: inherit;
+    color: #9f2600;
+    font-size: inherit;
+    font-weight: bold;
+    font-style: inherit; }
+
+#footer-mobile {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   flex-wrap: nowrap;
   padding: 10px; }
-  footer img {
-    width: 50px;
+  #footer-mobile img {
+    width: 45px;
     height: auto; }
-  footer nav {
+  #footer-mobile nav {
     width: 80%;
     display: flex;
     flex-direction: row;
     align-items: unset;
     justify-content: space-between;
     flex-wrap: wrap; }
-  footer a {
+  #footer-mobile a {
     font-family: "Signika Light";
     color: white;
-    font-size: 12px;
+    font-size: 8px;
     font-weight: lighter;
     font-style: unset;
     letter-spacing: 1px; }
-    footer a span {
-      font-family: inherit;
-      color: #9f2600;
-      font-size: inherit;
-      font-weight: bold;
-      font-style: inherit;
-      text-shadow: none; }
+
+#footer-desktop {
+  display: flex;
+  flex-direction: row;
+  align-items: unset;
+  justify-content: center;
+  flex-wrap: nowrap;
+  display: none;
+  padding: 30px;
+  font-family: "Signika Light";
+  color: white;
+  font-size: 14px;
+  font-weight: lighter;
+  font-style: unset; }
+  #footer-desktop .aside {
+    width: 235px; }
+    #footer-desktop .aside span.howtovegan {
+      border-bottom: 3px solid;
+      padding-bottom: 10px; }
+    #footer-desktop .aside p:first-child {
+      margin-bottom: 30px;
+      font-weight: bold; }
+    #footer-desktop .aside .line {
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+      justify-content: unset;
+      flex-wrap: nowrap; }
+      #footer-desktop .aside .line img {
+        margin-right: 15px; }
+      #footer-desktop .aside .line p {
+        margin-top: 0; }
+  #footer-desktop .center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+    padding-top: 20px;
+    margin: 0 5%; }
+
+@media screen and (min-width: 321px) {
+  #footer-mobile nav a {
+    font-size: 10px; } }
+@media screen and (min-width: 376px) {
+  #footer-mobile img {
+    width: 60px;
+    height: auto; }
+  #footer-mobile nav a {
+    font-size: 12px; } }
+@media screen and (min-width: 641px) {
+  header {
+    background-image: url("../img/bg_desktop.png");
+    height: 250px;
+    flex-direction: row;
+    padding: 0; }
+    header .icons-menu {
+      display: none; }
+    header nav {
+      align-items: center;
+      align-self: flex-start;
+      margin-top: 20px;
+      width: 80%; }
+      header nav .logo {
+        display: block; }
+    header .profile-login {
+      display: flex; }
+      header .profile-login .btn-menu {
+        margin-right: 10px; }
+
+  #footer-mobile {
+    display: none; }
+
+  #footer-desktop {
+    display: flex; } }
+@media screen and (min-width: 769px) {
+  header {
+    height: 330px; }
+    header nav {
+      width: 60%; }
+    header .profile-login {
+      position: absolute;
+      top: 47px;
+      right: 50px;
+      bottom: initial;
+      left: initial; }
+      header .profile-login a {
+        display: block; } }
 
 /*# sourceMappingURL=style.css.map */

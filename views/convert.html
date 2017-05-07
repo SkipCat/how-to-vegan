@@ -23,25 +23,44 @@
     <body>
         <header>
             <div class="icons-menu">
-                <a href="?action=home">
-                    <img src="assets/img/logo.png" alt="logo" id="logo">
+                <a href="?action=home" class="logo">
+                    <img src="assets/img/logo.png" alt="logo">
                 </a>
-                <img src="assets/img/profile.png" alt="icon profile" id="profile">
+                <!-- twig : if connected -->
+                <img src="assets/img/profile.png" alt="icon profile" id="btn-profile" class="btn-menu">
+                <a href="?action=profile">Mon compte</a>
+                <!-- twig : if not connected -->
+                <!--
+                <img src="assets/img/login.png" alt="icon login" id="btn-login" class="btn-menu">
+                <a href="?action=login">Se connecter</a>-->
             </div>
             <nav>
-                <a href="?action=convert" id="convert-page">Courses</a>
-                <a href="?action=basket" id="basket-page">Panier</a>
+                <a href="?action=convert" id="convert-page">Liste</a>
+                <a href="?action=basket" id="basket-page">Basiques</a>
+                <a href="?action=home" class="logo">
+                    <img src="assets/img/logo.png" alt="logo">
+                </a>
                 <a href="?action=recipe" id="recipe-page">Recettes</a>
                 <a href="?action=about" id="about-page">A propos</a>
             </nav>
+            <div class="profile-login">
+                <!-- twig : if connected -->
+                <img src="assets/img/profile.png" alt="icon profile" id="btn-profile" class="btn-menu">
+                <a href="?action=profile">Mon compte</a>
+                <!-- twig : if not connected -->
+                <!--
+                <img src="assets/img/login.png" alt="icon login" id="btn-login" class="btn-menu">
+                <a href="?action=login">Se connecter</a>-->
+            </div>
         </header>
         <main>
             <img src="assets/img/brush.png" alt="brush-text" class="img-to-resize brush">
+            <img src="assets/img/big_brush.png" alt="brush-text" class="big-brush">
             <p class="desc">
                 How to Vegan est un outil qui vous permet de convertir automatiquement votre liste de
                 courses traditionnelle en liste de courses vegan.
                 Vous pouvez également ajouter les filtres "bio" et/ou "gluten-free" à votre sélection.
-            </p>
+            </p>        
             <form name="shoppping-list" id="form-list" class="frame-elt">
                 <div class="list">
                     <img src="assets/img/pin_list.png" alt="icon pin" id="img-pin" title="Epingler cette liste">
@@ -107,7 +126,7 @@
                         <img src="assets/img/arrow_list.png" alt="arrow" id="img-list-skip" title="Tourner la page pour continuer">
                     </span>
                     <img src="assets/img/leaf.png" alt="leaf" id="img-leaf">
-                </div>
+                </div>                
                 <div class="convert frame-elt">
                     <span class="filters">
                         <h3>Filtres :</h3>
@@ -133,14 +152,41 @@
                 <div id="map" class="img-to-resize"></div>
             </div>
         </main>
-        <footer>
+        <footer id="footer-mobile">
             <img src="assets/img/logo_footer.png" alt="logo">
             <nav>
                 <a href="">Conditions d'utilisation</a>
                 <a href="">Politique de confidentialité</a>
                 <a href="?action=contact">Contact</a>
-                <a>&copy; 2017 <span>howtovegan.fr</span>, tous droits réservés</a>
+                <a>&copy; 2017 <span class="howtovegan">howtovegan.fr</span>, tous droits réservés</a>
             </nav>
+        </footer>
+        <footer id="footer-desktop">
+            <div class="aside">
+                <p><span class="howtovegan">howtovegan</span> contact</p>
+                <span class="line">
+                    <img src="assets/img/localization.png" alt="icon localization">
+                    <p>95 avenue Parmentier, Paris, 75011</p>
+                </span>
+                <span class="line">
+                    <img src="assets/img/telephone.png" alt="icon telephone">
+                    <p>+331 23 45 67</p>
+                </span>
+                <span class="line">
+                    <img src="assets/img/mail.png" alt="icon mail">
+                    <p>contact@howtovegan.fr</p>
+                </span>
+            </div>
+            <div class="center">
+                <img src="assets/img/logo_reverse.png" alt="logo">
+                <p>&copy; 2017 <span class="howtovegan">howtovegan.fr</span>, tous droits réservés</p>
+            </div>
+            <div class="aside">
+                <p><span class="howtovegan">howtovegan</span> informations</p>
+                <p>Nous contacter</p>
+                <p>Conditions d'utilisation</p>
+                <p>Politique de confidentialité</p>
+            </div>
         </footer>
     </body>
 </html>
