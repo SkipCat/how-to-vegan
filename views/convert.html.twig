@@ -1,0 +1,103 @@
+{% extends 'index.html.twig' %}
+
+{% block content %}
+    <main id="main-convert">
+        <img src="assets/img/brush.png" alt="brush-text" class="brush">
+        <img src="assets/img/big_brush.png" alt="brush-text" class="big-brush">
+        <p class="desc">
+            How to Vegan est un outil qui vous permet de convertir automatiquement votre liste de
+            courses traditionnelle en liste de courses vegan.
+            Vous pouvez également ajouter les filtres "bio" et/ou "gluten-free" à votre sélection.
+        </p>        
+        <form name="shoppping-list" id="form-list" class="frame-elt">
+            <div class="list">
+                <img src="assets/img/pin_list.png" alt="icon pin" id="img-pin" title="Epingler cette liste">
+                <ul>
+                    <li class="shop-li">
+                        <select name="products-list">
+                            <option value="NULL">Sélectionnez un produit</option>
+                            <optgroup label="Céréales">
+                                <option value="Pâtes">Pâtes</option>
+                                <option value="Riz">Riz</option>
+                                <option value="Maïs">Maïs</option>
+                                <option value="Blé">Blé</option>
+                                <option value="Corn Flakes">Corn Flakes</option>
+                            </optgroup>
+                            <optgroup label="Viandes et protéines">
+                                <option value="Oeufs">Oeufs</option>
+                                <option value="Poisson">Poisson</option>
+                                <option value="Viande hachée">Viande hachée</option>
+                                <option value="Poulet">Poulet</option>
+                                <option value="Steak">Steak</option>
+                            </optgroup>
+                            <optgroup label="Produits laitiers">
+                                <option value="Lait">Lait</option>
+                                <option value="Beurre">Beurre</option>
+                                <option value="Yaourt">Yaourt</option>
+                                <option value="Fromage">Fromage</option>
+                            </optgroup>
+                            <optgroup label="Fruits">
+                                <option value="Pommes">Pommes</option>
+                                <option value="Bananes">Bananes</option>
+                                <option value="Clémentines">Clémentines</option>
+                                <option value="Ananas">Ananas</option>
+                            </optgroup>
+                            <optgroup label="Légumes">
+                                <option value="Tomates">Tomates</option>
+                                <option value="Concombre">Concombre</option>
+                                <option value="Poireau">Poireau</option>
+                                <option value="Courgette">Courgette</option>
+                                <option value="Haricots">Haricots</option>
+                            </optgroup>
+                            <optgroup label="Chocolat">
+                                <option value="Chocolat noir">Chocolat noir</option>
+                                <option value="Chocolat au lait">Chocolat au lait</option>
+                            </optgroup>
+                            <optgroup label="Charcuterie"> 
+                                <option value="Saucisse">Saucisse</option>
+                                <option value="Saucisson">Saucisson</option>
+                                <option value="Jambon">Jambon</option>
+                            </optgroup>
+                            <optgroup label="Assaisonnement">
+                                <option value="Huile">Huile</option>
+                                <option value="Mayonnaise">Mayonnaise</option>
+                                <option value="Moutarde">Moutarde</option>
+                                <option value="Ketchup">Ketchup</option>
+                            </optgroup>
+                            <option value="Bonbons">Bonbons</option>
+                        </select>
+                    </li>
+                    <div id="recap-list"></div>
+                </ul>
+                <span id="img-delete-skip">
+                    <img src="assets/img/delete_list.png" alt="icon delete" id ="img-delete" title="Supprimer cette liste">
+                    <img src="assets/img/arrow_list.png" alt="arrow" id="img-list-skip" title="Tourner la page pour continuer">
+                </span>
+                <img src="assets/img/leaf.png" alt="leaf" id="img-leaf">
+            </div>                
+            <div class="convert frame-elt">
+                <span class="filters">
+                    <h3>Filtres :</h3>
+                    <input type="checkbox" id="filter-bio" value="Bio">
+                    <label for="filter-bio">Bio</label>
+                    <input type="checkbox" id="filter-gluten" value="Gluten-free">
+                    <label for="filter-gluten">Gluten Free</label>
+                </span>
+                <span class="submit">
+                    <h3>
+                        <input type="submit" value="Convertir ma liste">
+                    </h3>
+                    <input type="image" src="assets/img/arrow_convert.png" alt="green arrow" disabled>
+                </span>
+            </div>
+        </form>
+        <div class="mapping">
+            <p class="frame-elt">Situez les boutiques vegan les plus proches de chez vous :</p>
+            <form class="localization frame-elt" id="form-localization">
+                <input type="text" placeholder="Indiquez votre adresse" id="input-adress">
+                <input type="image" src="assets/img/green_arrow.png" id="submit-localization">
+            </form>
+            <div id="map" class="img-to-resize"></div>
+        </div>
+    </main>
+{% endblock %}

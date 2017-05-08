@@ -3,8 +3,7 @@
     margin-right: 8%;
 }
 
-main {
-    flex-grow: 1;
+#main-convert {
     @include flex(column, unset, space-between, nowrap);
 
     .brush {
@@ -59,8 +58,8 @@ main {
         }
 
         .result-li {
-            @include policy($list-font, $text-color, 22px, unset, unset);
-            margin-bottom: 21.5px;
+            @include policy($list-font, $text-color, inherit, unset, unset);
+            //margin-bottom: 21.5px;
             letter-spacing: 2px;
         }
 
@@ -219,7 +218,7 @@ main {
         background-image: url('../img/bg_convert.png');
     }
     
-    main {
+    #main-convert {
         @include resize(310px, auto);
         margin: 20px auto 50px 50%;
 
@@ -273,7 +272,7 @@ main {
 }
 
 @media screen and (min-width: 769px) {
-    main {
+    #main-convert {
         margin: 0 auto 50px 55%;;
 
         .big-brush {
@@ -315,7 +314,7 @@ main {
 }
 
 @media screen and (min-width: 1025px) {
-    main {
+    #main-convert {
         .big-brush {
             @include position(absolute, 38%, initial, initial, 60%);   
         }

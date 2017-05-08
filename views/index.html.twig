@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>How To Vegan</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
+
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+        <script type="text/javascript" src="assets/js/script.min.js"></script>
+        <link rel="stylesheet" href="assets/css/style.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBnZiYklw780--bZb4kJ1i6rMLaLOOHU-I"></script>
+        <script src="assets/js/map/jquery.googlemap.js"></script>
+        <script type="text/javascript" src="assets/js/map/map.js"></script>
+
+        <!--
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/i18n/fr.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
+        -->
+    </head>
+    <body>
+        <header>
+            <div class="icons-menu">
+                <a href="?action=home" class="logo">
+                    <img src="assets/img/logo.png" alt="logo">
+                </a>
+                {% if user.username is defined and user.username is not empty %}
+                    <img src="assets/img/profile.png" alt="icon profile" id="btn-profile" class="btn-menu">
+                    <a href="?action=profile">{{ user.username|e }}</a>
+                {% endif %}
+                {% if user.username is not defined and user.username is empty %}
+                    <img src="assets/img/login.png" alt="icon login" id="btn-login" class="btn-menu">
+                    <a href="?action=login">Se connecter</a>
+                {% endif %}
+            </div>
+            <nav>
+                <a href="?action=convert" id="convert-page">Liste</a>
+                <a href="?action=basket" id="basket-page">Essentiels</a>
+                <a href="?action=home" class="logo">
+                    <img src="assets/img/logo.png" alt="logo">
+                </a>
+                <a href="?action=recipe" id="recipe-page">Recettes</a>
+                <a href="?action=about" id="about-page">A propos</a>
+            </nav>
+            <div class="profile-login">
+                {% if user.username is defined and user.username is not empty %}
+                    <img src="assets/img/profile.png" alt="icon profile" id="btn-profile" class="btn-menu">
+                    <a href="?action=profile">{{ user.username|e }}</a>
+                {% endif %}
+                {% if user.username is not defined and user.username is empty %}
+                    <img src="assets/img/login.png" alt="icon login" id="btn-login" class="btn-menu">
+                    <a href="?action=login">Se connecter</a>
+                {% endif %}
+            </div>
+        </header>
+
+        {% block content %}{% endblock %}
+
+        <footer id="footer-mobile">
+            <img src="assets/img/logo_footer.png" alt="logo">
+            <nav>
+                <a href="">Conditions d'utilisation</a>
+                <a href="">Politique de confidentialité</a>
+                <a href="?action=contact">Contact</a>
+                <a>&copy; 2017 <span class="howtovegan">howtovegan.fr</span>, tous droits réservés</a>
+            </nav>
+        </footer>
+        <footer id="footer-desktop">
+            <div class="aside">
+                <p><span class="howtovegan">howtovegan</span> contact</p>
+                <span class="line">
+                    <img src="assets/img/localization.png" alt="icon localization">
+                    <p>95 avenue Parmentier, Paris, 75011</p>
+                </span>
+                <span class="line">
+                    <img src="assets/img/telephone.png" alt="icon telephone">
+                    <p>+331 23 45 67</p>
+                </span>
+                <span class="line">
+                    <img src="assets/img/mail.png" alt="icon mail">
+                    <p>contact@howtovegan.fr</p>
+                </span>
+            </div>
+            <div class="center">
+                <img src="assets/img/logo_reverse.png" alt="logo">
+                <p>Téléchargez l'application !</p>
+                <span>
+                    <img src="assets/img/app_apple.png" alt="app-store picture">
+                    <img src="assets/img/app_android.png" alt="google-store picture">
+                </span>
+                <p>&copy; 2017 <span class="howtovegan">howtovegan.fr</span>, tous droits réservés</p>
+            </div>
+            <div class="aside">
+                <p><span class="howtovegan">howtovegan</span> informations</p>
+                <p>Nous contacter</p>
+                <p>Conditions d'utilisation</p>
+                <p>Politique de confidentialité</p>
+            </div>
+        </footer>
+    </body>
+</html>
