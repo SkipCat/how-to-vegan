@@ -8,7 +8,8 @@ main {
     @include flex(column, unset, space-between, nowrap);
 
     .brush {
-        margin-top: -20px;
+        width: 300px;
+        margin: 0 auto 0 auto;
     }
 
     .big-brush {
@@ -214,6 +215,10 @@ main {
 }
 
 @media screen and (min-width: 641px) {
+    #header-convert {
+        background-image: url('../img/bg_convert.png');
+    }
+    
     main {
         @include resize(310px, auto);
         margin: 20px auto 50px 50%;
@@ -223,7 +228,7 @@ main {
         }
         .big-brush {
             display: block;
-            @include position(absolute, 30%, initial, initial, 53%);
+            @include position(absolute, 25%, initial, initial, 53%);
             width: 300px;
         }
         #form-list {

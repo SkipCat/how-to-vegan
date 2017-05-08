@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>How To Vegan</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
+
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+        <script type="text/javascript" src="assets/js/bookmark.js"></script>
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body>
+        <header>
+            <div class="icons-menu">
+                <a href="?action=home" class="logo">
+                    <img src="assets/img/logo.png" alt="logo">
+                </a>
+                <!-- twig : if connected -->
+                <img src="assets/img/profile.png" alt="icon profile" id="btn-profile" class="btn-menu">
+                <a href="?action=profile">Mon compte</a>
+                <!-- twig : if not connected -->
+                <!--
+                <img src="assets/img/login.png" alt="icon login" id="btn-login" class="btn-menu">
+                <a href="?action=login">Se connecter</a>-->
+            </div>
+            <nav>
+                <a href="?action=convert" id="convert-page">Liste</a>
+                <a href="?action=basket" id="basket-page">Essentiels</a>
+                <a href="?action=home" class="logo">
+                    <img src="assets/img/logo.png" alt="logo">
+                </a>
+                <a href="?action=recipe" id="recipe-page">Recettes</a>
+                <a href="?action=about" id="about-page">A propos</a>
+            </nav>
+            <div class="profile-login">
+                <!-- twig : if connected -->
+                <img src="assets/img/profile.png" alt="icon profile" id="btn-profile" class="btn-menu">
+                <a href="?action=profile">Mon compte</a>
+                <!-- twig : if not connected -->
+                <!--
+                <img src="assets/img/login.png" alt="icon login" id="btn-login" class="btn-menu">
+                <a href="?action=login">Se connecter</a>-->
+            </div>
+        </header>
+
+    </body>
+</html>

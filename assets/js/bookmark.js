@@ -7,14 +7,22 @@ window.onload = function() {
 
     if (currentPage.search('convert') !== -1) {
         convertLink.id = 'active-page';
+        document.querySelector('header').id = 'header-convert';
     }
     if (currentPage.search('basket') !== -1) {
         basketLink.id = 'active-page';
+        document.querySelector('header').id = 'header-basket';
     }
     if (currentPage.search('recipe') !== -1) {
         recipeLink.id = 'active-page';
+        document.querySelector('header').id = 'header-recipe';
+    }
+    if (currentPage.search('profile') !== -1) {
+        aboutLink.id = 'active-page';
+        document.querySelector('header').id = 'header-profile';
     }
     if (currentPage.search('about') !== -1) {
         aboutLink.id = 'active-page';
+        document.querySelector('header').id = 'header-about';
     }
 };

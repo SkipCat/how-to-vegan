@@ -28,7 +28,8 @@ main {
   justify-content: space-between;
   flex-wrap: nowrap; }
   main .brush {
-    margin-top: -20px; }
+    width: 300px;
+    margin: 0 auto 0 auto; }
   main .big-brush {
     display: none; }
   main p.desc {
@@ -235,6 +236,9 @@ main {
   .convert {
     margin-top: 0; } }
 @media screen and (min-width: 641px) {
+  #header-convert {
+    background-image: url("../img/bg_convert.png"); }
+
   main {
     width: 310px;
     height: auto;
@@ -244,7 +248,7 @@ main {
     main .big-brush {
       display: block;
       position: absolute;
-      top: 30%;
+      top: 25%;
       right: initial;
       bottom: initial;
       left: 53%;
@@ -348,7 +352,7 @@ body {
     width: 100%; }
 
 header {
-  background: transparent url("../img/menu_background.png") no-repeat;
+  background: transparent url("../img/bg_menu.png") no-repeat;
   background-size: 100% 100%;
   display: flex;
   flex-direction: column;
@@ -404,7 +408,7 @@ header {
       letter-spacing: 1px; }
     header nav #active-page {
       padding-top: 5px;
-      border-top: 5px solid #e74a18; }
+      border-top: 4px solid #e74a18; }
     header nav .logo {
       display: none; }
   header .profile-login {
@@ -491,8 +495,10 @@ footer {
     justify-content: space-between;
     flex-wrap: wrap;
     text-align: center;
-    padding-top: 20px;
     margin: 0 5%; }
+    #footer-desktop .center img {
+      width: 100px;
+      height: auto; }
 
 @media screen and (min-width: 321px) {
   #footer-mobile nav a {
@@ -505,7 +511,7 @@ footer {
     font-size: 12px; } }
 @media screen and (min-width: 641px) {
   header {
-    background-image: url("../img/bg_desktop.png");
+    background-image: url("../img/bg_menu_desktop.png");
     height: 250px;
     flex-direction: row;
     padding: 0; }
