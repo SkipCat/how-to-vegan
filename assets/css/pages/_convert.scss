@@ -215,6 +215,10 @@ main {
 }
 
 @media screen and (min-width: 641px) {
+    #header-convert {
+        background-image: url('../img/bg_convert.png');
+    }
+    
     main {
         @include resize(310px, auto);
         margin: 20px auto 50px 50%;

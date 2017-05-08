@@ -236,6 +236,9 @@ main {
   .convert {
     margin-top: 0; } }
 @media screen and (min-width: 641px) {
+  #header-convert {
+    background-image: url("../img/bg_convert.png"); }
+
   main {
     width: 310px;
     height: auto;
@@ -349,7 +352,7 @@ body {
     width: 100%; }
 
 header {
-  background: transparent url("../img/menu_background.png") no-repeat;
+  background: transparent url("../img/bg_menu.png") no-repeat;
   background-size: 100% 100%;
   display: flex;
   flex-direction: column;
@@ -405,7 +408,7 @@ header {
       letter-spacing: 1px; }
     header nav #active-page {
       padding-top: 5px;
-      border-top: 5px solid #e74a18; }
+      border-top: 4px solid #e74a18; }
     header nav .logo {
       display: none; }
   header .profile-login {
@@ -508,7 +511,7 @@ footer {
     font-size: 12px; } }
 @media screen and (min-width: 641px) {
   header {
-    background-image: url("../img/bg_desktop.png");
+    background-image: url("../img/bg_menu_desktop.png");
     height: 250px;
     flex-direction: row;
     padding: 0; }
