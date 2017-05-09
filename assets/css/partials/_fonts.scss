@@ -4,6 +4,9 @@
 @font-face {
     @include fontface('Lucida Fax Italic', '../font/Lucida_Fax_Italic.ttf');
 }
+@font-face {
+    @include fontface('SourceSansPro Italic', '../font/SourceSansPro-Italic.ttf');
+}
 
 @font-face {
     @include fontface('Signika Bold', '../font/Signika-Bold.ttf');

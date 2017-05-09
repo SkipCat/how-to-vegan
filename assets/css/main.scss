@@ -4,6 +4,7 @@
 
 @import 'pages/convert';
 @import 'pages/basket';
+@import 'pages/home';
 
 ////////////////////////////////////
 
@@ -96,6 +97,11 @@ header {
 
 main {
     flex-grow: 1;
+}
+
+.frame-elt {
+    margin-left: 8%;
+    margin-right: 8%;
 }
 
 footer {

@@ -10,10 +10,10 @@ class DefaultController extends BaseController {
         if (!empty($_SESSION['user_id'])) {
             $manager = UserManager::getInstance();
             $user = $manager->getUserById($_SESSION['user_id']);
-            echo $this->renderView('index.html.twig', ['user' => $user]);
+            echo $this->renderView('home.html.twig', ['user' => $user]);
         }
         else {
-            echo $this->renderView('index.html.twig');
+            echo $this->renderView('home.html.twig');
         }
     }
 

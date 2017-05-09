@@ -90,23 +90,23 @@
             .portion {
                 font-size: 10px;
             }
-
-            .category-indicator {
-                padding: 3px;
-                border-radius: 10px;
-                text-align: center;
-                @include policy($light-font, white, 10px, unset, unset);
-            }
-            .category-bio {
-                background-color: $light-red;
-                width: 20px;
-            }
-            .category-gluten-free {
-                background-color: $light-green;
-                width: 60px;
-            }
         }
     }
+}
+
+.category-indicator {
+    padding: 3px;
+    border-radius: 10px;
+    text-align: center;
+    @include policy($light-font, white, 10px, unset, unset);
+}
+.category-bio {
+    background-color: $light-red;
+    width: 20px;
+}
+.category-gluten-free {
+    background-color: $light-green;
+    width: 60px;
 }
 
 #details {

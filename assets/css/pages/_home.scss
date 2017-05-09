@@ -1,0 +1,180 @@
+#main-home {
+    #form-list {
+        margin-bottom: 30px;
+        .convert {
+            margin-left: auto;
+        }
+    }
+}
+
+.presentation {
+    p:first-child {
+        @include policy($light-font, $text-color, 18px, bold, unset);
+        span {
+            @include policy($bold-font, $light-red, 18px, bold, unset);
+            text-transform: uppercase;
+        }
+    }
+    p:nth-child(2) {
+        @include policy($text-font, $text-color, 16px, unset, unset);
+        text-align: justify;
+    }
+    input[type="submit"] {
+        @include policy($bold-font, $text-color, 13px, unset, unset);
+        letter-spacing: 1px;
+        border: 2px solid $light-red;
+        border-radius: 3px;
+        padding: 5px;
+        text-transform: uppercase;
+    }
+}
+
+.spotlight-type {
+    .spotlight-title {
+        @include flex(row, center, space-between, nowrap);
+        @include resize(250px, auto);
+        margin-left: auto;
+        margin-right: auto;
+
+        img {
+            @include resize(45px, auto);
+        }
+
+        div {
+            @include flex(column, center, space-between, nowrap);
+            @include resize(100%, 40px);
+
+            p {
+                margin: 0;
+            }
+            p:first-child {
+                @include policy($light-font, $text-color, 16px, unset, unset);
+                span {
+                    font-family: $bold-font;
+                }
+            }
+            p:last-child {
+                @include policy($bold-font, $grey, 12px, unset, unset);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+        }
+    }
+
+    .spotlight-container-basket {
+        @include flex(row, center, center, wrap);
+
+        .spotlight-img {
+            @include resize(100%, 50%);
+        }
+        
+        .spotlight-basket {
+            @include flex(column, center, center, nowrap);
+            .price {
+                @include policy($main-font, $dark-green, 14px, unset, unset);
+                margin: 0;
+            }
+            .name {
+                @include policy($light-font, $text-color, 14px, unset, unset);
+                span {
+                    font-family: $bold-font;
+                }
+            }
+        }
+    }
+
+    .spotlight-container-img {
+        @include resize(130px, 180px);
+        @include flex(column, center, unset, nowrap);
+        background-color: white;
+        border-radius: 5px;
+        margin: 25px 10px 0 10px;
+        padding: 3px;
+    
+        .container-category-indicator {
+            @include flex(row, center, space-between, nowrap);
+            @include resize(100px, auto);
+            align-self: flex-start;
+        }
+    }
+    .spotlight-container-img:hover {
+        box-shadow: 0 0 20px lightgrey;
+    }
+
+    .input-discover {
+        padding: 0 15px;
+        margin: 30px auto 10px auto;
+        border: 2px solid $light-red;
+        border-radius: 2px;
+        @include resize(220px, 25px);
+        @include flex(row, center, space-between, nowrap);
+
+        p {
+            @include policy($bold-font, $text-color, 14px, unset, unset);
+            margin: 0;
+        }
+        img {
+            @include resize(30px, auto);
+        }
+    }
+
+    .spotlight-container-recipe {
+        @include flex(row, center, center, wrap);
+
+        .spotlight-recipe {
+            padding: 0;
+            height: 200px;
+            justify-content: center;
+
+            .spotlight-img {
+                @include resize(100%, auto);
+                margin-bottom: auto;
+            }
+
+            .recipe-title {
+                margin: 0;
+                @include policy($bold-font, $text-color, 12px, bold, unset);
+                text-transform: uppercase;
+                text-align: center;
+            }
+
+            .category-img {
+                margin: auto;
+                img {
+                    @include resize(30px, auto);
+                }
+            }
+
+            input[type="submit"] {
+                @include policy($main-font, white, 11px, unset, unset);
+                padding: 4px;
+                background: linear-gradient(to bottom, #ff9c33, #ef7205);
+                @include resize(75px, auto);
+                border-radius: 5px;
+                margin-bottom: 7px;
+            }
+        }
+    }   
+}
+
+#spotlight-type-basket {
+    background-color: $bg-grey;
+    padding: 25px 0;
+}
+#spotlight-type-recipe {
+    padding: 25px 0;
+}
+
+///////////////////
+
+@media screen and (min-width: 641px) {
+
+}
+
+@media screen and (min-width: 769px) {
+
+}
+
+@media screen and (min-width: 1025px) {
+
+}
