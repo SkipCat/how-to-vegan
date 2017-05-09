@@ -1,0 +1,18 @@
+routes:
+    home:     'Default:home'
+    convert:  'Default:convert'
+    basket:   'Default:basket'
+    recipe:   'Default:recipe'
+    about:    'Default:about'
+    contact:  'Default:contact'
+    login:    'Security:login'
+    logout:   'Security:logout'
+    register: 'Security:register'
+
+defaut_route: 'home'
+
+db_config:
+    name: 'projet_transversal'
+    host: 'localhost'
+    user: 'root'
+    pass: ''

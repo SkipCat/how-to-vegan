@@ -20,19 +20,18 @@
   margin-left: 8%;
   margin-right: 8%; }
 
-main {
-  flex-grow: 1;
+#main-convert {
   display: flex;
   flex-direction: column;
   align-items: unset;
   justify-content: space-between;
   flex-wrap: nowrap; }
-  main .brush {
+  #main-convert .brush {
     width: 300px;
     margin: 0 auto 0 auto; }
-  main .big-brush {
+  #main-convert .big-brush {
     display: none; }
-  main p.desc {
+  #main-convert p.desc {
     text-align: justify;
     margin: 0px 13%;
     font-family: "Lucida Fax Italic";
@@ -83,10 +82,9 @@ main {
     .list ul .result-li {
       font-family: "DK Pimpernel";
       color: #444444;
-      font-size: 22px;
+      font-size: inherit;
       font-weight: unset;
       font-style: unset;
-      margin-bottom: 21.5px;
       letter-spacing: 2px; }
     .list ul select {
       background-color: transparent;
@@ -239,13 +237,13 @@ main {
   #header-convert {
     background-image: url("../img/bg_convert.png"); }
 
-  main {
+  #main-convert {
     width: 310px;
     height: auto;
     margin: 20px auto 50px 50%; }
-    main .brush {
+    #main-convert .brush {
       display: none; }
-    main .big-brush {
+    #main-convert .big-brush {
       display: block;
       position: absolute;
       top: 25%;
@@ -253,66 +251,66 @@ main {
       bottom: initial;
       left: 53%;
       width: 300px; }
-    main #form-list {
+    #main-convert #form-list {
       margin: 0;
       position: absolute;
       top: 23%;
       right: 0;
       bottom: 0;
       left: 5%; }
-      main #form-list .list {
+      #main-convert #form-list .list {
         width: 300px;
         height: 400px; }
-        main #form-list .list ul {
+        #main-convert #form-list .list ul {
           margin-left: 15px;
           margin-top: 38px; }
-        main #form-list .list #img-delete-skip {
+        #main-convert #form-list .list #img-delete-skip {
           margin-top: 46%;
           margin-left: 28%; }
-      main #form-list .convert {
+      #main-convert #form-list .convert {
         margin-left: 60px; }
-    main p.desc {
+    #main-convert p.desc {
       margin: 0; }
-    main .frame-elt {
+    #main-convert .frame-elt {
       margin-left: 0;
       margin-right: 0; }
-    main .mapping p {
+    #main-convert .mapping p {
       margin-top: 50px; }
-    main .mapping #form-localization {
+    #main-convert .mapping #form-localization {
       margin-bottom: 15px; }
-    main .mapping #map {
+    #main-convert .mapping #map {
       width: auto;
       height: 220px; } }
 @media screen and (min-width: 769px) {
-  main {
+  #main-convert {
     margin: 0 auto 50px 55%; }
-    main .big-brush {
+    #main-convert .big-brush {
       width: 350px;
       position: absolute;
       top: 34%;
       right: initial;
       bottom: initial;
       left: 55%; }
-    main #form-list {
+    #main-convert #form-list {
       position: absolute;
       top: 25%;
       right: 0;
       bottom: 0;
       left: 6%; }
-      main #form-list .list {
+      #main-convert #form-list .list {
         width: 380px;
         height: 510px; }
-        main #form-list .list #img-delete-skip {
+        #main-convert #form-list .list #img-delete-skip {
           margin-top: 45%;
           margin-left: 28.5%; }
-        main #form-list .list ul {
+        #main-convert #form-list .list ul {
           margin-left: 22px;
           margin-top: 34px; }
-          main #form-list .list ul select {
+          #main-convert #form-list .list ul select {
             font-size: 20px; }
-      main #form-list .convert {
+      #main-convert #form-list .convert {
         margin-left: 14%; }
-      main #form-list #img-leaf {
+      #main-convert #form-list #img-leaf {
         width: 150px;
         height: auto;
         position: relative;
@@ -321,21 +319,191 @@ main {
         bottom: 0;
         left: -40px; } }
 @media screen and (min-width: 1025px) {
-  main .big-brush {
+  #main-convert .big-brush {
     position: absolute;
     top: 38%;
     right: initial;
     bottom: initial;
     left: 60%; }
-  main #form-list {
+  #main-convert #form-list {
     position: absolute;
     top: 25%;
     right: 0;
     bottom: 0;
     left: 15%; }
-    main #form-list .list #img-delete-skip {
+    #main-convert #form-list .list #img-delete-skip {
       margin-top: 38%;
       margin-left: 24%; } }
+#main-basket {
+  margin-top: 15px; }
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  margin-bottom: 75px; }
+  .step > p {
+    font-family: "Signika Light";
+    color: #444444;
+    font-size: 15px;
+    font-weight: unset;
+    font-style: unset; }
+    .step > p span {
+      font-family: "Signika Semibold"; }
+
+#category {
+  width: 100%;
+  height: 325px; }
+  #category .category {
+    width: 80%;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    background-color: white;
+    border-radius: 30px;
+    padding: 0 20px 0 20px;
+    box-shadow: 0 0 10px lightgrey; }
+    #category .category p {
+      font-family: "Signika Regular";
+      color: #78a514;
+      font-size: 12px;
+      font-weight: unset;
+      font-style: unset;
+      margin: 0; }
+    #category .category .category-names {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: left;
+      flex-wrap: nowrap;
+      width: 68px;
+      height: auto; }
+      #category .category .category-names .green-border {
+        background-color: #78a514;
+        width: 3px;
+        height: 20px;
+        margin-right: 5px; }
+    #category .category .category-img {
+      width: 120px;
+      height: auto; }
+      #category .category .category-img img {
+        width: 35px;
+        height: auto; }
+    #category .category > img {
+      width: 12px;
+      height: auto; }
+
+#basket {
+  width: 100%;
+  height: auto; }
+  #basket .basket {
+    width: 92%;
+    height: 155px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 10px lightgrey; }
+    #basket .basket img {
+      width: 35%;
+      height: 100%; }
+    #basket .basket .basket-desc {
+      padding: 7px 10px 7px 12px;
+      font-family: "Signika Regular";
+      color: #78a514;
+      font-size: 12px;
+      font-weight: unset;
+      font-style: unset;
+      text-align: justify; }
+      #basket .basket .basket-desc p {
+        margin-top: 0; }
+      #basket .basket .basket-desc .name {
+        font-size: 13px;
+        letter-spacing: 1.5px; }
+      #basket .basket .basket-desc .text {
+        margin-bottom: 0; }
+      #basket .basket .basket-desc .portion {
+        font-size: 10px; }
+      #basket .basket .basket-desc .category-indicator {
+        padding: 3px;
+        border-radius: 10px;
+        text-align: center;
+        font-family: "Signika Light";
+        color: white;
+        font-size: 10px;
+        font-weight: unset;
+        font-style: unset; }
+      #basket .basket .basket-desc .category-bio {
+        background-color: #e74a18;
+        width: 20px; }
+      #basket .basket .basket-desc .category-gluten-free {
+        background-color: #9ec550;
+        width: 60px; }
+
+#details .details-title {
+  font-family: "Signika Light";
+  color: #444444;
+  font-size: 15px;
+  font-weight: unset;
+  font-style: unset;
+  margin-bottom: 25px; }
+  #details .details-title p {
+    margin: 0; }
+  #details .details-title p:nth-child(2) {
+    font-family: "Signika Light";
+    color: #bbbbbb;
+    font-size: 14px;
+    font-weight: unset;
+    font-style: unset; }
+  #details .details-title span {
+    font-family: "Signika Semibold"; }
+  #details .details-title hr {
+    display: block;
+    clear: both;
+    width: 55%;
+    height: 1px;
+    border: 0;
+    margin: 7px 0 0 0;
+    background-color: #bbbbbb; }
+#details .ingredient {
+  display: flex;
+  background-color: white;
+  width: 92%;
+  height: 100px;
+  margin: 10px 0 10px 0;
+  box-shadow: 0 0 10px lightgrey; }
+  #details .ingredient img {
+    width: 100px;
+    height: 100%; }
+  #details .ingredient .ingredient-desc {
+    padding: 5px 10px 5px 12px; }
+    #details .ingredient .ingredient-desc .ingredient-name {
+      font-family: "Signika Regular";
+      color: #78a514;
+      font-size: 13px;
+      font-weight: unset;
+      font-style: unset;
+      margin-top: 0; }
+    #details .ingredient .ingredient-desc .ingredient-text {
+      font-family: "Signika Regular";
+      color: #78a514;
+      font-size: 12px;
+      font-weight: unset;
+      font-style: unset;
+      margin: 0; }
+#details #first-ingr {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px; }
+#details #last-ingr {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px; }
+
 html {
   min-height: 100vh;
   min-width: 100vw; }
@@ -422,6 +590,9 @@ header {
     header .profile-login .btn-menu {
       width: 20px;
       height: 21px; }
+
+main {
+  flex-grow: 1; }
 
 footer {
   background-color: #e74919; }
@@ -541,7 +712,7 @@ footer {
       width: 60%; }
     header .profile-login {
       position: absolute;
-      top: 47px;
+      top: 53px;
       right: 50px;
       bottom: initial;
       left: initial; }

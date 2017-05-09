@@ -1,0 +1,171 @@
+#main-basket {
+    margin-top: 15px;
+}
+
+.step {
+    @include flex(column, center, space-between, nowrap);
+    margin-bottom: 75px;
+
+    > p {
+        @include policy($light-font, $text-color, 15px, unset, unset);
+        span {
+            font-family: $bold-font;
+        }
+    }
+}
+
+#category {
+    @include resize(100%, 325px);
+
+    .category {
+        @include resize(80%, 55px);
+        @include flex(row, center, space-between, nowrap);
+        background-color: white;
+        border-radius: 30px;
+        padding: 0 20px 0 20px;
+        box-shadow: 0 0 10px lightgrey;
+
+        p {
+            @include policy($main-font, $dark-green, 12px, unset, unset);
+            margin: 0;
+        }
+
+        .category-names {
+            @include flex(row, center, left, nowrap);
+            @include resize(68px, auto);
+
+            .green-border {
+                background-color: $dark-green;
+                @include resize(3px, 20px);
+                margin-right: 5px;
+            }
+        }
+
+        .category-img {
+            @include resize(120px, auto);
+
+            img {
+                @include resize(35px, auto);
+            }
+        }
+
+        > img {
+            @include resize(12px, auto);
+        }
+    }
+}
+
+#basket {
+    @include resize(100%, auto);
+
+    .basket {
+        @include resize(92%, 155px);
+        margin-top: 15px;
+        margin-bottom: 15px;
+        display: flex;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0 0 10px lightgrey;
+
+        img {
+            @include resize(35%, 100%);
+        }
+
+        .basket-desc {
+            padding: 7px 10px 7px 12px;
+            @include policy($main-font, $dark-green, 12px, unset, unset);
+            text-align: justify;
+
+            p {
+                margin-top: 0;
+            }
+
+            .name {
+                font-size: 13px;
+                letter-spacing: 1.5px;
+            }
+            .text {
+                margin-bottom: 0;
+            }
+            .portion {
+                font-size: 10px;
+            }
+
+            .category-indicator {
+                padding: 3px;
+                border-radius: 10px;
+                text-align: center;
+                @include policy($light-font, white, 10px, unset, unset);
+            }
+            .category-bio {
+                background-color: $light-red;
+                width: 20px;
+            }
+            .category-gluten-free {
+                background-color: $light-green;
+                width: 60px;
+            }
+        }
+    }
+}
+
+#details {
+    .details-title {
+        @include policy($light-font, $text-color, 15px, unset, unset);
+        margin-bottom: 25px;
+
+        p {
+            margin: 0;
+        }
+        p:nth-child(2) {
+            @include policy($light-font, $grey, 14px, unset, unset);
+        }
+        span {
+            font-family: $bold-font;
+        }
+
+        hr {
+            display: block;
+            clear: both;
+            @include resize(55%, 1px);
+            border: 0;
+            margin: 7px 0 0 0;
+            background-color: $grey;
+        }
+    }
+
+    .ingredient {
+        display: flex;
+        background-color: white;
+        @include resize(92%, 100px);
+        margin: 10px 0 10px 0;
+        box-shadow: 0 0 10px lightgrey;
+        
+        img {
+            @include resize(100px, 100%);
+        }
+
+        .ingredient-desc {
+            padding: 5px 10px 5px 12px;
+
+            .ingredient-name {
+                @include policy($main-font, $dark-green, 13px, unset, unset);
+                margin-top: 0;
+            }
+            .ingredient-text {
+                @include policy($main-font, $dark-green, 12px, unset, unset);
+                margin: 0;
+            }
+        }
+    }
+
+    #first-ingr {//.ingredient:first-child {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+   #last-ingr { //.ingredient:last-child {
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+}

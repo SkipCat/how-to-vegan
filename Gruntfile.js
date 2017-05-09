@@ -17,13 +17,28 @@ module.exports = function(grunt) {
 				}
             }
         },
+		uglify: {
+			prod: {
+				files: {
+					'assets/js/script.min.js': [
+						'assets/js/bookmark.js',
+						'assets/js/convert.js',
+						'assets/js/list.js',
+						'assets/js/script.js'
+					],
+					'assets/js/map.min.js': ['assets/js/map/*.js'],
+				}
+			}
+		}
 	});
     
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 
 	grunt.registerTask('default', [
 		'watch',
-		'sass'
+		'sass', 
+		'uglify',
 	]);
 };

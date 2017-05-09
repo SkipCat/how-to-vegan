@@ -3,6 +3,7 @@
 @import 'partials/var';
 
 @import 'pages/convert';
+@import 'pages/basket';
 
 ////////////////////////////////////
 
@@ -18,10 +19,12 @@ body {
     a {
         text-decoration: none;
     }
+
     input, button {
         border: none;
         background-color: transparent;
     }
+
     .img-to-resize {
         width: 100%;
     }
@@ -43,6 +46,7 @@ header {
             @include resize(20px, auto);
             right: 40px;
         }
+
         .btn-menu + a {
             display: none;
             @include policy($main-font, white, 16px, unset, unset);
@@ -71,7 +75,7 @@ header {
 
         #active-page {
             padding-top: 5px;
-            border-top: 4px solid $bookmark;
+            border-top: 4px solid $light-red;
         }
 
         .logo {
@@ -88,6 +92,10 @@ header {
             @include resize(20px, 21px);
         }
     }
+}
+
+main {
+    flex-grow: 1;
 }
 
 footer {
@@ -128,15 +136,19 @@ footer {
             border-bottom: 3px solid;
             padding-bottom: 10px;
         }
+
         p:first-child {
             margin-bottom: 30px;
             font-weight: bold;
         }
+
         .line {
             @include flex(row, baseline, unset, nowrap);
+            
             img {
                 margin-right: 15px;
             }
+
             p {
                 margin-top: 0;
             }
@@ -228,7 +240,7 @@ footer {
         }
 
         .profile-login {
-            @include position(absolute, 47px, 50px, initial, initial);
+            @include position(absolute, 53px, 50px, initial, initial);
             a {
                 display: block;
             }

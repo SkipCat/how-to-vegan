@@ -1,4 +1,4 @@
-$(function() {
+function convert() {
     var formConvert = $('#form-list');
     var product = $('select');
     var filter = $('input[type="checkbox"]');
@@ -8,7 +8,7 @@ $(function() {
     var disabled = [];
 
     // lock buttons by default to avoid empty submitted form
-    $('input[type="submit"]').prop('disabled', true);
+    $('.submit input[type="submit"]').prop('disabled', true);
 
     // get chosen filters
     filter.each(function() {
@@ -135,4 +135,4 @@ $(function() {
 
         return false;
     });
-});
+}

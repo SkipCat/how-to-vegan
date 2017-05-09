@@ -1,6 +1,6 @@
-function getCurrentPage(currentPage) {
-    console.log('in page function');
+window.onload = function() {
     var currentPage = window.location.href;
+    console.log(currentPage);
     var convertLink = document.querySelector('#convert-page');
     var basketLink = document.querySelector('#basket-page');
     var recipeLink = document.querySelector('#recipe-page');
@@ -27,4 +27,4 @@ function getCurrentPage(currentPage) {
         aboutLink.id = 'active-page';
         //document.querySelector('header').id = 'header-about';
     }
-}
+};
