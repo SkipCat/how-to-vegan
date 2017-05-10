@@ -1,8 +1,3 @@
-.frame-elt {
-    margin-left: 8%;
-    margin-right: 8%;
-}
-
 #main-convert {
     @include flex(column, unset, space-between, nowrap);
 
@@ -18,7 +13,7 @@
     p.desc {
         text-align: justify;
         margin: 0px 13%;
-        @include policy($text-font, $text-color, 14px, unset, italic);
+        @include policy($text-font, $text-color, 16px, unset, italic);
     }
 }
 
@@ -184,6 +179,8 @@
     }
 }
 
+/////////////////////
+
 @media screen and (min-width: 376px) {
     .list {
         height: 562px;
@@ -302,7 +299,7 @@
             }
 
             .convert {
-                margin-left: 14%;
+                margin-left: 17%;
             }
 
             #img-leaf {

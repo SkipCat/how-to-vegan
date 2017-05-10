@@ -1,0 +1,313 @@
+{% extends 'index.html.twig' %}
+
+{% block content %}
+    <main id="main-home">
+        <div class="presentation">
+            <img src="assets/img/soja_flou.png" alt="soja picture">
+            <div>
+                <p>
+                    <span>Découvrez :</span>
+                    Comment convertir votre liste de courses
+                </p>
+                <p>
+                    How to Vegan est un outil qui vous permet de convertir automatiquement
+                    votre liste de courses traditionnelle en liste de courses vegan.
+                    Vous pouvez également ajouter les filtres "bio" et/ou "gluten free" à
+                    votre sélection et épingler votre liste pour la retrouver dans votre
+                    profil.
+                </p>
+                <a href="?action=convert">Essayez l'outil conversion</a>
+            </div>
+        </div>
+        <form name="shoppping-list" id="form-list" class="frame-elt">
+            <div class="list">
+                <img src="assets/img/pin_list.png" alt="icon pin" id="img-pin" title="Epingler cette liste">
+                <ul>
+                    <li class="shop-li">
+                        <select name="products-list">
+                            <option value="NULL">Sélectionnez un produit</option>
+                            <optgroup label="Céréales">
+                                <option value="Pâtes">Pâtes</option>
+                                <option value="Riz">Riz</option>
+                                <option value="Maïs">Maïs</option>
+                                <option value="Blé">Blé</option>
+                                <option value="Corn Flakes">Corn Flakes</option>
+                            </optgroup>
+                            <optgroup label="Viandes et protéines">
+                                <option value="Oeufs">Oeufs</option>
+                                <option value="Poisson">Poisson</option>
+                                <option value="Viande hachée">Viande hachée</option>
+                                <option value="Poulet">Poulet</option>
+                                <option value="Steak">Steak</option>
+                            </optgroup>
+                            <optgroup label="Produits laitiers">
+                                <option value="Lait">Lait</option>
+                                <option value="Beurre">Beurre</option>
+                                <option value="Yaourt">Yaourt</option>
+                                <option value="Fromage">Fromage</option>
+                            </optgroup>
+                            <optgroup label="Fruits">
+                                <option value="Pommes">Pommes</option>
+                                <option value="Bananes">Bananes</option>
+                                <option value="Clémentines">Clémentines</option>
+                                <option value="Ananas">Ananas</option>
+                            </optgroup>
+                            <optgroup label="Légumes">
+                                <option value="Tomates">Tomates</option>
+                                <option value="Concombre">Concombre</option>
+                                <option value="Poireau">Poireau</option>
+                                <option value="Courgette">Courgette</option>
+                                <option value="Haricots">Haricots</option>
+                            </optgroup>
+                            <optgroup label="Chocolat">
+                                <option value="Chocolat noir">Chocolat noir</option>
+                                <option value="Chocolat au lait">Chocolat au lait</option>
+                            </optgroup>
+                            <optgroup label="Charcuterie"> 
+                                <option value="Saucisse">Saucisse</option>
+                                <option value="Saucisson">Saucisson</option>
+                                <option value="Jambon">Jambon</option>
+                            </optgroup>
+                            <optgroup label="Assaisonnement">
+                                <option value="Huile">Huile</option>
+                                <option value="Mayonnaise">Mayonnaise</option>
+                                <option value="Moutarde">Moutarde</option>
+                                <option value="Ketchup">Ketchup</option>
+                            </optgroup>
+                            <option value="Bonbons">Bonbons</option>
+                        </select>
+                    </li>
+                    <div id="recap-list"></div>
+                </ul>
+                <span id="img-delete-skip">
+                    <img src="assets/img/delete_list.png" alt="icon delete" id ="img-delete" title="Supprimer cette liste">
+                    <img src="assets/img/arrow_list.png" alt="arrow" id="img-list-skip" title="Tourner la page pour continuer">
+                </span>
+                <img src="assets/img/leaf.png" alt="leaf" id="img-leaf">
+            </div>                
+            <div class="convert frame-elt">
+                <span class="filters">
+                    <h3>Filtres :</h3>
+                    <input type="checkbox" id="filter-bio" value="Bio">
+                    <label for="filter-bio">Bio</label>
+                    <input type="checkbox" id="filter-gluten" value="Gluten-free">
+                    <label for="filter-gluten">Gluten Free</label>
+                </span>
+                <span class="submit">
+                    <h3>
+                        <input type="submit" value="Convertir ma liste">
+                    </h3>
+                    <input type="image" src="assets/img/arrow_convert.png" alt="green arrow" disabled>
+                </span>
+            </div>
+        </form>
+        <div class="spotlight-type" id="spotlight-type-basket">
+            <div class="spotlight-title">
+                <img src="assets/img/icon_basket.png" alt="icon basket">
+                <div>
+                    <p>découvrez nos <span>paniers types</span></p>
+                    <p>Le guide du petit vegan</p>
+                </div>
+            </div>
+            <div class="spotlight-container-basket">
+                <div class="spotlight-container-img">
+                    <div class="basket-buttons">
+                        <div class="crush">
+                            <img src="assets/img/heart.png" alt="icon heart">
+                        </div>
+                        <div class="open-modal">
+                            <img src="assets/img/open_modal.png" alt="icon open">
+                        </div>
+                    </div>
+                    <img class="spotlight-img" src="assets/img/frame_picture_basket.png" alt="frame picture">
+                    <div class="spotlight-basket">
+                        <p class="price">~ 28.50&euro;</p>
+                        <p class="name">panier du <span>néophyte</span></p>
+                        <div class="container-category-indicator">
+                            <div class="category-indicator category-bio">Bio</div>
+                            <div class="category-indicator category-gluten-free">Gluten Free</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="spotlight-container-img">
+                    <div class="basket-buttons">
+                        <div class="crush">
+                            <img src="assets/img/heart.png" alt="icon heart">
+                        </div>
+                        <div class="open-modal">
+                            <img src="assets/img/open_modal.png" alt="icon open">
+                        </div>
+                    </div>
+                    <img class="spotlight-img" src="assets/img/frame_picture_basket.png" alt="frame picture">
+                    <div class="spotlight-basket">
+                        <p class="price">~ 28.50&euro;</p>
+                        <p class="name">panier du <span>néophyte</span></p>
+                        <div class="container-category-indicator">
+                            <div class="category-indicator category-gluten-free">Gluten Free</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="spotlight-container-img">
+                    <div class="basket-buttons">
+                        <div class="crush">
+                            <img src="assets/img/heart.png" alt="icon heart">
+                        </div>
+                        <div class="open-modal">
+                            <img src="assets/img/open_modal.png" alt="icon open">
+                        </div>
+                    </div>
+                    <img class="spotlight-img" src="assets/img/frame_picture_basket.png" alt="frame picture">
+                    <div class="spotlight-basket">
+                        <p class="price">~ 28.50&euro;</p>
+                        <p class="name">panier du <span>néophyte</span></p>
+                    </div>
+                </div>
+                <div class="spotlight-container-img">
+                    <div class="basket-buttons">
+                        <div class="crush">
+                            <img src="assets/img/heart.png" alt="icon heart">
+                        </div>
+                        <div class="open-modal">
+                            <img src="assets/img/open_modal.png" alt="icon open">
+                        </div>
+                    </div>
+                    <img class="spotlight-img" src="assets/img/frame_picture_basket.png" alt="frame picture">
+                    <div class="spotlight-basket">
+                        <p class="price">~ 28.50&euro;</p>
+                        <p class="name">panier du <span>néophyte</span></p>
+                        <div class="container-category-indicator">
+                            <div class="category-indicator category-bio">Bio</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="?action=basket">
+                <div class="input-discover">
+                    <p>Découvrez tous nos paniers</p>
+                    <img src="assets/img/arrow_red.png" alt="red arrow">
+                </div>
+            </a>
+        </div>
+        <div class="spotlight-type" id="spotlight-type-recipe">
+            <div class="spotlight-title">
+                <img src="assets/img/icon_recipe.png" alt="icon recipe">
+                <div>
+                    <p>découvrez nos <span>recettes</span></p>
+                    <p>sélection de la semaine</p>
+                </div>
+            </div>
+            <div class="spotlight-container-recipe">
+                <div class="spotlight-container-img spotlight-recipe">
+                    <img class="spotlight-img" src="assets/img/seitan.png" alt="frame picture">
+                    <div class="container-desc">
+                        <p class="recipe-title">Seitan façon poulet tikka massala</p>
+                        <div class="kitchen">
+                            <div class="recipe-author">
+                                <img src="assets/img/chief.png" alt="chief icon">
+                                <div>
+                                    <p class="proposed-by">Proposé par</p>
+                                    <p class="author">Le staff</p>
+                                </div>
+                            </div>
+                            <div class="category-img">
+                                <img src="assets/img/basket_category_vegan.png" alt="icon vegan">
+                                <img src="assets/img/basket_category_gluten_free.png" alt="icon gluten free">
+                                <img src="assets/img/basket_category_bio.png" alt="icon bio">
+                            </div>
+                        </div>
+                        <div class="time">
+                            <img src="assets/img/alarm.png" alt="alarm icon">
+                            <p><span>Prep:</span> 15min</p>
+                            <p><span>Cuisson:</span> 30min</p>
+                            <p><span>Total:</span> 45min</p>
+                        </div>
+                        <a href="?action=recipe">Voir plus</a>
+                    </div>
+                </div>
+                <div class="spotlight-container-img spotlight-recipe">
+                    <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
+                    <div class="container-desc">
+                        <p class="recipe-title">Gâteau coco</p>
+                        <div class="kitchen">
+                            <div class="recipe-author">
+                                <img src="assets/img/chief.png" alt="chief icon">
+                                <div>
+                                    <p class="proposed-by">Proposé par</p>
+                                    <p class="author">Le staff</p>
+                                </div>
+                            </div>
+                            <div class="category-img">
+                                <img src="assets/img/basket_category_vegan.png" alt="icon vegan">
+                            </div>
+                        </div>
+                        <div class="time">
+                            <img src="assets/img/alarm.png" alt="alarm icon">
+                            <p><span>Prep:</span> 15min</p>
+                            <p><span>Cuisson:</span> 30min</p>
+                            <p><span>Total:</span> 45min</p>
+                        </div>
+                        <a href="?action=recipe">Voir plus</a>
+                    </div>
+                </div>
+                <div class="spotlight-container-img spotlight-recipe">
+                    <img class="spotlight-img" src="assets/img/seitan.png" alt="frame picture">
+                    <div class="container-desc">
+                        <p class="recipe-title">Seitan façon poulet tikka massala</p>
+                        <div class="kitchen">
+                            <div class="recipe-author">
+                                <img src="assets/img/chief.png" alt="chief icon">
+                                <div>
+                                    <p class="proposed-by">Proposé par</p>
+                                    <p class="author">Le staff</p>
+                                </div>
+                            </div>
+                            <div class="category-img">
+                                <img src="assets/img/basket_category_vegan.png" alt="icon vegan">
+                                <img src="assets/img/basket_category_gluten_free.png" alt="icon gluten free">
+                                <img src="assets/img/basket_category_bio.png" alt="icon bio">
+                            </div>
+                        </div>
+                        <div class="time">
+                            <img src="assets/img/alarm.png" alt="alarm icon">
+                            <p><span>Prep:</span> 15min</p>
+                            <p><span>Cuisson:</span> 30min</p>
+                            <p><span>Total:</span> 45min</p>
+                        </div>
+                        <a href="?action=recipe">Voir plus</a>
+                    </div>
+                </div>
+                <div class="spotlight-container-img spotlight-recipe">
+                    <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
+                    <div class="container-desc">
+                        <p class="recipe-title">Gâteau coco</p>
+                        <div class="kitchen">
+                            <div class="recipe-author">
+                                <img src="assets/img/chief.png" alt="chief icon">
+                                <div>
+                                    <p class="proposed-by">Proposé par</p>
+                                    <p class="author">Le staff</p>
+                                </div>
+                            </div>
+                            <div class="category-img">
+                                <img src="assets/img/basket_category_vegan.png" alt="icon vegan">
+                            </div>
+                        </div>
+                        <div class="time">
+                            <img src="assets/img/alarm.png" alt="alarm icon">
+                            <p><span>Prep:</span> 15min</p>
+                            <p><span>Cuisson:</span> 30min</p>
+                            <p><span>Total:</span> 45min</p>
+                        </div>
+                        <a href="?action=recipe">Voir plus</a>
+                    </div>
+                </div>
+            </div>
+            <a href="?action=recipe">
+                <div class="input-discover">
+                    <p>Découvrez toutes nos recettes</p>
+                    <img src="assets/img/arrow_red.png" alt="red arrow">
+                </div>
+            </a>
+        </div>
+    </main>
+{% endblock %}
