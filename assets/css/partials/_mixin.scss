@@ -24,13 +24,6 @@
     height: $height;
 }
 
-@mixin position($pos, $top, $right, $left) {
-    position: $pos;
-    top: $top;
-    right: $right;
-    left: $left;
-}
-
 @mixin background($size, $origin, $clip, $pos) {
     background-size: $size; // x y
     background-origin: $origin;

@@ -26,6 +26,10 @@ body {
         background-color: transparent;
     }
 
+    button, a, input[type="submit"], input[type="image"] {
+        cursor: pointer;
+    }
+
     .img-to-resize {
         width: 100%;
     }
@@ -37,10 +41,25 @@ header {
     @include flex(column, center, space-around, nowrap);
     height: 180px;
     padding-bottom: 20px;
+    @media screen and (min-width: 641px) {
+        background-image: url('../img/bg_menu_desktop.png');
+        height: 250px;
+        flex-direction: row;
+        padding: 0;
+    }
+    @media screen and (min-width: 769px) {
+        height: 330px;
+    }
+    @media screen and (min-width: 1025px) {
+        height: 400px;
+    }
 
     .icons-menu {
         margin-top: -15px;
         @include flex(row, center, center, nowrap);
+        @media screen and (min-width: 641px) {
+            display: none;
+        }
         
         .btn-menu {
             position: absolute;
@@ -66,6 +85,15 @@ header {
     nav {
         width: 100%;
         @include flex(row, baseline, space-around, nowrap);
+        @media screen and (min-width: 641px) {
+            align-items: center; // problem with link of active page
+            align-self: flex-start;
+            margin-top: 20px;
+            width: 80%;
+        }
+        @media screen and (min-width: 769px) {
+            width: 60%;
+        }
 
         a {
             @include policy($bold-font, white, 14px, unset, unset);
@@ -81,6 +109,9 @@ header {
 
         .logo {
             display: none;
+            @media screen and (min-width: 641px) {
+                display: block;
+            }
         }
     }
 
@@ -88,9 +119,21 @@ header {
         display: none;
         align-self: flex-start;
         @include position(absolute, 120px, 40px, initial, initial);
+        @media screen and (min-width: 641px) {
+            display: flex;
+        }
+        @media screen and (min-width: 769px) {
+            @include position(absolute, 53px, 50px, initial, initial);
+            a {
+                display: block;
+            }
+        }
         
         .btn-menu {
             @include resize(20px, 21px);
+            @media screen and (min-width: 641px) {
+                margin-right: 10px;
+            }
         }
     }
 }
@@ -114,9 +157,15 @@ footer {
 #footer-mobile {
     @include flex(row, center, space-between, nowrap);
     padding: 10px;
+    @media screen and (min-width: 641px) {
+        display: none;
+    }
 
     img {
         @include resize(45px, auto);
+        @media screen and (min-width: 376px) {
+            @include resize(60px, auto);
+        }
     }
     nav {
         width: 80%;
@@ -124,8 +173,13 @@ footer {
     }
     a {
         @include policy($light-font, white, 8px, lighter, unset);
-        //text-shadow: 0px 0px 1px darkgrey;
-        letter-spacing: 1px;        
+        letter-spacing: 1px;
+        @media screen and (min-width: 321px) { // mobile medium
+            font-size: 10px;
+        }
+        @media screen and (min-width: 376px) { // mobile medium
+            font-size: 12px;
+        }
     }
 }
 
@@ -134,6 +188,9 @@ footer {
     display: none;
     padding: 30px;
     @include policy($light-font, white, 14px, lighter, unset);
+    @media screen and (min-width: 641px) {
+        display: flex;
+    }
 
     .aside {
         width: 235px;
@@ -171,92 +228,3 @@ footer {
     }
 }
 
-////////////////////////////////////
-
-// mobile medium
-@media screen and (min-width: 321px) {
-    #footer-mobile nav a {
-        font-size: 10px;
-    }
-}
-
-// mobile large
-@media screen and (min-width: 376px) {
-    #footer-mobile {
-        img {
-            @include resize(60px, auto);
-        }
-        nav a {
-            font-size: 12px;
-        }
-    }
-}
-
-// tablet
-@media screen and (min-width: 641px) {
-    header {
-        background-image: url('../img/bg_menu_desktop.png');
-        height: 250px;
-        flex-direction: row;
-        padding: 0;
-
-        .icons-menu {
-            display: none;
-        }
-
-        nav {
-            align-items: center; // problem with link of active page
-            align-self: flex-start;
-            margin-top: 20px;
-            width: 80%;
-
-            .logo {
-                display: block;
-            }
-        }
-
-        .profile-login {
-            display: flex;
-
-            .btn-menu {
-                margin-right: 10px;
-            }
-        }
-    }
-
-    #footer-mobile {
-        display: none;
-    }
-
-    #footer-desktop {
-        display: flex;
-    }
-
-    //#active-page
-
-}
-
-// desktop
-@media screen and (min-width: 769px) {
-    header {
-        height: 330px;
-
-        nav {
-            width: 60%;
-        }
-
-        .profile-login {
-            @include position(absolute, 53px, 50px, initial, initial);
-            a {
-                display: block;
-            }
-        }
-    }
-}
-
-// desktop large
-@media screen and (min-width: 1025px) {
-    header {
-        height: 400px;
-    }
-}

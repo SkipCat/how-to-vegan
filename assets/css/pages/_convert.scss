@@ -13,7 +13,7 @@
     p.desc {
         text-align: justify;
         margin: 0px 13%;
-        @include policy($text-font, $text-color, 14px, unset, italic);
+        @include policy($text-font, $text-color, 16px, unset, italic);
     }
 }
 
@@ -299,7 +299,7 @@
             }
 
             .convert {
-                margin-left: 14%;
+                margin-left: 17%;
             }
 
             #img-leaf {

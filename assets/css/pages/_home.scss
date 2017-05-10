@@ -1,31 +1,121 @@
+#header-home {
+    @media screen and (min-width: 641px) {
+        background-image: url('../img/bg_home.png');
+        height: 400px;
+    }
+}
+
 #main-home {
     #form-list {
         margin-bottom: 30px;
+        @media screen and (min-width: 641px) {
+            width: 300px;
+            @include position(absolute, 110px, 5%, 0, initial);
+            #img-leaf {
+                display: none;
+            }
+        }
+        @media screen and (min-width: 769px) {
+            right: 10%;
+            .list {
+                @include resize(380px, 510px);
+            }
+        }
+
+        #img-pin {
+            @media screen and (min-width: 641px) {
+                top: 7%;
+            }
+            @media screen and (min-width: 769px) {
+                top: 11%;
+            }
+        }
+
+        ul {
+            @media screen and (min-width: 641px) {
+                margin-left: 14px;
+                margin-top: 19px;
+            }
+            @media screen and (min-width: 769px) {
+                margin-left: 21px;
+                margin-top: 34px;
+                
+                select {
+                    font-size: 20px;
+                }
+            }
+        }
+
+        #img-delete-skip {
+            @media screen and (min-width: 641px) {
+                margin-left: 69%;
+            }
+            @media screen and (min-width: 769px) {
+                margin-left: 92%;
+                margin-top: 144%;
+            }
+        }
+
         .convert {
             margin-left: auto;
+            @media screen and (min-width: 641px) {
+                margin-top: -12px;
+                margin-left: 130px;
+            }
         }
     }
 }
 
 .presentation {
-    p:first-child {
-        @include policy($light-font, $text-color, 18px, bold, unset);
-        span {
-            @include policy($bold-font, $light-red, 18px, bold, unset);
-            text-transform: uppercase;
+    @media screen and (min-width: 641px) {
+        @include resize(300px, 360px);
+        margin-top: -100px;
+        margin-left: 5%;
+    }
+    @media screen and (min-width: 769px) {
+        @include flex(row, center, space-between, nowrap);
+        @include resize(600px, auto);
+        margin-left: 0;
+        margin-top: -125px;
+    }
+    @media screen and (min-width: 1025px) {
+        @include resize(690px, auto);
+    }
+
+    img {
+        display: none;
+        @media screen and (min-width: 769px) {
+            display: block;
+            @include resize(260px, auto);
+        }
+        @media screen and (min-width: 1025px) {
+            @include resize(300px, auto);
         }
     }
-    p:nth-child(2) {
-        @include policy($text-font, $text-color, 16px, unset, unset);
-        text-align: justify;
-    }
-    input[type="submit"] {
-        @include policy($bold-font, $text-color, 13px, unset, unset);
-        letter-spacing: 1px;
-        border: 2px solid $light-red;
-        border-radius: 3px;
-        padding: 5px;
-        text-transform: uppercase;
+
+    div {
+        padding: 20px;
+
+        p:first-child {
+            @include policy($light-font, $text-color, 18px, bold, unset);
+            span {
+                @include policy($bold-font, $light-red, 18px, bold, unset);
+                text-transform: uppercase;
+            }
+        }
+        p:nth-child(2) {
+            @include policy($text-font, $text-color, 16px, unset, unset);
+            text-align: justify;
+            margin-bottom: 25px;
+        }
+        a {
+            @include policy($bold-font, $text-color, 13px, unset, unset);
+            letter-spacing: 1px;
+            border: 2px solid $light-red;
+            border-radius: 3px;
+            padding: 5px;
+            text-transform: uppercase;
+        }
     }
 }
 
@@ -63,13 +153,47 @@
 
     .spotlight-container-basket {
         @include flex(row, center, center, wrap);
+        max-width: 700px;
 
         .spotlight-img {
             @include resize(100%, 50%);
+            margin-top: -19px;
         }
         
+        .basket-buttons {
+            @include flex(row, center, space-between, nowrap);
+            @include resize(62px, auto);
+            @include position(relative, 10px, 0, 0, 0);
+
+            div {
+                background-color: white;
+                @include resize(30px, 20px);
+                @include flex(row, center, center, nowrap);
+            }
+            div:hover {
+                box-shadow: 0 0 10px lightgrey;
+            }
+
+            .crush {
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+            .open-modal {
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+
+            img {
+                @include resize(12px, auto);
+            }
+        }
+
         .spotlight-basket {
             @include flex(column, center, center, nowrap);
+            @media screen and (min-width: 769px) {
+                @include resize(auto, 105px);
+            }
+
             .price {
                 @include policy($main-font, $dark-green, 14px, unset, unset);
                 margin: 0;
@@ -90,11 +214,24 @@
         border-radius: 5px;
         margin: 25px 10px 0 10px;
         padding: 3px;
+        @media screen and (min-width: 641px) {
+            margin: 60px 18px 0 18px;
+        }
+        @media screen and (min-width: 769px) {
+            @include resize(195px, 215px);
+        }
     
         .container-category-indicator {
             @include flex(row, center, space-between, nowrap);
             @include resize(100px, auto);
             align-self: flex-start;
+
+            .category-indicator {
+                @media screen and (min-width: 769px) {
+                    font-size: 12px;
+                    padding: 4px;
+                }
+            }
         }
     }
     .spotlight-container-img:hover {
@@ -108,10 +245,19 @@
         border-radius: 2px;
         @include resize(220px, 25px);
         @include flex(row, center, space-between, nowrap);
+        @media screen and (min-width: 641px) {
+            margin: 50px auto 20px auto;
+        }
+        @media screen and (min-width: 769px) {
+            @include resize(250px, 30px);
+        }
 
         p {
             @include policy($bold-font, $text-color, 14px, unset, unset);
             margin: 0;
+            @media screen and (min-width: 769px) {
+                font-size: 16px;
+            }
         }
         img {
             @include resize(30px, auto);
@@ -120,11 +266,18 @@
 
     .spotlight-container-recipe {
         @include flex(row, center, center, wrap);
+        max-width: 700px;
+        @media screen and (min-width: 769px) {
+            max-width: 800px;
+        }
 
         .spotlight-recipe {
             padding: 0;
             height: 200px;
             justify-content: center;
+            @media screen and (min-width: 769px) {
+                @include resize(200px, 290px);
+            }
 
             .spotlight-img {
                 @include resize(100%, auto);
@@ -136,17 +289,28 @@
                 @include policy($bold-font, $text-color, 12px, bold, unset);
                 text-transform: uppercase;
                 text-align: center;
+                @media screen and (min-width: 769px) {
+                    font-size: 14px;
+                }
             }
 
             .category-img {
                 margin: auto;
+                @media screen and (min-width: 769px) {
+                    margin: 0;
+                }
+                @media screen and (min-width: 1025px) {
+                    margin: 0;
+                }
+
                 img {
                     @include resize(30px, auto);
                 }
             }
 
-            input[type="submit"] {
+            a {
                 @include policy($main-font, white, 11px, unset, unset);
+                text-align: center;
                 padding: 4px;
                 background: linear-gradient(to bottom, #ff9c33, #ef7205);
                 @include resize(75px, auto);
@@ -157,24 +321,73 @@
     }   
 }
 
+.container-desc {
+    @include flex(column, center, space-between, nowrap);
+    @include resize(100%, 57%);
+    @media screen and (min-width: 769px) {
+        @include resize(95%, 55%);
+    }
+
+    .kitchen  {
+        @include flex(row, center, space-between, nowrap);
+        width: 95%;
+
+        .recipe-author {
+            display: none;
+            @media screen and (min-width: 769px) {
+                @include flex(row, center, space-between, nowrap);
+            }
+
+            p {
+                margin: 0;
+            }
+            .proposed-by {
+                @include policy($light-font, $grey, 11px, unset, unset);
+            }
+            .author {
+                @include policy($bold-font, $text-color, 13px, unset, unset);
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .time {
+        display: none;
+        @media screen and (min-width: 769px) {
+            @include flex(row, center, space-between, nowrap);
+        }
+
+        p {
+            margin: 0;
+            text-align: center;
+            @include policy($bold-font, $text-color, 12px, unset, unset);
+            span {
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+#spotlight-type-basket, #spotlight-type-recipe {
+    padding: 25px 0;
+    @include flex(column, center, center, nowrap);
+}
+
 #spotlight-type-basket {
     background-color: $bg-grey;
-    padding: 25px 0;
+    @media screen and (min-width: 641px) {
+        padding-top: 80px;
+        background-color: initial;
+        background-image: url('../img/bg_spotlight_basket.png');
+    }
+    @media screen and (min-width: 769px) {
+        margin-top: 130px;
+        padding-top: 100px;
+    }
 }
+
 #spotlight-type-recipe {
-    padding: 25px 0;
-}
-
-///////////////////
-
-@media screen and (min-width: 641px) {
-
-}
-
-@media screen and (min-width: 769px) {
-
-}
-
-@media screen and (min-width: 1025px) {
-
+    @media screen and (min-width: 641px) {
+        padding-top: 50px;    
+    }
 }

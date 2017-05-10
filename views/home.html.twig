@@ -2,19 +2,22 @@
 
 {% block content %}
     <main id="main-home">
-        <div class="presentation frame-elt">
-            <p>
-                <span>Découvrez :</span>
-                Comment convertir votre liste de courses
-            </p>
-            <p>
-                How to Vegan est un outil qui vous permet de convertir automatiquement
-                votre liste de courses traditionnelle en liste de courses vegan.
-                Vous pouvez également ajouter les filtres "bio" et/ou "gluten free" à
-                votre sélection et épingler votre liste pour la retrouver dans votre
-                profil.
-            </p>
-            <input type="submit" value="Essayez l'outil conversion">
+        <div class="presentation">
+            <img src="assets/img/soja_flou.png" alt="soja picture">
+            <div>
+                <p>
+                    <span>Découvrez :</span>
+                    Comment convertir votre liste de courses
+                </p>
+                <p>
+                    How to Vegan est un outil qui vous permet de convertir automatiquement
+                    votre liste de courses traditionnelle en liste de courses vegan.
+                    Vous pouvez également ajouter les filtres "bio" et/ou "gluten free" à
+                    votre sélection et épingler votre liste pour la retrouver dans votre
+                    profil.
+                </p>
+                <a href="?action=convert">Essayez l'outil conversion</a>
+            </div>
         </div>
         <form name="shoppping-list" id="form-list" class="frame-elt">
             <div class="list">
@@ -108,6 +111,14 @@
             </div>
             <div class="spotlight-container-basket">
                 <div class="spotlight-container-img">
+                    <div class="basket-buttons">
+                        <div class="crush">
+                            <img src="assets/img/heart.png" alt="icon heart">
+                        </div>
+                        <div class="open-modal">
+                            <img src="assets/img/open_modal.png" alt="icon open">
+                        </div>
+                    </div>
                     <img class="spotlight-img" src="assets/img/frame_picture_basket.png" alt="frame picture">
                     <div class="spotlight-basket">
                         <p class="price">~ 28.50&euro;</p>
@@ -119,6 +130,14 @@
                     </div>
                 </div>
                 <div class="spotlight-container-img">
+                    <div class="basket-buttons">
+                        <div class="crush">
+                            <img src="assets/img/heart.png" alt="icon heart">
+                        </div>
+                        <div class="open-modal">
+                            <img src="assets/img/open_modal.png" alt="icon open">
+                        </div>
+                    </div>
                     <img class="spotlight-img" src="assets/img/frame_picture_basket.png" alt="frame picture">
                     <div class="spotlight-basket">
                         <p class="price">~ 28.50&euro;</p>
@@ -129,6 +148,14 @@
                     </div>
                 </div>
                 <div class="spotlight-container-img">
+                    <div class="basket-buttons">
+                        <div class="crush">
+                            <img src="assets/img/heart.png" alt="icon heart">
+                        </div>
+                        <div class="open-modal">
+                            <img src="assets/img/open_modal.png" alt="icon open">
+                        </div>
+                    </div>
                     <img class="spotlight-img" src="assets/img/frame_picture_basket.png" alt="frame picture">
                     <div class="spotlight-basket">
                         <p class="price">~ 28.50&euro;</p>
@@ -136,6 +163,14 @@
                     </div>
                 </div>
                 <div class="spotlight-container-img">
+                    <div class="basket-buttons">
+                        <div class="crush">
+                            <img src="assets/img/heart.png" alt="icon heart">
+                        </div>
+                        <div class="open-modal">
+                            <img src="assets/img/open_modal.png" alt="icon open">
+                        </div>
+                    </div>
                     <img class="spotlight-img" src="assets/img/frame_picture_basket.png" alt="frame picture">
                     <div class="spotlight-basket">
                         <p class="price">~ 28.50&euro;</p>
@@ -146,10 +181,12 @@
                     </div>
                 </div>
             </div>
-            <div class="input-discover">
-                <p>Découvrez tous nos paniers</p>
-                <img src="assets/img/arrow_red.png" alt="red arrow">
-            </div>
+            <a href="?action=basket">
+                <div class="input-discover">
+                    <p>Découvrez tous nos paniers</p>
+                    <img src="assets/img/arrow_red.png" alt="red arrow">
+                </div>
+            </a>
         </div>
         <div class="spotlight-type" id="spotlight-type-recipe">
             <div class="spotlight-title">
@@ -162,63 +199,115 @@
             <div class="spotlight-container-recipe">
                 <div class="spotlight-container-img spotlight-recipe">
                     <img class="spotlight-img" src="assets/img/seitan.png" alt="frame picture">
-                    <p class="recipe-title">Seitan façon poulet tikka massala</p>
-                    <div class="category-img">
-                        <img src="assets/img/basket_category_vegan.png" alt="icon vegan">
-                        <img src="assets/img/basket_category_gluten_free.png" alt="icon gluten free">
-                        <img src="assets/img/basket_category_bio.png" alt="icon bio">
+                    <div class="container-desc">
+                        <p class="recipe-title">Seitan façon poulet tikka massala</p>
+                        <div class="kitchen">
+                            <div class="recipe-author">
+                                <img src="assets/img/chief.png" alt="chief icon">
+                                <div>
+                                    <p class="proposed-by">Proposé par</p>
+                                    <p class="author">Le staff</p>
+                                </div>
+                            </div>
+                            <div class="category-img">
+                                <img src="assets/img/basket_category_vegan.png" alt="icon vegan">
+                                <img src="assets/img/basket_category_gluten_free.png" alt="icon gluten free">
+                                <img src="assets/img/basket_category_bio.png" alt="icon bio">
+                            </div>
+                        </div>
+                        <div class="time">
+                            <img src="assets/img/alarm.png" alt="alarm icon">
+                            <p><span>Prep:</span> 15min</p>
+                            <p><span>Cuisson:</span> 30min</p>
+                            <p><span>Total:</span> 45min</p>
+                        </div>
+                        <a href="?action=recipe">Voir plus</a>
                     </div>
-                    <input type="submit" value="Voir plus"> 
                 </div>
                 <div class="spotlight-container-img spotlight-recipe">
                     <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
-                    <p class="recipe-title">Gâteau coco</p>
-                    <div class="category-img">
-                        <img src="assets/img/basket_category_vegan.png" alt="icon vegan">
+                    <div class="container-desc">
+                        <p class="recipe-title">Gâteau coco</p>
+                        <div class="kitchen">
+                            <div class="recipe-author">
+                                <img src="assets/img/chief.png" alt="chief icon">
+                                <div>
+                                    <p class="proposed-by">Proposé par</p>
+                                    <p class="author">Le staff</p>
+                                </div>
+                            </div>
+                            <div class="category-img">
+                                <img src="assets/img/basket_category_vegan.png" alt="icon vegan">
+                            </div>
+                        </div>
+                        <div class="time">
+                            <img src="assets/img/alarm.png" alt="alarm icon">
+                            <p><span>Prep:</span> 15min</p>
+                            <p><span>Cuisson:</span> 30min</p>
+                            <p><span>Total:</span> 45min</p>
+                        </div>
+                        <a href="?action=recipe">Voir plus</a>
                     </div>
-                    <input type="submit" value="Voir plus"> 
                 </div>
                 <div class="spotlight-container-img spotlight-recipe">
                     <img class="spotlight-img" src="assets/img/seitan.png" alt="frame picture">
-                    <p class="recipe-title">Seitan façon poulet tikka massala</p>
-                    <div class="category-img">
-                        <img src="assets/img/basket_category_vegan.png" alt="icon vegan">
-                        <img src="assets/img/basket_category_gluten_free.png" alt="icon gluten free">
-                        <img src="assets/img/basket_category_bio.png" alt="icon bio">
+                    <div class="container-desc">
+                        <p class="recipe-title">Seitan façon poulet tikka massala</p>
+                        <div class="kitchen">
+                            <div class="recipe-author">
+                                <img src="assets/img/chief.png" alt="chief icon">
+                                <div>
+                                    <p class="proposed-by">Proposé par</p>
+                                    <p class="author">Le staff</p>
+                                </div>
+                            </div>
+                            <div class="category-img">
+                                <img src="assets/img/basket_category_vegan.png" alt="icon vegan">
+                                <img src="assets/img/basket_category_gluten_free.png" alt="icon gluten free">
+                                <img src="assets/img/basket_category_bio.png" alt="icon bio">
+                            </div>
+                        </div>
+                        <div class="time">
+                            <img src="assets/img/alarm.png" alt="alarm icon">
+                            <p><span>Prep:</span> 15min</p>
+                            <p><span>Cuisson:</span> 30min</p>
+                            <p><span>Total:</span> 45min</p>
+                        </div>
+                        <a href="?action=recipe">Voir plus</a>
                     </div>
-                    <input type="submit" value="Voir plus"> 
                 </div>
                 <div class="spotlight-container-img spotlight-recipe">
                     <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
-                    <p class="recipe-title">Gâteau coco</p>
-                    <div class="category-img">
-                        <img src="assets/img/basket_category_vegan.png" alt="icon vegan">
+                    <div class="container-desc">
+                        <p class="recipe-title">Gâteau coco</p>
+                        <div class="kitchen">
+                            <div class="recipe-author">
+                                <img src="assets/img/chief.png" alt="chief icon">
+                                <div>
+                                    <p class="proposed-by">Proposé par</p>
+                                    <p class="author">Le staff</p>
+                                </div>
+                            </div>
+                            <div class="category-img">
+                                <img src="assets/img/basket_category_vegan.png" alt="icon vegan">
+                            </div>
+                        </div>
+                        <div class="time">
+                            <img src="assets/img/alarm.png" alt="alarm icon">
+                            <p><span>Prep:</span> 15min</p>
+                            <p><span>Cuisson:</span> 30min</p>
+                            <p><span>Total:</span> 45min</p>
+                        </div>
+                        <a href="?action=recipe">Voir plus</a>
                     </div>
-                    <input type="submit" value="Voir plus"> 
-                </div>
-                <div class="spotlight-container-img spotlight-recipe">
-                    <img class="spotlight-img" src="assets/img/seitan.png" alt="frame picture">
-                    <p class="recipe-title">Seitan façon poulet tikka massala</p>
-                    <div class="category-img">
-                        <img src="assets/img/basket_category_vegan.png" alt="icon vegan">
-                        <img src="assets/img/basket_category_gluten_free.png" alt="icon gluten free">
-                        <img src="assets/img/basket_category_bio.png" alt="icon bio">
-                    </div>
-                    <input type="submit" value="Voir plus"> 
-                </div>
-                <div class="spotlight-container-img spotlight-recipe">
-                    <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
-                    <p class="recipe-title">Gâteau coco</p>
-                    <div class="category-img">
-                        <img src="assets/img/basket_category_vegan.png" alt="icon vegan">
-                    </div>
-                    <input type="submit" value="Voir plus"> 
                 </div>
             </div>
-            <div class="input-discover">
-                <p>Découvrez toutes nos recettes</p>
-                <img src="assets/img/arrow_red.png" alt="red arrow">
-            </div>
+            <a href="?action=recipe">
+                <div class="input-discover">
+                    <p>Découvrez toutes nos recettes</p>
+                    <img src="assets/img/arrow_red.png" alt="red arrow">
+                </div>
+            </a>
         </div>
     </main>
 {% endblock %}

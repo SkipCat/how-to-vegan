@@ -35,7 +35,7 @@
     margin: 0px 13%;
     font-family: "SourceSansPro Italic";
     color: #444444;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: unset;
     font-style: italic; }
 
@@ -308,7 +308,7 @@
           #main-convert #form-list .list ul select {
             font-size: 20px; }
       #main-convert #form-list .convert {
-        margin-left: 14%; }
+        margin-left: 17%; }
       #main-convert #form-list #img-leaf {
         width: 150px;
         height: auto;
@@ -506,42 +506,125 @@
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px; }
 
+@media screen and (min-width: 641px) {
+  #header-home {
+    background-image: url("../img/bg_home.png");
+    height: 400px; } }
+
 #main-home #form-list {
   margin-bottom: 30px; }
+  @media screen and (min-width: 641px) {
+    #main-home #form-list {
+      width: 300px;
+      position: absolute;
+      top: 110px;
+      right: 5%;
+      bottom: 0;
+      left: initial; }
+      #main-home #form-list #img-leaf {
+        display: none; } }
+  @media screen and (min-width: 769px) {
+    #main-home #form-list {
+      right: 10%; }
+      #main-home #form-list .list {
+        width: 380px;
+        height: 510px; } }
+  @media screen and (min-width: 641px) {
+    #main-home #form-list #img-pin {
+      top: 7%; } }
+  @media screen and (min-width: 769px) {
+    #main-home #form-list #img-pin {
+      top: 11%; } }
+  @media screen and (min-width: 641px) {
+    #main-home #form-list ul {
+      margin-left: 14px;
+      margin-top: 19px; } }
+  @media screen and (min-width: 769px) {
+    #main-home #form-list ul {
+      margin-left: 21px;
+      margin-top: 34px; }
+      #main-home #form-list ul select {
+        font-size: 20px; } }
+  @media screen and (min-width: 641px) {
+    #main-home #form-list #img-delete-skip {
+      margin-left: 69%; } }
+  @media screen and (min-width: 769px) {
+    #main-home #form-list #img-delete-skip {
+      margin-left: 92%;
+      margin-top: 144%; } }
   #main-home #form-list .convert {
     margin-left: auto; }
+    @media screen and (min-width: 641px) {
+      #main-home #form-list .convert {
+        margin-top: -12px;
+        margin-left: 130px; } }
 
-.presentation p:first-child {
-  font-family: "Signika Light";
-  color: #444444;
-  font-size: 18px;
-  font-weight: bold;
-  font-style: unset; }
-  .presentation p:first-child span {
-    font-family: "Signika Semibold";
-    color: #e74a18;
+@media screen and (min-width: 641px) {
+  .presentation {
+    width: 300px;
+    height: 360px;
+    margin-top: -100px;
+    margin-left: 5%; } }
+@media screen and (min-width: 769px) {
+  .presentation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 600px;
+    height: auto;
+    margin-left: 0;
+    margin-top: -125px; } }
+@media screen and (min-width: 1025px) {
+  .presentation {
+    width: 690px;
+    height: auto; } }
+.presentation img {
+  display: none; }
+  @media screen and (min-width: 769px) {
+    .presentation img {
+      display: block;
+      width: 260px;
+      height: auto; } }
+  @media screen and (min-width: 1025px) {
+    .presentation img {
+      width: 300px;
+      height: auto; } }
+.presentation div {
+  padding: 20px; }
+  .presentation div p:first-child {
+    font-family: "Signika Light";
+    color: #444444;
     font-size: 18px;
     font-weight: bold;
+    font-style: unset; }
+    .presentation div p:first-child span {
+      font-family: "Signika Semibold";
+      color: #e74a18;
+      font-size: 18px;
+      font-weight: bold;
+      font-style: unset;
+      text-transform: uppercase; }
+  .presentation div p:nth-child(2) {
+    font-family: "SourceSansPro Italic";
+    color: #444444;
+    font-size: 16px;
+    font-weight: unset;
     font-style: unset;
+    text-align: justify;
+    margin-bottom: 25px; }
+  .presentation div a {
+    font-family: "Signika Semibold";
+    color: #444444;
+    font-size: 13px;
+    font-weight: unset;
+    font-style: unset;
+    letter-spacing: 1px;
+    border: 2px solid #e74a18;
+    border-radius: 3px;
+    padding: 5px;
     text-transform: uppercase; }
-.presentation p:nth-child(2) {
-  font-family: "SourceSansPro Italic";
-  color: #444444;
-  font-size: 16px;
-  font-weight: unset;
-  font-style: unset;
-  text-align: justify; }
-.presentation input[type="submit"] {
-  font-family: "Signika Semibold";
-  color: #444444;
-  font-size: 13px;
-  font-weight: unset;
-  font-style: unset;
-  letter-spacing: 1px;
-  border: 2px solid #e74a18;
-  border-radius: 3px;
-  padding: 5px;
-  text-transform: uppercase; }
 
 .spotlight-type .spotlight-title {
   display: flex;
@@ -587,16 +670,55 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  max-width: 700px; }
   .spotlight-type .spotlight-container-basket .spotlight-img {
     width: 100%;
-    height: 50%; }
+    height: 50%;
+    margin-top: -19px; }
+  .spotlight-type .spotlight-container-basket .basket-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 62px;
+    height: auto;
+    position: relative;
+    top: 10px;
+    right: 0;
+    bottom: 0;
+    left: 0; }
+    .spotlight-type .spotlight-container-basket .basket-buttons div {
+      background-color: white;
+      width: 30px;
+      height: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: nowrap; }
+    .spotlight-type .spotlight-container-basket .basket-buttons div:hover {
+      box-shadow: 0 0 10px lightgrey; }
+    .spotlight-type .spotlight-container-basket .basket-buttons .crush {
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px; }
+    .spotlight-type .spotlight-container-basket .basket-buttons .open-modal {
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px; }
+    .spotlight-type .spotlight-container-basket .basket-buttons img {
+      width: 12px;
+      height: auto; }
   .spotlight-type .spotlight-container-basket .spotlight-basket {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     flex-wrap: nowrap; }
+    @media screen and (min-width: 769px) {
+      .spotlight-type .spotlight-container-basket .spotlight-basket {
+        width: auto;
+        height: 105px; } }
     .spotlight-type .spotlight-container-basket .spotlight-basket .price {
       font-family: "Signika Regular";
       color: #78a514;
@@ -624,6 +746,13 @@
   border-radius: 5px;
   margin: 25px 10px 0 10px;
   padding: 3px; }
+  @media screen and (min-width: 641px) {
+    .spotlight-type .spotlight-container-img {
+      margin: 60px 18px 0 18px; } }
+  @media screen and (min-width: 769px) {
+    .spotlight-type .spotlight-container-img {
+      width: 195px;
+      height: 215px; } }
   .spotlight-type .spotlight-container-img .container-category-indicator {
     display: flex;
     flex-direction: row;
@@ -633,6 +762,10 @@
     width: 100px;
     height: auto;
     align-self: flex-start; }
+    @media screen and (min-width: 769px) {
+      .spotlight-type .spotlight-container-img .container-category-indicator .category-indicator {
+        font-size: 12px;
+        padding: 4px; } }
 .spotlight-type .spotlight-container-img:hover {
   box-shadow: 0 0 20px lightgrey; }
 .spotlight-type .input-discover {
@@ -647,6 +780,13 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: nowrap; }
+  @media screen and (min-width: 641px) {
+    .spotlight-type .input-discover {
+      margin: 50px auto 20px auto; } }
+  @media screen and (min-width: 769px) {
+    .spotlight-type .input-discover {
+      width: 250px;
+      height: 30px; } }
   .spotlight-type .input-discover p {
     font-family: "Signika Semibold";
     color: #444444;
@@ -654,6 +794,9 @@
     font-weight: unset;
     font-style: unset;
     margin: 0; }
+    @media screen and (min-width: 769px) {
+      .spotlight-type .input-discover p {
+        font-size: 16px; } }
   .spotlight-type .input-discover img {
     width: 30px;
     height: auto; }
@@ -662,11 +805,19 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  max-width: 700px; }
+  @media screen and (min-width: 769px) {
+    .spotlight-type .spotlight-container-recipe {
+      max-width: 800px; } }
   .spotlight-type .spotlight-container-recipe .spotlight-recipe {
     padding: 0;
     height: 200px;
     justify-content: center; }
+    @media screen and (min-width: 769px) {
+      .spotlight-type .spotlight-container-recipe .spotlight-recipe {
+        width: 200px;
+        height: 290px; } }
     .spotlight-type .spotlight-container-recipe .spotlight-recipe .spotlight-img {
       width: 100%;
       height: auto;
@@ -680,17 +831,27 @@
       font-style: unset;
       text-transform: uppercase;
       text-align: center; }
+      @media screen and (min-width: 769px) {
+        .spotlight-type .spotlight-container-recipe .spotlight-recipe .recipe-title {
+          font-size: 14px; } }
     .spotlight-type .spotlight-container-recipe .spotlight-recipe .category-img {
       margin: auto; }
+      @media screen and (min-width: 769px) {
+        .spotlight-type .spotlight-container-recipe .spotlight-recipe .category-img {
+          margin: 0; } }
+      @media screen and (min-width: 1025px) {
+        .spotlight-type .spotlight-container-recipe .spotlight-recipe .category-img {
+          margin: 0; } }
       .spotlight-type .spotlight-container-recipe .spotlight-recipe .category-img img {
         width: 30px;
         height: auto; }
-    .spotlight-type .spotlight-container-recipe .spotlight-recipe input[type="submit"] {
+    .spotlight-type .spotlight-container-recipe .spotlight-recipe a {
       font-family: "Signika Regular";
       color: white;
       font-size: 11px;
       font-weight: unset;
       font-style: unset;
+      text-align: center;
       padding: 4px;
       background: linear-gradient(to bottom, #ff9c33, #ef7205);
       width: 75px;
@@ -698,12 +859,92 @@
       border-radius: 5px;
       margin-bottom: 7px; }
 
-#spotlight-type-basket {
-  background-color: #f7f7f7;
-  padding: 25px 0; }
+.container-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 57%; }
+  @media screen and (min-width: 769px) {
+    .container-desc {
+      width: 95%;
+      height: 55%; } }
+  .container-desc .kitchen {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 95%; }
+    .container-desc .kitchen .recipe-author {
+      display: none; }
+      @media screen and (min-width: 769px) {
+        .container-desc .kitchen .recipe-author {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: nowrap; } }
+      .container-desc .kitchen .recipe-author p {
+        margin: 0; }
+      .container-desc .kitchen .recipe-author .proposed-by {
+        font-family: "Signika Light";
+        color: #bbbbbb;
+        font-size: 11px;
+        font-weight: unset;
+        font-style: unset; }
+      .container-desc .kitchen .recipe-author .author {
+        font-family: "Signika Semibold";
+        color: #444444;
+        font-size: 13px;
+        font-weight: unset;
+        font-style: unset;
+        text-transform: uppercase; }
+  .container-desc .time {
+    display: none; }
+    @media screen and (min-width: 769px) {
+      .container-desc .time {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap; } }
+    .container-desc .time p {
+      margin: 0;
+      text-align: center;
+      font-family: "Signika Semibold";
+      color: #444444;
+      font-size: 12px;
+      font-weight: unset;
+      font-style: unset; }
+      .container-desc .time p span {
+        text-transform: uppercase; }
 
-#spotlight-type-recipe {
-  padding: 25px 0; }
+#spotlight-type-basket, #spotlight-type-recipe {
+  padding: 25px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap; }
+
+#spotlight-type-basket {
+  background-color: #f7f7f7; }
+  @media screen and (min-width: 641px) {
+    #spotlight-type-basket {
+      padding-top: 80px;
+      background-color: initial;
+      background-image: url("../img/bg_spotlight_basket.png"); } }
+  @media screen and (min-width: 769px) {
+    #spotlight-type-basket {
+      margin-top: 130px;
+      padding-top: 100px; } }
+
+@media screen and (min-width: 641px) {
+  #spotlight-type-recipe {
+    padding-top: 50px; } }
 
 html {
   min-height: 100vh;
@@ -717,6 +958,8 @@ body {
   body input, body button {
     border: none;
     background-color: transparent; }
+  body button, body a, body input[type="submit"], body input[type="image"] {
+    cursor: pointer; }
   body .img-to-resize {
     width: 100%; }
 
@@ -730,6 +973,18 @@ header {
   flex-wrap: nowrap;
   height: 180px;
   padding-bottom: 20px; }
+  @media screen and (min-width: 641px) {
+    header {
+      background-image: url("../img/bg_menu_desktop.png");
+      height: 250px;
+      flex-direction: row;
+      padding: 0; } }
+  @media screen and (min-width: 769px) {
+    header {
+      height: 330px; } }
+  @media screen and (min-width: 1025px) {
+    header {
+      height: 400px; } }
   header .icons-menu {
     margin-top: -15px;
     display: flex;
@@ -737,6 +992,9 @@ header {
     align-items: center;
     justify-content: center;
     flex-wrap: nowrap; }
+    @media screen and (min-width: 641px) {
+      header .icons-menu {
+        display: none; } }
     header .icons-menu .btn-menu {
       position: absolute;
       width: 20px;
@@ -766,6 +1024,15 @@ header {
     align-items: baseline;
     justify-content: space-around;
     flex-wrap: nowrap; }
+    @media screen and (min-width: 641px) {
+      header nav {
+        align-items: center;
+        align-self: flex-start;
+        margin-top: 20px;
+        width: 80%; } }
+    @media screen and (min-width: 769px) {
+      header nav {
+        width: 60%; } }
     header nav a {
       font-family: "Signika Semibold";
       color: white;
@@ -780,6 +1047,9 @@ header {
       border-top: 4px solid #e74a18; }
     header nav .logo {
       display: none; }
+      @media screen and (min-width: 641px) {
+        header nav .logo {
+          display: block; } }
   header .profile-login {
     display: none;
     align-self: flex-start;
@@ -788,9 +1058,24 @@ header {
     right: 40px;
     bottom: initial;
     left: initial; }
+    @media screen and (min-width: 641px) {
+      header .profile-login {
+        display: flex; } }
+    @media screen and (min-width: 769px) {
+      header .profile-login {
+        position: absolute;
+        top: 53px;
+        right: 50px;
+        bottom: initial;
+        left: initial; }
+        header .profile-login a {
+          display: block; } }
     header .profile-login .btn-menu {
       width: 20px;
       height: 21px; }
+      @media screen and (min-width: 641px) {
+        header .profile-login .btn-menu {
+          margin-right: 10px; } }
 
 main {
   flex-grow: 1; }
@@ -815,9 +1100,16 @@ footer {
   justify-content: space-between;
   flex-wrap: nowrap;
   padding: 10px; }
+  @media screen and (min-width: 641px) {
+    #footer-mobile {
+      display: none; } }
   #footer-mobile img {
     width: 45px;
     height: auto; }
+    @media screen and (min-width: 376px) {
+      #footer-mobile img {
+        width: 60px;
+        height: auto; } }
   #footer-mobile nav {
     width: 80%;
     display: flex;
@@ -832,6 +1124,12 @@ footer {
     font-weight: lighter;
     font-style: unset;
     letter-spacing: 1px; }
+    @media screen and (min-width: 321px) {
+      #footer-mobile a {
+        font-size: 10px; } }
+    @media screen and (min-width: 376px) {
+      #footer-mobile a {
+        font-size: 12px; } }
 
 #footer-desktop {
   display: flex;
@@ -846,6 +1144,9 @@ footer {
   font-size: 14px;
   font-weight: lighter;
   font-style: unset; }
+  @media screen and (min-width: 641px) {
+    #footer-desktop {
+      display: flex; } }
   #footer-desktop .aside {
     width: 235px; }
     #footer-desktop .aside span.howtovegan {
@@ -875,56 +1176,5 @@ footer {
     #footer-desktop .center img {
       width: 100px;
       height: auto; }
-
-@media screen and (min-width: 321px) {
-  #footer-mobile nav a {
-    font-size: 10px; } }
-@media screen and (min-width: 376px) {
-  #footer-mobile img {
-    width: 60px;
-    height: auto; }
-  #footer-mobile nav a {
-    font-size: 12px; } }
-@media screen and (min-width: 641px) {
-  header {
-    background-image: url("../img/bg_menu_desktop.png");
-    height: 250px;
-    flex-direction: row;
-    padding: 0; }
-    header .icons-menu {
-      display: none; }
-    header nav {
-      align-items: center;
-      align-self: flex-start;
-      margin-top: 20px;
-      width: 80%; }
-      header nav .logo {
-        display: block; }
-    header .profile-login {
-      display: flex; }
-      header .profile-login .btn-menu {
-        margin-right: 10px; }
-
-  #footer-mobile {
-    display: none; }
-
-  #footer-desktop {
-    display: flex; } }
-@media screen and (min-width: 769px) {
-  header {
-    height: 330px; }
-    header nav {
-      width: 60%; }
-    header .profile-login {
-      position: absolute;
-      top: 53px;
-      right: 50px;
-      bottom: initial;
-      left: initial; }
-      header .profile-login a {
-        display: block; } }
-@media screen and (min-width: 1025px) {
-  header {
-    height: 400px; } }
 
 /*# sourceMappingURL=style.css.map */
