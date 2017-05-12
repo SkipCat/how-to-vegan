@@ -2,8 +2,27 @@
 
 {% block content %}
     <main id="main-recipe">
-        <div class="filters">
-            
+        <div class="filter-in-order">
+            <h3>Filtrer par</h3>
+            <div class="checkbox">
+                <input type="checkbox" value="Entrée">
+                <label>Entrée</label>
+                <input type="checkbox" value="Plat">
+                <label>Plat</label>
+                <input type="checkbox" value="Dessert">
+                <label>Dessert</label>
+            </div>
+        </div>
+        <div class="filter-by-category">
+            <h3>Filtrer par</h3>
+            <div class="checkbox">
+                <input type="checkbox" value="Vegan">
+                <label>Vegan</label>
+                <input type="checkbox" value="Bio">
+                <label>Bio</label>
+                <input type="checkbox" value="Gluten-free">
+                <label>Gluten free</label>
+            </div>
         </div>
         <div class="spotlight-type" id="spotlight-type-recipe">
             <div class="spotlight-title">

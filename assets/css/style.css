@@ -351,7 +351,8 @@
   font-weight: unset;
   font-style: unset;
   width: 100%;
-  height: auto; }
+  height: auto;
+  z-index: 2; }
 .mapping input[type="image"] {
   width: 20px;
   height: auto; }

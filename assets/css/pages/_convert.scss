@@ -274,6 +274,7 @@
         text-align: left;
         @include policy($light-font, #444444, 16px, unset, unset);
         @include resize(100%, auto);
+        z-index: 2;
     }
 
     input[type="image"] {
