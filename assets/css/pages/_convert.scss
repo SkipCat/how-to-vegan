@@ -1,24 +1,71 @@
+#header-convert {
+    @media screen and (min-width: 641px) {
+        background-image: url('../img/bg_convert.png');
+    }
+}
+
 #main-convert {
     @include flex(column, unset, space-between, nowrap);
+    @media screen and (min-width: 641px) {    
+        @include resize(310px, auto);
+        margin: 20px auto 50px 50%;   
+        .frame-elt {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+    @media screen and (min-width: 769px) {
+        margin: 0 auto 50px 55%;
+    }
 
     .brush {
         width: 300px;
         margin: 0 auto 0 auto;
+        @media screen and (min-width: 641px) {
+            display: none;
+        }
     }
 
     .big-brush {
         display: none;
+        @media screen and (min-width: 641px) {
+            display: block;
+            @include position(absolute, 25%, initial, initial, 53%);
+            width: 300px;
+        }
+        @media screen and (min-width: 769px) {
+            width: 350px;
+            @include position(absolute, 34%, initial, initial, 55%);
+
+            @media screen and (min-width: 1025px) {
+                @include position(absolute, 38%, initial, initial, 60%);   
+            }
+        }
     }
 
     p.desc {
         text-align: justify;
         margin: 0px 13%;
         @include policy($text-font, $text-color, 16px, unset, italic);
+        @media screen and (min-width: 641px) {
+            margin: 0;
+        }
     }
 }
 
 #form-list {
     margin: 50px 0px;
+    @media screen and (min-width: 641px) {
+        margin: 0;
+        @include position(absolute, 23%, 0, 0, 5%);
+    }
+    @media screen and (min-width: 769px) {
+        @include position(absolute, 25%, 0, 0, 6%);
+    }
+    @media screen and (min-width: 1025px) {
+        @include position(absolute, 25%, 0, 0, 15%); 
+        top: 22%;
+    }
 }
 
 .list {
@@ -28,6 +75,15 @@
     background-origin: border-box;
     @include flex(column, unset, space-between, nowrap);
     @include policy($list-font, $text-color, 20px, unset, unset);
+    @media screen and (min-width: 376px) {
+        height: 562px;
+    }
+    @media screen and (min-width: 641px) {
+        @include resize(300px, 400px);
+    }
+    @media screen and (min-width: 769px) {
+        @include resize(380px, 510px);
+    }
 
     img:not(#img-leaf) {
         @include resize(22px, auto);
@@ -35,6 +91,9 @@
 
     #img-pin {
         @include position(relative, 8%, 0, 0, 80%);
+        @media screen and (min-width: 376px) {
+            @include position(relative, 11%, 0, 0, 81%);
+        }
     }
 
     #img-delete-skip {
@@ -43,10 +102,48 @@
         margin-top: 112%;
         width: 60px;
         @include flex(row, center, space-between, nowrap);
+        @media screen and (min-width: 321px) {
+            margin-left: 70%;
+        }
+        @media screen and (min-width: 376px) {
+            margin-top: 114%;
+            margin-left: 73%;
+        }
+        @media screen and (min-width: 376px) {
+            margin-top: 46%;
+            margin-left: 28%;
+        }
+        @media screen and (min-width: 769px) {
+            margin-top: 45%;
+            margin-left: 28.5%;
+        }
+        @media screen and (min-width: 1025px) {
+            margin-top: 38%;
+            margin-left: 24%;   
+        }
     }
 
     ul {
         margin: 23px 0 auto 15px;
+        @media screen and (min-width: 321px) {
+            margin-left: 20px;
+            margin-top: 35px;
+        }
+        @media screen and (min-width: 376px) {
+            margin-left: 25px;
+            margin-top: 44px;
+        }
+        @media screen and (min-width: 641px) {
+            margin-left: 15px;
+            margin-top: 38px;
+        }
+        @media screen and (min-width: 769px) {
+            margin-left: 22px;
+            margin-top: 34px;
+            select {
+                font-size: 20px;
+            }
+        }
 
         .shop-li {
             //margin-bottom: 23px;
@@ -71,12 +168,38 @@
 #img-leaf {
     @include resize(100px, auto);
     @include position(relative, initial, 0, 90px, 0);
+    @media screen and (min-width: 321px) {
+        bottom: 25px;
+    }
+    @media screen and (min-width: 376px) {
+        bottom: 0;
+        top: 20px;
+    }
+    @media screen and (min-width: 769px) {
+        @include resize(150px, auto);
+        @include position(relative, 60px, 0, 0, -40px);
+    }
 }
 
 .convert {
     @include resize(210px, 100px);
-    margin-left: auto;
-    margin-top: -110px;
+    margin: -110px 30px 0 auto;
+    @media screen and (min-width: 321px) {
+        margin-top: -50px;
+    }
+    @media screen and (min-width: 376px) {
+        margin-top: 0;
+    }
+    @media screen and (min-width: 641px) {
+        margin-left: 60px;
+    }
+    @media screen and (min-width: 769px) {
+        margin-left: 17%;
+    }
+    @media screen and (min-width: 1025px) {
+        margin: 0;
+        margin-left: 11%;
+    }
 
     .filters, .submit {
         @include flex(row, center, space-between, nowrap);
@@ -131,6 +254,9 @@
 .mapping {
     p {
         @include policy($main-font, $text-color, 16px, unset, unset);
+        @media screen and (min-width: 641px) {
+            margin-top: 50px;
+        }
     }
 
     #form-localization {
@@ -138,6 +264,9 @@
         @include input(1px, #cdcdcd, #cdcdcd, 1px);
         padding: 5px;
         margin-bottom: 30px;
+        @media screen and (min-width: 641px) {
+            margin-bottom: 15px;
+        }
     }
 
     input[type="text"] {
@@ -153,176 +282,8 @@
 
     #map {
         @include resize(auto, 300px);
-    }
-}
-
-/////////////////////////////////
-
-@media screen and (min-width: 321px) {
-    .list {
-        ul {
-            margin-left: 20px;
-            margin-top: 35px;
-        }
-
-        #img-delete-skip {
-            margin-left: 70%;
-        }
-    }
-
-    #img-leaf {
-        bottom: 25px;
-    }
-
-    .convert {
-        margin-top: -50px;
-    }
-}
-
-/////////////////////
-
-@media screen and (min-width: 376px) {
-    .list {
-        height: 562px;
-
-        #img-pin {
-            @include position(relative, 11%, 0, 0, 81%);
-        }
-
-        #img-delete-skip {
-            margin-top: 114%;
-            margin-left: 73%;
-        }
-
-        ul {
-            margin-left: 25px;
-            margin-top: 44px;
-        }
-    }
-
-    #img-leaf {
-        bottom: 0;
-        top: 20px;
-    }
-
-    .convert {
-        margin-top: 0;
-    }
-}
-
-@media screen and (min-width: 641px) {
-    #header-convert {
-        background-image: url('../img/bg_convert.png');
-    }
-    
-    #main-convert {
-        @include resize(310px, auto);
-        margin: 20px auto 50px 50%;
-
-        .brush {
-            display: none;
-        }
-        .big-brush {
-            display: block;
-            @include position(absolute, 25%, initial, initial, 53%);
-            width: 300px;
-        }
-        #form-list {
-            margin: 0;
-            @include position(absolute, 23%, 0, 0, 5%);
-
-            .list {
-                @include resize(300px, 400px);
-                ul {
-                    margin-left: 15px;
-                    margin-top: 38px;
-                }
-                #img-delete-skip {
-                    margin-top: 46%;
-                    margin-left: 28%;
-                }
-            }
-            .convert {
-                margin-left: 60px;
-            }
-        }
-        p.desc {
-            margin: 0;
-        }
-        .frame-elt {
-            margin-left: 0;
-            margin-right: 0;
-        }
-        .mapping {
-            p {
-                margin-top: 50px;
-            }
-            #form-localization {
-                margin-bottom: 15px;
-            }
-            #map {
-                @include resize(auto, 220px);
-            }
-
-        }
-    }
-}
-
-@media screen and (min-width: 769px) {
-    #main-convert {
-        margin: 0 auto 50px 55%;;
-
-        .big-brush {
-            width: 350px;
-            @include position(absolute, 34%, initial, initial, 55%);
-        }
-
-        #form-list {
-            @include position(absolute, 25%, 0, 0, 6%);
-
-            .list {
-                @include resize(380px, 510px);
-
-                #img-delete-skip {
-                    margin-top: 45%;
-                    margin-left: 28.5%;
-                }
-
-                ul {
-                    margin-left: 22px;
-                    margin-top: 34px;
-                    
-                    select {
-                        font-size: 20px;
-                    }
-                }
-            }
-
-            .convert {
-                margin-left: 17%;
-            }
-
-            #img-leaf {
-                @include resize(150px, auto);
-                @include position(relative, 60px, 0, 0, -40px);
-            }
-        }
-    }
-}
-
-@media screen and (min-width: 1025px) {
-    #main-convert {
-        .big-brush {
-            @include position(absolute, 38%, initial, initial, 60%);   
-        }
-
-        #form-list {
-            @include position(absolute, 25%, 0, 0, 15%);
-
-            .list #img-delete-skip {
-                margin-top: 38%;
-                margin-left: 24%;   
-            }
+        @media screen and (min-width: 641px) {
+            @include resize(auto, 220px);
         }
     }
 }

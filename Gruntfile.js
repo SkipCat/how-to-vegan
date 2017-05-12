@@ -23,8 +23,11 @@ module.exports = function(grunt) {
 					'assets/js/script.min.js': [
 						'assets/js/bookmark.js',
 						'assets/js/convert.js',
+						//'assets/js/map.js',
 						'assets/js/list.js',
-						'assets/js/script.js'
+						'assets/js/crush.js',
+						//'assets/js/modal.js',
+						'assets/js/script.js',
 					],
 					'assets/js/map.min.js': ['assets/js/map/*.js'],
 				}
@@ -37,7 +40,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 
 	grunt.registerTask('default', [
-		'watch',
 		'sass', 
 		'uglify',
 	]);

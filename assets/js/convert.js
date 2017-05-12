@@ -30,7 +30,7 @@ function convert() {
             }
         });
     });
-
+        
     function disableOptions() {
         $('option').prop('disabled', false);
         $.each(disabled, function(key, val) {

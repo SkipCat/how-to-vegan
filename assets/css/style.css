@@ -19,17 +19,60 @@
 @font-face {
   font-family: "Signika Semibold";
   src: url("../font/Signika-Semibold.ttf"); }
+@media screen and (min-width: 641px) {
+  #header-convert {
+    background-image: url("../img/bg_convert.png"); } }
+
 #main-convert {
   display: flex;
   flex-direction: column;
   align-items: unset;
   justify-content: space-between;
   flex-wrap: nowrap; }
+  @media screen and (min-width: 641px) {
+    #main-convert {
+      width: 310px;
+      height: auto;
+      margin: 20px auto 50px 50%; }
+      #main-convert .frame-elt {
+        margin-left: 0;
+        margin-right: 0; } }
+  @media screen and (min-width: 769px) {
+    #main-convert {
+      margin: 0 auto 50px 55%; } }
   #main-convert .brush {
     width: 300px;
     margin: 0 auto 0 auto; }
+    @media screen and (min-width: 641px) {
+      #main-convert .brush {
+        display: none; } }
   #main-convert .big-brush {
     display: none; }
+    @media screen and (min-width: 641px) {
+      #main-convert .big-brush {
+        display: block;
+        position: absolute;
+        top: 25%;
+        right: initial;
+        bottom: initial;
+        left: 53%;
+        width: 300px; } }
+    @media screen and (min-width: 769px) {
+      #main-convert .big-brush {
+        width: 350px;
+        position: absolute;
+        top: 34%;
+        right: initial;
+        bottom: initial;
+        left: 55%; } }
+  @media screen and (min-width: 769px) and (min-width: 1025px) {
+    #main-convert .big-brush {
+      position: absolute;
+      top: 38%;
+      right: initial;
+      bottom: initial;
+      left: 60%; } }
+
   #main-convert p.desc {
     text-align: justify;
     margin: 0px 13%;
@@ -38,9 +81,35 @@
     font-size: 16px;
     font-weight: unset;
     font-style: italic; }
+    @media screen and (min-width: 641px) {
+      #main-convert p.desc {
+        margin: 0; } }
 
 #form-list {
   margin: 50px 0px; }
+  @media screen and (min-width: 641px) {
+    #form-list {
+      margin: 0;
+      position: absolute;
+      top: 23%;
+      right: 0;
+      bottom: 0;
+      left: 5%; } }
+  @media screen and (min-width: 769px) {
+    #form-list {
+      position: absolute;
+      top: 25%;
+      right: 0;
+      bottom: 0;
+      left: 6%; } }
+  @media screen and (min-width: 1025px) {
+    #form-list {
+      position: absolute;
+      top: 25%;
+      right: 0;
+      bottom: 0;
+      left: 15%;
+      top: 22%; } }
 
 .list {
   height: 550px;
@@ -57,6 +126,17 @@
   font-size: 20px;
   font-weight: unset;
   font-style: unset; }
+  @media screen and (min-width: 376px) {
+    .list {
+      height: 562px; } }
+  @media screen and (min-width: 641px) {
+    .list {
+      width: 300px;
+      height: 400px; } }
+  @media screen and (min-width: 769px) {
+    .list {
+      width: 380px;
+      height: 510px; } }
   .list img:not(#img-leaf) {
     width: 22px;
     height: auto; }
@@ -66,6 +146,13 @@
     right: 0;
     bottom: 0;
     left: 80%; }
+    @media screen and (min-width: 376px) {
+      .list #img-pin {
+        position: relative;
+        top: 11%;
+        right: 0;
+        bottom: 0;
+        left: 81%; } }
   .list #img-delete-skip {
     position: absolute;
     margin-left: 68%;
@@ -76,8 +163,45 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap; }
+    @media screen and (min-width: 321px) {
+      .list #img-delete-skip {
+        margin-left: 70%; } }
+    @media screen and (min-width: 376px) {
+      .list #img-delete-skip {
+        margin-top: 114%;
+        margin-left: 73%; } }
+    @media screen and (min-width: 376px) {
+      .list #img-delete-skip {
+        margin-top: 46%;
+        margin-left: 28%; } }
+    @media screen and (min-width: 769px) {
+      .list #img-delete-skip {
+        margin-top: 45%;
+        margin-left: 28.5%; } }
+    @media screen and (min-width: 1025px) {
+      .list #img-delete-skip {
+        margin-top: 38%;
+        margin-left: 24%; } }
   .list ul {
     margin: 23px 0 auto 15px; }
+    @media screen and (min-width: 321px) {
+      .list ul {
+        margin-left: 20px;
+        margin-top: 35px; } }
+    @media screen and (min-width: 376px) {
+      .list ul {
+        margin-left: 25px;
+        margin-top: 44px; } }
+    @media screen and (min-width: 641px) {
+      .list ul {
+        margin-left: 15px;
+        margin-top: 38px; } }
+    @media screen and (min-width: 769px) {
+      .list ul {
+        margin-left: 22px;
+        margin-top: 34px; }
+        .list ul select {
+          font-size: 20px; } }
     .list ul .result-li {
       font-family: "DK Pimpernel";
       color: #444444;
@@ -103,12 +227,43 @@
   right: 0;
   bottom: 90px;
   left: 0; }
+  @media screen and (min-width: 321px) {
+    #img-leaf {
+      bottom: 25px; } }
+  @media screen and (min-width: 376px) {
+    #img-leaf {
+      bottom: 0;
+      top: 20px; } }
+  @media screen and (min-width: 769px) {
+    #img-leaf {
+      width: 150px;
+      height: auto;
+      position: relative;
+      top: 60px;
+      right: 0;
+      bottom: 0;
+      left: -40px; } }
 
 .convert {
   width: 210px;
   height: 100px;
-  margin-left: auto;
-  margin-top: -110px; }
+  margin: -110px 30px 0 auto; }
+  @media screen and (min-width: 321px) {
+    .convert {
+      margin-top: -50px; } }
+  @media screen and (min-width: 376px) {
+    .convert {
+      margin-top: 0; } }
+  @media screen and (min-width: 641px) {
+    .convert {
+      margin-left: 60px; } }
+  @media screen and (min-width: 769px) {
+    .convert {
+      margin-left: 17%; } }
+  @media screen and (min-width: 1025px) {
+    .convert {
+      margin: 0;
+      margin-left: 11%; } }
   .convert .filters, .convert .submit {
     display: flex;
     flex-direction: row;
@@ -170,6 +325,9 @@
   font-size: 16px;
   font-weight: unset;
   font-style: unset; }
+  @media screen and (min-width: 641px) {
+    .mapping p {
+      margin-top: 50px; } }
 .mapping #form-localization {
   display: flex;
   flex-direction: row;
@@ -181,6 +339,9 @@
   border-radius: 1px;
   padding: 5px;
   margin-bottom: 30px; }
+  @media screen and (min-width: 641px) {
+    .mapping #form-localization {
+      margin-bottom: 15px; } }
 .mapping input[type="text"] {
   border: none;
   text-align: left;
@@ -197,142 +358,11 @@
 .mapping #map {
   width: auto;
   height: 300px; }
-
-@media screen and (min-width: 321px) {
-  .list ul {
-    margin-left: 20px;
-    margin-top: 35px; }
-  .list #img-delete-skip {
-    margin-left: 70%; }
-
-  #img-leaf {
-    bottom: 25px; }
-
-  .convert {
-    margin-top: -50px; } }
-@media screen and (min-width: 376px) {
-  .list {
-    height: 562px; }
-    .list #img-pin {
-      position: relative;
-      top: 11%;
-      right: 0;
-      bottom: 0;
-      left: 81%; }
-    .list #img-delete-skip {
-      margin-top: 114%;
-      margin-left: 73%; }
-    .list ul {
-      margin-left: 25px;
-      margin-top: 44px; }
-
-  #img-leaf {
-    bottom: 0;
-    top: 20px; }
-
-  .convert {
-    margin-top: 0; } }
-@media screen and (min-width: 641px) {
-  #header-convert {
-    background-image: url("../img/bg_convert.png"); }
-
-  #main-convert {
-    width: 310px;
-    height: auto;
-    margin: 20px auto 50px 50%; }
-    #main-convert .brush {
-      display: none; }
-    #main-convert .big-brush {
-      display: block;
-      position: absolute;
-      top: 25%;
-      right: initial;
-      bottom: initial;
-      left: 53%;
-      width: 300px; }
-    #main-convert #form-list {
-      margin: 0;
-      position: absolute;
-      top: 23%;
-      right: 0;
-      bottom: 0;
-      left: 5%; }
-      #main-convert #form-list .list {
-        width: 300px;
-        height: 400px; }
-        #main-convert #form-list .list ul {
-          margin-left: 15px;
-          margin-top: 38px; }
-        #main-convert #form-list .list #img-delete-skip {
-          margin-top: 46%;
-          margin-left: 28%; }
-      #main-convert #form-list .convert {
-        margin-left: 60px; }
-    #main-convert p.desc {
-      margin: 0; }
-    #main-convert .frame-elt {
-      margin-left: 0;
-      margin-right: 0; }
-    #main-convert .mapping p {
-      margin-top: 50px; }
-    #main-convert .mapping #form-localization {
-      margin-bottom: 15px; }
-    #main-convert .mapping #map {
+  @media screen and (min-width: 641px) {
+    .mapping #map {
       width: auto;
       height: 220px; } }
-@media screen and (min-width: 769px) {
-  #main-convert {
-    margin: 0 auto 50px 55%; }
-    #main-convert .big-brush {
-      width: 350px;
-      position: absolute;
-      top: 34%;
-      right: initial;
-      bottom: initial;
-      left: 55%; }
-    #main-convert #form-list {
-      position: absolute;
-      top: 25%;
-      right: 0;
-      bottom: 0;
-      left: 6%; }
-      #main-convert #form-list .list {
-        width: 380px;
-        height: 510px; }
-        #main-convert #form-list .list #img-delete-skip {
-          margin-top: 45%;
-          margin-left: 28.5%; }
-        #main-convert #form-list .list ul {
-          margin-left: 22px;
-          margin-top: 34px; }
-          #main-convert #form-list .list ul select {
-            font-size: 20px; }
-      #main-convert #form-list .convert {
-        margin-left: 17%; }
-      #main-convert #form-list #img-leaf {
-        width: 150px;
-        height: auto;
-        position: relative;
-        top: 60px;
-        right: 0;
-        bottom: 0;
-        left: -40px; } }
-@media screen and (min-width: 1025px) {
-  #main-convert .big-brush {
-    position: absolute;
-    top: 38%;
-    right: initial;
-    bottom: initial;
-    left: 60%; }
-  #main-convert #form-list {
-    position: absolute;
-    top: 25%;
-    right: 0;
-    bottom: 0;
-    left: 15%; }
-    #main-convert #form-list .list #img-delete-skip {
-      margin-top: 38%;
-      margin-left: 24%; } }
+
 #main-basket {
   margin-top: 15px; }
 
@@ -1042,9 +1072,24 @@ header {
       text-transform: uppercase;
       text-shadow: 0px 0px 1px darkgrey;
       letter-spacing: 1px; }
+    @media screen and (min-width: 641px) {
+      header nav #bookmark {
+        width: 5px;
+        height: 30px;
+        background-color: #e74a18;
+        position: relative;
+        top: -55px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: 0 auto -29px auto; } }
     header nav #active-page {
       padding-top: 5px;
       border-top: 4px solid #e74a18; }
+      @media screen and (min-width: 641px) {
+        header nav #active-page {
+          padding-top: 0;
+          border: none; } }
     header nav .logo {
       display: none; }
       @media screen and (min-width: 641px) {
