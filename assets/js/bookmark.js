@@ -1,4 +1,4 @@
-function getCurrentPage(currentPage) {
+function getCurrentPage() {
     var currentPage = window.location.href;
     var convertLink = document.querySelector('#convert-page');
     var basketLink = document.querySelector('#basket-page');
@@ -10,18 +10,22 @@ function getCurrentPage(currentPage) {
     }
     if (currentPage.search('convert') !== -1) {
         convertLink.id = 'active-page';
+        convertLink.parentNode.childNodes[1].id = 'bookmark';
         document.querySelector('header').id = 'header-convert';
     }
     if (currentPage.search('basket') !== -1) {
         basketLink.id = 'active-page';
+        basketLink.parentNode.childNodes[1].id = 'bookmark';
         document.querySelector('header').id = 'header-basket';
     }
     if (currentPage.search('recipe') !== -1) {
         recipeLink.id = 'active-page';
+        recipeLink.parentNode.childNodes[1].id = 'bookmark';
         document.querySelector('header').id = 'header-recipe';
     }
     if (currentPage.search('about') !== -1) {
         aboutLink.id = 'active-page';
+        aboutLink.parentNode.childNodes[1].id = 'bookmark';
         //document.querySelector('header').id = 'header-about';
     }
 }

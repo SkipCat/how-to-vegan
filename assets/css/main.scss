@@ -5,6 +5,7 @@
 @import 'pages/convert';
 @import 'pages/basket';
 @import 'pages/home';
+@import 'pages/recipe';
 
 ////////////////////////////////////
 
@@ -100,11 +101,26 @@ header {
             text-transform: uppercase;
             text-shadow: 0px 0px 1px darkgrey;
             letter-spacing: 1px;
+            @media screen and (min-width: 641px) {
+
+            }
         }
 
+        #bookmark {
+            @media screen and (min-width: 641px) {
+                @include resize(5px, 30px);
+                background-color: $light-red;
+                @include position(relative, -55px, 0, 0, 0);
+                margin: 0 auto -29px auto;
+            }
+        }
         #active-page {
             padding-top: 5px;
             border-top: 4px solid $light-red;
+            @media screen and (min-width: 641px) {
+                padding-top: 0;
+                border: none;
+            }
         }
 
         .logo {
