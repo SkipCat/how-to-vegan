@@ -29,7 +29,7 @@ module.exports = function(grunt) {
 						//'assets/js/modal.js',
 						'assets/js/script.js',
 					],
-					'assets/js/map.min.js': ['assets/js/map/*.js'],
+					'assets/js/map.min.js': ['assets/js/map.js'],
 				}
 			}
 		}
