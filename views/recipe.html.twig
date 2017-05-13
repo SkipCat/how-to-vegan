@@ -3,15 +3,60 @@
 {% block content %}
     <main id="main-recipe">
         <div class="filters">
-            
+            <div class="filter-type" id="filter-in-order">
+                <h3>Filtrer par</h3>
+                <div class="checkbox-container">
+                    <div class="checkbox">
+                        <input type="checkbox" value="Entrée" id="starter">
+                        <div class="checkbox-frame"></div>
+                        <label for="starter">Entrée</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" value="Plat" id="main">
+                        <div class="checkbox-frame"></div>
+                        <label for="main">Plat</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" value="Dessert" id="dessert">
+                        <div class="checkbox-frame"></div>
+                        <label for="dessert">Dessert</label>
+                    </div>
+                </div>
+            </div>
+            <div class="filter-type" id="filter-by-category">
+                <h3>Filtrer par</h3>
+                <div class="checkbox-container">
+                    <div class="checkbox">
+                        <input type="checkbox" value="Vegan" id="vegan">
+                        <div class="checkbox-frame"></div>
+                        <img src="assets/img/category_vegan.png" alt="vegan icon">
+                        <label for="vegan">Vegan</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" value="Bio" id="bio">
+                        <div class="checkbox-frame"></div>
+                        <img src="assets/img/category_bio.png" alt="vegan icon">
+                        <label for="bio">Bio</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" value="Gluten-free" id="gluten-free">
+                        <div class="checkbox-frame"></div>
+                        <img src="assets/img/category_gluten_free.png" alt="vegan icon">
+                        <label for="gluten-free">Gluten free</label>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="spotlight-type" id="spotlight-type-recipe">
-            <div class="spotlight-title">
-                <img src="assets/img/icon_recipe.png" alt="icon recipe">
-                <div>
-                    <p>découvrez nos <span>recettes</span></p>
-                    <p>sélection de la semaine</p>
-                </div>
+            <div class="recipe-presentation">
+                <h3>Découvrez <span>nos recettes</span></h3>
+                <p>
+                    Proposées par la communauté How to Vegan ou par le staff,
+                    les recettes ci-dessous sont conçues spécialement pour vous,
+                    en fonction de vos préférences alimentaires.
+                    <br><br>
+                    Sélectionnez les filtres selon vos envies et enfilez votre tablier !
+                </p>
             </div>
             <div class="spotlight-container-recipe">
                 <div class="spotlight-container-img spotlight-recipe">
@@ -27,9 +72,9 @@
                                 </div>
                             </div>
                             <div class="category-img">
-                                <img src="assets/img/basket_category_vegan.png" alt="icon vegan">
-                                <img src="assets/img/basket_category_gluten_free.png" alt="icon gluten free">
-                                <img src="assets/img/basket_category_bio.png" alt="icon bio">
+                                <img src="assets/img/category_vegan.png" alt="icon vegan">
+                                <img src="assets/img/category_gluten_free.png" alt="icon gluten free">
+                                <img src="assets/img/category_bio.png" alt="icon bio">
                             </div>
                         </div>
                         <div class="time">
@@ -54,7 +99,7 @@
                                 </div>
                             </div>
                             <div class="category-img">
-                                <img src="assets/img/basket_category_vegan.png" alt="icon vegan">
+                                <img src="assets/img/category_vegan.png" alt="icon vegan">
                             </div>
                         </div>
                         <div class="time">
@@ -79,9 +124,9 @@
                                 </div>
                             </div>
                             <div class="category-img">
-                                <img src="assets/img/basket_category_vegan.png" alt="icon vegan">
-                                <img src="assets/img/basket_category_gluten_free.png" alt="icon gluten free">
-                                <img src="assets/img/basket_category_bio.png" alt="icon bio">
+                                <img src="assets/img/category_vegan.png" alt="icon vegan">
+                                <img src="assets/img/category_gluten_free.png" alt="icon gluten free">
+                                <img src="assets/img/category_bio.png" alt="icon bio">
                             </div>
                         </div>
                         <div class="time">
@@ -106,7 +151,7 @@
                                 </div>
                             </div>
                             <div class="category-img">
-                                <img src="assets/img/basket_category_vegan.png" alt="icon vegan">
+                                <img src="assets/img/category_vegan.png" alt="icon vegan">
                             </div>
                         </div>
                         <div class="time">
@@ -119,12 +164,19 @@
                     </div>
                 </div>
             </div>
-            <a href="?action=recipe">
-                <div class="input-discover">
-                    <p>Découvrez toutes nos recettes</p>
-                    <img src="assets/img/arrow_red.png" alt="red arrow">
-                </div>
-            </a>
+        </div>
+        <div class="carousel">
+            <div class="choose-page">
+                <img src="assets/img/arrow_black_left.png" alt="left arrow">
+                <p>Page 1 sur 4</p>
+                <img src="assets/img/arrow_black_right.png" alt="right arrow">
+            </div>
+            <div class="container-bullets">
+                <div class="bullet"></div>
+                <div class="bullet"></div>
+                <div class="bullet"></div>
+                <div class="bullet"></div>
+            </div>
         </div>
     </main>
 {% endblock %}

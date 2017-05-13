@@ -5,7 +5,7 @@
 }
 
 #main-convert {
-    @include flex(column, unset, space-between, nowrap);
+    @include flex(column, unset, space-between);
     @media screen and (min-width: 641px) {    
         @include resize(310px, auto);
         margin: 20px auto 50px 50%;   
@@ -45,8 +45,9 @@
 
     p.desc {
         text-align: justify;
-        margin: 0px 13%;
-        @include policy($text-font, $text-color, 16px, unset, italic);
+        margin: 0px 10%;
+        @include policy($text-italic-font, $text-color, 16px);
+        font-style: italic;
         @media screen and (min-width: 641px) {
             margin: 0;
         }
@@ -73,8 +74,8 @@
     background: url('../img/list.png') no-repeat;
     background-size: 95% auto;
     background-origin: border-box;
-    @include flex(column, unset, space-between, nowrap);
-    @include policy($list-font, $text-color, 20px, unset, unset);
+    @include flex(column, unset, space-between);
+    @include policy($list-font, $text-color, 20px);
     @media screen and (min-width: 376px) {
         height: 562px;
     }
@@ -101,7 +102,7 @@
         margin-left: 68%;
         margin-top: 112%;
         width: 60px;
-        @include flex(row, center, space-between, nowrap);
+        @include flex(row, center, space-between);
         @media screen and (min-width: 321px) {
             margin-left: 70%;
         }
@@ -150,7 +151,7 @@
         }
 
         .result-li {
-            @include policy($list-font, $text-color, inherit, unset, unset);
+            @include policy($list-font, $text-color, inherit);
             //margin-bottom: 21.5px;
             letter-spacing: 2px;
         }
@@ -158,7 +159,7 @@
         select {
             background-color: transparent;
             border: none;
-            @include policy($list-font, $text-color, 18px, unset, unset);
+            @include policy($list-font, $text-color, 18px);
             letter-spacing: 2px;
         }    
     }
@@ -202,11 +203,11 @@
     }
 
     .filters, .submit {
-        @include flex(row, center, space-between, nowrap);
+        @include flex(row, center, space-between);
 
         h3, input[type="submit"] {
             text-transform: uppercase;
-            @include policy($main-font, $text-color, 16px, unset, unset);
+            @include policy($main-font, $text-color, 16px);
         }
 
         input[type="checkbox"] {
@@ -217,7 +218,7 @@
         input[type="checkbox"] + label:active {
             color: white;
             background-color: $light-green;
-            border-color: none;
+            border-color: transparent;
         }
 
         label {
@@ -225,7 +226,7 @@
             border: 1px solid #c9c9c9;
             border-radius: 5px;
             padding: 5px 10px;
-            @include policy($main-font, $text-color, 14px, unset, unset);
+            @include policy($main-font, $text-color, 14px);
         }
     }
 
@@ -239,7 +240,9 @@
         }
 
         input[type="submit"] {
-            @include policy($bold-font, inherit, 14px, inherit, inherit);
+            @include policy($semibold-font, inherit, 14px);
+            font-weight: inherit;
+            font-style: inherit;
             letter-spacing: 1px;
         }
 
@@ -253,14 +256,14 @@
 
 .mapping {
     p {
-        @include policy($main-font, $text-color, 16px, unset, unset);
+        @include policy($main-font, $text-color, 16px);
         @media screen and (min-width: 641px) {
             margin-top: 50px;
         }
     }
 
     #form-localization {
-        @include flex(row, center, left, nowrap);
+        @include flex(row, center, left);
         @include input(1px, #cdcdcd, #cdcdcd, 1px);
         padding: 5px;
         margin-bottom: 30px;
@@ -272,8 +275,9 @@
     input[type="text"] {
         border: none;
         text-align: left;
-        @include policy($light-font, #444444, 16px, unset, unset);
+        @include policy($light-font, #444444, 16px);
         @include resize(100%, auto);
+        z-index: 2;
     }
 
     input[type="image"] {

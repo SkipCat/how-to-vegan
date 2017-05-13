@@ -8,6 +8,9 @@
   font-family: "SourceSansPro Italic";
   src: url("../font/SourceSansPro-Italic.ttf"); }
 @font-face {
+  font-family: "SourceSansPro";
+  src: url("../font/SourceSansPro-Regular.ttf"); }
+@font-face {
   font-family: "Signika Bold";
   src: url("../font/Signika-Bold.ttf"); }
 @font-face {
@@ -27,8 +30,7 @@
   display: flex;
   flex-direction: column;
   align-items: unset;
-  justify-content: space-between;
-  flex-wrap: nowrap; }
+  justify-content: space-between; }
   @media screen and (min-width: 641px) {
     #main-convert {
       width: 310px;
@@ -75,11 +77,10 @@
 
   #main-convert p.desc {
     text-align: justify;
-    margin: 0px 13%;
+    margin: 0px 10%;
     font-family: "SourceSansPro Italic";
     color: #444444;
     font-size: 16px;
-    font-weight: unset;
     font-style: italic; }
     @media screen and (min-width: 641px) {
       #main-convert p.desc {
@@ -120,12 +121,9 @@
   flex-direction: column;
   align-items: unset;
   justify-content: space-between;
-  flex-wrap: nowrap;
   font-family: "DK Pimpernel";
   color: #444444;
-  font-size: 20px;
-  font-weight: unset;
-  font-style: unset; }
+  font-size: 20px; }
   @media screen and (min-width: 376px) {
     .list {
       height: 562px; } }
@@ -161,8 +159,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap; }
+    justify-content: space-between; }
     @media screen and (min-width: 321px) {
       .list #img-delete-skip {
         margin-left: 70%; } }
@@ -206,8 +203,6 @@
       font-family: "DK Pimpernel";
       color: #444444;
       font-size: inherit;
-      font-weight: unset;
-      font-style: unset;
       letter-spacing: 2px; }
     .list ul select {
       background-color: transparent;
@@ -215,8 +210,6 @@
       font-family: "DK Pimpernel";
       color: #444444;
       font-size: 18px;
-      font-weight: unset;
-      font-style: unset;
       letter-spacing: 2px; }
 
 #img-leaf {
@@ -268,15 +261,12 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap; }
+    justify-content: space-between; }
     .convert .filters h3, .convert .filters input[type="submit"], .convert .submit h3, .convert .submit input[type="submit"] {
       text-transform: uppercase;
       font-family: "Signika Regular";
       color: #444444;
-      font-size: 16px;
-      font-weight: unset;
-      font-style: unset; }
+      font-size: 16px; }
     .convert .filters input[type="checkbox"], .convert .submit input[type="checkbox"] {
       display: none; }
     .convert .filters input[type="checkbox"]:checked + label,
@@ -284,7 +274,7 @@
     .convert .submit input[type="checkbox"] + label:active {
       color: white;
       background-color: #9ec550;
-      border-color: none; }
+      border-color: transparent; }
     .convert .filters label, .convert .submit label {
       background-color: #e6e6e6;
       border: 1px solid #c9c9c9;
@@ -292,9 +282,7 @@
       padding: 5px 10px;
       font-family: "Signika Regular";
       color: #444444;
-      font-size: 14px;
-      font-weight: unset;
-      font-style: unset; }
+      font-size: 14px; }
   .convert .submit {
     color: inherit;
     border: 2px solid #78a514;
@@ -322,9 +310,7 @@
 .mapping p {
   font-family: "Signika Regular";
   color: #444444;
-  font-size: 16px;
-  font-weight: unset;
-  font-style: unset; }
+  font-size: 16px; }
   @media screen and (min-width: 641px) {
     .mapping p {
       margin-top: 50px; } }
@@ -333,7 +319,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: left;
-  flex-wrap: nowrap;
   color: #cdcdcd;
   border: 1px solid #cdcdcd;
   border-radius: 1px;
@@ -348,10 +333,9 @@
   font-family: "Signika Light";
   color: #444444;
   font-size: 16px;
-  font-weight: unset;
-  font-style: unset;
   width: 100%;
-  height: auto; }
+  height: auto;
+  z-index: 2; }
 .mapping input[type="image"] {
   width: 20px;
   height: auto; }
@@ -371,14 +355,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: nowrap;
   margin-bottom: 75px; }
   .step > p {
     font-family: "Signika Light";
     color: #444444;
-    font-size: 15px;
-    font-weight: unset;
-    font-style: unset; }
+    font-size: 15px; }
     .step > p span {
       font-family: "Signika Semibold"; }
 
@@ -392,7 +373,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: nowrap;
     background-color: white;
     border-radius: 30px;
     padding: 0 20px 0 20px;
@@ -401,15 +381,12 @@
       font-family: "Signika Regular";
       color: #78a514;
       font-size: 12px;
-      font-weight: unset;
-      font-style: unset;
       margin: 0; }
     #category .category .category-names {
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: left;
-      flex-wrap: nowrap;
       width: 68px;
       height: auto; }
       #category .category .category-names .green-border {
@@ -447,8 +424,6 @@
       font-family: "Signika Regular";
       color: #78a514;
       font-size: 12px;
-      font-weight: unset;
-      font-style: unset;
       text-align: justify; }
       #basket .basket .basket-desc p {
         margin-top: 0; }
@@ -466,9 +441,7 @@
   text-align: center;
   font-family: "Signika Light";
   color: white;
-  font-size: 10px;
-  font-weight: unset;
-  font-style: unset; }
+  font-size: 10px; }
 
 .category-bio {
   background-color: #e74a18;
@@ -482,17 +455,13 @@
   font-family: "Signika Light";
   color: #444444;
   font-size: 15px;
-  font-weight: unset;
-  font-style: unset;
   margin-bottom: 25px; }
   #details .details-title p {
     margin: 0; }
   #details .details-title p:nth-child(2) {
     font-family: "Signika Light";
     color: #bbbbbb;
-    font-size: 14px;
-    font-weight: unset;
-    font-style: unset; }
+    font-size: 14px; }
   #details .details-title span {
     font-family: "Signika Semibold"; }
   #details .details-title hr {
@@ -519,15 +488,11 @@
       font-family: "Signika Regular";
       color: #78a514;
       font-size: 13px;
-      font-weight: unset;
-      font-style: unset;
       margin-top: 0; }
     #details .ingredient .ingredient-desc .ingredient-text {
       font-family: "Signika Regular";
       color: #78a514;
       font-size: 12px;
-      font-weight: unset;
-      font-style: unset;
       margin: 0; }
 #details #first-ingr {
   border-top-left-radius: 20px;
@@ -601,7 +566,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: nowrap;
     width: 600px;
     height: auto;
     margin-left: 0;
@@ -627,29 +591,23 @@
     font-family: "Signika Light";
     color: #444444;
     font-size: 18px;
-    font-weight: bold;
-    font-style: unset; }
+    font-weight: bold; }
     .presentation div p:first-child span {
       font-family: "Signika Semibold";
       color: #e74a18;
       font-size: 18px;
       font-weight: bold;
-      font-style: unset;
       text-transform: uppercase; }
   .presentation div p:nth-child(2) {
     font-family: "SourceSansPro Italic";
     color: #444444;
     font-size: 16px;
-    font-weight: unset;
-    font-style: unset;
     text-align: justify;
     margin-bottom: 25px; }
   .presentation div a {
     font-family: "Signika Semibold";
     color: #444444;
     font-size: 13px;
-    font-weight: unset;
-    font-style: unset;
     letter-spacing: 1px;
     border: 2px solid #e74a18;
     border-radius: 3px;
@@ -661,7 +619,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: nowrap;
   width: 250px;
   height: auto;
   margin-left: auto;
@@ -674,7 +631,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: nowrap;
     width: 100%;
     height: 40px; }
     .spotlight-type .spotlight-title div p {
@@ -682,17 +638,13 @@
     .spotlight-type .spotlight-title div p:first-child {
       font-family: "Signika Light";
       color: #444444;
-      font-size: 16px;
-      font-weight: unset;
-      font-style: unset; }
+      font-size: 16px; }
       .spotlight-type .spotlight-title div p:first-child span {
         font-family: "Signika Semibold"; }
     .spotlight-type .spotlight-title div p:last-child {
       font-family: "Signika Semibold";
       color: #bbbbbb;
       font-size: 12px;
-      font-weight: unset;
-      font-style: unset;
       text-transform: uppercase;
       letter-spacing: 2px; }
 .spotlight-type .spotlight-container-basket {
@@ -711,7 +663,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: nowrap;
     width: 62px;
     height: auto;
     position: relative;
@@ -726,8 +677,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: center;
-      flex-wrap: nowrap; }
+      justify-content: center; }
     .spotlight-type .spotlight-container-basket .basket-buttons div:hover {
       box-shadow: 0 0 10px lightgrey; }
     .spotlight-type .spotlight-container-basket .basket-buttons .crush {
@@ -743,8 +693,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap; }
+    justify-content: center; }
     @media screen and (min-width: 769px) {
       .spotlight-type .spotlight-container-basket .spotlight-basket {
         width: auto;
@@ -753,15 +702,11 @@
       font-family: "Signika Regular";
       color: #78a514;
       font-size: 14px;
-      font-weight: unset;
-      font-style: unset;
       margin: 0; }
     .spotlight-type .spotlight-container-basket .spotlight-basket .name {
       font-family: "Signika Light";
       color: #444444;
-      font-size: 14px;
-      font-weight: unset;
-      font-style: unset; }
+      font-size: 14px; }
       .spotlight-type .spotlight-container-basket .spotlight-basket .name span {
         font-family: "Signika Semibold"; }
 .spotlight-type .spotlight-container-img {
@@ -771,7 +716,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: unset;
-  flex-wrap: nowrap;
   background-color: white;
   border-radius: 5px;
   margin: 25px 10px 0 10px;
@@ -788,7 +732,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: nowrap;
     width: 100px;
     height: auto;
     align-self: flex-start; }
@@ -808,8 +751,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: nowrap; }
+  justify-content: space-between; }
   @media screen and (min-width: 641px) {
     .spotlight-type .input-discover {
       margin: 50px auto 20px auto; } }
@@ -821,8 +763,6 @@
     font-family: "Signika Semibold";
     color: #444444;
     font-size: 14px;
-    font-weight: unset;
-    font-style: unset;
     margin: 0; }
     @media screen and (min-width: 769px) {
       .spotlight-type .input-discover p {
@@ -858,7 +798,6 @@
       color: #444444;
       font-size: 12px;
       font-weight: bold;
-      font-style: unset;
       text-transform: uppercase;
       text-align: center; }
       @media screen and (min-width: 769px) {
@@ -879,8 +818,6 @@
       font-family: "Signika Regular";
       color: white;
       font-size: 11px;
-      font-weight: unset;
-      font-style: unset;
       text-align: center;
       padding: 4px;
       background: linear-gradient(to bottom, #ff9c33, #ef7205);
@@ -894,7 +831,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: nowrap;
   width: 100%;
   height: 57%; }
   @media screen and (min-width: 769px) {
@@ -906,7 +842,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: nowrap;
     width: 95%; }
     .container-desc .kitchen .recipe-author {
       display: none; }
@@ -915,22 +850,17 @@
           display: flex;
           flex-direction: row;
           align-items: center;
-          justify-content: space-between;
-          flex-wrap: nowrap; } }
+          justify-content: space-between; } }
       .container-desc .kitchen .recipe-author p {
         margin: 0; }
       .container-desc .kitchen .recipe-author .proposed-by {
         font-family: "Signika Light";
         color: #bbbbbb;
-        font-size: 11px;
-        font-weight: unset;
-        font-style: unset; }
+        font-size: 11px; }
       .container-desc .kitchen .recipe-author .author {
         font-family: "Signika Semibold";
         color: #444444;
         font-size: 13px;
-        font-weight: unset;
-        font-style: unset;
         text-transform: uppercase; }
   .container-desc .time {
     display: none; }
@@ -939,16 +869,13 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-between;
-        flex-wrap: nowrap; } }
+        justify-content: space-between; } }
     .container-desc .time p {
       margin: 0;
       text-align: center;
       font-family: "Signika Semibold";
       color: #444444;
-      font-size: 12px;
-      font-weight: unset;
-      font-style: unset; }
+      font-size: 12px; }
       .container-desc .time p span {
         text-transform: uppercase; }
 
@@ -957,8 +884,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap; }
+  justify-content: center; }
 
 #spotlight-type-basket {
   background-color: #f7f7f7; }
@@ -976,6 +902,133 @@
   #spotlight-type-recipe {
     padding-top: 50px; } }
 
+#header-recipe {
+  background-color: white; }
+  @media screen and (min-width: 641px) {
+    #header-recipe {
+      background-image: url("../img/bg_recipe.png"); } }
+  @media screen and (min-width: 769px) {
+    #header-recipe {
+      height: 340px; } }
+
+#main-recipe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 40px; }
+  #main-recipe .filters {
+    width: 100%;
+    font-family: "Signika Regular";
+    color: #444444;
+    font-size: 14px;
+    background-color: white;
+    padding-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; }
+    #main-recipe .filters .filter-type {
+      width: 210px; }
+    #main-recipe .filters h3 {
+      font-family: "Signika Bold";
+      color: #444444;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-bottom: 7px; }
+    #main-recipe .filters .checkbox-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 190px; }
+      #main-recipe .filters .checkbox-container .checkbox {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 70px; }
+        #main-recipe .filters .checkbox-container .checkbox input[type="checkbox"] {
+          display: none; }
+        #main-recipe .filters .checkbox-container .checkbox .checkbox-frame {
+          width: 13px;
+          height: 13px;
+          border: 1px solid #e74a18;
+          background: transparent;
+          border-radius: 3px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center; }
+        #main-recipe .filters .checkbox-container .checkbox input[type="checkbox"]:checked + .checkbox-frame:after {
+          content: url("../img/check.png");
+          color: #e74a18;
+          margin-left: 2px; }
+        #main-recipe .filters .checkbox-container .checkbox label {
+          margin-left: 5px; }
+        #main-recipe .filters .checkbox-container .checkbox img {
+          display: none;
+          width: 25px; }
+          @media screen and (min-width: 641px) {
+            #main-recipe .filters .checkbox-container .checkbox img {
+              display: block; } }
+    #main-recipe .filters #filter-by-category .checkbox-container {
+      width: 210px; }
+      #main-recipe .filters #filter-by-category .checkbox-container .checkbox {
+        max-width: 90px; }
+  #main-recipe .recipe-presentation {
+    text-align: center;
+    width: 87%; }
+    @media screen and (min-width: 641px) {
+      #main-recipe .recipe-presentation {
+        width: 80%; } }
+    #main-recipe .recipe-presentation h3 {
+      font-family: "Signika Light";
+      color: #444444;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px; }
+      #main-recipe .recipe-presentation h3 span {
+        font-family: "Signika Bold"; }
+    #main-recipe .recipe-presentation p {
+      font-family: "SourceSansPro";
+      color: #444444;
+      font-size: 14px;
+      text-align: justify; }
+  #main-recipe .carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; }
+    #main-recipe .carousel .choose-page {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 120px; }
+      #main-recipe .carousel .choose-page img {
+        width: 10px;
+        height: 15px; }
+      #main-recipe .carousel .choose-page p {
+        font-family: "Signika Bold";
+        color: #444444;
+        font-size: 14px;
+        text-transform: uppercase; }
+    #main-recipe .carousel .container-bullets {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 65px; }
+      #main-recipe .carousel .container-bullets .bullet {
+        background-color: #bfbcbc;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%; }
+      #main-recipe .carousel .container-bullets #bullet-active {
+        background-color: #414141; }
+
 html {
   min-height: 100vh;
   min-width: 100vw; }
@@ -988,7 +1041,9 @@ body {
   body input, body button {
     border: none;
     background-color: transparent; }
-  body button, body a, body input[type="submit"], body input[type="image"] {
+  body button, body a, body label,
+  body input[type="submit"], body input[type="image"],
+  body input[type="checkbox"], body .checkbox-frame {
     cursor: pointer; }
   body .img-to-resize {
     width: 100%; }
@@ -1000,7 +1055,6 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  flex-wrap: nowrap;
   height: 180px;
   padding-bottom: 20px; }
   @media screen and (min-width: 641px) {
@@ -1020,8 +1074,7 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap; }
+    justify-content: center; }
     @media screen and (min-width: 641px) {
       header .icons-menu {
         display: none; } }
@@ -1034,16 +1087,12 @@ header {
       display: none;
       font-family: "Signika Regular";
       color: white;
-      font-size: 16px;
-      font-weight: unset;
-      font-style: unset; }
+      font-size: 16px; }
   header .btn-menu + a {
     text-transform: none;
     font-family: "Signika Regular";
     color: white;
-    font-size: 16px;
-    font-weight: unset;
-    font-style: unset; }
+    font-size: 16px; }
   header .logo img {
     width: 100px;
     height: auto; }
@@ -1052,8 +1101,7 @@ header {
     display: flex;
     flex-direction: row;
     align-items: baseline;
-    justify-content: space-around;
-    flex-wrap: nowrap; }
+    justify-content: space-around; }
     @media screen and (min-width: 641px) {
       header nav {
         align-items: center;
@@ -1067,11 +1115,11 @@ header {
       font-family: "Signika Semibold";
       color: white;
       font-size: 14px;
-      font-weight: unset;
-      font-style: unset;
       text-transform: uppercase;
-      text-shadow: 0px 0px 1px darkgrey;
       letter-spacing: 1px; }
+      @media screen and (min-width: 1025px) {
+        header nav a {
+          font-size: 16px; } }
     @media screen and (min-width: 641px) {
       header nav #bookmark {
         width: 5px;
@@ -1143,7 +1191,6 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: nowrap;
   padding: 10px; }
   @media screen and (min-width: 641px) {
     #footer-mobile {
@@ -1167,7 +1214,6 @@ footer {
     color: white;
     font-size: 8px;
     font-weight: lighter;
-    font-style: unset;
     letter-spacing: 1px; }
     @media screen and (min-width: 321px) {
       #footer-mobile a {
@@ -1181,14 +1227,12 @@ footer {
   flex-direction: row;
   align-items: unset;
   justify-content: center;
-  flex-wrap: nowrap;
   display: none;
   padding: 30px;
   font-family: "Signika Light";
   color: white;
   font-size: 14px;
-  font-weight: lighter;
-  font-style: unset; }
+  font-weight: lighter; }
   @media screen and (min-width: 641px) {
     #footer-desktop {
       display: flex; } }
@@ -1204,8 +1248,7 @@ footer {
       display: flex;
       flex-direction: row;
       align-items: baseline;
-      justify-content: unset;
-      flex-wrap: nowrap; }
+      justify-content: unset; }
       #footer-desktop .aside .line img {
         margin-right: 15px; }
       #footer-desktop .aside .line p {

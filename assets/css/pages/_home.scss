@@ -73,7 +73,7 @@
         margin-left: 5%;
     }
     @media screen and (min-width: 769px) {
-        @include flex(row, center, space-between, nowrap);
+        @include flex(row, center, space-between);
         @include resize(600px, auto);
         margin-left: 0;
         margin-top: -125px;
@@ -97,19 +97,22 @@
         padding: 20px;
 
         p:first-child {
-            @include policy($light-font, $text-color, 18px, bold, unset);
+            @include policy($light-font, $text-color, 18px);
+            font-weight: bold;
+
             span {
-                @include policy($bold-font, $light-red, 18px, bold, unset);
+                @include policy($semibold-font, $light-red, 18px);
+                font-weight: bold;
                 text-transform: uppercase;
             }
         }
         p:nth-child(2) {
-            @include policy($text-font, $text-color, 16px, unset, unset);
+            @include policy($text-italic-font, $text-color, 16px);
             text-align: justify;
             margin-bottom: 25px;
         }
         a {
-            @include policy($bold-font, $text-color, 13px, unset, unset);
+            @include policy($semibold-font, $text-color, 13px);
             letter-spacing: 1px;
             border: 2px solid $light-red;
             border-radius: 3px;
@@ -121,7 +124,7 @@
 
 .spotlight-type {
     .spotlight-title {
-        @include flex(row, center, space-between, nowrap);
+        @include flex(row, center, space-between);
         @include resize(250px, auto);
         margin-left: auto;
         margin-right: auto;
@@ -131,20 +134,20 @@
         }
 
         div {
-            @include flex(column, center, space-between, nowrap);
+            @include flex(column, center, space-between);
             @include resize(100%, 40px);
 
             p {
                 margin: 0;
             }
             p:first-child {
-                @include policy($light-font, $text-color, 16px, unset, unset);
+                @include policy($light-font, $text-color, 16px);
                 span {
-                    font-family: $bold-font;
+                    font-family: $semibold-font;
                 }
             }
             p:last-child {
-                @include policy($bold-font, $grey, 12px, unset, unset);
+                @include policy($semibold-font, $grey, 12px);
                 text-transform: uppercase;
                 letter-spacing: 2px;
             }
@@ -152,7 +155,8 @@
     }
 
     .spotlight-container-basket {
-        @include flex(row, center, center, wrap);
+        @include flex(row, center, center);
+        flex-wrap: wrap;
         max-width: 700px;
 
         .spotlight-img {
@@ -161,14 +165,14 @@
         }
         
         .basket-buttons {
-            @include flex(row, center, space-between, nowrap);
+            @include flex(row, center, space-between);
             @include resize(62px, auto);
             @include position(relative, 10px, 0, 0, 0);
 
             div {
                 background-color: white;
                 @include resize(30px, 20px);
-                @include flex(row, center, center, nowrap);
+                @include flex(row, center, center);
             }
             div:hover {
                 box-shadow: 0 0 10px lightgrey;
@@ -189,19 +193,19 @@
         }
 
         .spotlight-basket {
-            @include flex(column, center, center, nowrap);
+            @include flex(column, center, center);
             @media screen and (min-width: 769px) {
                 @include resize(auto, 105px);
             }
 
             .price {
-                @include policy($main-font, $dark-green, 14px, unset, unset);
+                @include policy($main-font, $dark-green, 14px);
                 margin: 0;
             }
             .name {
-                @include policy($light-font, $text-color, 14px, unset, unset);
+                @include policy($light-font, $text-color, 14px);
                 span {
-                    font-family: $bold-font;
+                    font-family: $semibold-font;
                 }
             }
         }
@@ -209,7 +213,7 @@
 
     .spotlight-container-img {
         @include resize(130px, 180px);
-        @include flex(column, center, unset, nowrap);
+        @include flex(column, center, unset);
         background-color: white;
         border-radius: 5px;
         margin: 25px 10px 0 10px;
@@ -222,7 +226,7 @@
         }
     
         .container-category-indicator {
-            @include flex(row, center, space-between, nowrap);
+            @include flex(row, center, space-between);
             @include resize(100px, auto);
             align-self: flex-start;
 
@@ -244,7 +248,7 @@
         border: 2px solid $light-red;
         border-radius: 2px;
         @include resize(220px, 25px);
-        @include flex(row, center, space-between, nowrap);
+        @include flex(row, center, space-between);
         @media screen and (min-width: 641px) {
             margin: 50px auto 20px auto;
         }
@@ -253,7 +257,7 @@
         }
 
         p {
-            @include policy($bold-font, $text-color, 14px, unset, unset);
+            @include policy($semibold-font, $text-color, 14px);
             margin: 0;
             @media screen and (min-width: 769px) {
                 font-size: 16px;
@@ -265,7 +269,8 @@
     }
 
     .spotlight-container-recipe {
-        @include flex(row, center, center, wrap);
+        @include flex(row, center, center);
+        flex-wrap: wrap;
         max-width: 700px;
         @media screen and (min-width: 769px) {
             max-width: 800px;
@@ -286,7 +291,8 @@
 
             .recipe-title {
                 margin: 0;
-                @include policy($bold-font, $text-color, 12px, bold, unset);
+                @include policy($semibold-font, $text-color, 12px);
+                font-weight: bold;
                 text-transform: uppercase;
                 text-align: center;
                 @media screen and (min-width: 769px) {
@@ -309,7 +315,7 @@
             }
 
             a {
-                @include policy($main-font, white, 11px, unset, unset);
+                @include policy($main-font, white, 11px);
                 text-align: center;
                 padding: 4px;
                 background: linear-gradient(to bottom, #ff9c33, #ef7205);
@@ -322,30 +328,30 @@
 }
 
 .container-desc {
-    @include flex(column, center, space-between, nowrap);
+    @include flex(column, center, space-between);
     @include resize(100%, 57%);
     @media screen and (min-width: 769px) {
         @include resize(95%, 55%);
     }
 
     .kitchen  {
-        @include flex(row, center, space-between, nowrap);
+        @include flex(row, center, space-between);
         width: 95%;
 
         .recipe-author {
             display: none;
             @media screen and (min-width: 769px) {
-                @include flex(row, center, space-between, nowrap);
+                @include flex(row, center, space-between);
             }
 
             p {
                 margin: 0;
             }
             .proposed-by {
-                @include policy($light-font, $grey, 11px, unset, unset);
+                @include policy($light-font, $grey, 11px);
             }
             .author {
-                @include policy($bold-font, $text-color, 13px, unset, unset);
+                @include policy($semibold-font, $text-color, 13px);
                 text-transform: uppercase;
             }
         }
@@ -354,13 +360,13 @@
     .time {
         display: none;
         @media screen and (min-width: 769px) {
-            @include flex(row, center, space-between, nowrap);
+            @include flex(row, center, space-between);
         }
 
         p {
             margin: 0;
             text-align: center;
-            @include policy($bold-font, $text-color, 12px, unset, unset);
+            @include policy($semibold-font, $text-color, 12px);
             span {
                 text-transform: uppercase;
             }
@@ -370,7 +376,7 @@
 
 #spotlight-type-basket, #spotlight-type-recipe {
     padding: 25px 0;
-    @include flex(column, center, center, nowrap);
+    @include flex(column, center, center);
 }
 
 #spotlight-type-basket {

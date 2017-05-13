@@ -1,0 +1,138 @@
+#header-recipe {
+    background-color: white;
+    @media screen and (min-width: 641px) {
+        background-image: url('../img/bg_recipe.png');
+    }
+    @media screen and (min-width: 769px) {
+        height: 340px;
+    }
+}
+
+#main-recipe {
+    @include flex(column, center, space-between);
+    padding-bottom: 40px;
+
+    .filters {
+        width: 100%;
+        @include policy($main-font, $text-color, 14px);
+        background-color: white;
+        padding-bottom: 25px;
+        @include flex(column, center, space-between);
+
+        .filter-type {
+            width: 210px;
+        }
+
+        h3 {
+            @include policy($bold-font, $text-color, 14px);
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        .checkbox-container {
+            @include flex(row, center, space-between);
+            width: 190px;
+
+            .checkbox {
+                @include flex(row, center, space-between);
+                max-width: 70px;
+
+                input[type="checkbox"] {
+                    display: none;
+                }
+
+                .checkbox-frame {
+                    @include resize(13px, 13px);
+                    border: 1px solid $light-red;
+                    background: transparent;
+                    border-radius: 3px;
+                    @include flex(row, center, center);
+                }
+
+                input[type="checkbox"]:checked + .checkbox-frame:after {
+                    //content: 'X';
+                    content: url('../img/check.png');
+                    color: $light-red;
+                    margin-left: 2px;
+                }
+
+                label {
+                    margin-left: 5px;
+                }
+
+                img {
+                    display: none;
+                    width: 25px;
+                    @media screen and (min-width: 641px) {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        #filter-by-category {
+            .checkbox-container {
+                width: 210px;
+                .checkbox {
+                    max-width: 90px;
+                }
+            }
+        }
+    }
+
+    .recipe-presentation {
+        text-align: center;
+        width: 87%;
+        @media screen and (min-width: 641px) {
+            width: 80%;
+        }
+
+        h3 {
+            @include policy($light-font, $text-color, 16px);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            span {
+                font-family: $bold-font;
+            }
+        }
+
+        p {
+            @include policy($text-font, $text-color, 14px);
+            text-align: justify;
+        }
+    }
+
+    .carousel {
+        @include flex(column, center, space-between);
+
+        .choose-page {
+            @include flex(row, center, space-between);
+            width: 120px;
+
+            img {
+                @include resize(10px, 15px);
+            }
+
+            p {
+                @include policy($bold-font, $text-color, 14px);
+                text-transform: uppercase;
+            }
+        }
+
+        .container-bullets {
+            @include flex(row, center, space-between);
+            width: 65px;
+
+            .bullet {
+                background-color: #bfbcbc;
+                @include resize(8px, 8px);
+                border-radius: 50%;
+            }
+
+            #bullet-active {
+                background-color: #414141;
+            }
+        }
+    }
+}

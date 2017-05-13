@@ -3,13 +3,13 @@
 }
 
 .step {
-    @include flex(column, center, space-between, nowrap);
+    @include flex(column, center, space-between);
     margin-bottom: 75px;
 
     > p {
-        @include policy($light-font, $text-color, 15px, unset, unset);
+        @include policy($light-font, $text-color, 15px);
         span {
-            font-family: $bold-font;
+            font-family: $semibold-font;
         }
     }
 }
@@ -19,19 +19,19 @@
 
     .category {
         @include resize(80%, 55px);
-        @include flex(row, center, space-between, nowrap);
+        @include flex(row, center, space-between);
         background-color: white;
         border-radius: 30px;
         padding: 0 20px 0 20px;
         box-shadow: 0 0 10px lightgrey;
 
         p {
-            @include policy($main-font, $dark-green, 12px, unset, unset);
+            @include policy($main-font, $dark-green, 12px);
             margin: 0;
         }
 
         .category-names {
-            @include flex(row, center, left, nowrap);
+            @include flex(row, center, left);
             @include resize(68px, auto);
 
             .green-border {
@@ -73,7 +73,7 @@
 
         .basket-desc {
             padding: 7px 10px 7px 12px;
-            @include policy($main-font, $dark-green, 12px, unset, unset);
+            @include policy($main-font, $dark-green, 12px);
             text-align: justify;
 
             p {
@@ -98,7 +98,7 @@
     padding: 3px;
     border-radius: 10px;
     text-align: center;
-    @include policy($light-font, white, 10px, unset, unset);
+    @include policy($light-font, white, 10px);
 }
 .category-bio {
     background-color: $light-red;
@@ -111,17 +111,17 @@
 
 #details {
     .details-title {
-        @include policy($light-font, $text-color, 15px, unset, unset);
+        @include policy($light-font, $text-color, 15px);
         margin-bottom: 25px;
 
         p {
             margin: 0;
         }
         p:nth-child(2) {
-            @include policy($light-font, $grey, 14px, unset, unset);
+            @include policy($light-font, $grey, 14px);
         }
         span {
-            font-family: $bold-font;
+            font-family: $semibold-font;
         }
 
         hr {
@@ -149,11 +149,11 @@
             padding: 5px 10px 5px 12px;
 
             .ingredient-name {
-                @include policy($main-font, $dark-green, 13px, unset, unset);
+                @include policy($main-font, $dark-green, 13px);
                 margin-top: 0;
             }
             .ingredient-text {
-                @include policy($main-font, $dark-green, 12px, unset, unset);
+                @include policy($main-font, $dark-green, 12px);
                 margin: 0;
             }
         }
