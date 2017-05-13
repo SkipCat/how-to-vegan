@@ -67,14 +67,13 @@
         right: initial;
         bottom: initial;
         left: 55%; } }
-  @media screen and (min-width: 769px) and (min-width: 1025px) {
-    #main-convert .big-brush {
-      position: absolute;
-      top: 38%;
-      right: initial;
-      bottom: initial;
-      left: 60%; } }
-
+    @media screen and (min-width: 1025px) {
+      #main-convert .big-brush {
+        position: absolute;
+        top: 40%;
+        right: initial;
+        bottom: initial;
+        left: 60%; } }
   #main-convert p.desc {
     text-align: justify;
     margin: 0px 10%;
@@ -106,11 +105,10 @@
   @media screen and (min-width: 1025px) {
     #form-list {
       position: absolute;
-      top: 25%;
+      top: 28%;
       right: 0;
       bottom: 0;
-      left: 15%;
-      top: 22%; } }
+      left: 15%; } }
 
 .list {
   height: 550px;
@@ -209,7 +207,7 @@
       border: none;
       font-family: "DK Pimpernel";
       color: #444444;
-      font-size: 18px;
+      font-size: 20px;
       letter-spacing: 2px; }
 
 #img-leaf {
@@ -279,13 +277,13 @@
       background-color: #e6e6e6;
       border: 1px solid #c9c9c9;
       border-radius: 5px;
-      padding: 5px 10px;
+      padding: 4px 10px;
       font-family: "Signika Regular";
       color: #444444;
       font-size: 14px; }
   .convert .submit {
     color: inherit;
-    border: 2px solid #78a514;
+    border: 1.5px solid #78a514;
     border-radius: 5px;
     padding: 5px;
     text-align: left; }
@@ -441,7 +439,10 @@
   text-align: center;
   font-family: "Signika Light";
   color: white;
-  font-size: 10px; }
+  font-size: 11px; }
+  @media screen and (min-width: 769px) {
+    .category-indicator {
+      font-size: 12px; } }
 
 .category-bio {
   background-color: #e74a18;
@@ -504,7 +505,10 @@
 @media screen and (min-width: 641px) {
   #header-home {
     background-image: url("../img/bg_home.png");
-    height: 400px; } }
+    height: 325px; } }
+@media screen and (min-width: 769px) {
+  #header-home {
+    height: 425px; } }
 
 #main-home #form-list {
   margin-bottom: 30px; }
@@ -512,7 +516,7 @@
     #main-home #form-list {
       width: 300px;
       position: absolute;
-      top: 110px;
+      top: 155px;
       right: 5%;
       bottom: 0;
       left: initial; }
@@ -520,10 +524,13 @@
         display: none; } }
   @media screen and (min-width: 769px) {
     #main-home #form-list {
-      right: 10%; }
+      right: 12%; }
       #main-home #form-list .list {
         width: 380px;
         height: 510px; } }
+  @media screen and (min-width: 1025px) {
+    #main-home #form-list {
+      top: 125px; } }
   @media screen and (min-width: 641px) {
     #main-home #form-list #img-pin {
       top: 7%; } }
@@ -542,7 +549,8 @@
         font-size: 20px; } }
   @media screen and (min-width: 641px) {
     #main-home #form-list #img-delete-skip {
-      margin-left: 69%; } }
+      margin-left: 69%;
+      margin-top: 114%; } }
   @media screen and (min-width: 769px) {
     #main-home #form-list #img-delete-skip {
       margin-left: 92%;
@@ -551,8 +559,10 @@
     margin-left: auto; }
     @media screen and (min-width: 641px) {
       #main-home #form-list .convert {
-        margin-top: -12px;
-        margin-left: 130px; } }
+        margin-top: -12px; } }
+    @media screen and (min-width: 769px) {
+      #main-home #form-list .convert {
+        margin-left: 125px; } }
 
 @media screen and (min-width: 641px) {
   .presentation {
@@ -587,6 +597,12 @@
       height: auto; } }
 .presentation div {
   padding: 20px; }
+  @media screen and (min-width: 1025px) {
+    .presentation div {
+      padding-left: 0; } }
+  @media screen and (min-width: 1025px) {
+    .presentation div {
+      margin-right: 35px; } }
   .presentation div p:first-child {
     font-family: "Signika Light";
     color: #444444;
@@ -607,11 +623,11 @@
   .presentation div a {
     font-family: "Signika Semibold";
     color: #444444;
-    font-size: 13px;
+    font-size: 14px;
     letter-spacing: 1px;
-    border: 2px solid #e74a18;
+    border: 1.5px solid #e74a18;
     border-radius: 3px;
-    padding: 5px;
+    padding: 7px;
     text-transform: uppercase; }
 
 .spotlight-type .spotlight-title {
@@ -653,7 +669,10 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 700px; }
+  max-width: 665px; }
+  @media screen and (min-width: 769px) {
+    .spotlight-type .spotlight-container-basket {
+      max-width: 715px; } }
   .spotlight-type .spotlight-container-basket .spotlight-img {
     width: 100%;
     height: 50%;
@@ -696,7 +715,7 @@
     justify-content: center; }
     @media screen and (min-width: 769px) {
       .spotlight-type .spotlight-container-basket .spotlight-basket {
-        width: auto;
+        width: 100%;
         height: 105px; } }
     .spotlight-type .spotlight-container-basket .spotlight-basket .price {
       font-family: "Signika Regular";
@@ -736,6 +755,9 @@
     height: auto;
     align-self: flex-start; }
     @media screen and (min-width: 769px) {
+      .spotlight-type .spotlight-container-img .container-category-indicator {
+        margin-left: 10px; } }
+    @media screen and (min-width: 769px) {
       .spotlight-type .spotlight-container-img .container-category-indicator .category-indicator {
         font-size: 12px;
         padding: 4px; } }
@@ -744,7 +766,7 @@
 .spotlight-type .input-discover {
   padding: 0 15px;
   margin: 30px auto 10px auto;
-  border: 2px solid #e74a18;
+  border: 1.5px solid #e74a18;
   border-radius: 2px;
   width: 220px;
   height: 25px;
@@ -755,18 +777,11 @@
   @media screen and (min-width: 641px) {
     .spotlight-type .input-discover {
       margin: 50px auto 20px auto; } }
-  @media screen and (min-width: 769px) {
-    .spotlight-type .input-discover {
-      width: 250px;
-      height: 30px; } }
   .spotlight-type .input-discover p {
     font-family: "Signika Semibold";
     color: #444444;
     font-size: 14px;
     margin: 0; }
-    @media screen and (min-width: 769px) {
-      .spotlight-type .input-discover p {
-        font-size: 16px; } }
   .spotlight-type .input-discover img {
     width: 30px;
     height: auto; }
@@ -776,7 +791,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 700px; }
+  max-width: 665px; }
   @media screen and (min-width: 769px) {
     .spotlight-type .spotlight-container-recipe {
       max-width: 800px; } }
@@ -812,7 +827,7 @@
         .spotlight-type .spotlight-container-recipe .spotlight-recipe .category-img {
           margin: 0; } }
       .spotlight-type .spotlight-container-recipe .spotlight-recipe .category-img img {
-        width: 30px;
+        width: 27px;
         height: auto; }
     .spotlight-type .spotlight-container-recipe .spotlight-recipe a {
       font-family: "Signika Regular";
@@ -825,6 +840,12 @@
       height: auto;
       border-radius: 5px;
       margin-bottom: 7px; }
+      @media screen and (min-width: 641px) {
+        .spotlight-type .spotlight-container-recipe .spotlight-recipe a {
+          font-size: 12px; } }
+      @media screen and (min-width: 769px) {
+        .spotlight-type .spotlight-container-recipe .spotlight-recipe a {
+          font-size: 13px; } }
 
 .container-desc {
   display: flex;
@@ -851,6 +872,8 @@
           flex-direction: row;
           align-items: center;
           justify-content: space-between; } }
+      .container-desc .kitchen .recipe-author img {
+        margin-right: 2px; }
       .container-desc .kitchen .recipe-author p {
         margin: 0; }
       .container-desc .kitchen .recipe-author .proposed-by {
@@ -860,7 +883,7 @@
       .container-desc .kitchen .recipe-author .author {
         font-family: "Signika Semibold";
         color: #444444;
-        font-size: 13px;
+        font-size: 12px;
         text-transform: uppercase; }
   .container-desc .time {
     display: none; }
@@ -870,12 +893,14 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between; } }
+    .container-desc .time img {
+      margin-left: 5px; }
     .container-desc .time p {
       margin: 0;
       text-align: center;
       font-family: "Signika Semibold";
       color: #444444;
-      font-size: 12px; }
+      font-size: 11px; }
       .container-desc .time p span {
         text-transform: uppercase; }
 
@@ -891,6 +916,7 @@
   @media screen and (min-width: 641px) {
     #spotlight-type-basket {
       padding-top: 80px;
+      margin-top: 15px;
       background-color: initial;
       background-image: url("../img/bg_spotlight_basket.png"); } }
   @media screen and (min-width: 769px) {
@@ -909,14 +935,24 @@
       background-image: url("../img/bg_recipe.png"); } }
   @media screen and (min-width: 769px) {
     #header-recipe {
-      height: 340px; } }
+      height: 305px; } }
 
 #main-recipe {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 40px; }
+  /*
+  #filter-fixed {
+      @media screen and (min-width: 641px) {
+          @include position(fixed, 200px, 0, 45px, 15px);
+          width: 145px;
+          border-radius: 7px;
+          padding-left: 15px;
+          align-items: left;
+      }
+  }
+  */ }
   #main-recipe .filters {
     width: 100%;
     font-family: "Signika Regular";
@@ -924,36 +960,95 @@
     font-size: 14px;
     background-color: white;
     padding-bottom: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between; }
-    #main-recipe .filters .filter-type {
-      width: 210px; }
+    text-align: center; }
+    @media screen and (min-width: 641px) {
+      #main-recipe .filters {
+        position: absolute;
+        top: 380px;
+        right: 0;
+        bottom: 0;
+        left: 15px;
+        width: 125px;
+        height: 320px;
+        text-align: left;
+        align-items: left;
+        padding-bottom: 0;
+        background-color: transparent; } }
+    @media screen and (min-width: 769px) {
+      #main-recipe .filters {
+        top: 480px;
+        width: 140px; } }
+    @media screen and (min-width: 1025px) {
+      #main-recipe .filters {
+        top: 400px;
+        left: 30px;
+        width: 150px; } }
+    #main-recipe .filters > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left; }
+      @media screen and (min-width: 641px) {
+        #main-recipe .filters > div {
+          width: 100%;
+          background-color: white;
+          border-radius: 7px;
+          box-shadow: 0 0 10px lightgrey;
+          padding: 5px 5px 15px 5px; } }
+      @media screen and (min-width: 1025px) {
+        #main-recipe .filters > div {
+          padding-left: 2px; } }
     #main-recipe .filters h3 {
       font-family: "Signika Bold";
       color: #444444;
-      font-size: 14px;
+      font-size: 12px;
       text-transform: uppercase;
-      font-weight: bold;
       margin-bottom: 7px; }
+      @media screen and (min-width: 641px) {
+        #main-recipe .filters h3 {
+          font-size: 13px; } }
+    #main-recipe .filters > h3 {
+      font-size: 14px; }
+      @media screen and (min-width: 641px) {
+        #main-recipe .filters > h3 {
+          margin-left: 10px;
+          font-size: 15px; } }
+    #main-recipe .filters .filter-type {
+      width: 210px; }
+      @media screen and (min-width: 641px) {
+        #main-recipe .filters .filter-type {
+          width: 90%; } }
+    #main-recipe .filters .filter-type:last-child {
+      margin-top: 7px; }
     #main-recipe .filters .checkbox-container {
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
       width: 190px; }
+      @media screen and (min-width: 641px) {
+        #main-recipe .filters .checkbox-container {
+          flex-direction: column;
+          align-items: left;
+          width: 100%;
+          padding-left: 10px; } }
       #main-recipe .filters .checkbox-container .checkbox {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
         max-width: 70px; }
+        @media screen and (min-width: 641px) {
+          #main-recipe .filters .checkbox-container .checkbox {
+            justify-content: left;
+            margin-top: 7px;
+            max-width: 100%; } }
         #main-recipe .filters .checkbox-container .checkbox input[type="checkbox"] {
           display: none; }
         #main-recipe .filters .checkbox-container .checkbox .checkbox-frame {
-          width: 13px;
-          height: 13px;
+          width: 12px;
+          height: 12px;
           border: 1px solid #e74a18;
           background: transparent;
           border-radius: 3px;
@@ -967,22 +1062,79 @@
           margin-left: 2px; }
         #main-recipe .filters .checkbox-container .checkbox label {
           margin-left: 5px; }
+          @media screen and (min-width: 641px) {
+            #main-recipe .filters .checkbox-container .checkbox label {
+              margin-left: 10px; } }
+          @media screen and (min-width: 769px) {
+            #main-recipe .filters .checkbox-container .checkbox label {
+              font-size: 14px; } }
         #main-recipe .filters .checkbox-container .checkbox img {
           display: none;
           width: 25px; }
-          @media screen and (min-width: 641px) {
+          @media screen and (min-width: 769px) {
             #main-recipe .filters .checkbox-container .checkbox img {
-              display: block; } }
+              display: block;
+              margin-left: 10px; } }
     #main-recipe .filters #filter-by-category .checkbox-container {
       width: 210px; }
+      @media screen and (min-width: 641px) {
+        #main-recipe .filters #filter-by-category .checkbox-container {
+          max-width: 100%; } }
       #main-recipe .filters #filter-by-category .checkbox-container .checkbox {
         max-width: 90px; }
+        @media screen and (min-width: 641px) {
+          #main-recipe .filters #filter-by-category .checkbox-container .checkbox {
+            max-width: 100%; } }
+  #main-recipe #leaf-side {
+    display: none;
+    position: absolute;
+    width: 140px;
+    left: 0;
+    top: 655px;
+    z-index: -2; }
+    @media screen and (min-width: 641px) {
+      #main-recipe #leaf-side {
+        display: block; } }
+    @media screen and (min-width: 769px) {
+      #main-recipe #leaf-side {
+        top: 780px; } }
+    @media screen and (min-width: 769px) {
+      #main-recipe #leaf-side {
+        top: 700px; } }
+  @media screen and (min-width: 641px) {
+    #main-recipe #spotlight-type-recipe {
+      margin-left: 15%;
+      padding-top: 25px; } }
+  @media screen and (min-width: 769px) {
+    #main-recipe #spotlight-type-recipe {
+      margin-left: 10%; } }
+  @media screen and (min-width: 1025px) {
+    #main-recipe #spotlight-type-recipe {
+      margin-left: 0; } }
+  #main-recipe #spotlight-type-recipe .spotlight-container-recipe {
+    max-width: 595px; }
+    @media screen and (min-width: 769px) {
+      #main-recipe #spotlight-type-recipe .spotlight-container-recipe {
+        max-width: 710px; } }
+    @media screen and (min-width: 1025px) {
+      #main-recipe #spotlight-type-recipe .spotlight-container-recipe {
+        max-width: 720px; } }
+  @media screen and (min-width: 641px) {
+    #main-recipe #spotlight-type-recipe .spotlight-recipe {
+      margin-top: 25px; } }
+  @media screen and (min-width: 769px) {
+    #main-recipe #spotlight-type-recipe .spotlight-recipe {
+      width: 200px;
+      margin: 40px 18px 0 18px; } }
   #main-recipe .recipe-presentation {
     text-align: center;
     width: 87%; }
     @media screen and (min-width: 641px) {
       #main-recipe .recipe-presentation {
-        width: 80%; } }
+        width: 75%; } }
+    @media screen and (min-width: 769px) {
+      #main-recipe .recipe-presentation {
+        width: 65%; } }
     #main-recipe .recipe-presentation h3 {
       font-family: "Signika Light";
       color: #444444;
@@ -996,11 +1148,19 @@
       color: #444444;
       font-size: 14px;
       text-align: justify; }
+      @media screen and (min-width: 641px) {
+        #main-recipe .recipe-presentation p {
+          text-align: center; } }
+      @media screen and (min-width: 769px) {
+        #main-recipe .recipe-presentation p {
+          font-size: 16px; } }
   #main-recipe .carousel {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between; }
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 45px; }
     #main-recipe .carousel .choose-page {
       display: flex;
       flex-direction: row;
@@ -1092,9 +1252,9 @@ header {
     text-transform: none;
     font-family: "Signika Regular";
     color: white;
-    font-size: 16px; }
+    font-size: 15px; }
   header .logo img {
-    width: 100px;
+    width: 90px;
     height: auto; }
   header nav {
     width: 100%;
@@ -1117,9 +1277,6 @@ header {
       font-size: 14px;
       text-transform: uppercase;
       letter-spacing: 1px; }
-      @media screen and (min-width: 1025px) {
-        header nav a {
-          font-size: 16px; } }
     @media screen and (min-width: 641px) {
       header nav #bookmark {
         width: 5px;
@@ -1228,10 +1385,10 @@ footer {
   align-items: unset;
   justify-content: center;
   display: none;
-  padding: 30px;
+  padding: 15px;
   font-family: "Signika Light";
   color: white;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: lighter; }
   @media screen and (min-width: 641px) {
     #footer-desktop {
@@ -1262,7 +1419,7 @@ footer {
     text-align: center;
     margin: 0 5%; }
     #footer-desktop .center img {
-      width: 100px;
+      width: 70px;
       height: auto; }
 
 /*# sourceMappingURL=style.css.map */

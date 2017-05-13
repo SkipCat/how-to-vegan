@@ -98,7 +98,10 @@
     padding: 3px;
     border-radius: 10px;
     text-align: center;
-    @include policy($light-font, white, 10px);
+    @include policy($light-font, white, 11px);
+    @media screen and (min-width: 769px) {
+        font-size: 12px;
+    }
 }
 .category-bio {
     background-color: $light-red;

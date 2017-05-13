@@ -78,11 +78,11 @@ header {
 
     .btn-menu + a {
         text-transform: none;
-        @include policy($main-font, white, 16px);
+        @include policy($main-font, white, 15px);
     }
 
     .logo img {
-        @include resize(100px, auto);
+        @include resize(90px, auto);
     }
 
     nav {
@@ -103,9 +103,6 @@ header {
             text-transform: uppercase;
             //text-shadow: 0px 0px 1px darkgrey;
             letter-spacing: 1px;
-            @media screen and (min-width: 1025px) {
-                font-size: 16px;
-            }
         }
 
         #bookmark {
@@ -208,8 +205,8 @@ footer {
 #footer-desktop {
     @include flex(row, unset, center);
     display: none;
-    padding: 30px;
-    @include policy($light-font, white, 14px);
+    padding: 15px;
+    @include policy($light-font, white, 13px);
     font-weight: lighter;
     @media screen and (min-width: 641px) {
         display: flex;
@@ -247,7 +244,7 @@ footer {
         margin: 0 5%;
 
         img {
-            @include resize(100px, auto);
+            @include resize(70px, auto);
         }
     }
 }

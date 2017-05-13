@@ -1,7 +1,10 @@
 #header-home {
     @media screen and (min-width: 641px) {
         background-image: url('../img/bg_home.png');
-        height: 400px;
+        height: 325px;
+    }
+    @media screen and (min-width: 769px) {
+        height: 425px;
     }
 }
 
@@ -10,16 +13,19 @@
         margin-bottom: 30px;
         @media screen and (min-width: 641px) {
             width: 300px;
-            @include position(absolute, 110px, 5%, 0, initial);
+            @include position(absolute, 155px, 5%, 0, initial);
             #img-leaf {
                 display: none;
             }
         }
         @media screen and (min-width: 769px) {
-            right: 10%;
+            right: 12%;
             .list {
                 @include resize(380px, 510px);
             }
+        }
+        @media screen and (min-width: 1025px) {
+            top: 125px;
         }
 
         #img-pin {
@@ -49,18 +55,22 @@
         #img-delete-skip {
             @media screen and (min-width: 641px) {
                 margin-left: 69%;
+                margin-top: 114%;
             }
             @media screen and (min-width: 769px) {
                 margin-left: 92%;
                 margin-top: 144%;
             }
+
         }
 
         .convert {
             margin-left: auto;
             @media screen and (min-width: 641px) {
                 margin-top: -12px;
-                margin-left: 130px;
+            }
+            @media screen and (min-width: 769px) {
+                margin-left: 125px;
             }
         }
     }
@@ -95,6 +105,12 @@
 
     div {
         padding: 20px;
+        @media screen and (min-width: 1025px) {
+            padding-left: 0;
+        }
+        @media screen and (min-width: 1025px) {
+            margin-right: 35px;
+        }
 
         p:first-child {
             @include policy($light-font, $text-color, 18px);
@@ -110,13 +126,14 @@
             @include policy($text-italic-font, $text-color, 16px);
             text-align: justify;
             margin-bottom: 25px;
+
         }
         a {
-            @include policy($semibold-font, $text-color, 13px);
+            @include policy($semibold-font, $text-color, 14px);
             letter-spacing: 1px;
-            border: 2px solid $light-red;
+            border: 1.5px solid $light-red;
             border-radius: 3px;
-            padding: 5px;
+            padding: 7px;
             text-transform: uppercase;
         }
     }
@@ -157,7 +174,10 @@
     .spotlight-container-basket {
         @include flex(row, center, center);
         flex-wrap: wrap;
-        max-width: 700px;
+        max-width: 665px;
+        @media screen and (min-width: 769px) {
+            max-width: 715px;
+        }
 
         .spotlight-img {
             @include resize(100%, 50%);
@@ -195,7 +215,7 @@
         .spotlight-basket {
             @include flex(column, center, center);
             @media screen and (min-width: 769px) {
-                @include resize(auto, 105px);
+                @include resize(100%, 105px);
             }
 
             .price {
@@ -229,6 +249,9 @@
             @include flex(row, center, space-between);
             @include resize(100px, auto);
             align-self: flex-start;
+            @media screen and (min-width: 769px) {
+                margin-left: 10px;
+            }
 
             .category-indicator {
                 @media screen and (min-width: 769px) {
@@ -245,23 +268,17 @@
     .input-discover {
         padding: 0 15px;
         margin: 30px auto 10px auto;
-        border: 2px solid $light-red;
+        border: 1.5px solid $light-red;
         border-radius: 2px;
         @include resize(220px, 25px);
         @include flex(row, center, space-between);
         @media screen and (min-width: 641px) {
             margin: 50px auto 20px auto;
         }
-        @media screen and (min-width: 769px) {
-            @include resize(250px, 30px);
-        }
 
         p {
             @include policy($semibold-font, $text-color, 14px);
             margin: 0;
-            @media screen and (min-width: 769px) {
-                font-size: 16px;
-            }
         }
         img {
             @include resize(30px, auto);
@@ -271,7 +288,7 @@
     .spotlight-container-recipe {
         @include flex(row, center, center);
         flex-wrap: wrap;
-        max-width: 700px;
+        max-width: 665px;
         @media screen and (min-width: 769px) {
             max-width: 800px;
         }
@@ -310,7 +327,7 @@
                 }
 
                 img {
-                    @include resize(30px, auto);
+                    @include resize(27px, auto);
                 }
             }
 
@@ -322,6 +339,12 @@
                 @include resize(75px, auto);
                 border-radius: 5px;
                 margin-bottom: 7px;
+                @media screen and (min-width: 641px) {
+                    font-size: 12px;
+                }
+                @media screen and (min-width: 769px) {
+                    font-size: 13px;
+                }
             }
         }
     }   
@@ -344,6 +367,9 @@
                 @include flex(row, center, space-between);
             }
 
+            img {
+                margin-right: 2px;
+            }
             p {
                 margin: 0;
             }
@@ -351,7 +377,7 @@
                 @include policy($light-font, $grey, 11px);
             }
             .author {
-                @include policy($semibold-font, $text-color, 13px);
+                @include policy($semibold-font, $text-color, 12px);
                 text-transform: uppercase;
             }
         }
@@ -363,10 +389,14 @@
             @include flex(row, center, space-between);
         }
 
+        img {
+            margin-left: 5px;
+        }
+
         p {
             margin: 0;
             text-align: center;
-            @include policy($semibold-font, $text-color, 12px);
+            @include policy($semibold-font, $text-color, 11px);
             span {
                 text-transform: uppercase;
             }
@@ -383,6 +413,7 @@
     background-color: $bg-grey;
     @media screen and (min-width: 641px) {
         padding-top: 80px;
+        margin-top: 15px;
         background-color: initial;
         background-image: url('../img/bg_spotlight_basket.png');
     }

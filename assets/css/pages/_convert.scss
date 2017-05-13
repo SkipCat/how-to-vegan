@@ -36,10 +36,9 @@
         @media screen and (min-width: 769px) {
             width: 350px;
             @include position(absolute, 34%, initial, initial, 55%);
-
-            @media screen and (min-width: 1025px) {
-                @include position(absolute, 38%, initial, initial, 60%);   
-            }
+        }
+        @media screen and (min-width: 1025px) {
+            @include position(absolute, 40%, initial, initial, 60%);   
         }
     }
 
@@ -64,8 +63,7 @@
         @include position(absolute, 25%, 0, 0, 6%);
     }
     @media screen and (min-width: 1025px) {
-        @include position(absolute, 25%, 0, 0, 15%); 
-        top: 22%;
+        @include position(absolute, 28%, 0, 0, 15%);
     }
 }
 
@@ -159,7 +157,7 @@
         select {
             background-color: transparent;
             border: none;
-            @include policy($list-font, $text-color, 18px);
+            @include policy($list-font, $text-color, 20px);
             letter-spacing: 2px;
         }    
     }
@@ -225,13 +223,13 @@
             background-color: #e6e6e6;
             border: 1px solid #c9c9c9;
             border-radius: 5px;
-            padding: 5px 10px;
+            padding: 4px 10px;
             @include policy($main-font, $text-color, 14px);
         }
     }
 
     .submit {
-        @include input(2px, inherit, $dark-green, 5px);
+        @include input(1.5px, inherit, $dark-green, 5px);
         padding: 5px ;
         text-align: left;
 
