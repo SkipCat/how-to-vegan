@@ -107,13 +107,10 @@
         @media screen and (min-width: 376px) {
             margin-top: 114%;
             margin-left: 73%;
+            
         }
-        @media screen and (min-width: 376px) {
-            margin-top: 46%;
-            margin-left: 28%;
-        }
-        @media screen and (min-width: 769px) {
-            margin-top: 45%;
+        @media screen and (min-width: 641px) {
+             margin-top: 45%;
             margin-left: 28.5%;
         }
         @media screen and (min-width: 1025px) {
@@ -124,13 +121,26 @@
 
     ul {
         margin: 23px 0 auto 15px;
+        height: 315px;
+        overflow-y: scroll;
+        /*
+        ::-webkit-scrollbar
+        ::-webkit-scrollbar-button
+        ::-webkit-scrollbar-track
+        ::-webkit-scrollbar-track-piece
+        ::-webkit-scrollbar-thumb
+        ::-webkit-scrollbar-corner
+        ::-webkit-resizer
+        */
         @media screen and (min-width: 321px) {
             margin-left: 20px;
-            margin-top: 35px;
+            margin-top: 34px;
+            height: 350px;
         }
         @media screen and (min-width: 376px) {
             margin-left: 25px;
             margin-top: 44px;
+            height: 400px;
         }
         @media screen and (min-width: 641px) {
             margin-left: 15px;

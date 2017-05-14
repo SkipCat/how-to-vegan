@@ -6,6 +6,9 @@
     @media screen and (min-width: 769px) {
         height: 305px;
     }
+    @media screen and (min-width: 1025px) {
+        height: 400px;
+    }
 }
 
 #main-recipe {
@@ -30,7 +33,7 @@
             width: 140px;
         }
         @media screen and (min-width: 1025px) {
-            top: 400px;
+            top: 500px;
             left: 30px;
             width: 150px;
         }
@@ -178,7 +181,7 @@
             top: 780px;
         }
         @media screen and (min-width: 769px) {
-            top: 700px;
+            top: 800px;
         }
     }
 
