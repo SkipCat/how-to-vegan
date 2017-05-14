@@ -52,7 +52,7 @@
             }
         }
 
-        #img-delete-skip {
+        #img-delete {
             @media screen and (min-width: 641px) {
                 margin-left: 69%;
                 margin-top: 114%;
@@ -61,7 +61,6 @@
                 margin-left: 92%;
                 margin-top: 144%;
             }
-
         }
 
         .convert {
@@ -72,6 +71,23 @@
             @media screen and (min-width: 769px) {
                 margin-left: 125px;
             }
+        }
+    }
+
+    #leaf-side {
+        display: none;
+        width: 100px;
+        position: absolute;
+        top: 1280px;
+        right: 0;
+        @media screen and (min-width: 641px) {
+            display: block;
+        }
+        @media screen and (min-width: 769px) {
+            top: 1500px;
+        }
+        @media screen and (min-width: 769px) {
+            top: 1475px;
         }
     }
 }

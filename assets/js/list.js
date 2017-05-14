@@ -1,9 +1,30 @@
-// pin/delete/keep list
-
 function listActions() {
     var pinButton = document.querySelector('#img-pin');
+
     var deleteButton = document.querySelector('#img-delete');
-    var keepButton = document.querySelector('#img-list-skip');
+    var ul = document.querySelector('.list ul');
+    var firstSelect = document.querySelector('.list ul').childNodes[1];
+    var recapList = document.querySelector('#recap-list');
+
+    function deleteList() {
+        // remove all select elements from DOM
+        while (ul.firstChild) {
+            ul.removeChild(ul.firstChild);
+        }
+        
+        // create default select element
+        var li = document.createElement('li');
+        li.className = 'shop-li';
+        //li = ul.insertBefore(li, recapList);
+        ul.appendChild(li);
+        
+        firstSelect.childNodes[1].value = 'NULL';
+        li.appendChild(firstSelect);
+    }
+
+    deleteButton.onclick = function() {
+        deleteList();
+    };
 }
 
 /* PIN

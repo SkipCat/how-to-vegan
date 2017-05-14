@@ -149,43 +149,31 @@
         right: 0;
         bottom: 0;
         left: 81%; } }
-  .list #img-delete-skip {
+  .list #img-delete {
     position: absolute;
-    margin-left: 68%;
+    margin-left: 80%;
     margin-top: 112%;
     width: 60px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between; }
-    @media screen and (min-width: 321px) {
-      .list #img-delete-skip {
-        margin-left: 70%; } }
     @media screen and (min-width: 376px) {
-      .list #img-delete-skip {
+      .list #img-delete {
         margin-top: 114%;
-        margin-left: 73%; } }
+        margin-left: 82%; } }
     @media screen and (min-width: 641px) {
-      .list #img-delete-skip {
+      .list #img-delete {
         margin-top: 45%;
-        margin-left: 28.5%; } }
+        margin-left: 32.5%; } }
     @media screen and (min-width: 1025px) {
-      .list #img-delete-skip {
+      .list #img-delete {
         margin-top: 38%;
-        margin-left: 24%; } }
+        margin-left: 27%; } }
   .list ul {
-    margin: 23px 0 auto 15px;
+    margin: 23px 12px auto 15px;
     height: 315px;
-    overflow-y: scroll;
-    /*
-    ::-webkit-scrollbar
-    ::-webkit-scrollbar-button
-    ::-webkit-scrollbar-track
-    ::-webkit-scrollbar-track-piece
-    ::-webkit-scrollbar-thumb
-    ::-webkit-scrollbar-corner
-    ::-webkit-resizer
-    */ }
+    overflow-y: scroll; }
     @media screen and (min-width: 321px) {
       .list ul {
         margin-left: 20px;
@@ -193,17 +181,16 @@
         height: 350px; } }
     @media screen and (min-width: 376px) {
       .list ul {
-        margin-left: 25px;
+        margin: 44px 15px auto 25px;
         margin-top: 44px;
         height: 400px; } }
     @media screen and (min-width: 641px) {
       .list ul {
-        margin-left: 15px;
-        margin-top: 38px; } }
+        margin: 38px 28px auto 15px;
+        height: 295px; } }
     @media screen and (min-width: 769px) {
       .list ul {
-        margin-left: 22px;
-        margin-top: 34px; }
+        margin: 34px 35px auto 22px; }
         .list ul select {
           font-size: 20px; } }
     .list ul .result-li {
@@ -218,6 +205,14 @@
       color: #444444;
       font-size: 20px;
       letter-spacing: 2px; }
+  .list ul::-webkit-scrollbar {
+    width: 5px; }
+  .list ul::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px; }
+  .list ul::-webkit-scrollbar-thumb {
+    background-color: #8BC34A;
+    border-radius: 10px; }
 
 #img-leaf {
   width: 100px;
@@ -557,11 +552,11 @@
       #main-home #form-list ul select {
         font-size: 20px; } }
   @media screen and (min-width: 641px) {
-    #main-home #form-list #img-delete-skip {
+    #main-home #form-list #img-delete {
       margin-left: 69%;
       margin-top: 114%; } }
   @media screen and (min-width: 769px) {
-    #main-home #form-list #img-delete-skip {
+    #main-home #form-list #img-delete {
       margin-left: 92%;
       margin-top: 144%; } }
   #main-home #form-list .convert {
@@ -572,6 +567,21 @@
     @media screen and (min-width: 769px) {
       #main-home #form-list .convert {
         margin-left: 125px; } }
+#main-home #leaf-side {
+  display: none;
+  width: 100px;
+  position: absolute;
+  top: 1280px;
+  right: 0; }
+  @media screen and (min-width: 641px) {
+    #main-home #leaf-side {
+      display: block; } }
+  @media screen and (min-width: 769px) {
+    #main-home #leaf-side {
+      top: 1500px; } }
+  @media screen and (min-width: 769px) {
+    #main-home #leaf-side {
+      top: 1475px; } }
 
 @media screen and (min-width: 641px) {
   .presentation {
@@ -953,18 +963,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  /*
-  #filter-fixed {
-      @media screen and (min-width: 641px) {
-          @include position(fixed, 200px, 0, 45px, 15px);
-          width: 145px;
-          border-radius: 7px;
-          padding-left: 15px;
-          align-items: left;
-      }
-  }
-  */ }
+  justify-content: space-between; }
   #main-recipe .filters {
     width: 100%;
     font-family: "Signika Regular";
@@ -1346,6 +1345,25 @@ main {
   margin-left: 8%;
   margin-right: 8%; }
 
+/*
+.parallax {
+    height: 100vh;
+    overflow-y: auto;
+    perspective: 1px;
+
+    .parallax-background {
+        -webkit-transform: translateZ(-1px);
+        transform: translateZ(-1px) scale(2);
+        // content {
+            //     transform: translate(-50%, -50%);
+    }
+    .parallax-foreground {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+         //   transform: translate(-50%, -50%)
+    }
+}
+*/
 footer {
   background-color: #e74919; }
   footer span.howtovegan {

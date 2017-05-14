@@ -1,5 +1,4 @@
-
-
+    
 var paris = {lat: 48.866667, lng: 2.333333};
 
 var markers = [
@@ -86,7 +85,7 @@ var markers = [
 ];
 
 
-function initMap() {
+window.initMap = function() {
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 12,
         center: paris
@@ -119,7 +118,7 @@ function initMap() {
 }
 
 function geocodeAddress(geocoder, resultsMap) {
-    var address = document.getElementById('input-adress').value;
+    var address = document.getElementById('form-localization').value;
     geocoder.geocode({'address': address}, function (results, status) {
         if (status === 'OK') {
             resultsMap.setCenter(results[0].geometry.location);
@@ -133,9 +132,3 @@ function geocodeAddress(geocoder, resultsMap) {
         }
     });
 }
-
-
-
-
-
-
