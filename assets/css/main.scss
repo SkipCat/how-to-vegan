@@ -27,7 +27,9 @@ body {
         background-color: transparent;
     }
 
-    button, a, input[type="submit"], input[type="image"] {
+    button, a, label,
+    input[type="submit"], input[type="image"],
+    input[type="checkbox"], .checkbox-frame {
         cursor: pointer;
     }
 
@@ -39,7 +41,7 @@ body {
 header {
     background: transparent url('../img/bg_menu.png') no-repeat;
     background-size: 100% 100%;
-    @include flex(column, center, space-around, nowrap);
+    @include flex(column, center, space-around);
     height: 180px;
     padding-bottom: 20px;
     @media screen and (min-width: 641px) {
@@ -57,7 +59,7 @@ header {
 
     .icons-menu {
         margin-top: -15px;
-        @include flex(row, center, center, nowrap);
+        @include flex(row, center, center);
         @media screen and (min-width: 641px) {
             display: none;
         }
@@ -70,24 +72,24 @@ header {
 
         .btn-menu + a {
             display: none;
-            @include policy($main-font, white, 16px, unset, unset);
+            @include policy($main-font, white, 16px);
         }
     }
 
     .btn-menu + a {
         text-transform: none;
-        @include policy($main-font, white, 16px, unset, unset);
+        @include policy($main-font, white, 15px);
     }
 
     .logo img {
-        @include resize(100px, auto);
+        @include resize(90px, auto);
     }
 
     nav {
         width: 100%;
-        @include flex(row, baseline, space-around, nowrap);
+        @include flex(row, baseline, space-around);
         @media screen and (min-width: 641px) {
-            align-items: center; // problem with link of active page
+            align-items: center;
             align-self: flex-start;
             margin-top: 20px;
             width: 80%;
@@ -97,13 +99,10 @@ header {
         }
 
         a {
-            @include policy($bold-font, white, 14px, unset, unset);
+            @include policy($semibold-font, white, 14px);
             text-transform: uppercase;
-            text-shadow: 0px 0px 1px darkgrey;
+            //text-shadow: 0px 0px 1px darkgrey;
             letter-spacing: 1px;
-            @media screen and (min-width: 641px) {
-
-            }
         }
 
         #bookmark {
@@ -166,12 +165,14 @@ main {
 footer {
     background-color: $bg-footer;
     span.howtovegan {
-        @include policy(inherit, $link-website, inherit, bold, inherit);
+        @include policy(inherit, $link-website, inherit);
+        font-weight:  bold;
+        font-style: inherit;
     }
 }
 
 #footer-mobile {
-    @include flex(row, center, space-between, nowrap);
+    @include flex(row, center, space-between);
     padding: 10px;
     @media screen and (min-width: 641px) {
         display: none;
@@ -185,10 +186,12 @@ footer {
     }
     nav {
         width: 80%;
-        @include flex(row, unset, space-between, wrap);
+        @include flex(row, unset, space-between);
+        flex-wrap: wrap;
     }
     a {
-        @include policy($light-font, white, 8px, lighter, unset);
+        @include policy($light-font, white, 8px);
+        font-weight: lighter;
         letter-spacing: 1px;
         @media screen and (min-width: 321px) { // mobile medium
             font-size: 10px;
@@ -200,10 +203,11 @@ footer {
 }
 
 #footer-desktop {
-    @include flex(row, unset, center, nowrap);
+    @include flex(row, unset, center);
     display: none;
-    padding: 30px;
-    @include policy($light-font, white, 14px, lighter, unset);
+    padding: 15px;
+    @include policy($light-font, white, 13px);
+    font-weight: lighter;
     @media screen and (min-width: 641px) {
         display: flex;
     }
@@ -222,7 +226,7 @@ footer {
         }
 
         .line {
-            @include flex(row, baseline, unset, nowrap);
+            @include flex(row, baseline, unset);
             
             img {
                 margin-right: 15px;
@@ -234,12 +238,13 @@ footer {
         }
     }
     .center {
-        @include flex(column, center, space-between, wrap);
+        @include flex(column, center, space-between);
+        flex-wrap: wrap;
         text-align: center;
         margin: 0 5%;
 
         img {
-            @include resize(100px, auto);
+            @include resize(70px, auto);
         }
     }
 }

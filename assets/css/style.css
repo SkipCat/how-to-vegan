@@ -8,6 +8,9 @@
   font-family: "SourceSansPro Italic";
   src: url("../font/SourceSansPro-Italic.ttf"); }
 @font-face {
+  font-family: "SourceSansPro";
+  src: url("../font/SourceSansPro-Regular.ttf"); }
+@font-face {
   font-family: "Signika Bold";
   src: url("../font/Signika-Bold.ttf"); }
 @font-face {
@@ -27,8 +30,7 @@
   display: flex;
   flex-direction: column;
   align-items: unset;
-  justify-content: space-between;
-  flex-wrap: nowrap; }
+  justify-content: space-between; }
   @media screen and (min-width: 641px) {
     #main-convert {
       width: 310px;
@@ -65,21 +67,19 @@
         right: initial;
         bottom: initial;
         left: 55%; } }
-  @media screen and (min-width: 769px) and (min-width: 1025px) {
-    #main-convert .big-brush {
-      position: absolute;
-      top: 38%;
-      right: initial;
-      bottom: initial;
-      left: 60%; } }
-
+    @media screen and (min-width: 1025px) {
+      #main-convert .big-brush {
+        position: absolute;
+        top: 40%;
+        right: initial;
+        bottom: initial;
+        left: 60%; } }
   #main-convert p.desc {
     text-align: justify;
-    margin: 0px 13%;
+    margin: 0px 10%;
     font-family: "SourceSansPro Italic";
     color: #444444;
     font-size: 16px;
-    font-weight: unset;
     font-style: italic; }
     @media screen and (min-width: 641px) {
       #main-convert p.desc {
@@ -105,11 +105,10 @@
   @media screen and (min-width: 1025px) {
     #form-list {
       position: absolute;
-      top: 25%;
+      top: 28%;
       right: 0;
       bottom: 0;
-      left: 15%;
-      top: 22%; } }
+      left: 15%; } }
 
 .list {
   height: 550px;
@@ -120,12 +119,9 @@
   flex-direction: column;
   align-items: unset;
   justify-content: space-between;
-  flex-wrap: nowrap;
   font-family: "DK Pimpernel";
   color: #444444;
-  font-size: 20px;
-  font-weight: unset;
-  font-style: unset; }
+  font-size: 20px; }
   @media screen and (min-width: 376px) {
     .list {
       height: 562px; } }
@@ -161,8 +157,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap; }
+    justify-content: space-between; }
     @media screen and (min-width: 321px) {
       .list #img-delete-skip {
         margin-left: 70%; } }
@@ -170,11 +165,7 @@
       .list #img-delete-skip {
         margin-top: 114%;
         margin-left: 73%; } }
-    @media screen and (min-width: 376px) {
-      .list #img-delete-skip {
-        margin-top: 46%;
-        margin-left: 28%; } }
-    @media screen and (min-width: 769px) {
+    @media screen and (min-width: 641px) {
       .list #img-delete-skip {
         margin-top: 45%;
         margin-left: 28.5%; } }
@@ -183,15 +174,28 @@
         margin-top: 38%;
         margin-left: 24%; } }
   .list ul {
-    margin: 23px 0 auto 15px; }
+    margin: 23px 0 auto 15px;
+    height: 315px;
+    overflow-y: scroll;
+    /*
+    ::-webkit-scrollbar
+    ::-webkit-scrollbar-button
+    ::-webkit-scrollbar-track
+    ::-webkit-scrollbar-track-piece
+    ::-webkit-scrollbar-thumb
+    ::-webkit-scrollbar-corner
+    ::-webkit-resizer
+    */ }
     @media screen and (min-width: 321px) {
       .list ul {
         margin-left: 20px;
-        margin-top: 35px; } }
+        margin-top: 34px;
+        height: 350px; } }
     @media screen and (min-width: 376px) {
       .list ul {
         margin-left: 25px;
-        margin-top: 44px; } }
+        margin-top: 44px;
+        height: 400px; } }
     @media screen and (min-width: 641px) {
       .list ul {
         margin-left: 15px;
@@ -206,17 +210,13 @@
       font-family: "DK Pimpernel";
       color: #444444;
       font-size: inherit;
-      font-weight: unset;
-      font-style: unset;
       letter-spacing: 2px; }
     .list ul select {
       background-color: transparent;
       border: none;
       font-family: "DK Pimpernel";
       color: #444444;
-      font-size: 18px;
-      font-weight: unset;
-      font-style: unset;
+      font-size: 20px;
       letter-spacing: 2px; }
 
 #img-leaf {
@@ -268,15 +268,12 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap; }
+    justify-content: space-between; }
     .convert .filters h3, .convert .filters input[type="submit"], .convert .submit h3, .convert .submit input[type="submit"] {
       text-transform: uppercase;
       font-family: "Signika Regular";
       color: #444444;
-      font-size: 16px;
-      font-weight: unset;
-      font-style: unset; }
+      font-size: 16px; }
     .convert .filters input[type="checkbox"], .convert .submit input[type="checkbox"] {
       display: none; }
     .convert .filters input[type="checkbox"]:checked + label,
@@ -284,20 +281,18 @@
     .convert .submit input[type="checkbox"] + label:active {
       color: white;
       background-color: #9ec550;
-      border-color: none; }
+      border-color: transparent; }
     .convert .filters label, .convert .submit label {
       background-color: #e6e6e6;
       border: 1px solid #c9c9c9;
       border-radius: 5px;
-      padding: 5px 10px;
+      padding: 4px 10px;
       font-family: "Signika Regular";
       color: #444444;
-      font-size: 14px;
-      font-weight: unset;
-      font-style: unset; }
+      font-size: 14px; }
   .convert .submit {
     color: inherit;
-    border: 2px solid #78a514;
+    border: 1.5px solid #78a514;
     border-radius: 5px;
     padding: 5px;
     text-align: left; }
@@ -322,9 +317,7 @@
 .mapping p {
   font-family: "Signika Regular";
   color: #444444;
-  font-size: 16px;
-  font-weight: unset;
-  font-style: unset; }
+  font-size: 16px; }
   @media screen and (min-width: 641px) {
     .mapping p {
       margin-top: 50px; } }
@@ -333,7 +326,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: left;
-  flex-wrap: nowrap;
   color: #cdcdcd;
   border: 1px solid #cdcdcd;
   border-radius: 1px;
@@ -348,8 +340,6 @@
   font-family: "Signika Light";
   color: #444444;
   font-size: 16px;
-  font-weight: unset;
-  font-style: unset;
   width: 100%;
   height: auto;
   z-index: 2; }
@@ -372,14 +362,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: nowrap;
   margin-bottom: 75px; }
   .step > p {
     font-family: "Signika Light";
     color: #444444;
-    font-size: 15px;
-    font-weight: unset;
-    font-style: unset; }
+    font-size: 15px; }
     .step > p span {
       font-family: "Signika Semibold"; }
 
@@ -393,7 +380,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: nowrap;
     background-color: white;
     border-radius: 30px;
     padding: 0 20px 0 20px;
@@ -402,15 +388,12 @@
       font-family: "Signika Regular";
       color: #78a514;
       font-size: 12px;
-      font-weight: unset;
-      font-style: unset;
       margin: 0; }
     #category .category .category-names {
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: left;
-      flex-wrap: nowrap;
       width: 68px;
       height: auto; }
       #category .category .category-names .green-border {
@@ -448,8 +431,6 @@
       font-family: "Signika Regular";
       color: #78a514;
       font-size: 12px;
-      font-weight: unset;
-      font-style: unset;
       text-align: justify; }
       #basket .basket .basket-desc p {
         margin-top: 0; }
@@ -467,9 +448,10 @@
   text-align: center;
   font-family: "Signika Light";
   color: white;
-  font-size: 10px;
-  font-weight: unset;
-  font-style: unset; }
+  font-size: 11px; }
+  @media screen and (min-width: 769px) {
+    .category-indicator {
+      font-size: 12px; } }
 
 .category-bio {
   background-color: #e74a18;
@@ -483,17 +465,13 @@
   font-family: "Signika Light";
   color: #444444;
   font-size: 15px;
-  font-weight: unset;
-  font-style: unset;
   margin-bottom: 25px; }
   #details .details-title p {
     margin: 0; }
   #details .details-title p:nth-child(2) {
     font-family: "Signika Light";
     color: #bbbbbb;
-    font-size: 14px;
-    font-weight: unset;
-    font-style: unset; }
+    font-size: 14px; }
   #details .details-title span {
     font-family: "Signika Semibold"; }
   #details .details-title hr {
@@ -520,15 +498,11 @@
       font-family: "Signika Regular";
       color: #78a514;
       font-size: 13px;
-      font-weight: unset;
-      font-style: unset;
       margin-top: 0; }
     #details .ingredient .ingredient-desc .ingredient-text {
       font-family: "Signika Regular";
       color: #78a514;
       font-size: 12px;
-      font-weight: unset;
-      font-style: unset;
       margin: 0; }
 #details #first-ingr {
   border-top-left-radius: 20px;
@@ -540,7 +514,10 @@
 @media screen and (min-width: 641px) {
   #header-home {
     background-image: url("../img/bg_home.png");
-    height: 400px; } }
+    height: 325px; } }
+@media screen and (min-width: 769px) {
+  #header-home {
+    height: 425px; } }
 
 #main-home #form-list {
   margin-bottom: 30px; }
@@ -548,7 +525,7 @@
     #main-home #form-list {
       width: 300px;
       position: absolute;
-      top: 110px;
+      top: 155px;
       right: 5%;
       bottom: 0;
       left: initial; }
@@ -556,10 +533,13 @@
         display: none; } }
   @media screen and (min-width: 769px) {
     #main-home #form-list {
-      right: 10%; }
+      right: 12%; }
       #main-home #form-list .list {
         width: 380px;
         height: 510px; } }
+  @media screen and (min-width: 1025px) {
+    #main-home #form-list {
+      top: 125px; } }
   @media screen and (min-width: 641px) {
     #main-home #form-list #img-pin {
       top: 7%; } }
@@ -578,7 +558,8 @@
         font-size: 20px; } }
   @media screen and (min-width: 641px) {
     #main-home #form-list #img-delete-skip {
-      margin-left: 69%; } }
+      margin-left: 69%;
+      margin-top: 114%; } }
   @media screen and (min-width: 769px) {
     #main-home #form-list #img-delete-skip {
       margin-left: 92%;
@@ -587,8 +568,10 @@
     margin-left: auto; }
     @media screen and (min-width: 641px) {
       #main-home #form-list .convert {
-        margin-top: -12px;
-        margin-left: 130px; } }
+        margin-top: -12px; } }
+    @media screen and (min-width: 769px) {
+      #main-home #form-list .convert {
+        margin-left: 125px; } }
 
 @media screen and (min-width: 641px) {
   .presentation {
@@ -602,7 +585,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: nowrap;
     width: 600px;
     height: auto;
     margin-left: 0;
@@ -624,37 +606,37 @@
       height: auto; } }
 .presentation div {
   padding: 20px; }
+  @media screen and (min-width: 1025px) {
+    .presentation div {
+      padding-left: 0; } }
+  @media screen and (min-width: 1025px) {
+    .presentation div {
+      margin-right: 35px; } }
   .presentation div p:first-child {
     font-family: "Signika Light";
     color: #444444;
     font-size: 18px;
-    font-weight: bold;
-    font-style: unset; }
+    font-weight: bold; }
     .presentation div p:first-child span {
       font-family: "Signika Semibold";
       color: #e74a18;
       font-size: 18px;
       font-weight: bold;
-      font-style: unset;
       text-transform: uppercase; }
   .presentation div p:nth-child(2) {
     font-family: "SourceSansPro Italic";
     color: #444444;
     font-size: 16px;
-    font-weight: unset;
-    font-style: unset;
     text-align: justify;
     margin-bottom: 25px; }
   .presentation div a {
     font-family: "Signika Semibold";
     color: #444444;
-    font-size: 13px;
-    font-weight: unset;
-    font-style: unset;
+    font-size: 14px;
     letter-spacing: 1px;
-    border: 2px solid #e74a18;
+    border: 1.5px solid #e74a18;
     border-radius: 3px;
-    padding: 5px;
+    padding: 7px;
     text-transform: uppercase; }
 
 .spotlight-type .spotlight-title {
@@ -662,7 +644,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: nowrap;
   width: 250px;
   height: auto;
   margin-left: auto;
@@ -675,7 +656,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: nowrap;
     width: 100%;
     height: 40px; }
     .spotlight-type .spotlight-title div p {
@@ -683,17 +663,13 @@
     .spotlight-type .spotlight-title div p:first-child {
       font-family: "Signika Light";
       color: #444444;
-      font-size: 16px;
-      font-weight: unset;
-      font-style: unset; }
+      font-size: 16px; }
       .spotlight-type .spotlight-title div p:first-child span {
         font-family: "Signika Semibold"; }
     .spotlight-type .spotlight-title div p:last-child {
       font-family: "Signika Semibold";
       color: #bbbbbb;
       font-size: 12px;
-      font-weight: unset;
-      font-style: unset;
       text-transform: uppercase;
       letter-spacing: 2px; }
 .spotlight-type .spotlight-container-basket {
@@ -702,7 +678,10 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 700px; }
+  max-width: 665px; }
+  @media screen and (min-width: 769px) {
+    .spotlight-type .spotlight-container-basket {
+      max-width: 715px; } }
   .spotlight-type .spotlight-container-basket .spotlight-img {
     width: 100%;
     height: 50%;
@@ -712,7 +691,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: nowrap;
     width: 62px;
     height: auto;
     position: relative;
@@ -727,8 +705,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: center;
-      flex-wrap: nowrap; }
+      justify-content: center; }
     .spotlight-type .spotlight-container-basket .basket-buttons div:hover {
       box-shadow: 0 0 10px lightgrey; }
     .spotlight-type .spotlight-container-basket .basket-buttons .crush {
@@ -744,25 +721,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap; }
+    justify-content: center; }
     @media screen and (min-width: 769px) {
       .spotlight-type .spotlight-container-basket .spotlight-basket {
-        width: auto;
+        width: 100%;
         height: 105px; } }
     .spotlight-type .spotlight-container-basket .spotlight-basket .price {
       font-family: "Signika Regular";
       color: #78a514;
       font-size: 14px;
-      font-weight: unset;
-      font-style: unset;
       margin: 0; }
     .spotlight-type .spotlight-container-basket .spotlight-basket .name {
       font-family: "Signika Light";
       color: #444444;
-      font-size: 14px;
-      font-weight: unset;
-      font-style: unset; }
+      font-size: 14px; }
       .spotlight-type .spotlight-container-basket .spotlight-basket .name span {
         font-family: "Signika Semibold"; }
 .spotlight-type .spotlight-container-img {
@@ -772,7 +744,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: unset;
-  flex-wrap: nowrap;
   background-color: white;
   border-radius: 5px;
   margin: 25px 10px 0 10px;
@@ -789,10 +760,12 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: nowrap;
     width: 100px;
     height: auto;
     align-self: flex-start; }
+    @media screen and (min-width: 769px) {
+      .spotlight-type .spotlight-container-img .container-category-indicator {
+        margin-left: 10px; } }
     @media screen and (min-width: 769px) {
       .spotlight-type .spotlight-container-img .container-category-indicator .category-indicator {
         font-size: 12px;
@@ -802,32 +775,22 @@
 .spotlight-type .input-discover {
   padding: 0 15px;
   margin: 30px auto 10px auto;
-  border: 2px solid #e74a18;
+  border: 1.5px solid #e74a18;
   border-radius: 2px;
   width: 220px;
   height: 25px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: nowrap; }
+  justify-content: space-between; }
   @media screen and (min-width: 641px) {
     .spotlight-type .input-discover {
       margin: 50px auto 20px auto; } }
-  @media screen and (min-width: 769px) {
-    .spotlight-type .input-discover {
-      width: 250px;
-      height: 30px; } }
   .spotlight-type .input-discover p {
     font-family: "Signika Semibold";
     color: #444444;
     font-size: 14px;
-    font-weight: unset;
-    font-style: unset;
     margin: 0; }
-    @media screen and (min-width: 769px) {
-      .spotlight-type .input-discover p {
-        font-size: 16px; } }
   .spotlight-type .input-discover img {
     width: 30px;
     height: auto; }
@@ -837,7 +800,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 700px; }
+  max-width: 665px; }
   @media screen and (min-width: 769px) {
     .spotlight-type .spotlight-container-recipe {
       max-width: 800px; } }
@@ -859,7 +822,6 @@
       color: #444444;
       font-size: 12px;
       font-weight: bold;
-      font-style: unset;
       text-transform: uppercase;
       text-align: center; }
       @media screen and (min-width: 769px) {
@@ -874,14 +836,12 @@
         .spotlight-type .spotlight-container-recipe .spotlight-recipe .category-img {
           margin: 0; } }
       .spotlight-type .spotlight-container-recipe .spotlight-recipe .category-img img {
-        width: 30px;
+        width: 27px;
         height: auto; }
     .spotlight-type .spotlight-container-recipe .spotlight-recipe a {
       font-family: "Signika Regular";
       color: white;
       font-size: 11px;
-      font-weight: unset;
-      font-style: unset;
       text-align: center;
       padding: 4px;
       background: linear-gradient(to bottom, #ff9c33, #ef7205);
@@ -889,13 +849,18 @@
       height: auto;
       border-radius: 5px;
       margin-bottom: 7px; }
+      @media screen and (min-width: 641px) {
+        .spotlight-type .spotlight-container-recipe .spotlight-recipe a {
+          font-size: 12px; } }
+      @media screen and (min-width: 769px) {
+        .spotlight-type .spotlight-container-recipe .spotlight-recipe a {
+          font-size: 13px; } }
 
 .container-desc {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: nowrap;
   width: 100%;
   height: 57%; }
   @media screen and (min-width: 769px) {
@@ -907,7 +872,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: nowrap;
     width: 95%; }
     .container-desc .kitchen .recipe-author {
       display: none; }
@@ -916,22 +880,19 @@
           display: flex;
           flex-direction: row;
           align-items: center;
-          justify-content: space-between;
-          flex-wrap: nowrap; } }
+          justify-content: space-between; } }
+      .container-desc .kitchen .recipe-author img {
+        margin-right: 2px; }
       .container-desc .kitchen .recipe-author p {
         margin: 0; }
       .container-desc .kitchen .recipe-author .proposed-by {
         font-family: "Signika Light";
         color: #bbbbbb;
-        font-size: 11px;
-        font-weight: unset;
-        font-style: unset; }
+        font-size: 11px; }
       .container-desc .kitchen .recipe-author .author {
         font-family: "Signika Semibold";
         color: #444444;
-        font-size: 13px;
-        font-weight: unset;
-        font-style: unset;
+        font-size: 12px;
         text-transform: uppercase; }
   .container-desc .time {
     display: none; }
@@ -940,16 +901,15 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-between;
-        flex-wrap: nowrap; } }
+        justify-content: space-between; } }
+    .container-desc .time img {
+      margin-left: 5px; }
     .container-desc .time p {
       margin: 0;
       text-align: center;
       font-family: "Signika Semibold";
       color: #444444;
-      font-size: 12px;
-      font-weight: unset;
-      font-style: unset; }
+      font-size: 11px; }
       .container-desc .time p span {
         text-transform: uppercase; }
 
@@ -958,14 +918,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap; }
+  justify-content: center; }
 
 #spotlight-type-basket {
   background-color: #f7f7f7; }
   @media screen and (min-width: 641px) {
     #spotlight-type-basket {
       padding-top: 80px;
+      margin-top: 15px;
       background-color: initial;
       background-image: url("../img/bg_spotlight_basket.png"); } }
   @media screen and (min-width: 769px) {
@@ -976,6 +936,270 @@
 @media screen and (min-width: 641px) {
   #spotlight-type-recipe {
     padding-top: 50px; } }
+
+#header-recipe {
+  background-color: white; }
+  @media screen and (min-width: 641px) {
+    #header-recipe {
+      background-image: url("../img/bg_recipe.png"); } }
+  @media screen and (min-width: 769px) {
+    #header-recipe {
+      height: 305px; } }
+  @media screen and (min-width: 1025px) {
+    #header-recipe {
+      height: 400px; } }
+
+#main-recipe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /*
+  #filter-fixed {
+      @media screen and (min-width: 641px) {
+          @include position(fixed, 200px, 0, 45px, 15px);
+          width: 145px;
+          border-radius: 7px;
+          padding-left: 15px;
+          align-items: left;
+      }
+  }
+  */ }
+  #main-recipe .filters {
+    width: 100%;
+    font-family: "Signika Regular";
+    color: #444444;
+    font-size: 14px;
+    background-color: white;
+    padding-bottom: 25px;
+    text-align: center; }
+    @media screen and (min-width: 641px) {
+      #main-recipe .filters {
+        position: absolute;
+        top: 380px;
+        right: 0;
+        bottom: 0;
+        left: 15px;
+        width: 125px;
+        height: 320px;
+        text-align: left;
+        align-items: left;
+        padding-bottom: 0;
+        background-color: transparent; } }
+    @media screen and (min-width: 769px) {
+      #main-recipe .filters {
+        top: 480px;
+        width: 140px; } }
+    @media screen and (min-width: 1025px) {
+      #main-recipe .filters {
+        top: 500px;
+        left: 30px;
+        width: 150px; } }
+    #main-recipe .filters > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left; }
+      @media screen and (min-width: 641px) {
+        #main-recipe .filters > div {
+          width: 100%;
+          background-color: white;
+          border-radius: 7px;
+          box-shadow: 0 0 10px lightgrey;
+          padding: 5px 5px 15px 5px; } }
+      @media screen and (min-width: 1025px) {
+        #main-recipe .filters > div {
+          padding-left: 2px; } }
+    #main-recipe .filters h3 {
+      font-family: "Signika Bold";
+      color: #444444;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 7px; }
+      @media screen and (min-width: 641px) {
+        #main-recipe .filters h3 {
+          font-size: 13px; } }
+    #main-recipe .filters > h3 {
+      font-size: 14px; }
+      @media screen and (min-width: 641px) {
+        #main-recipe .filters > h3 {
+          margin-left: 10px;
+          font-size: 15px; } }
+    #main-recipe .filters .filter-type {
+      width: 210px; }
+      @media screen and (min-width: 641px) {
+        #main-recipe .filters .filter-type {
+          width: 90%; } }
+    #main-recipe .filters .filter-type:last-child {
+      margin-top: 7px; }
+    #main-recipe .filters .checkbox-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 190px; }
+      @media screen and (min-width: 641px) {
+        #main-recipe .filters .checkbox-container {
+          flex-direction: column;
+          align-items: left;
+          width: 100%;
+          padding-left: 10px; } }
+      #main-recipe .filters .checkbox-container .checkbox {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 70px; }
+        @media screen and (min-width: 641px) {
+          #main-recipe .filters .checkbox-container .checkbox {
+            justify-content: left;
+            margin-top: 7px;
+            max-width: 100%; } }
+        #main-recipe .filters .checkbox-container .checkbox input[type="checkbox"] {
+          display: none; }
+        #main-recipe .filters .checkbox-container .checkbox .checkbox-frame {
+          width: 12px;
+          height: 12px;
+          border: 1px solid #e74a18;
+          background: transparent;
+          border-radius: 3px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center; }
+        #main-recipe .filters .checkbox-container .checkbox input[type="checkbox"]:checked + .checkbox-frame:after {
+          content: url("../img/check.png");
+          color: #e74a18;
+          margin-left: 2px; }
+        #main-recipe .filters .checkbox-container .checkbox label {
+          margin-left: 5px; }
+          @media screen and (min-width: 641px) {
+            #main-recipe .filters .checkbox-container .checkbox label {
+              margin-left: 10px; } }
+          @media screen and (min-width: 769px) {
+            #main-recipe .filters .checkbox-container .checkbox label {
+              font-size: 14px; } }
+        #main-recipe .filters .checkbox-container .checkbox img {
+          display: none;
+          width: 25px; }
+          @media screen and (min-width: 769px) {
+            #main-recipe .filters .checkbox-container .checkbox img {
+              display: block;
+              margin-left: 10px; } }
+    #main-recipe .filters #filter-by-category .checkbox-container {
+      width: 210px; }
+      @media screen and (min-width: 641px) {
+        #main-recipe .filters #filter-by-category .checkbox-container {
+          max-width: 100%; } }
+      #main-recipe .filters #filter-by-category .checkbox-container .checkbox {
+        max-width: 90px; }
+        @media screen and (min-width: 641px) {
+          #main-recipe .filters #filter-by-category .checkbox-container .checkbox {
+            max-width: 100%; } }
+  #main-recipe #leaf-side {
+    display: none;
+    position: absolute;
+    width: 140px;
+    left: 0;
+    top: 655px;
+    z-index: -2; }
+    @media screen and (min-width: 641px) {
+      #main-recipe #leaf-side {
+        display: block; } }
+    @media screen and (min-width: 769px) {
+      #main-recipe #leaf-side {
+        top: 780px; } }
+    @media screen and (min-width: 769px) {
+      #main-recipe #leaf-side {
+        top: 800px; } }
+  @media screen and (min-width: 641px) {
+    #main-recipe #spotlight-type-recipe {
+      margin-left: 15%;
+      padding-top: 25px; } }
+  @media screen and (min-width: 769px) {
+    #main-recipe #spotlight-type-recipe {
+      margin-left: 10%; } }
+  @media screen and (min-width: 1025px) {
+    #main-recipe #spotlight-type-recipe {
+      margin-left: 0; } }
+  #main-recipe #spotlight-type-recipe .spotlight-container-recipe {
+    max-width: 595px; }
+    @media screen and (min-width: 769px) {
+      #main-recipe #spotlight-type-recipe .spotlight-container-recipe {
+        max-width: 710px; } }
+    @media screen and (min-width: 1025px) {
+      #main-recipe #spotlight-type-recipe .spotlight-container-recipe {
+        max-width: 720px; } }
+  @media screen and (min-width: 641px) {
+    #main-recipe #spotlight-type-recipe .spotlight-recipe {
+      margin-top: 25px; } }
+  @media screen and (min-width: 769px) {
+    #main-recipe #spotlight-type-recipe .spotlight-recipe {
+      width: 200px;
+      margin: 40px 18px 0 18px; } }
+  #main-recipe .recipe-presentation {
+    text-align: center;
+    width: 87%; }
+    @media screen and (min-width: 641px) {
+      #main-recipe .recipe-presentation {
+        width: 75%; } }
+    @media screen and (min-width: 769px) {
+      #main-recipe .recipe-presentation {
+        width: 65%; } }
+    #main-recipe .recipe-presentation h3 {
+      font-family: "Signika Light";
+      color: #444444;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px; }
+      #main-recipe .recipe-presentation h3 span {
+        font-family: "Signika Bold"; }
+    #main-recipe .recipe-presentation p {
+      font-family: "SourceSansPro";
+      color: #444444;
+      font-size: 14px;
+      text-align: justify; }
+      @media screen and (min-width: 641px) {
+        #main-recipe .recipe-presentation p {
+          text-align: center; } }
+      @media screen and (min-width: 769px) {
+        #main-recipe .recipe-presentation p {
+          font-size: 16px; } }
+  #main-recipe .carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 45px; }
+    #main-recipe .carousel .choose-page {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 120px; }
+      #main-recipe .carousel .choose-page img {
+        width: 10px;
+        height: 15px; }
+      #main-recipe .carousel .choose-page p {
+        font-family: "Signika Bold";
+        color: #444444;
+        font-size: 14px;
+        text-transform: uppercase; }
+    #main-recipe .carousel .container-bullets {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 65px; }
+      #main-recipe .carousel .container-bullets .bullet {
+        background-color: #bfbcbc;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%; }
+      #main-recipe .carousel .container-bullets #bullet-active {
+        background-color: #414141; }
 
 html {
   min-height: 100vh;
@@ -989,7 +1213,9 @@ body {
   body input, body button {
     border: none;
     background-color: transparent; }
-  body button, body a, body input[type="submit"], body input[type="image"] {
+  body button, body a, body label,
+  body input[type="submit"], body input[type="image"],
+  body input[type="checkbox"], body .checkbox-frame {
     cursor: pointer; }
   body .img-to-resize {
     width: 100%; }
@@ -1001,7 +1227,6 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  flex-wrap: nowrap;
   height: 180px;
   padding-bottom: 20px; }
   @media screen and (min-width: 641px) {
@@ -1021,8 +1246,7 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap; }
+    justify-content: center; }
     @media screen and (min-width: 641px) {
       header .icons-menu {
         display: none; } }
@@ -1035,26 +1259,21 @@ header {
       display: none;
       font-family: "Signika Regular";
       color: white;
-      font-size: 16px;
-      font-weight: unset;
-      font-style: unset; }
+      font-size: 16px; }
   header .btn-menu + a {
     text-transform: none;
     font-family: "Signika Regular";
     color: white;
-    font-size: 16px;
-    font-weight: unset;
-    font-style: unset; }
+    font-size: 15px; }
   header .logo img {
-    width: 100px;
+    width: 90px;
     height: auto; }
   header nav {
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: baseline;
-    justify-content: space-around;
-    flex-wrap: nowrap; }
+    justify-content: space-around; }
     @media screen and (min-width: 641px) {
       header nav {
         align-items: center;
@@ -1068,10 +1287,7 @@ header {
       font-family: "Signika Semibold";
       color: white;
       font-size: 14px;
-      font-weight: unset;
-      font-style: unset;
       text-transform: uppercase;
-      text-shadow: 0px 0px 1px darkgrey;
       letter-spacing: 1px; }
     @media screen and (min-width: 641px) {
       header nav #bookmark {
@@ -1144,7 +1360,6 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: nowrap;
   padding: 10px; }
   @media screen and (min-width: 641px) {
     #footer-mobile {
@@ -1168,7 +1383,6 @@ footer {
     color: white;
     font-size: 8px;
     font-weight: lighter;
-    font-style: unset;
     letter-spacing: 1px; }
     @media screen and (min-width: 321px) {
       #footer-mobile a {
@@ -1182,14 +1396,12 @@ footer {
   flex-direction: row;
   align-items: unset;
   justify-content: center;
-  flex-wrap: nowrap;
   display: none;
-  padding: 30px;
+  padding: 15px;
   font-family: "Signika Light";
   color: white;
-  font-size: 14px;
-  font-weight: lighter;
-  font-style: unset; }
+  font-size: 13px;
+  font-weight: lighter; }
   @media screen and (min-width: 641px) {
     #footer-desktop {
       display: flex; } }
@@ -1205,8 +1417,7 @@ footer {
       display: flex;
       flex-direction: row;
       align-items: baseline;
-      justify-content: unset;
-      flex-wrap: nowrap; }
+      justify-content: unset; }
       #footer-desktop .aside .line img {
         margin-right: 15px; }
       #footer-desktop .aside .line p {
@@ -1220,7 +1431,7 @@ footer {
     text-align: center;
     margin: 0 5%; }
     #footer-desktop .center img {
-      width: 100px;
+      width: 70px;
       height: auto; }
 
 /*# sourceMappingURL=style.css.map */

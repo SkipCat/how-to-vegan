@@ -5,7 +5,7 @@
 }
 
 #main-convert {
-    @include flex(column, unset, space-between, nowrap);
+    @include flex(column, unset, space-between);
     @media screen and (min-width: 641px) {    
         @include resize(310px, auto);
         margin: 20px auto 50px 50%;   
@@ -36,17 +36,17 @@
         @media screen and (min-width: 769px) {
             width: 350px;
             @include position(absolute, 34%, initial, initial, 55%);
-
-            @media screen and (min-width: 1025px) {
-                @include position(absolute, 38%, initial, initial, 60%);   
-            }
+        }
+        @media screen and (min-width: 1025px) {
+            @include position(absolute, 40%, initial, initial, 60%);   
         }
     }
 
     p.desc {
         text-align: justify;
-        margin: 0px 13%;
-        @include policy($text-font, $text-color, 16px, unset, italic);
+        margin: 0px 10%;
+        @include policy($text-italic-font, $text-color, 16px);
+        font-style: italic;
         @media screen and (min-width: 641px) {
             margin: 0;
         }
@@ -63,8 +63,7 @@
         @include position(absolute, 25%, 0, 0, 6%);
     }
     @media screen and (min-width: 1025px) {
-        @include position(absolute, 25%, 0, 0, 15%); 
-        top: 22%;
+        @include position(absolute, 28%, 0, 0, 15%);
     }
 }
 
@@ -73,8 +72,8 @@
     background: url('../img/list.png') no-repeat;
     background-size: 95% auto;
     background-origin: border-box;
-    @include flex(column, unset, space-between, nowrap);
-    @include policy($list-font, $text-color, 20px, unset, unset);
+    @include flex(column, unset, space-between);
+    @include policy($list-font, $text-color, 20px);
     @media screen and (min-width: 376px) {
         height: 562px;
     }
@@ -101,20 +100,17 @@
         margin-left: 68%;
         margin-top: 112%;
         width: 60px;
-        @include flex(row, center, space-between, nowrap);
+        @include flex(row, center, space-between);
         @media screen and (min-width: 321px) {
             margin-left: 70%;
         }
         @media screen and (min-width: 376px) {
             margin-top: 114%;
             margin-left: 73%;
+            
         }
-        @media screen and (min-width: 376px) {
-            margin-top: 46%;
-            margin-left: 28%;
-        }
-        @media screen and (min-width: 769px) {
-            margin-top: 45%;
+        @media screen and (min-width: 641px) {
+             margin-top: 45%;
             margin-left: 28.5%;
         }
         @media screen and (min-width: 1025px) {
@@ -125,13 +121,26 @@
 
     ul {
         margin: 23px 0 auto 15px;
+        height: 315px;
+        overflow-y: scroll;
+        /*
+        ::-webkit-scrollbar
+        ::-webkit-scrollbar-button
+        ::-webkit-scrollbar-track
+        ::-webkit-scrollbar-track-piece
+        ::-webkit-scrollbar-thumb
+        ::-webkit-scrollbar-corner
+        ::-webkit-resizer
+        */
         @media screen and (min-width: 321px) {
             margin-left: 20px;
-            margin-top: 35px;
+            margin-top: 34px;
+            height: 350px;
         }
         @media screen and (min-width: 376px) {
             margin-left: 25px;
             margin-top: 44px;
+            height: 400px;
         }
         @media screen and (min-width: 641px) {
             margin-left: 15px;
@@ -150,7 +159,7 @@
         }
 
         .result-li {
-            @include policy($list-font, $text-color, inherit, unset, unset);
+            @include policy($list-font, $text-color, inherit);
             //margin-bottom: 21.5px;
             letter-spacing: 2px;
         }
@@ -158,7 +167,7 @@
         select {
             background-color: transparent;
             border: none;
-            @include policy($list-font, $text-color, 18px, unset, unset);
+            @include policy($list-font, $text-color, 20px);
             letter-spacing: 2px;
         }    
     }
@@ -202,11 +211,11 @@
     }
 
     .filters, .submit {
-        @include flex(row, center, space-between, nowrap);
+        @include flex(row, center, space-between);
 
         h3, input[type="submit"] {
             text-transform: uppercase;
-            @include policy($main-font, $text-color, 16px, unset, unset);
+            @include policy($main-font, $text-color, 16px);
         }
 
         input[type="checkbox"] {
@@ -217,20 +226,20 @@
         input[type="checkbox"] + label:active {
             color: white;
             background-color: $light-green;
-            border-color: none;
+            border-color: transparent;
         }
 
         label {
             background-color: #e6e6e6;
             border: 1px solid #c9c9c9;
             border-radius: 5px;
-            padding: 5px 10px;
-            @include policy($main-font, $text-color, 14px, unset, unset);
+            padding: 4px 10px;
+            @include policy($main-font, $text-color, 14px);
         }
     }
 
     .submit {
-        @include input(2px, inherit, $dark-green, 5px);
+        @include input(1.5px, inherit, $dark-green, 5px);
         padding: 5px ;
         text-align: left;
 
@@ -239,7 +248,9 @@
         }
 
         input[type="submit"] {
-            @include policy($bold-font, inherit, 14px, inherit, inherit);
+            @include policy($semibold-font, inherit, 14px);
+            font-weight: inherit;
+            font-style: inherit;
             letter-spacing: 1px;
         }
 
@@ -253,14 +264,14 @@
 
 .mapping {
     p {
-        @include policy($main-font, $text-color, 16px, unset, unset);
+        @include policy($main-font, $text-color, 16px);
         @media screen and (min-width: 641px) {
             margin-top: 50px;
         }
     }
 
     #form-localization {
-        @include flex(row, center, left, nowrap);
+        @include flex(row, center, left);
         @include input(1px, #cdcdcd, #cdcdcd, 1px);
         padding: 5px;
         margin-bottom: 30px;
@@ -272,7 +283,7 @@
     input[type="text"] {
         border: none;
         text-align: left;
-        @include policy($light-font, #444444, 16px, unset, unset);
+        @include policy($light-font, #444444, 16px);
         @include resize(100%, auto);
         z-index: 2;
     }

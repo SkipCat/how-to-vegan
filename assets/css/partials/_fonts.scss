@@ -4,8 +4,12 @@
 @font-face {
     @include fontface('Lucida Fax Italic', '../font/Lucida_Fax_Italic.ttf');
 }
+
 @font-face {
     @include fontface('SourceSansPro Italic', '../font/SourceSansPro-Italic.ttf');
+}
+@font-face {
+    @include fontface('SourceSansPro', '../font/SourceSansPro-Regular.ttf');
 }
 
 @font-face {

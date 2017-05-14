@@ -3,20 +3,17 @@
     src: url($url);
 }
 
-@mixin flex($direction, $align, $justify, $wrap) {
+@mixin flex($direction, $align, $justify) {
     display: flex;
     flex-direction: $direction;
     align-items: $align;
     justify-content: $justify;
-    flex-wrap: $wrap;
 }
 
-@mixin policy($font, $color, $size, $weight, $style) {
+@mixin policy($font, $color, $size) {
     font-family: $font;
     color: $color;
     font-size: $size;
-    font-weight: $weight;
-    font-style: $style;
 }
 
 @mixin resize($width, $height) {
