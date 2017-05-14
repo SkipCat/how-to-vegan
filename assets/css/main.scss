@@ -162,6 +162,26 @@ main {
     margin-right: 8%;
 }
 
+/*
+.parallax {
+    height: 100vh;
+    overflow-y: auto;
+    perspective: 1px;
+
+    .parallax-background {
+        -webkit-transform: translateZ(-1px);
+        transform: translateZ(-1px) scale(2);
+        // content {
+            //     transform: translate(-50%, -50%);
+    }
+    .parallax-foreground {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+         //   transform: translate(-50%, -50%)
+    }
+}
+*/
+
 footer {
     background-color: $bg-footer;
     span.howtovegan {

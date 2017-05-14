@@ -155,18 +155,6 @@
         }
     }
 
-    /*
-    #filter-fixed {
-        @media screen and (min-width: 641px) {
-            @include position(fixed, 200px, 0, 45px, 15px);
-            width: 145px;
-            border-radius: 7px;
-            padding-left: 15px;
-            align-items: left;
-        }
-    }
-    */
-
     #leaf-side {
         display: none;
         position: absolute;

@@ -43,11 +43,12 @@ function convert() {
         var newProduct = product.clone();
         $('<li></li>').addClass('shop-li').insertBefore($('#recap-list'));
         ($('li').last()).append(newProduct);
+        console.log('new select'); 
 
         // select click
-        newProduct.each(function() {
+        newProduct.each(function() {           
             $(this).on('click', function() {
-                if ($('select').last().val() != 'NULL'){
+                if ($('select').last().val() != 'NULL') {
                     $('input[type="submit"]').prop('disabled', false);
                     createSelect();
                     disabled = [];

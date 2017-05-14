@@ -7,11 +7,16 @@ function getCurrentPage() {
 
     if (currentPage.search('home') !== -1) {
         document.querySelector('header').id = 'header-home';
+        convert();
+        listActions();
+        crush();
     }
     if (currentPage.search('convert') !== -1) {
         convertLink.id = 'active-page';
         convertLink.parentNode.childNodes[1].id = 'bookmark';
         document.querySelector('header').id = 'header-convert';
+        convert();
+        listActions();
     }
     if (currentPage.search('basket') !== -1) {
         basketLink.id = 'active-page';
@@ -22,6 +27,7 @@ function getCurrentPage() {
         recipeLink.id = 'active-page';
         recipeLink.parentNode.childNodes[1].id = 'bookmark';
         document.querySelector('header').id = 'header-recipe';
+        crush();
     }
     if (currentPage.search('about') !== -1) {
         aboutLink.id = 'active-page';

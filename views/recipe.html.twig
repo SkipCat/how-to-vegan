@@ -1,175 +1,175 @@
 {% extends 'index.html.twig' %}
 
 {% block content %}
-    <main id="main-recipe">
-        <div class="filters">
-            <h3>Filtrer par</h3>
-            <div>
-                <div class="filter-type" id="filter-in-order">
-                    <h3>Type de recette :</h3>
-                    <div class="checkbox-container">
-                        <div class="checkbox">
-                            <input type="checkbox" value="Entrée" id="starter">
-                            <div class="checkbox-frame"></div>
-                            <label for="starter">Entrée</label>
+    <main id="main-recipe" class="parallax">
+        <div class="parallax-background">
+            <div class="filters">
+                <h3>Filtrer par</h3>
+                <div>
+                    <div class="filter-type" id="filter-in-order">
+                        <h3>Type de recette :</h3>
+                        <div class="checkbox-container">
+                            <div class="checkbox">
+                                <input type="checkbox" value="Entrée" id="starter">
+                                <div class="checkbox-frame"></div>
+                                <label for="starter">Entrée</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" value="Plat" id="main">
+                                <div class="checkbox-frame"></div>
+                                <label for="main">Plat</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" value="Dessert" id="dessert">
+                                <div class="checkbox-frame"></div>
+                                <label for="dessert">Dessert</label>
+                            </div>
                         </div>
-                        <div class="checkbox">
-                            <input type="checkbox" value="Plat" id="main">
-                            <div class="checkbox-frame"></div>
-                            <label for="main">Plat</label>
-                        </div>
-                        <div class="checkbox">
-                            <input type="checkbox" value="Dessert" id="dessert">
-                            <div class="checkbox-frame"></div>
-                            <label for="dessert">Dessert</label>
+                    </div>
+                    <div class="filter-type" id="filter-by-category">
+                        <h3>Préférence alimentaire :</h3>
+                        <div class="checkbox-container">
+                            <div class="checkbox">
+                                <input type="checkbox" value="Vegan" id="vegan">
+                                <div class="checkbox-frame"></div>
+                                <img src="assets/img/category_vegan.png" alt="vegan icon">
+                                <label for="vegan">Vegan</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" value="Bio" id="bio">
+                                <div class="checkbox-frame"></div>
+                                <img src="assets/img/category_bio.png" alt="vegan icon">
+                                <label for="bio">Bio</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" value="Gluten-free" id="gluten-free">
+                                <div class="checkbox-frame"></div>
+                                <img src="assets/img/category_gluten_free.png" alt="vegan icon">
+                                <label for="gluten-free">Gluten free</label>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="filter-type" id="filter-by-category">
-                    <h3>Préférence alimentaire :</h3>
-                    <div class="checkbox-container">
-                        <div class="checkbox">
-                            <input type="checkbox" value="Vegan" id="vegan">
-                            <div class="checkbox-frame"></div>
-                            <img src="assets/img/category_vegan.png" alt="vegan icon">
-                            <label for="vegan">Vegan</label>
+            </div>
+            <div class="spotlight-type" id="spotlight-type-recipe">
+                <div class="recipe-presentation">
+                    <h3>Découvrez <span>nos recettes</span></h3>
+                    <p>
+                        Proposées par la communauté How to Vegan ou par le staff,
+                        les recettes ci-dessous sont conçues spécialement pour vous,
+                        en fonction de vos préférences alimentaires.
+                        <br><br>
+                        Sélectionnez les filtres selon vos envies et enfilez votre tablier !
+                    </p>
+                </div>
+                <div class="spotlight-container-recipe">
+                    <div class="spotlight-container-img spotlight-recipe">
+                        <img class="spotlight-img" src="assets/img/seitan.png" alt="frame picture">
+                        <div class="container-desc">
+                            <p class="recipe-title">Seitan façon poulet tikka massala</p>
+                            <div class="kitchen">
+                                <div class="recipe-author">
+                                    <img src="assets/img/chief.png" alt="chief icon">
+                                    <div>
+                                        <p class="proposed-by">Proposé par</p>
+                                        <p class="author">Le staff</p>
+                                    </div>
+                                </div>
+                                <div class="category-img">
+                                    <img src="assets/img/category_vegan.png" alt="icon vegan">
+                                    <img src="assets/img/category_gluten_free.png" alt="icon gluten free">
+                                    <img src="assets/img/category_bio.png" alt="icon bio">
+                                </div>
+                            </div>
+                            <div class="time">
+                                <img src="assets/img/alarm.png" alt="alarm icon">
+                                <p><span>Prep:</span> 15min</p>
+                                <p><span>Cuisson:</span> 30min</p>
+                                <p><span>Total:</span> 45min</p>
+                            </div>
+                            <a href="?action=recipe">Voir plus</a>
                         </div>
-                        <div class="checkbox">
-                            <input type="checkbox" value="Bio" id="bio">
-                            <div class="checkbox-frame"></div>
-                            <img src="assets/img/category_bio.png" alt="vegan icon">
-                            <label for="bio">Bio</label>
+                    </div>
+                    <div class="spotlight-container-img spotlight-recipe">
+                        <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
+                        <div class="container-desc">
+                            <p class="recipe-title">Gâteau coco</p>
+                            <div class="kitchen">
+                                <div class="recipe-author">
+                                    <img src="assets/img/chief.png" alt="chief icon">
+                                    <div>
+                                        <p class="proposed-by">Proposé par</p>
+                                        <p class="author">Le staff</p>
+                                    </div>
+                                </div>
+                                <div class="category-img">
+                                    <img src="assets/img/category_vegan.png" alt="icon vegan">
+                                </div>
+                            </div>
+                            <div class="time">
+                                <img src="assets/img/alarm.png" alt="alarm icon">
+                                <p><span>Prep:</span> 15min</p>
+                                <p><span>Cuisson:</span> 30min</p>
+                                <p><span>Total:</span> 45min</p>
+                            </div>
+                            <a href="?action=recipe">Voir plus</a>
                         </div>
-                        <div class="checkbox">
-                            <input type="checkbox" value="Gluten-free" id="gluten-free">
-                            <div class="checkbox-frame"></div>
-                            <img src="assets/img/category_gluten_free.png" alt="vegan icon">
-                            <label for="gluten-free">Gluten free</label>
+                    </div>
+                    <div class="spotlight-container-img spotlight-recipe">
+                        <img class="spotlight-img" src="assets/img/seitan.png" alt="frame picture">
+                        <div class="container-desc">
+                            <p class="recipe-title">Seitan façon poulet tikka massala</p>
+                            <div class="kitchen">
+                                <div class="recipe-author">
+                                    <img src="assets/img/chief.png" alt="chief icon">
+                                    <div>
+                                        <p class="proposed-by">Proposé par</p>
+                                        <p class="author">Le staff</p>
+                                    </div>
+                                </div>
+                                <div class="category-img">
+                                    <img src="assets/img/category_vegan.png" alt="icon vegan">
+                                    <img src="assets/img/category_gluten_free.png" alt="icon gluten free">
+                                    <img src="assets/img/category_bio.png" alt="icon bio">
+                                </div>
+                            </div>
+                            <div class="time">
+                                <img src="assets/img/alarm.png" alt="alarm icon">
+                                <p><span>Prep:</span> 15min</p>
+                                <p><span>Cuisson:</span> 30min</p>
+                                <p><span>Total:</span> 45min</p>
+                            </div>
+                            <a href="?action=recipe">Voir plus</a>
+                        </div>
+                    </div>
+                    <div class="spotlight-container-img spotlight-recipe">
+                        <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
+                        <div class="container-desc">
+                            <p class="recipe-title">Gâteau coco</p>
+                            <div class="kitchen">
+                                <div class="recipe-author">
+                                    <img src="assets/img/chief.png" alt="chief icon">
+                                    <div>
+                                        <p class="proposed-by">Proposé par</p>
+                                        <p class="author">Le staff</p>
+                                    </div>
+                                </div>
+                                <div class="category-img">
+                                    <img src="assets/img/category_vegan.png" alt="icon vegan">
+                                </div>
+                            </div>
+                            <div class="time">
+                                <img src="assets/img/alarm.png" alt="alarm icon">
+                                <p><span>Prep:</span> 15min</p>
+                                <p><span>Cuisson:</span> 30min</p>
+                                <p><span>Total:</span> 45min</p>
+                            </div>
+                            <a href="?action=recipe">Voir plus</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <img src="assets/img/leaf_left_side.png" alt="leaf picture" id="leaf-side">
-        <div class="spotlight-type" id="spotlight-type-recipe">
-            <div class="recipe-presentation">
-                <h3>Découvrez <span>nos recettes</span></h3>
-                <p>
-                    Proposées par la communauté How to Vegan ou par le staff,
-                    les recettes ci-dessous sont conçues spécialement pour vous,
-                    en fonction de vos préférences alimentaires.
-                    <br><br>
-                    Sélectionnez les filtres selon vos envies et enfilez votre tablier !
-                </p>
-            </div>
-            <div class="spotlight-container-recipe">
-                <div class="spotlight-container-img spotlight-recipe">
-                    <img class="spotlight-img" src="assets/img/seitan.png" alt="frame picture">
-                    <div class="container-desc">
-                        <p class="recipe-title">Seitan façon poulet tikka massala</p>
-                        <div class="kitchen">
-                            <div class="recipe-author">
-                                <img src="assets/img/chief.png" alt="chief icon">
-                                <div>
-                                    <p class="proposed-by">Proposé par</p>
-                                    <p class="author">Le staff</p>
-                                </div>
-                            </div>
-                            <div class="category-img">
-                                <img src="assets/img/category_vegan.png" alt="icon vegan">
-                                <img src="assets/img/category_gluten_free.png" alt="icon gluten free">
-                                <img src="assets/img/category_bio.png" alt="icon bio">
-                            </div>
-                        </div>
-                        <div class="time">
-                            <img src="assets/img/alarm.png" alt="alarm icon">
-                            <p><span>Prep:</span> 15min</p>
-                            <p><span>Cuisson:</span> 30min</p>
-                            <p><span>Total:</span> 45min</p>
-                        </div>
-                        <a href="?action=recipe">Voir plus</a>
-                    </div>
-                </div>
-                <div class="spotlight-container-img spotlight-recipe">
-                    <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
-                    <div class="container-desc">
-                        <p class="recipe-title">Gâteau coco</p>
-                        <div class="kitchen">
-                            <div class="recipe-author">
-                                <img src="assets/img/chief.png" alt="chief icon">
-                                <div>
-                                    <p class="proposed-by">Proposé par</p>
-                                    <p class="author">Le staff</p>
-                                </div>
-                            </div>
-                            <div class="category-img">
-                                <img src="assets/img/category_vegan.png" alt="icon vegan">
-                            </div>
-                        </div>
-                        <div class="time">
-                            <img src="assets/img/alarm.png" alt="alarm icon">
-                            <p><span>Prep:</span> 15min</p>
-                            <p><span>Cuisson:</span> 30min</p>
-                            <p><span>Total:</span> 45min</p>
-                        </div>
-                        <a href="?action=recipe">Voir plus</a>
-                    </div>
-                </div>
-                <div class="spotlight-container-img spotlight-recipe">
-                    <img class="spotlight-img" src="assets/img/seitan.png" alt="frame picture">
-                    <div class="container-desc">
-                        <p class="recipe-title">Seitan façon poulet tikka massala</p>
-                        <div class="kitchen">
-                            <div class="recipe-author">
-                                <img src="assets/img/chief.png" alt="chief icon">
-                                <div>
-                                    <p class="proposed-by">Proposé par</p>
-                                    <p class="author">Le staff</p>
-                                </div>
-                            </div>
-                            <div class="category-img">
-                                <img src="assets/img/category_vegan.png" alt="icon vegan">
-                                <img src="assets/img/category_gluten_free.png" alt="icon gluten free">
-                                <img src="assets/img/category_bio.png" alt="icon bio">
-                            </div>
-                        </div>
-                        <div class="time">
-                            <img src="assets/img/alarm.png" alt="alarm icon">
-                            <p><span>Prep:</span> 15min</p>
-                            <p><span>Cuisson:</span> 30min</p>
-                            <p><span>Total:</span> 45min</p>
-                        </div>
-                        <a href="?action=recipe">Voir plus</a>
-                    </div>
-                </div>
-                <div class="spotlight-container-img spotlight-recipe">
-                    <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
-                    <div class="container-desc">
-                        <p class="recipe-title">Gâteau coco</p>
-                        <div class="kitchen">
-                            <div class="recipe-author">
-                                <img src="assets/img/chief.png" alt="chief icon">
-                                <div>
-                                    <p class="proposed-by">Proposé par</p>
-                                    <p class="author">Le staff</p>
-                                </div>
-                            </div>
-                            <div class="category-img">
-                                <img src="assets/img/category_vegan.png" alt="icon vegan">
-                            </div>
-                        </div>
-                        <div class="time">
-                            <img src="assets/img/alarm.png" alt="alarm icon">
-                            <p><span>Prep:</span> 15min</p>
-                            <p><span>Cuisson:</span> 30min</p>
-                            <p><span>Total:</span> 45min</p>
-                        </div>
-                        <a href="?action=recipe">Voir plus</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel">
+            <div class="carousel">
                 <div class="choose-page">
                     <img src="assets/img/arrow_black_left.png" alt="left arrow">
                     <p>Page 1 sur 4</p>
@@ -182,5 +182,9 @@
                     <div class="bullet"></div>
                 </div>
             </div>
+        </div>
+        <div class="parallax-foreground">
+            <img src="assets/img/leaf_left_side.png" alt="leaf picture" id="leaf-side">            
+        </div>
     </main>
 {% endblock %}
