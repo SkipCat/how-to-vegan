@@ -14,7 +14,8 @@
     @media screen and (min-width: 641px) {
         width: 60%;
         top: 5%;
-        left: 12%;
+        left: 20%;
+        right: 20%;
         border-radius: 12px;
     }
 }
@@ -185,6 +186,9 @@
 
 .btn-close {
     left: 5px;
+    @media screen and (min-width: 641px) {
+        //display: none;
+    }
 }
 
 .btn-crush {

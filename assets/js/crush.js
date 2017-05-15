@@ -1,5 +1,5 @@
-function crush(img) {
-    var heart = document.querySelectorAll('.crush img', '.btn-crush');
+function crush() {
+    var heart = document.querySelectorAll('.btn-crush');
     var clickHeart = false;
 
     for (var i in heart) {
