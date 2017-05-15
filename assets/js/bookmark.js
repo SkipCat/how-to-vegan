@@ -11,6 +11,7 @@ window.onload = function() {
         convert();
         listActions();
         crush();
+        modalActions();
     }
     if (currentPage.search('convert') !== -1) {
         convertLink.id = 'active-page';
@@ -29,6 +30,7 @@ window.onload = function() {
         recipeLink.parentNode.childNodes[1].id = 'bookmark';
         document.querySelector('header').id = 'header-recipe';
         crush();
+        modalActions();
     }
     if (currentPage.search('about') !== -1) {
         aboutLink.id = 'active-page';
