@@ -1,0 +1,196 @@
+.header-modal {
+    background-color: transparent;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 5;
+    top: 0px; // pb: fix modal at 170px only at beginning (header visible but not the rest)
+    left: 0;
+    @include resize(100%, 100%);
+    overflow-y: auto;
+    padding-bottom: 25px;
+    @media screen and (min-width: 641px) {
+        width: 60%;
+        top: 5%;
+        left: 20%;
+        right: 20%;
+        border-radius: 12px;
+    }
+}
+.modal:target {
+    display: block;
+}
+
+.modal::-webkit-scrollbar {
+    width: 3px;
+    @media screen and (min-width: 641px) {
+        width: 7px;
+    }
+    @media screen and (min-width: 769px) {
+        width: 10px;
+    }
+}
+.modal::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+//::-webkit-scrollbar-track-piece
+.modal::-webkit-scrollbar-thumb {
+    background-color: $light-red;
+    border-radius: 10px;
+}
+
+.modal-block {
+    background: $bg-grey;
+    height: 430px;
+    @include resize(100%, 100%);
+    border-radius: 10px;
+}
+
+.modal-img {
+    > img {
+        width: 100%;
+    }
+    
+    .time {
+        @include flex(row, center, space-between);
+        @include policy($main-font, $text-color, 13px);
+        padding-left: 20px;
+        padding-right: 20px;
+
+        span {
+            text-transform: uppercase;
+            font-size: inherit + 1px;
+            font-family: $bold-font;
+        }
+
+        img {
+            width: 17px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+}
+
+.modal-content {
+    background: $bg-grey;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .modal-title {
+        h2 {
+            @include policy($semibold-font, $text-color, 18px);
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .kitchen {
+            @include flex(row, center, space-between);
+
+            .chief {
+                @include flex(row, center, center);
+                img {
+                    width: 17px;
+                    margin-right: 5px;
+                }
+                p {
+                    margin: 0;
+                }
+                .proposed-by {
+                    @include policy($light-font, $grey, 13px);
+                }
+                .author {
+                    @include policy($semibold-font, $text-color, 14px);
+                    text-transform: uppercase;
+                }
+            }
+
+            .category {
+                img {
+                    width: 40px;
+                }
+            }
+        }
+    }
+
+    .modal-desc > div {
+        margin-top: 30px;
+    }
+
+    h3 {
+        @include policy($semibold-font, $text-color, 16px);
+        text-transform: uppercase;
+        margin-bottom: 5px;
+    }
+
+    hr {
+        border: 0;
+        height: 3px;
+        width: 50px;
+        background: $light-red;
+        margin: 0;    
+    }
+
+    > div {
+        margin-top: 25px;
+    }
+
+    p, .modal-comments p {
+        @include policy($light-font, $text-color, 14px);
+        text-align: justify;
+    }
+
+    .modal-comments {
+        .comment {
+            background-color: white;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 20px 0;
+            margin-bottom: 20px;
+            padding: 1px 15px;
+
+            p:first-child {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+#modal-recipe {
+    .spotlight-container-recipe {
+        max-width: 100%;
+        .spotlight-recipe {
+            @include resize(125px, 190px);
+            @media screen and (min-width: 321px) {
+                @include resize(130px, 200px);
+            }
+        }
+    }
+    .spotlight-container-img {
+        margin-left: 6px;
+        margin-right: 6px;
+        @media screen and (min-width: 321px) {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }    
+}
+
+.btn-in-modal {
+    height: 25px;
+    position: absolute;
+    top: 5px;
+}
+
+.btn-close {
+    left: 5px;
+    @media screen and (min-width: 641px) {
+        //display: none;
+    }
+}
+
+.btn-crush {
+    right: 5px;
+}

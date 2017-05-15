@@ -6,6 +6,7 @@
 @import 'pages/basket';
 @import 'pages/home';
 @import 'pages/recipe';
+@import 'pages/modal';
 
 ////////////////////////////////////
 
@@ -269,3 +270,10 @@ footer {
     }
 }
 
+.blur-elements {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
