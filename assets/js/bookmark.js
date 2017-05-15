@@ -1,4 +1,5 @@
-function getCurrentPage() {
+window.onload = function() {
+//function getCurrentPage() {
     var currentPage = window.location.href;
     var convertLink = document.querySelector('#convert-page');
     var basketLink = document.querySelector('#basket-page');
@@ -34,4 +35,7 @@ function getCurrentPage() {
         aboutLink.parentNode.childNodes[1].id = 'bookmark';
         //document.querySelector('header').id = 'header-about';
     }
-}
+    if (currentPage.search('modal') !== -1) {
+        document.querySelector('header').className = 'header-modal';
+    }
+};

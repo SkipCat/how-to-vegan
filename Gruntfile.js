@@ -21,13 +21,12 @@ module.exports = function(grunt) {
 			prod: {
 				files: {
 					'assets/js/script.min.js': [
-						'assets/js/bookmark.js',
 						'assets/js/convert.js',
-						//'assets/js/map.js',
 						'assets/js/list.js',
 						'assets/js/crush.js',
+						//'assets/js/map.js',
 						//'assets/js/modal.js',
-						'assets/js/script.js',
+						'assets/js/bookmark.js',
 					],
 					'assets/js/map.min.js': ['assets/js/map.js'],
 				}

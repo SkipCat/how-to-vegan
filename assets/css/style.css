@@ -682,7 +682,8 @@
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 2px; }
-.spotlight-type .spotlight-container-basket {
+
+.spotlight-container-basket {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -690,13 +691,13 @@
   flex-wrap: wrap;
   max-width: 665px; }
   @media screen and (min-width: 769px) {
-    .spotlight-type .spotlight-container-basket {
+    .spotlight-container-basket {
       max-width: 715px; } }
-  .spotlight-type .spotlight-container-basket .spotlight-img {
+  .spotlight-container-basket .spotlight-img {
     width: 100%;
     height: 50%;
     margin-top: -19px; }
-  .spotlight-type .spotlight-container-basket .basket-buttons {
+  .spotlight-container-basket .basket-buttons {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -708,7 +709,7 @@
     right: 0;
     bottom: 0;
     left: 0; }
-    .spotlight-type .spotlight-container-basket .basket-buttons div {
+    .spotlight-container-basket .basket-buttons div {
       background-color: white;
       width: 30px;
       height: 20px;
@@ -716,38 +717,39 @@
       flex-direction: row;
       align-items: center;
       justify-content: center; }
-    .spotlight-type .spotlight-container-basket .basket-buttons div:hover {
+    .spotlight-container-basket .basket-buttons div:hover {
       box-shadow: 0 0 10px lightgrey; }
-    .spotlight-type .spotlight-container-basket .basket-buttons .crush {
+    .spotlight-container-basket .basket-buttons .crush {
       border-top-left-radius: 10px;
       border-bottom-left-radius: 10px; }
-    .spotlight-type .spotlight-container-basket .basket-buttons .open-modal {
+    .spotlight-container-basket .basket-buttons .open-modal {
       border-top-right-radius: 10px;
       border-bottom-right-radius: 10px; }
-    .spotlight-type .spotlight-container-basket .basket-buttons img {
+    .spotlight-container-basket .basket-buttons img {
       width: 12px;
       height: auto; }
-  .spotlight-type .spotlight-container-basket .spotlight-basket {
+  .spotlight-container-basket .spotlight-basket {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center; }
     @media screen and (min-width: 769px) {
-      .spotlight-type .spotlight-container-basket .spotlight-basket {
+      .spotlight-container-basket .spotlight-basket {
         width: 100%;
         height: 105px; } }
-    .spotlight-type .spotlight-container-basket .spotlight-basket .price {
+    .spotlight-container-basket .spotlight-basket .price {
       font-family: "Signika Regular";
       color: #78a514;
       font-size: 14px;
       margin: 0; }
-    .spotlight-type .spotlight-container-basket .spotlight-basket .name {
+    .spotlight-container-basket .spotlight-basket .name {
       font-family: "Signika Light";
       color: #444444;
       font-size: 14px; }
-      .spotlight-type .spotlight-container-basket .spotlight-basket .name span {
+      .spotlight-container-basket .spotlight-basket .name span {
         font-family: "Signika Semibold"; }
-.spotlight-type .spotlight-container-img {
+
+.spotlight-container-img {
   width: 130px;
   height: 180px;
   display: flex;
@@ -759,13 +761,13 @@
   margin: 25px 10px 0 10px;
   padding: 3px; }
   @media screen and (min-width: 641px) {
-    .spotlight-type .spotlight-container-img {
+    .spotlight-container-img {
       margin: 60px 18px 0 18px; } }
   @media screen and (min-width: 769px) {
-    .spotlight-type .spotlight-container-img {
+    .spotlight-container-img {
       width: 195px;
       height: 215px; } }
-  .spotlight-type .spotlight-container-img .container-category-indicator {
+  .spotlight-container-img .container-category-indicator {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -774,15 +776,17 @@
     height: auto;
     align-self: flex-start; }
     @media screen and (min-width: 769px) {
-      .spotlight-type .spotlight-container-img .container-category-indicator {
+      .spotlight-container-img .container-category-indicator {
         margin-left: 10px; } }
     @media screen and (min-width: 769px) {
-      .spotlight-type .spotlight-container-img .container-category-indicator .category-indicator {
+      .spotlight-container-img .container-category-indicator .category-indicator {
         font-size: 12px;
         padding: 4px; } }
-.spotlight-type .spotlight-container-img:hover {
+
+.spotlight-container-img:hover {
   box-shadow: 0 0 20px lightgrey; }
-.spotlight-type .input-discover {
+
+.input-discover {
   padding: 0 15px;
   margin: 30px auto 10px auto;
   border: 1.5px solid #e74a18;
@@ -794,17 +798,18 @@
   align-items: center;
   justify-content: space-between; }
   @media screen and (min-width: 641px) {
-    .spotlight-type .input-discover {
+    .input-discover {
       margin: 50px auto 20px auto; } }
-  .spotlight-type .input-discover p {
+  .input-discover p {
     font-family: "Signika Semibold";
     color: #444444;
     font-size: 14px;
     margin: 0; }
-  .spotlight-type .input-discover img {
+  .input-discover img {
     width: 30px;
     height: auto; }
-.spotlight-type .spotlight-container-recipe {
+
+.spotlight-container-recipe {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -812,21 +817,21 @@
   flex-wrap: wrap;
   max-width: 665px; }
   @media screen and (min-width: 769px) {
-    .spotlight-type .spotlight-container-recipe {
+    .spotlight-container-recipe {
       max-width: 800px; } }
-  .spotlight-type .spotlight-container-recipe .spotlight-recipe {
+  .spotlight-container-recipe .spotlight-recipe {
     padding: 0;
     height: 200px;
     justify-content: center; }
     @media screen and (min-width: 769px) {
-      .spotlight-type .spotlight-container-recipe .spotlight-recipe {
+      .spotlight-container-recipe .spotlight-recipe {
         width: 200px;
         height: 290px; } }
-    .spotlight-type .spotlight-container-recipe .spotlight-recipe .spotlight-img {
+    .spotlight-container-recipe .spotlight-recipe .spotlight-img {
       width: 100%;
       height: auto;
       margin-bottom: auto; }
-    .spotlight-type .spotlight-container-recipe .spotlight-recipe .recipe-title {
+    .spotlight-container-recipe .spotlight-recipe .recipe-title {
       margin: 0;
       font-family: "Signika Semibold";
       color: #444444;
@@ -835,20 +840,20 @@
       text-transform: uppercase;
       text-align: center; }
       @media screen and (min-width: 769px) {
-        .spotlight-type .spotlight-container-recipe .spotlight-recipe .recipe-title {
+        .spotlight-container-recipe .spotlight-recipe .recipe-title {
           font-size: 14px; } }
-    .spotlight-type .spotlight-container-recipe .spotlight-recipe .category-img {
+    .spotlight-container-recipe .spotlight-recipe .category-img {
       margin: auto; }
       @media screen and (min-width: 769px) {
-        .spotlight-type .spotlight-container-recipe .spotlight-recipe .category-img {
+        .spotlight-container-recipe .spotlight-recipe .category-img {
           margin: 0; } }
       @media screen and (min-width: 1025px) {
-        .spotlight-type .spotlight-container-recipe .spotlight-recipe .category-img {
+        .spotlight-container-recipe .spotlight-recipe .category-img {
           margin: 0; } }
-      .spotlight-type .spotlight-container-recipe .spotlight-recipe .category-img img {
+      .spotlight-container-recipe .spotlight-recipe .category-img img {
         width: 27px;
         height: auto; }
-    .spotlight-type .spotlight-container-recipe .spotlight-recipe a {
+    .spotlight-container-recipe .spotlight-recipe a {
       font-family: "Signika Regular";
       color: white;
       font-size: 11px;
@@ -860,10 +865,10 @@
       border-radius: 5px;
       margin-bottom: 7px; }
       @media screen and (min-width: 641px) {
-        .spotlight-type .spotlight-container-recipe .spotlight-recipe a {
+        .spotlight-container-recipe .spotlight-recipe a {
           font-size: 12px; } }
       @media screen and (min-width: 769px) {
-        .spotlight-type .spotlight-container-recipe .spotlight-recipe a {
+        .spotlight-container-recipe .spotlight-recipe a {
           font-size: 13px; } }
 
 .container-desc {
@@ -1199,6 +1204,169 @@
         border-radius: 50%; }
       #main-recipe .carousel .container-bullets #bullet-active {
         background-color: #414141; }
+
+.header-modal {
+  background-color: transparent; }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 5;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding-bottom: 25px; }
+  @media screen and (min-width: 641px) {
+    .modal {
+      width: 60%;
+      top: 5%;
+      left: 12%;
+      border-radius: 12px; } }
+
+.modal:target {
+  display: block; }
+
+.modal::-webkit-scrollbar {
+  width: 3px; }
+  @media screen and (min-width: 641px) {
+    .modal::-webkit-scrollbar {
+      width: 7px; } }
+  @media screen and (min-width: 769px) {
+    .modal::-webkit-scrollbar {
+      width: 10px; } }
+
+.modal::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px; }
+
+.modal::-webkit-scrollbar-thumb {
+  background-color: #e74a18;
+  border-radius: 10px; }
+
+.modal-block {
+  background: #f7f7f7;
+  height: 430px;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px; }
+
+.modal-img > img {
+  width: 100%; }
+.modal-img .time {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Signika Regular";
+  color: #444444;
+  font-size: 13px;
+  padding-left: 20px;
+  padding-right: 20px; }
+  .modal-img .time span {
+    text-transform: uppercase;
+    font-size: inherit1px;
+    font-family: "Signika Bold"; }
+  .modal-img .time img {
+    width: 17px;
+    margin-left: 10px;
+    margin-right: 10px; }
+
+.modal-content {
+  background: #f7f7f7;
+  padding-left: 20px;
+  padding-right: 20px; }
+  .modal-content .modal-title h2 {
+    font-family: "Signika Semibold";
+    color: #444444;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: center; }
+  .modal-content .modal-title .kitchen {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; }
+    .modal-content .modal-title .kitchen .chief {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center; }
+      .modal-content .modal-title .kitchen .chief img {
+        width: 17px;
+        margin-right: 5px; }
+      .modal-content .modal-title .kitchen .chief p {
+        margin: 0; }
+      .modal-content .modal-title .kitchen .chief .proposed-by {
+        font-family: "Signika Light";
+        color: #bbbbbb;
+        font-size: 13px; }
+      .modal-content .modal-title .kitchen .chief .author {
+        font-family: "Signika Semibold";
+        color: #444444;
+        font-size: 14px;
+        text-transform: uppercase; }
+    .modal-content .modal-title .kitchen .category img {
+      width: 40px; }
+  .modal-content .modal-desc > div {
+    margin-top: 30px; }
+  .modal-content h3 {
+    font-family: "Signika Semibold";
+    color: #444444;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 5px; }
+  .modal-content hr {
+    border: 0;
+    height: 3px;
+    width: 50px;
+    background: #e74a18;
+    margin: 0; }
+  .modal-content > div {
+    margin-top: 25px; }
+  .modal-content p, .modal-content .modal-comments p {
+    font-family: "Signika Light";
+    color: #444444;
+    font-size: 14px;
+    text-align: justify; }
+  .modal-content .modal-comments .comment {
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 20px 0;
+    margin-bottom: 20px;
+    padding: 1px 15px; }
+    .modal-content .modal-comments .comment p:first-child {
+      font-weight: bold; }
+
+#modal-recipe .spotlight-container-recipe {
+  max-width: 100%; }
+  #modal-recipe .spotlight-container-recipe .spotlight-recipe {
+    width: 125px;
+    height: 190px; }
+    @media screen and (min-width: 321px) {
+      #modal-recipe .spotlight-container-recipe .spotlight-recipe {
+        width: 130px;
+        height: 200px; } }
+#modal-recipe .spotlight-container-img {
+  margin-left: 6px;
+  margin-right: 6px; }
+  @media screen and (min-width: 321px) {
+    #modal-recipe .spotlight-container-img {
+      margin-left: 10px;
+      margin-right: 10px; } }
+
+.btn-in-modal {
+  height: 25px;
+  position: absolute;
+  top: 5px; }
+
+.btn-close {
+  left: 5px; }
+
+.btn-crush {
+  right: 5px; }
 
 html {
   min-height: 100vh;
