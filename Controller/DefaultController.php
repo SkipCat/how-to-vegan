@@ -50,6 +50,17 @@ class DefaultController extends BaseController {
         }
     }
 
+    public function profileAction() {
+        if (!empty($_SESSION['user_id'])) {
+            $manager = UserManager::getInstance();
+            $user = $manager->getUserById($_SESSION['user_id']);
+            echo $this->renderView('profile.html.twig', ['user' => $user]); // get also list, recipes and comments
+        }
+        else {
+            echo $this->renderView('profile.html.twig');
+        }
+    }
+
     public function contactAction() {
         if (!empty($_SESSION['user_id'])) {
             $manager = UserManager::getInstance();

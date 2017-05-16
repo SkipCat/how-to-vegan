@@ -31,10 +31,12 @@ class UserManager {
 
     public function userCheckRegister($data) {
         if (empty($data['username']) OR empty($data['email']) OR empty($data['password'])) {
+            echo 'empty';
             return false;
         }
         $data = $this->getUserByUsername($data['username']);
         if ($data !== false) {
+            echo 'data false';
             return false;
         }
         // TODO : Check valid email
@@ -50,7 +52,7 @@ class UserManager {
         $user['username'] = $data['username'];
         $user['password'] = $this->userHash($data['password']);
         $user['email'] = $data['email'];
-        $user['admin'] = $data['admin'];
+        $user['admin'] = null;
         $this->DBManager->insert('users', $user);
     }
 
@@ -63,7 +65,7 @@ class UserManager {
             return false;
         }
         $hash = $this->userHash($data['password']);
-        if ($hash !== $user['password']) {
+        if (!password_verify($hash, $user['password'])) {
             return false;
         }
         return true;

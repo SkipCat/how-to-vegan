@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <title>How To Vegan</title>
@@ -26,12 +26,14 @@
                     <img src="assets/img/logo.png" alt="logo">
                 </a>
                 {% if user.username is defined and user.username is not empty %}
-                    <img src="assets/img/profile.png" alt="icon profile" id="btn-profile" class="btn-menu">
-                    <a href="?action=profile">{{ user.username|e }}</a>
+                    <a href="?action=profile">
+                        <img src="assets/img/profile.png" alt="icon profile" id="btn-profile" class="btn-menu">
+                    </a>
                 {% endif %}
                 {% if user.username is not defined and user.username is empty %}
-                    <img src="assets/img/login.png" alt="icon login" id="btn-login" class="btn-menu">
-                    <a href="?action=login">Se connecter</a>
+                    <a href="?action=login">
+                        <img src="assets/img/login.png" alt="icon login" id="btn-login" class="btn-menu">
+                    </a>
                 {% endif %}
             </div>
             <nav>
@@ -52,17 +54,21 @@
                 </div>
                 <div>
                     <div></div>
-                    <a href="?action=about" id="about-page">A propos</a>
+                    <a href="?action=about" id="about-page">à propos</a>
                 </div>
             </nav>
             <div class="profile-login">
                 {% if user.username is defined and user.username is not empty %}
-                    <img src="assets/img/profile.png" alt="icon profile" id="btn-profile" class="btn-menu">
-                    <a href="?action=profile">{{ user.username|e }}</a>
+                    <a href="?action=profile">
+                        <img src="assets/img/profile.png" alt="icon profile" id="btn-profile" class="btn-menu">
+                        <p>{{ user.username|e }}</p>
+                    </a>
                 {% endif %}
                 {% if user.username is not defined and user.username is empty %}
-                    <img src="assets/img/login.png" alt="icon login" id="btn-login" class="btn-menu">
-                    <a href="?action=login">Se connecter</a>
+                    <a href="?action=login">
+                        <img src="assets/img/login.png" alt="icon login" id="btn-login" class="btn-menu">
+                        <p>Se connecter</p>
+                    </a>
                 {% endif %}
             </div>
         </header>
