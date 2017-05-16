@@ -1,4 +1,4 @@
-.header-modal {
+#header-modal {
     background-color: transparent;
 }
 
@@ -6,17 +6,23 @@
     display: none;
     position: fixed;
     z-index: 5;
-    top: 0px; // pb: fix modal at 170px only at beginning (header visible but not the rest)
+    top: 0; // pb: fix modal at 170px only at beginning (header visible but not the rest)
     left: 0;
     @include resize(100%, 100%);
     overflow-y: auto;
+    overflow-x: hidden;
     padding-bottom: 25px;
     @media screen and (min-width: 641px) {
-        width: 60%;
+        width: 570px;
         top: 5%;
-        left: 20%;
-        right: 20%;
+        left: 13%; // how to center ??
         border-radius: 12px;
+    }
+    @media screen and (min-width: 769px) {
+        left: 23%;
+    }
+    @media screen and (min-width: 1025px) {
+        left: 30%;
     }
 }
 .modal:target {
@@ -39,7 +45,7 @@
 //::-webkit-scrollbar-track-piece
 .modal::-webkit-scrollbar-thumb {
     background-color: $light-red;
-    border-radius: 10px;
+    border-radius: 3px;
 }
 
 .modal-block {
@@ -57,8 +63,28 @@
     .time {
         @include flex(row, center, space-between);
         @include policy($main-font, $text-color, 13px);
-        padding-left: 20px;
-        padding-right: 20px;
+        background-color: $bg-grey;
+        position: relative;
+        width: 90%;
+        top: -35px;
+        left: 5%;
+        @media screen and (min-width: 376px) {
+            width: 75%;
+            left: 12%;
+        }
+        @media screen and (min-width: 641px) {
+            width: 65%;
+            left: 17%;
+            margin-top: 0px;
+            padding: 5px 10px 5px 5px;
+        }
+
+        p {
+            margin: 5px 0;
+            @media screen and (min-width: 769px) {
+                margin: 10px 0;
+            }
+        }
 
         span {
             text-transform: uppercase;
@@ -69,7 +95,7 @@
         img {
             width: 17px;
             margin-left: 10px;
-            margin-right: 10px;
+            margin-right: 15px;
         }
     }
 }
@@ -78,19 +104,30 @@
     background: $bg-grey;
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom: 75px; // to modify
+    @media screen and (min-width: 641px) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 
     .modal-title {
         h2 {
             @include policy($semibold-font, $text-color, 18px);
             text-transform: uppercase;
             text-align: center;
+            margin-top: -45px;
+            @media screen and (min-width: 641px) {
+                width: 55%;
+                margin: -35px auto 0 auto;
+            }
         }
 
         .kitchen {
             @include flex(row, center, space-between);
 
             .chief {
-                @include flex(row, center, center);
+                @include flex(row, center, left);
+
                 img {
                     width: 17px;
                     margin-right: 5px;
@@ -108,15 +145,44 @@
             }
 
             .category {
+                @media screen and (min-width: 641px) {
+                    width: 125px;
+                    align-self: flex-start;
+                    position: absolute;
+                    top: 260px;
+                }
+
                 img {
-                    width: 40px;
+                    width: 35px;
+                    margin-right: 7px;
                 }
             }
         }
     }
 
-    .modal-desc > div {
-        margin-top: 30px;
+    .modal-desc {
+        width: 100%;
+        @media screen and (min-width: 641px) {
+            @include flex(row, top, space-between);
+        }
+
+        > div {
+            margin-top: 30px;
+            @media screen and (min-width: 641px) {
+                margin-top: 0;
+            }
+        }
+
+        .ingredients {
+            @media screen and (min-width: 641px) {
+                width: 35%
+            }
+        }
+        .recipe {
+            @media screen and (min-width: 641px) {
+                width: 60%;
+            }
+        }
     }
 
     h3 {
@@ -143,6 +209,9 @@
     }
 
     .modal-comments {
+        @media screen and (min-width: 641px) {
+            margin-top: 50px;
+        }
         .comment {
             background-color: white;
             border-radius: 5px;
@@ -156,24 +225,36 @@
             }
         }
     }
+
+    .modal-similars {
+        @media screen and (min-width: 641px) {
+            margin-top: 50px;
+        }
+    }
 }
 
 #modal-recipe {
     .spotlight-container-recipe {
         max-width: 100%;
+
         .spotlight-recipe {
             @include resize(125px, 190px);
             @media screen and (min-width: 321px) {
                 @include resize(130px, 200px);
             }
+            @media screen and (min-width: 769px) {
+                @include resize(200px, 290px);
+            }
         }
     }
+
     .spotlight-container-img {
         margin-left: 6px;
         margin-right: 6px;
+        margin-top: 30px;
         @media screen and (min-width: 321px) {
-            margin-left: 10px;
-            margin-right: 10px;
+            margin-left: 15px;
+            margin-right: 15px;
         }
     }    
 }
@@ -182,15 +263,30 @@
     height: 25px;
     position: absolute;
     top: 5px;
+    @media screen and (min-width: 641px) {
+        top: 10px;
+    }
 }
 
 .btn-close {
     left: 5px;
     @media screen and (min-width: 641px) {
+        left: 10px;
         //display: none;
     }
 }
 
 .btn-crush {
     right: 5px;
+    @media screen and (min-width: 641px) {
+        right: 10px;
+    }
+}
+
+.blur-elements {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
 }

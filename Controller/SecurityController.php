@@ -12,13 +12,16 @@ class SecurityController extends BaseController {
             $manager = UserManager::getInstance();
             if ($manager->userCheckLogin($_POST)) {
                 $manager->userLogin($_POST['username']);
+                echo $this->redirect('home');
             }
             else {
                 echo $result = 'Invalid username or password';
                 return false;
             }
         }
-        echo $this->renderView('login.html.twig', ['error' => $error]);
+        else {
+            echo $this->renderView('login.html.twig', ['error' => $error]);
+        }
     }
 
     public function logoutAction() {
@@ -32,6 +35,7 @@ class SecurityController extends BaseController {
             $manager = UserManager::getInstance();
             if ($manager->userCheckRegister($_POST)) {
                 $manager->userRegister($_POST);
+                echo $this->redirect('home');
             }
             else {
                 echo $result = 'Username already exist';

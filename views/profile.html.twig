@@ -1,0 +1,218 @@
+{% extends 'index.html.twig' %}
+
+{% block content %}
+    <a href="?action=logout" id="btn-logout">
+        <img src="assets/img/logout.png" alt="logout">
+    </a>
+    <main id="main-profile">
+        <nav>
+            <div>
+                <a href="#modify-content" id="modify-link">Profil</a>
+                <hr>
+            </div>
+            <div >
+                <a href="#pin-content" id="pin-link">épinglés</a>
+                <hr>
+            </div>
+            <div >
+                <a href="#favorites-content" id="favorites-link">Favoris</a>
+                <hr>
+            </div>
+        </nav>
+        <div>
+            <form id="modify-content">
+                <div class="profile-content">
+                    <div class="lastname">
+                        <p class="name">Nom : </p>
+                        <p class="info">Dewet</p>
+                    </div>
+                    <p>(Seule l'initiale de votre nom sera visible lorsque vous publierez du contenu.)</p>
+                    <div class="firstname">
+                        <p class="name">Prénom : </p>
+                        <p class="info">Clémence</p>
+                    </div>
+                    <div class="email">
+                        <p class="name">Email : </p>
+                        <p class="info">clemence.dewet@outlook.fr</p>
+                    </div>
+                    <div class="password">
+                        <p class="name">Mot de passe : </p>
+                        <p class="info">Modifier le mot de passe</p>
+                    </div>
+                    <div class="gender">
+                        <p class="name">Sexe : </p>
+                        <!-- twig if user.gender == female -->
+                        <div class="choose-gender">
+                            <div>
+                                <input type="radio" value="female" id="female">
+                                <label for="female">
+                                    <img src="assets/img/female.png">
+                                    <p class="info">Femme</p>
+                                </label>
+                            </div>
+                            <div>
+                                <input type="radio" value="male" id="male">
+                                <label for="male">
+                                    <img src="assets/img/male.png">
+                                    <p class="info">Homme</p>
+                                </label>
+                            </div>
+                            <div>
+                                <input type="radio" value="other" id="other">
+                                <label for="other">
+                                    <p class="info">Autre</p>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="birthdate">
+                        <p class="name">Date de naissance : </p>
+                        <p class="info">07/03/1996</p>
+                    </div>
+                    <div class="adress">
+                        <p class="name">Adresse : </p>
+                        <p class="info">6 rue du Moulin Vert</p>
+                    </div>
+                </div>
+                <input type="submit" value="Enregistrer">
+            </form>
+        </div>
+        <div>
+            <div id="pin-content">
+                <p>vos listes de <span>courses</span></p>
+                <div class="pin-elt">
+                    <img src="assets/img/delete_pin_list.png" alt="delete">
+                    <p class="pin-date">14/07/17</p>
+                    <p class="pin-name">"Anniv Papa"</p>
+                    <a class="btn-see-list">Voir la liste</a>
+                </div>
+                <div class="pin-elt">
+                    <img src="assets/img/delete_pin_list.png" alt="delete">
+                    <p class="pin-date">14/07/17</p>
+                    <p class="pin-name">"Anniv Papa"</p>
+                    <a class="btn-see-list">Voir la liste</a>
+                </div>
+                <div class="pin-elt">
+                    <img src="assets/img/delete_pin_list.png" alt="delete">
+                    <p class="pin-date">14/07/17</p>
+                    <p class="pin-name">"Anniv Papa"</p>
+                    <a class="btn-see-list">Voir la liste</a>
+                </div>
+
+            </div>
+        </div>
+        <div>
+            <div id="favorites-content">
+                <p>vos <span>recettes</span> coup de coeur !</p>
+                <div class="spotlight-type" id="spotlight-type-recipe">
+                    <div class="spotlight-container-recipe">
+                        <div class="spotlight-container-img spotlight-recipe">
+                            <img class="spotlight-img" src="assets/img/seitan.png" alt="frame picture">
+                            <div class="container-desc">
+                                <p class="recipe-title">Seitan façon poulet tikka massala</p>
+                                <div class="kitchen">
+                                    <div class="recipe-author">
+                                        <img src="assets/img/chief.png" alt="chief icon">
+                                        <div>
+                                            <p class="proposed-by">Proposé par</p>
+                                            <p class="author">Le staff</p>
+                                        </div>
+                                    </div>
+                                    <div class="category-img">
+                                        <img src="assets/img/category_vegan.png" alt="icon vegan">
+                                        <img src="assets/img/category_gluten_free.png" alt="icon gluten free">
+                                        <img src="assets/img/category_bio.png" alt="icon bio">
+                                    </div>
+                                </div>
+                                <div class="time">
+                                    <img src="assets/img/alarm.png" alt="alarm icon">
+                                    <p><span>Prep:</span> 15min</p>
+                                    <p><span>Cuisson:</span> 30min</p>
+                                    <p><span>Total:</span> 45min</p>
+                                </div>
+                                <a href="#modal-recipe" class="open-modal">Voir plus</a>
+                            </div>
+                        </div>
+                        <div class="spotlight-container-img spotlight-recipe">
+                            <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
+                            <div class="container-desc">
+                                <p class="recipe-title">Gâteau coco</p>
+                                <div class="kitchen">
+                                    <div class="recipe-author">
+                                        <img src="assets/img/chief.png" alt="chief icon">
+                                        <div>
+                                            <p class="proposed-by">Proposé par</p>
+                                            <p class="author">Le staff</p>
+                                        </div>
+                                    </div>
+                                    <div class="category-img">
+                                        <img src="assets/img/category_vegan.png" alt="icon vegan">
+                                    </div>
+                                </div>
+                                <div class="time">
+                                    <img src="assets/img/alarm.png" alt="alarm icon">
+                                    <p><span>Prep:</span> 15min</p>
+                                    <p><span>Cuisson:</span> 30min</p>
+                                    <p><span>Total:</span> 45min</p>
+                                </div>
+                                <a href="#modal-recipe" class="open-modal">Voir plus</a>
+                            </div>
+                        </div>
+                        <div class="spotlight-container-img spotlight-recipe">
+                            <img class="spotlight-img" src="assets/img/seitan.png" alt="frame picture">
+                            <div class="container-desc">
+                                <p class="recipe-title">Seitan façon poulet tikka massala</p>
+                                <div class="kitchen">
+                                    <div class="recipe-author">
+                                        <img src="assets/img/chief.png" alt="chief icon">
+                                        <div>
+                                            <p class="proposed-by">Proposé par</p>
+                                            <p class="author">Le staff</p>
+                                        </div>
+                                    </div>
+                                    <div class="category-img">
+                                        <img src="assets/img/category_vegan.png" alt="icon vegan">
+                                        <img src="assets/img/category_gluten_free.png" alt="icon gluten free">
+                                        <img src="assets/img/category_bio.png" alt="icon bio">
+                                    </div>
+                                </div>
+                                <div class="time">
+                                    <img src="assets/img/alarm.png" alt="alarm icon">
+                                    <p><span>Prep:</span> 15min</p>
+                                    <p><span>Cuisson:</span> 30min</p>
+                                    <p><span>Total:</span> 45min</p>
+                                </div>
+                                <a href="#modal-recipe" class="open-modal">Voir plus</a>
+                            </div>
+                        </div>
+                        <div class="spotlight-container-img spotlight-recipe">
+                            <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
+                            <div class="container-desc">
+                                <p class="recipe-title">Gâteau coco</p>
+                                <div class="kitchen">
+                                    <div class="recipe-author">
+                                        <img src="assets/img/chief.png" alt="chief icon">
+                                        <div>
+                                            <p class="proposed-by">Proposé par</p>
+                                            <p class="author">Le staff</p>
+                                        </div>
+                                    </div>
+                                    <div class="category-img">
+                                        <img src="assets/img/category_vegan.png" alt="icon vegan">
+                                    </div>
+                                </div>
+                                <div class="time">
+                                    <img src="assets/img/alarm.png" alt="alarm icon">
+                                    <p><span>Prep:</span> 15min</p>
+                                    <p><span>Cuisson:</span> 30min</p>
+                                    <p><span>Total:</span> 45min</p>
+                                </div>
+                                <a href="#modal-recipe" class="open-modal">Voir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
