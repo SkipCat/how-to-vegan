@@ -21,7 +21,11 @@
         </div>
         <form name="shoppping-list" id="form-list" class="frame-elt">
             <div class="list">
-                <img src="assets/img/pin_list.png" alt="icon pin" id="img-pin" title="Epingler cette liste">
+                {% if user.username is defined and user.username is not empty %}
+                    <img src="assets/img/pin_list.png" alt="icon pin" id="img-pin" title="Epingler cette liste">
+                {% else %}
+                    <img style="visibility: hidden;" src="assets/img/pin_list.png" alt="icon pin" id="img-pin" title="Epingler cette liste">
+                {% endif %}
                 <ul>
                     <li class="shop-li">
                         <select name="products-list">
@@ -107,76 +111,37 @@
                 </div>
             </div>
             <div class="spotlight-container-basket">
-                <div class="spotlight-container-img">
-                    <div class="basket-buttons">
-                        <div class="crush">
-                            <img src="assets/img/heart.png" alt="icon heart" class="btn-crush">
+                {% for basket in baskets %}
+                    <div class="spotlight-container-img">
+                        <div class="basket-buttons">
+                            {% if user.username is defined and user.username is not empty %}
+                                <div class="crush">
+                                    <img src="assets/img/heart.png" alt="icon heart" class="btn-crush">
+                                </div>
+                            {% else %}
+                                <div style="visibility: hidden;" class="crush">
+                                    <img src="assets/img/heart.png" alt="icon heart" class="btn-crush">
+                                </div>
+                            {% endif %}
+                            <div class="open-modal">
+                                <img src="assets/img/open_modal.png" alt="icon open">
+                            </div>
                         </div>
-                        <div class="open-modal">
-                            <img src="assets/img/open_modal.png" alt="icon open">
-                        </div>
-                    </div>
-                    <img class="spotlight-img" src="assets/img/frame_picture_basket.png" alt="frame picture">
-                    <div class="spotlight-basket">
-                        <p class="price">~ 28.50&euro;</p>
-                        <p class="name">panier du <span>néophyte</span></p>
-                        <div class="container-category-indicator">
-                            <div class="category-indicator category-bio">Bio</div>
-                            <div class="category-indicator category-gluten-free">Gluten Free</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="spotlight-container-img">
-                    <div class="basket-buttons">
-                        <div class="crush">
-                            <img src="assets/img/heart.png" alt="icon heart" class="btn-crush">
-                        </div>
-                        <div class="open-modal">
-                            <img src="assets/img/open_modal.png" alt="icon open">
-                        </div>
-                    </div>
-                    <img class="spotlight-img" src="assets/img/frame_picture_basket.png" alt="frame picture">
-                    <div class="spotlight-basket">
-                        <p class="price">~ 28.50&euro;</p>
-                        <p class="name">panier du <span>néophyte</span></p>
-                        <div class="container-category-indicator">
-                            <div class="category-indicator category-gluten-free">Gluten Free</div>
+                        <img class="spotlight-img" src="assets/img/frame_picture_basket.png" alt="frame picture">
+                        <div class="spotlight-basket">
+                            <p class="price">{{ basket.price }}&euro;</p>
+                            <p class="name"><span>{{ basket.name }}</span></p>
+                            <div class="container-category-indicator">
+                                {% if 'bio' in basket.category %}
+                                    <div class="category-indicator category-bio">Bio</div>
+                                {% endif %}
+                                {% if 'gluten-free' in basket.category %}
+                                    <div class="category-indicator category-gluten-free">Gluten Free</div>
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="spotlight-container-img">
-                    <div class="basket-buttons">
-                        <div class="crush">
-                            <img src="assets/img/heart.png" alt="icon heart" class="btn-crush">
-                        </div>
-                        <div class="open-modal">
-                            <img src="assets/img/open_modal.png" alt="icon open">
-                        </div>
-                    </div>
-                    <img class="spotlight-img" src="assets/img/frame_picture_basket.png" alt="frame picture">
-                    <div class="spotlight-basket">
-                        <p class="price">~ 28.50&euro;</p>
-                        <p class="name">panier du <span>néophyte</span></p>
-                    </div>
-                </div>
-                <div class="spotlight-container-img">
-                    <div class="basket-buttons">
-                        <div class="crush">
-                            <img src="assets/img/heart.png" alt="icon heart" class="btn-crush">
-                        </div>
-                        <div class="open-modal">
-                            <img src="assets/img/open_modal.png" alt="icon open">
-                        </div>
-                    </div>
-                    <img class="spotlight-img" src="assets/img/frame_picture_basket.png" alt="frame picture">
-                    <div class="spotlight-basket">
-                        <p class="price">~ 28.50&euro;</p>
-                        <p class="name">panier du <span>néophyte</span></p>
-                        <div class="container-category-indicator">
-                            <div class="category-indicator category-bio">Bio</div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
             <a href="?action=basket">
                 <div class="input-discover">
@@ -195,110 +160,39 @@
                 </div>
             </div>
             <div class="spotlight-container-recipe">
-                <div class="spotlight-container-img spotlight-recipe">
-                    <img class="spotlight-img" src="assets/img/seitan.png" alt="frame picture">
-                    <div class="container-desc">
-                        <p class="recipe-title">Seitan façon poulet tikka massala</p>
-                        <div class="kitchen">
-                            <div class="recipe-author">
-                                <img src="assets/img/chief.png" alt="chief icon">
-                                <div>
-                                    <p class="proposed-by">Proposé par</p>
-                                    <p class="author">Le staff</p>
+                {% for recipe in recipes %}
+                    <div class="spotlight-container-img spotlight-recipe">
+                        <img class="spotlight-img" src="assets/img/seitan.png" alt="frame picture">
+                        <div class="container-desc">
+                            <p class="recipe-title">{{ recipe.name }}</p>
+                            <div class="kitchen">
+                                <div class="recipe-author">
+                                    <img src="assets/img/chief.png" alt="chief icon">
+                                    <div>
+                                        <p class="proposed-by">Proposé par</p>
+                                        <p class="author">Le staff</p>
+                                    </div>
+                                </div>
+                                <div class="category-img">
+                                    <img src="assets/img/category_vegan.png" alt="icon vegan">
+                                    {% if 'gluten-free' in recipe.category %}
+                                        <img src="assets/img/category_gluten_free.png" alt="icon gluten free">
+                                    {% endif %}
+                                    {% if 'bio' in recipe.category %}
+                                        <img src="assets/img/category_bio.png" alt="icon bio">
+                                    {% endif %}
                                 </div>
                             </div>
-                            <div class="category-img">
-                                <img src="assets/img/category_vegan.png" alt="icon vegan">
-                                <img src="assets/img/category_gluten_free.png" alt="icon gluten free">
-                                <img src="assets/img/category_bio.png" alt="icon bio">
+                            <div class="time">
+                                <img src="assets/img/alarm.png" alt="alarm icon">
+                                <p><span>Prep:</span> {{ recipe.preparation }}min</p>
+                                <p><span>Cuisson:</span> {{ recipe.baking }}min</p>
+                                <p><span>Total:</span> {{ recipe.preparation + recipe.baking }}min</p>
                             </div>
+                            <a href="?action=recipe">Voir plus</a>
                         </div>
-                        <div class="time">
-                            <img src="assets/img/alarm.png" alt="alarm icon">
-                            <p><span>Prep:</span> 15min</p>
-                            <p><span>Cuisson:</span> 30min</p>
-                            <p><span>Total:</span> 45min</p>
-                        </div>
-                        <a href="?action=recipe">Voir plus</a>
                     </div>
-                </div>
-                <div class="spotlight-container-img spotlight-recipe">
-                    <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
-                    <div class="container-desc">
-                        <p class="recipe-title">Gâteau coco</p>
-                        <div class="kitchen">
-                            <div class="recipe-author">
-                                <img src="assets/img/chief.png" alt="chief icon">
-                                <div>
-                                    <p class="proposed-by">Proposé par</p>
-                                    <p class="author">Le staff</p>
-                                </div>
-                            </div>
-                            <div class="category-img">
-                                <img src="assets/img/category_vegan.png" alt="icon vegan">
-                            </div>
-                        </div>
-                        <div class="time">
-                            <img src="assets/img/alarm.png" alt="alarm icon">
-                            <p><span>Prep:</span> 15min</p>
-                            <p><span>Cuisson:</span> 30min</p>
-                            <p><span>Total:</span> 45min</p>
-                        </div>
-                        <a href="?action=recipe">Voir plus</a>
-                    </div>
-                </div>
-                <div class="spotlight-container-img spotlight-recipe">
-                    <img class="spotlight-img" src="assets/img/seitan.png" alt="frame picture">
-                    <div class="container-desc">
-                        <p class="recipe-title">Seitan façon poulet tikka massala</p>
-                        <div class="kitchen">
-                            <div class="recipe-author">
-                                <img src="assets/img/chief.png" alt="chief icon">
-                                <div>
-                                    <p class="proposed-by">Proposé par</p>
-                                    <p class="author">Le staff</p>
-                                </div>
-                            </div>
-                            <div class="category-img">
-                                <img src="assets/img/category_vegan.png" alt="icon vegan">
-                                <img src="assets/img/category_gluten_free.png" alt="icon gluten free">
-                                <img src="assets/img/category_bio.png" alt="icon bio">
-                            </div>
-                        </div>
-                        <div class="time">
-                            <img src="assets/img/alarm.png" alt="alarm icon">
-                            <p><span>Prep:</span> 15min</p>
-                            <p><span>Cuisson:</span> 30min</p>
-                            <p><span>Total:</span> 45min</p>
-                        </div>
-                        <a href="?action=recipe">Voir plus</a>
-                    </div>
-                </div>
-                <div class="spotlight-container-img spotlight-recipe">
-                    <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
-                    <div class="container-desc">
-                        <p class="recipe-title">Gâteau coco</p>
-                        <div class="kitchen">
-                            <div class="recipe-author">
-                                <img src="assets/img/chief.png" alt="chief icon">
-                                <div>
-                                    <p class="proposed-by">Proposé par</p>
-                                    <p class="author">Le staff</p>
-                                </div>
-                            </div>
-                            <div class="category-img">
-                                <img src="assets/img/category_vegan.png" alt="icon vegan">
-                            </div>
-                        </div>
-                        <div class="time">
-                            <img src="assets/img/alarm.png" alt="alarm icon">
-                            <p><span>Prep:</span> 15min</p>
-                            <p><span>Cuisson:</span> 30min</p>
-                            <p><span>Total:</span> 45min</p>
-                        </div>
-                        <a href="?action=recipe">Voir plus</a>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
             <a href="?action=recipe">
                 <div class="input-discover">

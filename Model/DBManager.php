@@ -58,7 +58,7 @@ class DBManager {
         $query .= ')';
         $sth = $dbh->prepare($query);
         $sth->execute($data);
-        //var_dump($sth);
+        var_dump($sth);
         return true;
     }
     

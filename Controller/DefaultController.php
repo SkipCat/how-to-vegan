@@ -7,13 +7,23 @@ use Model\UserManager;
 class DefaultController extends BaseController {
     
     public function homeAction() {
+        $manager = UserManager::getInstance();
+        $baskets = $manager->getAllBaskets();
+        $recipes = $manager->getAllRecipes();
+
         if (!empty($_SESSION['user_id'])) {
-            $manager = UserManager::getInstance();
             $user = $manager->getUserById($_SESSION['user_id']);
-            echo $this->renderView('home.html.twig', ['user' => $user]);
+            echo $this->renderView('home.html.twig', [
+                'user'    => $user,
+                'baskets' => $baskets,
+                'recipes' => $recipes
+            ]);
         }
         else {
-            echo $this->renderView('home.html.twig');
+            echo $this->renderView('home.html.twig', [
+                'baskets' => $baskets,
+                'recipes' => $recipes
+            ]);
         }
     }
 
@@ -29,47 +39,34 @@ class DefaultController extends BaseController {
     }
 
     public function basketAction() {
+        $manager = UserManager::getInstance();
+        $baskets = $manager->getAllBaskets();
+
         if (!empty($_SESSION['user_id'])) {
-            $manager = UserManager::getInstance();
             $user = $manager->getUserById($_SESSION['user_id']);
-            $baskets = $manager->getAllBaskets();
             echo $this->renderView('basket.html.twig', [
                 'user' => $user,
                 'baskets' => $baskets
             ]);
         }
         else {
-            $manager = UserManager::getInstance();
-            $baskets = $manager->getAllBaskets();
             echo $this->renderView('basket.html.twig', ['baskets' => $baskets]);
         }
     }
 
     public function recipeAction() {
+        $manager = UserManager::getInstance();
+        $recipes = $manager->getAllRecipes();
+
         if (!empty($_SESSION['user_id'])) {
-            $manager = UserManager::getInstance();
             $user = $manager->getUserById($_SESSION['user_id']);
-            $recipes = $manager->getAllRecipes();
             echo $this->renderView('recipe.html.twig', [
                 'user' => $user,
                 'recipes' => $recipes
             ]);
         }
         else {
-            $manager = UserManager::getInstance();
-            $recipes = $manager->getAllRecipes();
             echo $this->renderView('recipe.html.twig', ['recipes' => $recipes]);
-        }
-    }
-
-    public function profileAction() {
-        if (!empty($_SESSION['user_id'])) {
-            $manager = UserManager::getInstance();
-            $user = $manager->getUserById($_SESSION['user_id']);
-            echo $this->renderView('profile.html.twig', ['user' => $user]); // get also list, recipes and comments
-        }
-        else {
-            echo $this->renderView('profile.html.twig');
         }
     }
 
