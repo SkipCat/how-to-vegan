@@ -1890,6 +1890,333 @@
   display: flex;
   flex-direction: column; }
 
+@media screen and (min-width: 641px) {
+  #header-about {
+    background-image: url("../img/bg_about.png"); } }
+
+#subheader-about {
+  position: relative;
+  top: -50px;
+  /*
+  #about-d{
+      display: none;
+      @media screen and (min-width: 641px){
+          display: unset;
+          margin-top: -20px;
+          @include resize(100%, auto);
+      }
+      @media screen and (min-width: 1251px) {
+          margin-top: -50px;
+      }
+  }
+  */ }
+  @media screen and (min-width: 641px) {
+    #subheader-about {
+      top: -20px; } }
+  @media screen and (min-width: 769px) {
+    #subheader-about {
+      top: -170px; } }
+  @media screen and (min-width: 1025px) {
+    #subheader-about {
+      top: -210px; } }
+  #subheader-about #about-m {
+    width: 100%;
+    height: auto; }
+    @media screen and (min-width: 376px) {
+      #subheader-about #about-m {
+        width: 100%;
+        height: 170px; } }
+    @media screen and (min-width: 641px) {
+      #subheader-about #about-m {
+        display: none; } }
+  #subheader-about p {
+    font-family: "Signika Regular";
+    color: #efefef;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    position: relative;
+    top: -90px;
+    right: auto;
+    bottom: unset;
+    left: auto;
+    text-align: center;
+    text-transform: uppercase; }
+    @media screen and (min-width: 769px) {
+      #subheader-about p {
+        top: 35px; } }
+    @media screen and (min-width: 1025px) {
+      #subheader-about p {
+        font-size: 18px;
+        top: 50px; } }
+    #subheader-about p span {
+      font-family: "Signika Bold";
+      color: unset;
+      font-size: unset; }
+
+#main-about {
+  margin-top: -90px;
+  /*
+  @media screen and (min-width: 769px){
+      margin-top: -220px;
+  }
+  @media screen and (min-width: 1025px){
+      margin-top: -270px;
+  }
+  */ }
+  @media screen and (min-width: 641px) {
+    #main-about {
+      margin-top: -25px; } }
+  #main-about .section-about {
+    width: 90%;
+    margin: 0 auto;
+    display: block; }
+  @media screen and (min-width: 641px) {
+    #main-about #services-about {
+      width: 600px; } }
+  #main-about #services-about > p {
+    text-align: center;
+    font-family: "Signika Regular";
+    color: #444444;
+    font-size: 15px; }
+    #main-about #services-about > p:after {
+      width: 55px;
+      height: 2px;
+      position: absolute;
+      top: unset;
+      right: 0;
+      bottom: unset;
+      left: 0;
+      content: '';
+      margin: 20px auto;
+      background-color: #e74a18; }
+  #main-about #services-about #text {
+    text-align: justify;
+    font-family: "SourceSansPro";
+    color: #555555;
+    font-size: 14px; }
+  #main-about #services-about #panel {
+    width: 200px;
+    margin: 40px auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; }
+    @media screen and (min-width: 376px) {
+      #main-about #services-about #panel {
+        width: 250px; } }
+    @media screen and (min-width: 641px) {
+      #main-about #services-about #panel {
+        width: 600px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between; }
+        #main-about #services-about #panel > div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          width: 180px;
+          height: 230px; } }
+    #main-about #services-about #panel img {
+      width: 80px;
+      height: auto; }
+      @media screen and (min-width: 641px) {
+        #main-about #services-about #panel img {
+          width: auto;
+          height: 60px; } }
+    #main-about #services-about #panel .title {
+      font-family: "Signika Bold";
+      color: #444444;
+      font-size: 13px;
+      text-transform: uppercase;
+      width: 100px;
+      display: block;
+      margin: 0 auto; }
+      @media screen and (min-width: 641px) {
+        #main-about #services-about #panel .title {
+          margin: 30px auto 7px auto; } }
+    #main-about #services-about #panel .text {
+      font-family: "SourceSansPro";
+      color: #555555;
+      font-size: 13px;
+      text-align: justify;
+      margin-bottom: 30px; }
+      @media screen and (min-width: 641px) {
+        #main-about #services-about #panel .text {
+          margin-bottom: 20px; } }
+  #main-about #goal-about {
+    margin-top: 40px;
+    height: auto; }
+    #main-about #goal-about #back-goal {
+      display: none; }
+      @media screen and (min-width: 641px) {
+        #main-about #goal-about #back-goal {
+          display: unset;
+          width: 100%; } }
+    #main-about #goal-about #back-goal-m {
+      width: 100%; }
+      @media screen and (min-width: 641px) {
+        #main-about #goal-about #back-goal-m {
+          display: none; } }
+    #main-about #goal-about #text-goal {
+      width: 100%;
+      top: 1300px;
+      display: block;
+      position: absolute; }
+      @media screen and (min-width: 321px) {
+        #main-about #goal-about #text-goal {
+          top: 1350px; } }
+      @media screen and (min-width: 376px) {
+        #main-about #goal-about #text-goal {
+          top: 1380px; } }
+      @media screen and (min-width: 641px) {
+        #main-about #goal-about #text-goal {
+          top: 740px; } }
+      @media screen and (min-width: 769px) {
+        #main-about #goal-about #text-goal {
+          top: 860px; } }
+      @media screen and (min-width: 1025px) {
+        #main-about #goal-about #text-goal {
+          top: 1050px; } }
+      #main-about #goal-about #text-goal > p {
+        font-family: "Signika Bold";
+        color: white;
+        font-size: 16px;
+        text-align: center;
+        letter-spacing: 0.5px; }
+      #main-about #goal-about #text-goal #goal-text {
+        width: 170px;
+        text-align: justify;
+        font-family: "SourceSansPro";
+        color: #444444;
+        font-size: 13px;
+        margin: 20% auto 0 auto;
+        display: block;
+        padding: 30px 25px;
+        background-color: #efefef;
+        z-index: 2;
+        position: relative; }
+        @media screen and (min-width: 321px) {
+          #main-about #goal-about #text-goal #goal-text {
+            width: 200px; } }
+        @media screen and (min-width: 641px) {
+          #main-about #goal-about #text-goal #goal-text {
+            width: 400px;
+            margin-top: 5%; } }
+      #main-about #goal-about #text-goal #green-border {
+        position: relative;
+        top: -295px;
+        right: unset;
+        bottom: unset;
+        left: 14px;
+        width: 214px;
+        height: 275px;
+        border: 3px solid #78a514;
+        margin: 0 auto;
+        display: block;
+        z-index: 1; }
+        @media screen and (min-width: 321px) {
+          #main-about #goal-about #text-goal #green-border {
+            width: 244px;
+            height: 245px;
+            top: -265px; } }
+        @media screen and (min-width: 641px) {
+          #main-about #goal-about #text-goal #green-border {
+            width: 444px;
+            height: 160px;
+            top: -180px; } }
+    #main-about #goal-about #position-leaf {
+      width: 100%;
+      text-align: right;
+      margin-top: -65px; }
+    #main-about #goal-about #leaf-border-about {
+      width: 20%;
+      height: auto; }
+      @media screen and (min-width: 641px) {
+        #main-about #goal-about #leaf-border-about {
+          width: 10%; } }
+  #main-about #about-us {
+    margin-top: 10px; }
+    #main-about #about-us > p {
+      text-align: center;
+      font-family: "Signika Regular";
+      color: #444444;
+      font-size: 15px; }
+      #main-about #about-us > p:after {
+        width: 55px;
+        height: 2px;
+        position: absolute;
+        top: unset;
+        right: 0;
+        bottom: unset;
+        left: 0;
+        content: '';
+        margin: 20px auto;
+        background-color: #e74a18; }
+    #main-about #about-us #text-about-us {
+      text-align: justify;
+      width: 90%;
+      margin: 0 auto;
+      display: block;
+      font-family: "SourceSansPro";
+      color: #555555;
+      font-size: 13px; }
+      @media screen and (min-width: 641px) {
+        #main-about #about-us #text-about-us {
+          width: 600px; } }
+    #main-about #about-us #photo-about {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 30px 0; }
+      @media screen and (min-width: 641px) {
+        #main-about #about-us #photo-about {
+          width: 600px;
+          display: block;
+          margin: 30px auto;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center; } }
+      @media screen and (min-width: 769px) {
+        #main-about #about-us #photo-about {
+          width: 700px; } }
+      @media screen and (min-width: 1025px) {
+        #main-about #about-us #photo-about {
+          width: 750px; } }
+      #main-about #about-us #photo-about > div {
+        margin: 10px auto;
+        display: block;
+        text-align: center;
+        width: 50%; }
+        @media screen and (min-width: 641px) {
+          #main-about #about-us #photo-about > div {
+            width: 200px; } }
+        #main-about #about-us #photo-about > div > img {
+          width: 100px;
+          height: auto; }
+          @media screen and (min-width: 321px) {
+            #main-about #about-us #photo-about > div > img {
+              width: 120px; } }
+          @media screen and (min-width: 641px) {
+            #main-about #about-us #photo-about > div > img {
+              width: 140px; } }
+        #main-about #about-us #photo-about > div .name-photo {
+          font-family: "Signika Bold";
+          color: #555555;
+          font-size: 15px;
+          margin-top: 3px; }
+        #main-about #about-us #photo-about > div .job-photo {
+          font-family: "Signika Light";
+          color: #444444;
+          font-size: 15px;
+          text-transform: uppercase;
+          margin-top: -10px; }
+
 html {
   min-height: 100vh;
   min-width: 100vw; }
@@ -2016,7 +2343,7 @@ header {
         right: 50px;
         bottom: initial;
         left: initial;
-        display: block; } }
+        top: 30px; } }
     header .profile-login a .btn-menu {
       width: 20px;
       height: 21px; }

@@ -26,6 +26,7 @@ module.exports = function(grunt) {
 						'assets/js/crush.js',
 						//'assets/js/map.js',
 						'assets/js/modal.js',
+						'assets/js/anchor.js',
 						'assets/js/bookmark.js',
 					],
 					'assets/js/map.min.js': ['assets/js/map.js'],

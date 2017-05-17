@@ -1,6 +1,18 @@
 {% extends 'index.html.twig' %}
 
 {% block content %}
+
+    <script>
+        window.onload = function () {
+            $('.category').on('click', function () {
+                var page = $(this).attr('href');
+                var speed = 750;
+                $('html, body').animate({scrollTop: $(page).offset().top}, speed); // Go
+                return false;
+            });
+        }
+    </script>
+
     <main id="main-basket">
         <img src="assets/img/img_basket.png" id="basketImg">
         <div class="step" id="category">
@@ -13,7 +25,7 @@
                     <td><p class="underTitle">Quel filtre vous convient ?</p></td>
                 </tr>
             </table>
-            <div class="category">
+            <a href="#panier_vegan" class="category">
                 <div class="category-names">
                     <div class="green-border"></div>
                     <div class="names">
@@ -27,8 +39,8 @@
                 <div class="category-arrow">
                     <img src="assets/img/white_arrow_down.png">
                 </div>
-            </div>
-            <div class="category">
+            </a>
+            <a href="#panier_bio" class="category">
                 <div class="category-names">
                     <div class="green-border"></div>
                     <div class="names">
@@ -44,8 +56,8 @@
                 <div class="category-arrow">
                     <img src="assets/img/white_arrow_down.png">
                 </div>
-            </div>
-            <div class="category">
+            </a>
+            <a href="#panier_gf" class="category">
                 <div class="category-names">
                     <div class="green-border"></div>
                     <div class="names">
@@ -61,8 +73,8 @@
                 <div class="category-arrow">
                     <img src="assets/img/white_arrow_down.png">
                 </div>
-            </div>
-            <div class="category">
+            </a>
+            <a href="#panier_gfbio" class="category">
                 <div class="category-names">
                     <div class="green-border"></div>
                     <div class="names">
@@ -80,7 +92,7 @@
                 <div class="category-arrow">
                     <img src="assets/img/white_arrow_down.png">
                 </div>
-            </div>
+            </a>
         </div>
         <div class="step" id="basket">
             <div class="details-title">
@@ -95,7 +107,7 @@
                     <td><p class="underTitle">De quelle humeur êtes-vous ?</p></td>
                 </tr>
             </table>
-            <div class="basket">
+            <div class="basket" id="panier_vegan">
                 <img src="assets/img/basket_1.png" alt="basket">
                 <div class="basket-desc">
                     <p class="name">Panier Printanier</p>
@@ -119,7 +131,7 @@
                     <div><div class="category-indicator category-bio">Bio</div><div class="category-indicator category-gluten-free">Gluten Free</div></div>
                 </div>
             </div>
-            <div class="basket">
+            <div class="basket" id="panier_bio">
                 <img src="assets/img/basket_2.png" alt="basket">
                 <div class="basket-desc">
                     <p class="name">Panier Néophyte</p>
@@ -141,7 +153,7 @@
                     <div class="category-indicator category-gluten-free">Gluten Free</div>
                 </div>
             </div>
-            <div class="basket">
+            <div class="basket" id="panier_gf">
                 <img src="assets/img/basket_1.png" alt="basket">
                 <div class="basket-desc">
                     <p class="name">Panier Printanier</p>
@@ -165,7 +177,7 @@
                     <div class="category-indicator category-gluten-free">Vegan</div>
                 </div>
             </div>
-            <div class="basket">
+            <div class="basket" id="panier_gfbio">
                 <img src="assets/img/basket_2.png" alt="basket">
                 <!--<img class="frameBasket" src="assets/img/frame_basket.png">-->
                 <div class="basket-desc">
