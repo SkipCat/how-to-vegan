@@ -1,22 +1,46 @@
 function modalActions() {
     var btnOpenModal = document.querySelectorAll('.open-modal');
-    var btnCloseModal = document.querySelector('.btn-close');
+
+    var body = document.querySelector('body');
+    var header = document.querySelector('header');
+    var footerMobile = document.querySelector('#footer-mobile');
+    var footerDesktop= document.querySelector('#footer-desktop');
+    var blur = document.querySelectorAll('.blur');
     
-    for (var i in btnOpenModal) {
-        btnOpenModal[i].onclick = function() {
-            document.querySelector('body').style.overflow = 'hidden';
-            document.querySelector('header').classList.add('blur-elements');
-            document.querySelector('main').classList.add('blur-elements');
-            document.querySelector('#footer-mobile').classList.add('blur-elements');
-            document.querySelector('#footer-desktop').classList.add('blur-elements');
-        };
+    function openModal() {
+        body.style.overflow = 'hidden';
+
+        header.classList.add('blur-elements');
+        footerMobile.classList.add('blur-elements');
+        footerDesktop.classList.add('blur-elements');
+        
+        for (var i = 0; i < blur.length; i ++) {
+            blur[i].classList.add('blur-elements');
+        }
     }
 
-    btnCloseModal.onclick = function() {
-        document.querySelector('body').style.overflow = 'auto';
-        document.querySelector('header').classList.remove('blur-elements');
-        document.querySelector('main').classList.remove('blur-elements');
-        document.querySelector('#footer-mobile').classList.remove('blur-elements');
-        document.querySelector('#footer-desktop').classList.remove('blur-elements');
-    };
+    function closeModal() {
+        body.style.overflow = 'auto';
+
+        header.classList.remove('blur-elements');
+        footerMobile.classList.remove('blur-elements');
+        footerDesktop.classList.remove('blur-elements');
+
+        for (var i = 0; i < blur.length; i ++) {
+            blur[i].classList.remove('blur-elements');
+        }
+
+        console.log('close modal');
+    }
+
+    for (var i in btnOpenModal) {
+        btnOpenModal[i].onclick = function() {
+            openModal();
+        };
+        var btnCloseModal = document.querySelector('.btn-close');
+        btnCloseModal.onclick = function() {
+            console.log('call for closing modal');                
+            closeModal();
+        };
+    }
 }
