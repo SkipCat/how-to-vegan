@@ -33,6 +33,7 @@ window.onload = function() {
         recipeLink.id = 'active-page';
         recipeLink.parentNode.childNodes[1].id = 'bookmark';
         header.id = 'header-recipe';
+        carousel();
         crush();
         modalActions();
     }

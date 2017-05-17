@@ -1448,40 +1448,55 @@
       @media screen and (min-width: 769px) {
         #main-recipe .recipe-presentation p {
           font-size: 16px; } }
-  #main-recipe .carousel {
+
+.rslides {
+  padding-left: 0; }
+  .rslides li {
+    -webkit-backface-visibility: hidden;
+    position: absolute;
+    display: none;
+    width: 100%;
+    left: 0;
+    top: 0; }
+  .rslides li:first-child {
+    position: relative;
+    display: block;
+    float: left; }
+
+.rslides1_on {
+  display: flex; }
+
+.choose-page {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 10%;
+  align-items: center;
+  margin-right: 5%;
+  margin-top: 20px;
+  z-index: 5; }
+  .choose-page img {
+    width: 10px;
+    height: 15px; }
+  .choose-page p {
+    font-family: "Signika Bold";
+    color: #444444;
+    font-size: 14px;
+    text-transform: uppercase; }
+  .choose-page .container-bullets {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin-top: 10px;
-    margin-bottom: 45px; }
-    #main-recipe .carousel .choose-page {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      width: 120px; }
-      #main-recipe .carousel .choose-page img {
-        width: 10px;
-        height: 15px; }
-      #main-recipe .carousel .choose-page p {
-        font-family: "Signika Bold";
-        color: #444444;
-        font-size: 14px;
-        text-transform: uppercase; }
-    #main-recipe .carousel .container-bullets {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      width: 65px; }
-      #main-recipe .carousel .container-bullets .bullet {
-        background-color: #bfbcbc;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%; }
-      #main-recipe .carousel .container-bullets #bullet-active {
-        background-color: #414141; }
+    width: 65px; }
+    .choose-page .container-bullets .bullet {
+      background-color: #bfbcbc;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%; }
+    .choose-page .container-bullets #bullet-active {
+      background-color: #414141; }
 
 #header-modal {
   background-color: transparent; }
