@@ -1,18 +1,6 @@
 {% extends 'index.html.twig' %}
 
 {% block content %}
-
-    <script>
-        window.onload = function () {
-            $('.category').on('click', function () {
-                var page = $(this).attr('href');
-                var speed = 750;
-                $('html, body').animate({scrollTop: $(page).offset().top}, speed); // Go
-                return false;
-            });
-        }
-    </script>
-
     <main id="main-basket">
         <img src="assets/img/img_basket.png" id="basketImg">
         <div class="step" id="category">
@@ -107,7 +95,7 @@
                     <td><p class="underTitle">De quelle humeur êtes-vous ?</p></td>
                 </tr>
             </table>
-            <div class="basket" id="panier_vegan">
+            <a href="#details" class="basket" id="panier_vegan">
                 <img src="assets/img/basket_1.png" alt="basket">
                 <div class="basket-desc">
                     <p class="name">Panier Printanier</p>
@@ -130,8 +118,8 @@
                     <p class="name">Panier printanier</p>
                     <div><div class="category-indicator category-bio">Bio</div><div class="category-indicator category-gluten-free">Gluten Free</div></div>
                 </div>
-            </div>
-            <div class="basket" id="panier_bio">
+            </a>
+            <a href="#details" class="basket" id="panier_bio">
                 <img src="assets/img/basket_2.png" alt="basket">
                 <div class="basket-desc">
                     <p class="name">Panier Néophyte</p>
@@ -152,8 +140,8 @@
                     <p class="name">Panier du néophyte</p>
                     <div class="category-indicator category-gluten-free">Gluten Free</div>
                 </div>
-            </div>
-            <div class="basket" id="panier_gf">
+            </a>
+            <a href="#details" class="basket" id="panier_gf">
                 <img src="assets/img/basket_1.png" alt="basket">
                 <div class="basket-desc">
                     <p class="name">Panier Printanier</p>
@@ -176,8 +164,8 @@
                     <p class="name">Panier du néophyte</p>
                     <div class="category-indicator category-gluten-free">Vegan</div>
                 </div>
-            </div>
-            <div class="basket" id="panier_gfbio">
+            </a>
+            <a href="#details" class="basket" id="panier_gfbio">
                 <img src="assets/img/basket_2.png" alt="basket">
                 <!--<img class="frameBasket" src="assets/img/frame_basket.png">-->
                 <div class="basket-desc">
@@ -199,7 +187,7 @@
                     <p class="name">Panier du néophyte</p>
                     <div class="category-indicator category-bio">Bio</div>
                 </div>
-            </div>
+            </a>
         </div>
         <div class="step" id="details">
             <div class="details-title">
