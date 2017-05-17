@@ -6,6 +6,17 @@ use Model\UserManager;
 
 class SecurityController extends BaseController {
 
+    public function profileAction() {
+        if (!empty($_SESSION['user_id'])) {
+            $manager = UserManager::getInstance();
+            $user = $manager->getUserById($_SESSION['user_id']);
+            echo $this->renderView('profile.html.twig', ['user' => $user]); // get also list, recipes and comments
+        }
+        else {
+            echo $this->redirect('home');
+        }
+    }
+
     public function loginAction() {
         $error = '';
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -35,7 +46,7 @@ class SecurityController extends BaseController {
             $manager = UserManager::getInstance();
             if ($manager->userCheckRegister($_POST)) {
                 $manager->userRegister($_POST);
-                echo $this->redirect('home');
+                echo $this->redirect('login');
             }
             else {
                 echo $result = 'Username already exist';
@@ -46,5 +57,4 @@ class SecurityController extends BaseController {
             echo $this->renderView('register.html.twig', ['error' => $error]);
         }
     }
-
 }

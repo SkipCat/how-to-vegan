@@ -3,12 +3,12 @@ routes:
     convert:  'Default:convert'
     basket:   'Default:basket'
     recipe:   'Default:recipe'
-    profile:  'Default:profile'
     about:    'Default:about'
     contact:  'Default:contact'
     login:    'Security:login'
     logout:   'Security:logout'
     register: 'Security:register'
+    profile:  'Security:profile'
 
 defaut_route: 'home'
 

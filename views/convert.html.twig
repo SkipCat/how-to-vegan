@@ -11,7 +11,11 @@
         </p>        
         <form name="shoppping-list" id="form-list" class="frame-elt">
             <div class="list">
-                <img src="assets/img/pin_list.png" alt="icon pin" id="img-pin" title="Epingler cette liste">
+                {% if user.username is defined and user.username is not empty %}
+                    <img src="assets/img/pin_list.png" alt="icon pin" id="img-pin" title="Epingler cette liste">
+                {% else %}
+                    <img style="visibility: hidden;" src="assets/img/pin_list.png" alt="icon pin" id="img-pin" title="Epingler cette liste">
+                {% endif %}
                 <ul>
                     <li class="shop-li">
                         <select name="products-list">

@@ -63,8 +63,7 @@
                         <img src="assets/img/profile.png" alt="icon profile" id="btn-profile" class="btn-menu">
                         <p>{{ user.username|e }}</p>
                     </a>
-                {% endif %}
-                {% if user.username is not defined and user.username is empty %}
+                {% else %}
                     <a href="?action=login">
                         <img src="assets/img/login.png" alt="icon login" id="btn-login" class="btn-menu">
                         <p>Se connecter</p>

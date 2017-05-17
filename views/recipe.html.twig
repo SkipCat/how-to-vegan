@@ -2,7 +2,7 @@
 
 {% block content %}
     <main id="main-recipe">
-        <div class="filters">
+        <div class="filters blur">
             <h3>Filtrer par</h3>
             <div>
                 <div class="filter-type" id="filter-in-order">
@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="spotlight-type" id="spotlight-type-recipe">
-            <div class="recipe-presentation">
+            <div class="recipe-presentation blur">
                 <h3>Découvrez <span>nos recettes</span></h3>
                 <p>
                     Proposées par la communauté How to Vegan ou par le staff,
@@ -64,7 +64,7 @@
             <ul class="rslides">
                 <li class="spotlight-container-recipe">
                     {% for recipe in recipes %}
-                        <div class="spotlight-container-img spotlight-recipe">
+                        <div class="spotlight-container-img spotlight-recipe blur">
                             <img class="spotlight-img" src="{{ recipe.img }}" alt="frame picture">
                             <div class="container-desc">
                                 <p class="recipe-title">{{ recipe.name }}</p>
@@ -88,11 +88,184 @@
                                 </div>
                                 <div class="time">
                                     <img src="assets/img/alarm.png" alt="alarm icon">
-                                    <p><span>Prep:</span>{{ recipe.preparation }}min</p>
-                                    <p><span>Cuisson:</span>{{ recipe.baking }}min</p>
-                                    <p><span>Total:</span>{{ recipe.preparation + recipe.baking }}min</p>
+                                    <p><span>Prep:</span> {{ recipe.preparation }}min</p>
+                                    <p><span>Cuisson:</span> {{ recipe.baking }}min</p>
+                                    <p><span>Total:</span> {{ recipe.preparation + recipe.baking }}min</p>
                                 </div>
-                                <a href="#modal-recipe" class="open-modal">Voir plus</a>
+                                <a href="#modal_{{ recipe.id }}" class="open-modal">Voir plus</a>
+                            </div>
+                        </div>
+                        <div id="modal_{{ recipe.id }}" class="modal">
+                            <div class="modal-block" >
+                                <a class="close" href="#main-recipe">
+                                    <img src="assets/img/back_modal.png" alt="Fermer" title="Fermer la fenêtre" class="btn-in-modal btn-close">
+                                </a>
+                                <img src="assets/img/heart_modal.png" alt="Aimer" title="Aimer cette recette" class="btn-in-modal btn-crush">
+                                <div class="modal-img">
+                                    <img src="{{ recipe.img }}" alt="{{ recipe.img }}">
+                                    <div class="time">
+                                        <img src="assets/img/alarm.png" alt="alarm">
+                                        <p><span>Préparation</span> : {{ recipe.preparation }}min</p>
+                                        <p><span>Cuisson</span> : {{ recipe.baking }}min</p>
+                                        <p><span>Total</span> : {{ recipe.preparation + recipe.baking }}min</p>
+                                    </div>
+                                </div>
+                                <div class="modal-content">
+                                    <div class="modal-title">
+                                        <h2>{{ recipe.name }}</h2>                
+                                        <div class="kitchen">
+                                            <div class="chief">
+                                                <img src="assets/img/chief.png" alt="chief icon">
+                                                <div>
+                                                    <p class="proposed-by">Proposé par</p>
+                                                    <p class="author">Le staff</p>
+                                                </div>
+                                            </div>
+                                            <div class="category">
+                                                <img src="assets/img/category_vegan.png" alt="vegan">
+                                                <img src="assets/img/category_gluten_free.png" alt="gluten free">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-desc">
+                                        <div class="ingredients">
+                                            <h3>Ingrédients</h3>
+                                            <hr>
+                                            <p>{{ recipe.ingredients }}</p>
+                                        </div>
+                                        <div class="recipe">
+                                            <h3>Recette</h3>
+                                            <hr>
+                                            <p>{{ recipe.recipe }}</p>
+                                        </div>
+                                    </div>
+                                    <!--
+                                    <div class="modal-comments">
+                                        <h3>Commentaires</h3>
+                                        <hr>
+                                        <div class="comment">
+                                            <p>Jean Pierre D.</p>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                                                Minima blanditiis architecto temporibus odio illum saepe dolorum, pariatur.
+                                            </p>
+                                        </div>
+                                        <div class="comment">
+                                            <p>Jean Pierre D.</p>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                                                Minima blanditiis architecto temporibus odio illum saepe dolorum, pariatur.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    -->
+                                    <div class="modal-similars">
+                                        <h3>Recettes similaires</h3>
+                                        <hr>
+                                        <div class="spotlight-container-recipe">
+                                            <div class="spotlight-container-img spotlight-recipe">
+                                                <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
+                                                <div class="container-desc">
+                                                    <p class="recipe-title">Gâteau coco</p>
+                                                    <div class="kitchen">
+                                                        <div class="recipe-author">
+                                                            <img src="assets/img/chief.png" alt="chief icon">
+                                                            <div>
+                                                                <p class="proposed-by">Proposé par</p>
+                                                                <p class="author">Le staff</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="category-img">
+                                                            <img src="assets/img/category_vegan.png" alt="icon vegan">
+                                                        </div>
+                                                    </div>
+                                                    <div class="time">
+                                                        <img src="assets/img/alarm.png" alt="alarm icon">
+                                                        <p><span>Prep:</span> 15min</p>
+                                                        <p><span>Cuisson:</span> 30min</p>
+                                                        <p><span>Total:</span> 45min</p>
+                                                    </div>
+                                                    <a href="#modal-recipe" class="open-modal">Voir plus</a>
+                                                </div>
+                                            </div>
+                                            <div class="spotlight-container-img spotlight-recipe">
+                                                <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
+                                                <div class="container-desc">
+                                                    <p class="recipe-title">Gâteau coco</p>
+                                                    <div class="kitchen">
+                                                        <div class="recipe-author">
+                                                            <img src="assets/img/chief.png" alt="chief icon">
+                                                            <div>
+                                                                <p class="proposed-by">Proposé par</p>
+                                                                <p class="author">Le staff</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="category-img">
+                                                            <img src="assets/img/category_vegan.png" alt="icon vegan">
+                                                        </div>
+                                                    </div>
+                                                    <div class="time">
+                                                        <img src="assets/img/alarm.png" alt="alarm icon">
+                                                        <p><span>Prep:</span> 15min</p>
+                                                        <p><span>Cuisson:</span> 30min</p>
+                                                        <p><span>Total:</span> 45min</p>
+                                                    </div>
+                                                    <a href="#modal-recipe" class="open-modal">Voir plus</a>
+                                                </div>
+                                            </div>
+                                            <div class="spotlight-container-img spotlight-recipe">
+                                                <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
+                                                <div class="container-desc">
+                                                    <p class="recipe-title">Gâteau coco</p>
+                                                    <div class="kitchen">
+                                                        <div class="recipe-author">
+                                                            <img src="assets/img/chief.png" alt="chief icon">
+                                                            <div>
+                                                                <p class="proposed-by">Proposé par</p>
+                                                                <p class="author">Le staff</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="category-img">
+                                                            <img src="assets/img/category_vegan.png" alt="icon vegan">
+                                                        </div>
+                                                    </div>
+                                                    <div class="time">
+                                                        <img src="assets/img/alarm.png" alt="alarm icon">
+                                                        <p><span>Prep:</span> 15min</p>
+                                                        <p><span>Cuisson:</span> 30min</p>
+                                                        <p><span>Total:</span> 45min</p>
+                                                    </div>
+                                                    <a href="#modal-recipe" class="open-modal">Voir plus</a>
+                                                </div>
+                                            </div>
+                                            <div class="spotlight-container-img spotlight-recipe">
+                                                <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
+                                                <div class="container-desc">
+                                                    <p class="recipe-title">Gâteau coco</p>
+                                                    <div class="kitchen">
+                                                        <div class="recipe-author">
+                                                            <img src="assets/img/chief.png" alt="chief icon">
+                                                            <div>
+                                                                <p class="proposed-by">Proposé par</p>
+                                                                <p class="author">Le staff</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="category-img">
+                                                            <img src="assets/img/category_vegan.png" alt="icon vegan">
+                                                        </div>
+                                                    </div>
+                                                    <div class="time">
+                                                        <img src="assets/img/alarm.png" alt="alarm icon">
+                                                        <p><span>Prep:</span> 15min</p>
+                                                        <p><span>Cuisson:</span> 30min</p>
+                                                        <p><span>Total:</span> 45min</p>
+                                                    </div>
+                                                    <a href="#modal-recipe" class="open-modal">Voir plus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     {% endfor %}
@@ -259,8 +432,9 @@
                 </li>
             </ul>
         </div>
-        <img src="assets/img/leaf_left_side.png" alt="leaf picture" id="leaf-side">
+        <img src="assets/img/leaf_left_side.png" alt="leaf picture" id="leaf-side" class="lol blur">
     </main>
+    <!--
     <div id="modal-recipe" class="modal">
         <div class="modal-block" >
             <a class="close" href="#main-recipe">
@@ -447,4 +621,5 @@
             </div>
         </div>
     </div>
+    -->
 {% endblock %}

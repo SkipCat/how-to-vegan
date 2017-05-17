@@ -25,18 +25,16 @@ class UserManager {
     
     public function getUserByUsername($username) {
         $data = $this->DBManager->findOneSecure("SELECT * FROM users WHERE username = :username",
-                                ['username' => $username]);
+            ['username' => $username]);
         return $data;
     }
 
     public function userCheckRegister($data) {
         if (empty($data['username']) OR empty($data['email']) OR empty($data['password'])) {
-            echo 'empty';
             return false;
         }
         $data = $this->getUserByUsername($data['username']);
         if ($data !== false) {
-            echo 'data false';
             return false;
         }
         // TODO : Check valid email
@@ -52,7 +50,11 @@ class UserManager {
         $user['username'] = $data['username'];
         $user['password'] = $this->userHash($data['password']);
         $user['email'] = $data['email'];
+        $user['gender'] = $data['gender'];
+        $user['birthdate'] = $data['birthdate'];        
+        $user['address'] = $data['address'];
         $user['admin'] = null;
+        var_dump($user);
         $this->DBManager->insert('users', $user);
     }
 
@@ -64,8 +66,8 @@ class UserManager {
         if ($user === false) {
             return false;
         }
-        $hash = $this->userHash($data['password']);
-        if (!password_verify($hash, $user['password'])) {
+        $pass = $data['password'];
+        if (!password_verify($pass, $user['password'])) {
             return false;
         }
         return true;
@@ -82,12 +84,12 @@ class UserManager {
 
     /////////////
 
-    public function getAllRecipes(){
+    public function getAllRecipes() {
         $data = $this->DBManager->findAllSecure("SELECT * FROM recipes");
         return $data;
     }
 
-    public function getAllBaskets(){
+    public function getAllBaskets() {
         $data = $this->DBManager->findAllSecure("SELECT * FROM baskets");
         return $data;
     }

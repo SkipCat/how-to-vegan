@@ -22,43 +22,49 @@
         <div>
             <form id="modify-content">
                 <div class="profile-content">
-                    <div class="lastname">
-                        <p class="name">Nom : </p>
-                        <p class="info">Dewet</p>
-                    </div>
-                    <p>(Seule l'initiale de votre nom sera visible lorsque vous publierez du contenu.)</p>
                     <div class="firstname">
-                        <p class="name">Prénom : </p>
-                        <p class="info">Clémence</p>
+                        <p class="name">Pseudo : </p>
+                        <p class="info">{{ user.username }}</p>
                     </div>
                     <div class="email">
                         <p class="name">Email : </p>
-                        <p class="info">clemence.dewet@outlook.fr</p>
+                        <p class="info">{{ user.email }}</p>
                     </div>
                     <div class="password">
                         <p class="name">Mot de passe : </p>
                         <p class="info">Modifier le mot de passe</p>
                     </div>
                     <div class="gender">
-                        <p class="name">Sexe : </p>
-                        <!-- twig if user.gender == female -->
+                        <p class="name">Genre : </p>
                         <div class="choose-gender">
                             <div>
-                                <input type="radio" value="female" id="female">
+                                {% if 'female' in user.gender %}
+                                    <input type="radio" value="female" id="female" name="gender" checked>
+                                {% else %}
+                                    <input type="radio" value="female" id="female" name="gender">
+                                {% endif %}
                                 <label for="female">
                                     <img src="assets/img/female.png">
                                     <p class="info">Femme</p>
                                 </label>
                             </div>
                             <div>
-                                <input type="radio" value="male" id="male">
+                                {% if 'male' in user.gender %}
+                                    <input type="radio" value="male" id="male" name="gender" checked>
+                                {% else %}
+                                    <input type="radio" value="male" id="male" name="gender">
+                                {% endif %}
                                 <label for="male">
                                     <img src="assets/img/male.png">
                                     <p class="info">Homme</p>
                                 </label>
                             </div>
                             <div>
-                                <input type="radio" value="other" id="other">
+                                {% if 'other' in user.gender %}
+                                    <input type="radio" value="other" id="other" name="gender" checked>
+                                {% else %}
+                                    <input type="radio" value="other" id="other" name="gender">
+                                {% endif %}
                                 <label for="other">
                                     <p class="info">Autre</p>
                                 </label>
@@ -67,11 +73,11 @@
                     </div>
                     <div class="birthdate">
                         <p class="name">Date de naissance : </p>
-                        <p class="info">07/03/1996</p>
+                        <p class="info">{{ user.birthdate }}</p>
                     </div>
                     <div class="adress">
                         <p class="name">Adresse : </p>
-                        <p class="info">6 rue du Moulin Vert</p>
+                        <p class="info">{{ user.adress }}</p>
                     </div>
                 </div>
                 <input type="submit" value="Enregistrer">

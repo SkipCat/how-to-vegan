@@ -11,7 +11,6 @@ window.onload = function() {
         convert();
         listActions();
         crush();
-        modalActions();
     }
 
     if (currentPage.search('convert') !== -1) {
