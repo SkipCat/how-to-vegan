@@ -63,110 +63,39 @@
             </div>
             <ul class="rslides">
                 <li class="spotlight-container-recipe">
-                    <div class="spotlight-container-img spotlight-recipe">
-                        <img class="spotlight-img" src="assets/img/seitan.png" alt="frame picture">
-                        <div class="container-desc">
-                            <p class="recipe-title">Seitan façon poulet tikka massala</p>
-                            <div class="kitchen">
-                                <div class="recipe-author">
-                                    <img src="assets/img/chief.png" alt="chief icon">
-                                    <div>
-                                        <p class="proposed-by">Proposé par</p>
-                                        <p class="author">Le staff</p>
+                    {% for recipe in recipes %}
+                        <div class="spotlight-container-img spotlight-recipe">
+                            <img class="spotlight-img" src="{{ recipe.img }}" alt="frame picture">
+                            <div class="container-desc">
+                                <p class="recipe-title">{{ recipe.name }}</p>
+                                <div class="kitchen">
+                                    <div class="recipe-author">
+                                        <img src="assets/img/chief.png" alt="chief icon">
+                                        <div>
+                                            <p class="proposed-by">Proposé par</p>
+                                            <p class="author">Le staff</p>
+                                        </div>
+                                    </div>
+                                    <div class="category-img">
+                                        <img src="assets/img/category_vegan.png" alt="icon vegan">
+                                        {% if 'gluten-free' in recipe.category %}
+                                            <img src="assets/img/category_gluten_free.png" alt="icon gluten free">
+                                        {% endif %}
+                                        {% if 'bio' in recipe.category %}
+                                            <img src="assets/img/category_bio.png" alt="icon bio">
+                                        {% endif %}
                                     </div>
                                 </div>
-                                <div class="category-img">
-                                    <img src="assets/img/category_vegan.png" alt="icon vegan">
-                                    <img src="assets/img/category_gluten_free.png" alt="icon gluten free">
-                                    <img src="assets/img/category_bio.png" alt="icon bio">
+                                <div class="time">
+                                    <img src="assets/img/alarm.png" alt="alarm icon">
+                                    <p><span>Prep:</span>{{ recipe.preparation }}min</p>
+                                    <p><span>Cuisson:</span>{{ recipe.baking }}min</p>
+                                    <p><span>Total:</span>{{ recipe.preparation + recipe.baking }}min</p>
                                 </div>
+                                <a href="#modal-recipe" class="open-modal">Voir plus</a>
                             </div>
-                            <div class="time">
-                                <img src="assets/img/alarm.png" alt="alarm icon">
-                                <p><span>Prep:</span> 15min</p>
-                                <p><span>Cuisson:</span> 30min</p>
-                                <p><span>Total:</span> 45min</p>
-                            </div>
-                            <a href="#modal-recipe" class="open-modal">Voir plus</a>
                         </div>
-                    </div>
-                    <div class="spotlight-container-img spotlight-recipe">
-                        <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
-                        <div class="container-desc">
-                            <p class="recipe-title">Gâteau coco</p>
-                            <div class="kitchen">
-                                <div class="recipe-author">
-                                    <img src="assets/img/chief.png" alt="chief icon">
-                                    <div>
-                                        <p class="proposed-by">Proposé par</p>
-                                        <p class="author">Le staff</p>
-                                    </div>
-                                </div>
-                                <div class="category-img">
-                                    <img src="assets/img/category_vegan.png" alt="icon vegan">
-                                </div>
-                            </div>
-                            <div class="time">
-                                <img src="assets/img/alarm.png" alt="alarm icon">
-                                <p><span>Prep:</span> 15min</p>
-                                <p><span>Cuisson:</span> 30min</p>
-                                <p><span>Total:</span> 45min</p>
-                            </div>
-                            <a href="#modal-recipe" class="open-modal">Voir plus</a>
-                        </div>
-                    </div>
-                    <div class="spotlight-container-img spotlight-recipe">
-                        <img class="spotlight-img" src="assets/img/seitan.png" alt="frame picture">
-                        <div class="container-desc">
-                            <p class="recipe-title">Seitan façon poulet tikka massala</p>
-                            <div class="kitchen">
-                                <div class="recipe-author">
-                                    <img src="assets/img/chief.png" alt="chief icon">
-                                    <div>
-                                        <p class="proposed-by">Proposé par</p>
-                                        <p class="author">Le staff</p>
-                                    </div>
-                                </div>
-                                <div class="category-img">
-                                    <img src="assets/img/category_vegan.png" alt="icon vegan">
-                                    <img src="assets/img/category_gluten_free.png" alt="icon gluten free">
-                                    <img src="assets/img/category_bio.png" alt="icon bio">
-                                </div>
-                            </div>
-                            <div class="time">
-                                <img src="assets/img/alarm.png" alt="alarm icon">
-                                <p><span>Prep:</span> 15min</p>
-                                <p><span>Cuisson:</span> 30min</p>
-                                <p><span>Total:</span> 45min</p>
-                            </div>
-                            <a href="#modal-recipe" class="open-modal">Voir plus</a>
-                        </div>
-                    </div>
-                    <div class="spotlight-container-img spotlight-recipe">
-                        <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
-                        <div class="container-desc">
-                            <p class="recipe-title">Gâteau coco</p>
-                            <div class="kitchen">
-                                <div class="recipe-author">
-                                    <img src="assets/img/chief.png" alt="chief icon">
-                                    <div>
-                                        <p class="proposed-by">Proposé par</p>
-                                        <p class="author">Le staff</p>
-                                    </div>
-                                </div>
-                                <div class="category-img">
-                                    <img src="assets/img/category_vegan.png" alt="icon vegan">
-                                </div>
-                            </div>
-                            <div class="time">
-                                <img src="assets/img/alarm.png" alt="alarm icon">
-                                <p><span>Prep:</span> 15min</p>
-                                <p><span>Cuisson:</span> 30min</p>
-                                <p><span>Total:</span> 45min</p>
-                            </div>
-                            <a href="#modal-recipe" class="open-modal">Voir plus</a>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </li>
                 <li class="spotlight-container-recipe">
                     <div class="spotlight-container-img spotlight-recipe">
@@ -328,61 +257,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="spotlight-container-recipe">
-                    <div class="spotlight-container-img spotlight-recipe">
-                        <img class="spotlight-img" src="assets/img/seitan.png" alt="frame picture">
-                        <div class="container-desc">
-                            <p class="recipe-title">Seitan façon poulet tikka massala</p>
-                            <div class="kitchen">
-                                <div class="recipe-author">
-                                    <img src="assets/img/chief.png" alt="chief icon">
-                                    <div>
-                                        <p class="proposed-by">Proposé par</p>
-                                        <p class="author">Le staff</p>
-                                    </div>
-                                </div>
-                                <div class="category-img">
-                                    <img src="assets/img/category_vegan.png" alt="icon vegan">
-                                    <img src="assets/img/category_gluten_free.png" alt="icon gluten free">
-                                    <img src="assets/img/category_bio.png" alt="icon bio">
-                                </div>
-                            </div>
-                            <div class="time">
-                                <img src="assets/img/alarm.png" alt="alarm icon">
-                                <p><span>Prep:</span> 15min</p>
-                                <p><span>Cuisson:</span> 30min</p>
-                                <p><span>Total:</span> 45min</p>
-                            </div>
-                            <a href="#modal-recipe" class="open-modal">Voir plus</a>
-                        </div>
-                    </div>
-                    <div class="spotlight-container-img spotlight-recipe">
-                        <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
-                        <div class="container-desc">
-                            <p class="recipe-title">Gâteau coco</p>
-                            <div class="kitchen">
-                                <div class="recipe-author">
-                                    <img src="assets/img/chief.png" alt="chief icon">
-                                    <div>
-                                        <p class="proposed-by">Proposé par</p>
-                                        <p class="author">Le staff</p>
-                                    </div>
-                                </div>
-                                <div class="category-img">
-                                    <img src="assets/img/category_vegan.png" alt="icon vegan">
-                                </div>
-                            </div>
-                            <div class="time">
-                                <img src="assets/img/alarm.png" alt="alarm icon">
-                                <p><span>Prep:</span> 15min</p>
-                                <p><span>Cuisson:</span> 30min</p>
-                                <p><span>Total:</span> 45min</p>
-                            </div>
-                            <a href="#modal-recipe" class="open-modal">Voir plus</a>
-                        </div>
-                    </div>
-                </li>
-            <ul>
+            </ul>
         </div>
         <img src="assets/img/leaf_left_side.png" alt="leaf picture" id="leaf-side">
     </main>

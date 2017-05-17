@@ -89,13 +89,17 @@
 
         > p{
             text-align: center;
-            @include policy($main-font, $text-color, 15px);
+            @include policy($main-font, $text-color, 16px);
+            margin-bottom: 30px;
+            @media screen and (min-width: 641px) {
+                font-size: 18px;
+            }
 
             &:after{
                 @include resize(55px, 2px);
                 @include position(absolute, unset, 0, unset, 0);
                 content:'';
-                margin: 20px auto;
+                margin: 25px auto;
                 background-color: $light-red;
             }
         }
@@ -103,6 +107,9 @@
         #text{
             text-align: justify;
             @include policy($text-font, $text-grey, 14px);
+            @media screen and (min-width: 641px) {
+                font-size: 16px;
+            }
         }
 
         #panel{
@@ -130,7 +137,7 @@
             }
 
             .title{
-                @include policy($bold-font, $text-color, 13px);
+                @include policy($bold-font, $text-color, 14px);
                 text-transform: uppercase;
                 width: 100px;
                 display: block;
@@ -141,7 +148,7 @@
             }
 
             .text{
-                @include policy($text-font, $text-grey, 13px);
+                @include policy($text-font, $text-grey, 14px);
                 text-align: justify;
                 margin-bottom: 30px;
                 @media screen and (min-width: 641px){
@@ -153,6 +160,10 @@
     #goal-about{
         margin-top: 40px;
         height: auto;
+        @media screen and (min-width: 641px) {
+            margin-top: 60px;
+        }
+
         #back-goal{
             display: none;
             @media screen and (min-width: 641px){
@@ -169,7 +180,7 @@
 
         #text-goal{
             width: 100%;
-            top: 1300px;
+            top: 1380px;
             display: block;
             position: absolute;
             @media screen and (min-width: 321px){
@@ -179,10 +190,10 @@
                 top: 1380px;
             }
             @media screen and (min-width: 641px){
-                top: 740px;
+                top: 845px;
             }
             @media screen and (min-width: 769px){
-                top: 860px;
+                top: 960px;
             }
             @media screen and (min-width: 1025px){
                 top: 1050px;
@@ -192,12 +203,15 @@
                 @include policy($bold-font, white, 16px);
                 text-align: center;
                 letter-spacing: 0.5px;
+                @media screen and (min-width: 641px) {
+                    font-size: 18px;
+                }
             }
 
             #goal-text{
                 width: 170px;
                 text-align: justify;
-                @include policy($text-font, $text-color, 13px);
+                @include policy($text-font, $text-color, 14px);
                 margin: 20% auto 0 auto;
                 display: block;
                 padding: 30px 25px;
@@ -210,11 +224,12 @@
                 @media screen and (min-width: 641px){
                     width: 400px;
                     margin-top: 5%;
+                    font-size: 15px;
                 }
             }
 
             #green-border{
-                @include position(relative, -295px, unset, unset, 14px);
+                @include position(relative, -345px, unset, unset, 14px);
                 @include resize(214px, 275px);
                 border: 3px solid $dark-green;
                 margin: 0 auto;
@@ -226,17 +241,18 @@
                 }
                 @media screen and (min-width: 641px){
                     @include resize(444px, 160px);
-                    top: -180px;
+                    top: -210px;
                 }
             }
         }
 
         #position-leaf{
+            display: none;
             width: 100%;
             text-align: right;
             margin-top: -65px;
             @media screen and (min-width: 641px){
-
+                display: block;
             }
         }
 
@@ -250,16 +266,27 @@
 
     #about-us{
         margin-top: 10px;
+        @media screen and (min-width: 641px) {
+            margin-top: -40px;
+            margin-bottom: 25px;
+        }
+        @media screen and (min-width: 769px) {
+            margin-top: -60px;
+        }
 
         > p{
             text-align: center;
-            @include policy($main-font, $text-color, 15px);
+            @include policy($main-font, $text-color, 16px);
+            margin-bottom: 25px;
+            @media screen and (min-width: 641px) {
+                font-size: 18px;
+            }
 
             &:after{
                 @include resize(55px, 2px);
                 @include position(absolute, unset, 0, unset, 0);
                 content:'';
-                margin: 20px auto;
+                margin: 25px auto;
                 background-color: $light-red;
             }
         }
@@ -269,9 +296,10 @@
             width: 90%;
             margin: 0 auto;
             display: block;
-            @include policy($text-font, $text-grey, 13px);
+            @include policy($text-font, $text-grey, 14px);
             @media screen and (min-width: 641px){
                 width: 600px;
+                font-size: 16px;
             }
         }
 

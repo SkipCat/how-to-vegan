@@ -13,7 +13,7 @@
                     <td><p class="underTitle">Quel filtre vous convient ?</p></td>
                 </tr>
             </table>
-            <a href="#panier_vegan" class="category">
+            <a href="#paniers" class="category">
                 <div class="category-names">
                     <div class="green-border"></div>
                     <div class="names">
@@ -28,7 +28,7 @@
                     <img src="assets/img/white_arrow_down.png">
                 </div>
             </a>
-            <a href="#panier_bio" class="category">
+            <a href="#paniers" class="category">
                 <div class="category-names">
                     <div class="green-border"></div>
                     <div class="names">
@@ -45,7 +45,7 @@
                     <img src="assets/img/white_arrow_down.png">
                 </div>
             </a>
-            <a href="#panier_gf" class="category">
+            <a href="#paniers" class="category">
                 <div class="category-names">
                     <div class="green-border"></div>
                     <div class="names">
@@ -62,7 +62,7 @@
                     <img src="assets/img/white_arrow_down.png">
                 </div>
             </a>
-            <a href="#panier_gfbio" class="category">
+            <a href="#paniers" class="category">
                 <div class="category-names">
                     <div class="green-border"></div>
                     <div class="names">
@@ -95,162 +95,92 @@
                     <td><p class="underTitle">De quelle humeur êtes-vous ?</p></td>
                 </tr>
             </table>
-            <a href="#details" class="basket" id="panier_vegan">
-                <img src="assets/img/basket_1.png" alt="basket">
-                <div class="basket-desc">
-                    <p class="name">Panier Printanier</p>
-                    <p class="text">
-                        Avec ses goûts variés et naturels, le panier printanier
-                        est pour vous si vous cherchez un repas simple et légé !
-                    </p>
-                    <p class="portion">Disponible en portions pour 1 à 3 personnes</p>
-                    <div class="container-category-indicator">
-                        <div class="category-indicator category-gluten-free">Gluten Free</div>
+            {% for basket in baskets %}
+                <a href="#details" class="basket" id="paniers">
+                    <img src="{{ basket.img }}" alt="basket">
+                    <div class="desc_basket">
+                        <div class="popButtons">
+                            <div><img src="assets/img/heart_red.png"></div>
+                            <div><img src="assets/img/open_modal.png"></div>
+                        </div>
+                        <img src="{{ basket.img }}">
+                        <p class="basketPrice">{{ basket.price }}</p>
+                        <p class="name">{{ basket.name }}</p>
+                        <div>
+                            <div class="category-img">
+                                {% if 'gluten-free' in basket.category %}
+                                    <div class="category-indicator category-gluten-free">Gluten Free</div>
+                                {% endif %}
+                                {% if 'bio' in basket.category %}
+                                    <div class="category-indicator category-bio">Bio</div>
+                                {% endif %}
+                            </div>
+                        </div>
                     </div>
+                </a>
+            {% endfor %}
+            <div class="step" id="details">
+                <div class="details-title">
+                    <p>Détails de votre <span>panier</span></p>
+                    <p>Panier Printanier</p>
+                    <hr>
                 </div>
-                <div class="desc_basket">
-                    <div class="popButtons">
-                        <div><img src="assets/img/heart_red.png"></div>
-                        <div><img src="assets/img/open_modal.png"></div>
+                <table class="tableBasket">
+                    <tr>
+                        <td rowspan="2"><img src="assets/img/icon_basket_infos.png"></td>
+                        <td><p>Détails de votre <span>panier</span></p></td>
+                    </tr>
+                    <tr>
+                        <td><p class="underTitle">De quelle humeur êtes-vous ?</p></td>
+                    </tr>
+                </table>
+                <div id="allIngredients">
+                    <p><span>Les ingré</span>dients</p>
+                    <div class="ingredient" id="first-ingr">
+                        <img src="assets/img/carot.png" alt="carot">
+                        <div class="ingredient-desc">
+                            <p class="ingredient-name">La carotte Touchon</p>
+                            <p class="ingr-text-desc">description</p>
+                            <p class="ingredient-text">
+                                Variété précoce aux racines parfaitement cylindriques,
+                                droite et demi-longue (15-17 cm), de couleur orange rougeâtre (suite)
+                            </p>
+                        </div>
                     </div>
-                    <img src="assets/img/basketBGF.png">
-                    <p class="basketPrice">~28,50€</p>
-                    <p class="name">Panier printanier</p>
-                    <div><div class="category-indicator category-bio">Bio</div><div class="category-indicator category-gluten-free">Gluten Free</div></div>
-                </div>
-            </a>
-            <a href="#details" class="basket" id="panier_bio">
-                <img src="assets/img/basket_2.png" alt="basket">
-                <div class="basket-desc">
-                    <p class="name">Panier Néophyte</p>
-                    <p class="text">
-                        Avec ses goûts variés et naturels, le panier printanier
-                        est pour vous si vous cherchez un repas simple et légé !
-                    </p>
-                    <p class="portion">Disponible en portions pour 1 à 3 personnes</p>
-                    <div class="category-indicator category-bio">Bio</div>
-                </div>
-                <div class="desc_basket">
-                    <div class="popButtons">
-                        <div><img src="assets/img/heart_red.png"></div>
-                        <div><img src="assets/img/open_modal.png"></div>
+                    <div class="ingredient">
+                        <img src="assets/img/carot.png" alt="carot">
+                        <div class="ingredient-desc">
+                            <p class="ingredient-name">La carotte Touchon</p>
+                            <p class="ingr-text-desc">description</p>
+                            <p class="ingredient-text">
+                                Variété précoce aux racines parfaitement cylindriques,
+                                droite et demi-longue (15-17 cm), de couleur orange rougeâtre (suite)
+                            </p>
+                        </div>
                     </div>
-                    <img src="assets/img/basketGF.png">
-                    <p class="basketPrice">~28,50€</p>
-                    <p class="name">Panier du néophyte</p>
-                    <div class="category-indicator category-gluten-free">Gluten Free</div>
-                </div>
-            </a>
-            <a href="#details" class="basket" id="panier_gf">
-                <img src="assets/img/basket_1.png" alt="basket">
-                <div class="basket-desc">
-                    <p class="name">Panier Printanier</p>
-                    <p class="text">
-                        Avec ses goûts variés et naturels, le panier printanier
-                        est pour vous si vous cherchez un repas simple et légé !
-                    </p>
-                    <p class="portion">Disponible en portions pour 1 à 3 personnes</p>
-                    <div class="container-category-indicator">
-                        <div class="category-indicator category-gluten-free">Gluten Free</div>
+                    <div class="ingredient">
+                        <img src="assets/img/carot.png" alt="carot">
+                        <div class="ingredient-desc">
+                            <p class="ingredient-name">La carotte Touchon</p>
+                            <p class="ingr-text-desc">description</p>
+                            <p class="ingredient-text">
+                                Variété précoce aux racines parfaitement cylindriques,
+                                droite et demi-longue (15-17 cm), de couleur orange rougeâtre (suite)
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="desc_basket">
-                    <div class="popButtons">
-                        <div><img src="assets/img/heart_red.png"></div>
-                        <div><img src="assets/img/open_modal.png"></div>
-                    </div>
-                    <img src="assets/img/basketV.png">
-                    <p class="basketPrice">~28,50€</p>
-                    <p class="name">Panier du néophyte</p>
-                    <div class="category-indicator category-gluten-free">Vegan</div>
-                </div>
-            </a>
-            <a href="#details" class="basket" id="panier_gfbio">
-                <img src="assets/img/basket_2.png" alt="basket">
-                <!--<img class="frameBasket" src="assets/img/frame_basket.png">-->
-                <div class="basket-desc">
-                    <p class="name">Panier Néophyte</p>
-                    <p class="text">
-                        Avec ses goûts variés et naturels, le panier printanier
-                        est pour vous si vous cherchez un repas simple et légé !
-                    </p>
-                    <p class="portion">Disponible en portions pour 1 à 3 personnes</p>
-                    <div class="category-indicator category-bio">Bio</div>
-                </div>
-                <div class="desc_basket">
-                    <div class="popButtons">
-                        <div><img src="assets/img/heart_red.png"></div>
-                        <div><img src="assets/img/open_modal.png"></div>
-                    </div>
-                    <img src="assets/img/basketB.png">
-                    <p class="basketPrice">~28,50€</p>
-                    <p class="name">Panier du néophyte</p>
-                    <div class="category-indicator category-bio">Bio</div>
-                </div>
-            </a>
-        </div>
-        <div class="step" id="details">
-            <div class="details-title">
-                <p>Détails de votre <span>panier</span></p>
-                <p>Panier Printanier</p>
-                <hr>
-            </div>
-            <table class="tableBasket">
-                <tr>
-                    <td rowspan="2"><img src="assets/img/icon_basket_infos.png"></td>
-                    <td><p>Détails de votre <span>panier</span></p></td>
-                </tr>
-                <tr>
-                    <td><p class="underTitle">De quelle humeur êtes-vous ?</p></td>
-                </tr>
-            </table>
-            <div id="allIngredients">
-                <p><span>Les ingré</span>dients</p>
-                <div class="ingredient" id="first-ingr">
-                    <img src="assets/img/carot.png" alt="carot">
-                    <div class="ingredient-desc">
-                        <p class="ingredient-name">La carotte Touchon</p>
-                        <p class="ingr-text-desc">description</p>
-                        <p class="ingredient-text">
-                            Variété précoce aux racines parfaitement cylindriques,
-                             droite et demi-longue (15-17 cm), de couleur orange rougeâtre (suite)
-                        </p>
-                    </div>
-                </div>
-                <div class="ingredient">
-                    <img src="assets/img/carot.png" alt="carot">
-                    <div class="ingredient-desc">
-                        <p class="ingredient-name">La carotte Touchon</p>
-                        <p class="ingr-text-desc">description</p>
-                        <p class="ingredient-text">
-                            Variété précoce aux racines parfaitement cylindriques,
-                            droite et demi-longue (15-17 cm), de couleur orange rougeâtre (suite)
-                        </p>
-                    </div>
-                </div>
-                <div class="ingredient">
-                    <img src="assets/img/carot.png" alt="carot">
-                    <div class="ingredient-desc">
-                        <p class="ingredient-name">La carotte Touchon</p>
-                        <p class="ingr-text-desc">description</p>
-                        <p class="ingredient-text">
-                            Variété précoce aux racines parfaitement cylindriques,
-                             droite et demi-longue (15-17 cm), de couleur orange rougeâtre (suite)
-                        </p>
-                    </div>
-                </div>
-                <div class="ingredient" id="last-ingr">
-                    <img src="assets/img/carot.png" alt="carot">
-                    <div class="ingredient-desc">
-                        <p class="ingredient-name">La carotte Touchon</p>
-                        <p class="ingr-text-desc">description</p>
-                        <p class="ingredient-text">
-                            Variété précoce aux racines parfaitement cylindriques,
-                             droite et demi-longue (15-17 cm), de couleur orange rougeâtre (suite)
-                        </p>
+                    <div class="ingredient" id="last-ingr">
+                        <img src="assets/img/carot.png" alt="carot">
+                        <div class="ingredient-desc">
+                            <p class="ingredient-name">La carotte Touchon</p>
+                            <p class="ingr-text-desc">description</p>
+                            <p class="ingredient-text">
+                                Variété précoce aux racines parfaitement cylindriques,
+                                droite et demi-longue (15-17 cm), de couleur orange rougeâtre (suite)
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     </main>
 {% endblock %}

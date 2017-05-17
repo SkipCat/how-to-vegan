@@ -1992,7 +1992,11 @@
     text-align: center;
     font-family: "Signika Regular";
     color: #444444;
-    font-size: 15px; }
+    font-size: 16px;
+    margin-bottom: 30px; }
+    @media screen and (min-width: 641px) {
+      #main-about #services-about > p {
+        font-size: 18px; } }
     #main-about #services-about > p:after {
       width: 55px;
       height: 2px;
@@ -2002,13 +2006,16 @@
       bottom: unset;
       left: 0;
       content: '';
-      margin: 20px auto;
+      margin: 25px auto;
       background-color: #e74a18; }
   #main-about #services-about #text {
     text-align: justify;
     font-family: "SourceSansPro";
     color: #555555;
     font-size: 14px; }
+    @media screen and (min-width: 641px) {
+      #main-about #services-about #text {
+        font-size: 16px; } }
   #main-about #services-about #panel {
     width: 200px;
     margin: 40px auto;
@@ -2044,7 +2051,7 @@
     #main-about #services-about #panel .title {
       font-family: "Signika Bold";
       color: #444444;
-      font-size: 13px;
+      font-size: 14px;
       text-transform: uppercase;
       width: 100px;
       display: block;
@@ -2055,7 +2062,7 @@
     #main-about #services-about #panel .text {
       font-family: "SourceSansPro";
       color: #555555;
-      font-size: 13px;
+      font-size: 14px;
       text-align: justify;
       margin-bottom: 30px; }
       @media screen and (min-width: 641px) {
@@ -2064,6 +2071,9 @@
   #main-about #goal-about {
     margin-top: 40px;
     height: auto; }
+    @media screen and (min-width: 641px) {
+      #main-about #goal-about {
+        margin-top: 60px; } }
     #main-about #goal-about #back-goal {
       display: none; }
       @media screen and (min-width: 641px) {
@@ -2077,7 +2087,7 @@
           display: none; } }
     #main-about #goal-about #text-goal {
       width: 100%;
-      top: 1300px;
+      top: 1380px;
       display: block;
       position: absolute; }
       @media screen and (min-width: 321px) {
@@ -2088,10 +2098,10 @@
           top: 1380px; } }
       @media screen and (min-width: 641px) {
         #main-about #goal-about #text-goal {
-          top: 740px; } }
+          top: 845px; } }
       @media screen and (min-width: 769px) {
         #main-about #goal-about #text-goal {
-          top: 860px; } }
+          top: 960px; } }
       @media screen and (min-width: 1025px) {
         #main-about #goal-about #text-goal {
           top: 1050px; } }
@@ -2101,12 +2111,15 @@
         font-size: 16px;
         text-align: center;
         letter-spacing: 0.5px; }
+        @media screen and (min-width: 641px) {
+          #main-about #goal-about #text-goal > p {
+            font-size: 18px; } }
       #main-about #goal-about #text-goal #goal-text {
         width: 170px;
         text-align: justify;
         font-family: "SourceSansPro";
         color: #444444;
-        font-size: 13px;
+        font-size: 14px;
         margin: 20% auto 0 auto;
         display: block;
         padding: 30px 25px;
@@ -2119,10 +2132,11 @@
         @media screen and (min-width: 641px) {
           #main-about #goal-about #text-goal #goal-text {
             width: 400px;
-            margin-top: 5%; } }
+            margin-top: 5%;
+            font-size: 15px; } }
       #main-about #goal-about #text-goal #green-border {
         position: relative;
-        top: -295px;
+        top: -345px;
         right: unset;
         bottom: unset;
         left: 14px;
@@ -2141,11 +2155,15 @@
           #main-about #goal-about #text-goal #green-border {
             width: 444px;
             height: 160px;
-            top: -180px; } }
+            top: -210px; } }
     #main-about #goal-about #position-leaf {
+      display: none;
       width: 100%;
       text-align: right;
       margin-top: -65px; }
+      @media screen and (min-width: 641px) {
+        #main-about #goal-about #position-leaf {
+          display: block; } }
     #main-about #goal-about #leaf-border-about {
       width: 20%;
       height: auto; }
@@ -2154,11 +2172,22 @@
           width: 10%; } }
   #main-about #about-us {
     margin-top: 10px; }
+    @media screen and (min-width: 641px) {
+      #main-about #about-us {
+        margin-top: -40px;
+        margin-bottom: 25px; } }
+    @media screen and (min-width: 769px) {
+      #main-about #about-us {
+        margin-top: -60px; } }
     #main-about #about-us > p {
       text-align: center;
       font-family: "Signika Regular";
       color: #444444;
-      font-size: 15px; }
+      font-size: 16px;
+      margin-bottom: 25px; }
+      @media screen and (min-width: 641px) {
+        #main-about #about-us > p {
+          font-size: 18px; } }
       #main-about #about-us > p:after {
         width: 55px;
         height: 2px;
@@ -2168,7 +2197,7 @@
         bottom: unset;
         left: 0;
         content: '';
-        margin: 20px auto;
+        margin: 25px auto;
         background-color: #e74a18; }
     #main-about #about-us #text-about-us {
       text-align: justify;
@@ -2177,10 +2206,11 @@
       display: block;
       font-family: "SourceSansPro";
       color: #555555;
-      font-size: 13px; }
+      font-size: 14px; }
       @media screen and (min-width: 641px) {
         #main-about #about-us #text-about-us {
-          width: 600px; } }
+          width: 600px;
+          font-size: 16px; } }
     #main-about #about-us #photo-about {
       display: flex;
       flex-direction: row;

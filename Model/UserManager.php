@@ -79,4 +79,16 @@ class UserManager {
         $_SESSION['user_id'] = $data['id'];
         return true;
     }
+
+    /////////////
+
+    public function getAllRecipes(){
+        $data = $this->DBManager->findAllSecure("SELECT * FROM recipes");
+        return $data;
+    }
+
+    public function getAllBaskets(){
+        $data = $this->DBManager->findAllSecure("SELECT * FROM baskets");
+        return $data;
+    }
 }
