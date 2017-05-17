@@ -8,6 +8,7 @@
 @import 'pages/recipe';
 @import 'pages/modal';
 @import 'pages/profile';
+@import 'pages/about';
 
 ////////////////////////////////////
 
@@ -136,7 +137,7 @@ header {
         }
         @media screen and (min-width: 769px) {
             @include position(absolute, 53px, 50px, initial, initial);
-            display: block;            
+            top: 30px;            
         }
         
         .btn-menu {

@@ -1,7 +1,6 @@
 window.onload = function() {
     var currentPage = window.location.href;
     var header = document.querySelector('header');
-
     var convertLink = document.querySelector('#convert-page');
     var basketLink = document.querySelector('#basket-page');
     var recipeLink = document.querySelector('#recipe-page');
@@ -27,12 +26,14 @@ window.onload = function() {
         basketLink.id = 'active-page';
         basketLink.parentNode.childNodes[1].id = 'bookmark';
         header.id = 'header-basket';
+        anchor();
     }
 
     if (currentPage.search('recipe') !== -1) {
         recipeLink.id = 'active-page';
         recipeLink.parentNode.childNodes[1].id = 'bookmark';
         header.id = 'header-recipe';
+        carousel();
         crush();
         modalActions();
     }
@@ -75,7 +76,7 @@ window.onload = function() {
     if (currentPage.search('about') !== -1) {
         aboutLink.id = 'active-page';
         aboutLink.parentNode.childNodes[1].id = 'bookmark';
-        //header.id = 'header-about';
+        header.id = 'header-about';
     }
     
     if (currentPage.search('modal') !== -1) {
