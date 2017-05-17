@@ -69,7 +69,7 @@
 
                 // Styles for visible and hidden slides
                 visible = {"float": "left", "display": "flex", "position": "relative", "opacity": 1, "zIndex": 2},
-                hidden = {"float": "none", "position": "absolute", "opacity": 0, "zIndex": 1},
+                hidden = {"float": "none", "position": "absolute", "opacity": 0, "zIndex": -1},
 
                 // Detect transition support
                 supportsTransitions = (function () {

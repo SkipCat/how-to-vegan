@@ -32,10 +32,16 @@ class DefaultController extends BaseController {
         if (!empty($_SESSION['user_id'])) {
             $manager = UserManager::getInstance();
             $user = $manager->getUserById($_SESSION['user_id']);
-            echo $this->renderView('basket.html.twig', ['user' => $user]);
+            $baskets = $manager->getAllBaskets();
+            echo $this->renderView('basket.html.twig', [
+                'user' => $user,
+                'baskets' => $baskets
+            ]);
         }
         else {
-            echo $this->renderView('basket.html.twig');
+            $manager = UserManager::getInstance();
+            $baskets = $manager->getAllBaskets();
+            echo $this->renderView('basket.html.twig', ['baskets' => $baskets]);
         }
     }
 
@@ -43,10 +49,16 @@ class DefaultController extends BaseController {
         if (!empty($_SESSION['user_id'])) {
             $manager = UserManager::getInstance();
             $user = $manager->getUserById($_SESSION['user_id']);
-            echo $this->renderView('recipe.html.twig', ['user' => $user]);
+            $recipes = $manager->getAllRecipes();
+            echo $this->renderView('recipe.html.twig', [
+                'user' => $user,
+                'recipes' => $recipes
+            ]);
         }
         else {
-            echo $this->renderView('recipe.html.twig');
+            $manager = UserManager::getInstance();
+            $recipes = $manager->getAllRecipes();
+            echo $this->renderView('recipe.html.twig', ['recipes' => $recipes]);
         }
     }
 
