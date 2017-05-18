@@ -82,6 +82,36 @@ class UserManager {
         return true;
     }
 
+    public function editProfile($data) {
+        if (empty($data['password'])) {
+            $user = $this->getUserById($_SESSION['user_id']);
+            $pass = $user['password'];
+        }
+        else {
+            $pass = $this->userHash($data['password']);
+        }
+        
+        $query = $this->DBManager->findOneSecure("UPDATE users SET 
+            username = :username,
+            email = :email, 
+            password = :password,
+            gender = :gender, 
+            birthdate = :birthdate, 
+            address = :address
+            WHERE id = :id",
+            [
+                'username'  => $data['username'],
+                'email'     => $data['email'],
+                'password'  => $pass,
+                'gender'    => $data['gender'],
+                'birthdate' => $data['birthdate'],
+                'address'   => $data['address'],
+                'id'        => $_SESSION['user_id']
+            ]
+        );
+        return $query;
+    }
+
     /////////////
 
     public function getAllRecipes() {

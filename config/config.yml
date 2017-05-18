@@ -9,6 +9,7 @@ routes:
     logout:   'Security:logout'
     register: 'Security:register'
     profile:  'Security:profile'
+    editProfile: 'Security:editProfile'
 
 defaut_route: 'home'
 

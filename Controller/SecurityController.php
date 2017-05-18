@@ -6,11 +6,35 @@ use Model\UserManager;
 
 class SecurityController extends BaseController {
 
+    public function editProfileAction() {
+        $error = '';
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if(!empty($_POST['username']) || !empty($_POST['email'])) {
+                $manager = UserManager::getInstance();
+                $user = $manager->getUserById($_SESSION['user_id']);
+                $manager->editProfile($_POST);
+                $this->redirect('profile&username=' . $_POST['username']);
+            }
+            else {
+                echo $error = 'Un ou plusieurs champs requis vide(s).';
+                echo $this->renderView('profile.html.twig', ['error' => $error]);
+                return false;
+            }
+        }
+        else {
+            echo $this->redirect('home');
+        }
+    }
+
     public function profileAction() {
         if (!empty($_SESSION['user_id'])) {
             $manager = UserManager::getInstance();
             $user = $manager->getUserById($_SESSION['user_id']);
-            echo $this->renderView('profile.html.twig', ['user' => $user]); // get also list, recipes and comments
+            //$profileUser = $manager->getUserById($_GET['id']);
+            //$this->redirect('profile&username=' . $user['username']);
+            echo $this->renderView('profile.html.twig', [
+                'user' => $user,
+            ]); // get also list, recipes and comments
         }
         else {
             echo $this->redirect('home');

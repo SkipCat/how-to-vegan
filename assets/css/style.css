@@ -1795,7 +1795,7 @@
   margin-top: 30px; }
   #modify-content .profile-content > div:not(.gender) {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     white-space: pre; }
   #modify-content .profile-content div:first-child p {
     margin-bottom: 0; }
@@ -1837,7 +1837,8 @@
     font-family: "Signika Regular";
     color: #444444;
     font-size: 14px;
-    margin: 10px 0; }
+    margin: 10px 0;
+    width: 100%; }
   #modify-content input[type="submit"] {
     width: 130px;
     padding: 7px;

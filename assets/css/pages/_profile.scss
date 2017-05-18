@@ -54,7 +54,7 @@
     .profile-content {
         > div:not(.gender) {
             display: flex;
-            align-items: center;
+            align-items: baseline;
             white-space: pre;
         }
         div:first-child p {
@@ -101,6 +101,7 @@
     .info {
         @include policy($main-font, $text-color, 14px);
         margin: 10px 0;
+        width: 100%;
     }
 
     input[type="submit"] {

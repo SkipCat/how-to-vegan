@@ -20,25 +20,25 @@
             </div>
         </nav>
         <div>
-            <form id="modify-content">
+            <form action="?action=editProfile" method="POST" id="modify-content">
                 <div class="profile-content">
                     <div class="firstname">
                         <p class="name">Pseudo : </p>
-                        <p class="info">{{ user.username }}</p>
+                        <input type="text" class="info" value="{{ user.username }}" name="username">
                     </div>
                     <div class="email">
                         <p class="name">Email : </p>
-                        <p class="info">{{ user.email }}</p>
+                        <input type="email" class="info" value="{{ user.email }}" name="email">
                     </div>
                     <div class="password">
                         <p class="name">Mot de passe : </p>
-                        <p class="info">Modifier le mot de passe</p>
+                        <input type="password" class="info" placeholder="Modifier le mot de passe" name="password">
                     </div>
                     <div class="gender">
                         <p class="name">Genre : </p>
                         <div class="choose-gender">
                             <div>
-                                {% if 'female' in user.gender %}
+                                {% if user.gender == 'female' %}
                                     <input type="radio" value="female" id="female" name="gender" checked>
                                 {% else %}
                                     <input type="radio" value="female" id="female" name="gender">
@@ -49,7 +49,7 @@
                                 </label>
                             </div>
                             <div>
-                                {% if 'male' in user.gender %}
+                                {% if user.gender == 'male' %}
                                     <input type="radio" value="male" id="male" name="gender" checked>
                                 {% else %}
                                     <input type="radio" value="male" id="male" name="gender">
@@ -60,7 +60,7 @@
                                 </label>
                             </div>
                             <div>
-                                {% if 'other' in user.gender %}
+                                {% if user.gender == 'other' %}
                                     <input type="radio" value="other" id="other" name="gender" checked>
                                 {% else %}
                                     <input type="radio" value="other" id="other" name="gender">
@@ -73,11 +73,11 @@
                     </div>
                     <div class="birthdate">
                         <p class="name">Date de naissance : </p>
-                        <p class="info">{{ user.birthdate }}</p>
+                        <input type="date" class="info" value="{{ user.birthdate }}" name="birthdate">
                     </div>
                     <div class="adress">
                         <p class="name">Adresse : </p>
-                        <p class="info">{{ user.adress }}</p>
+                        <input type="text" class="info" value="{{ user.address }}" name="address">
                     </div>
                 </div>
                 <input type="submit" value="Enregistrer">
