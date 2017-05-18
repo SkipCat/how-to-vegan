@@ -67,6 +67,54 @@
     }
 }
 
+#form-pin {
+    display: none;
+    @include resize(300px, 200px);
+    position: fixed;
+    top: 30%;
+    left: 30%;
+    z-index: 5;
+    background-color: white;
+    border-radius: 7px;
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+        @include policy($semibold-font, $text-color, 16px);
+        text-transform: uppercase;
+        margin-top: 0;
+    }
+
+    #btn-close {
+        width: 30px;
+        margin: 5px auto 0 5px;
+    }
+
+    input[type="text"], p {
+        @include policy($main-font, $text-color, 14px);
+    }
+
+    input[type="text"] {
+        border: 1px solid lightgrey;
+        border-radius: 3px;
+        padding-left: 5px;
+        width: 100px;
+    }
+
+    input[type="submit"] {
+        @include policy($main-font, white, 14px);
+        text-align: center;
+        padding: 4px;
+        background: linear-gradient(to bottom, #ff9c33, #ef7205);
+        width: 100px;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 7px;
+        margin-top: 20px;
+        text-transform: uppercase;
+    }
+}
+
 .list {
     height: 550px;
     background: url('../img/list.png') no-repeat;

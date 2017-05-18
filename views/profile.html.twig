@@ -86,25 +86,15 @@
         <div>
             <div id="pin-content">
                 <p>vos listes de <span>courses</span></p>
-                <div class="pin-elt">
-                    <img src="assets/img/delete_pin_list.png" alt="delete">
-                    <p class="pin-date">14/07/17</p>
-                    <p class="pin-name">"Anniv Papa"</p>
-                    <a class="btn-see-list">Voir la liste</a>
-                </div>
-                <div class="pin-elt">
-                    <img src="assets/img/delete_pin_list.png" alt="delete">
-                    <p class="pin-date">14/07/17</p>
-                    <p class="pin-name">"Anniv Papa"</p>
-                    <a class="btn-see-list">Voir la liste</a>
-                </div>
-                <div class="pin-elt">
-                    <img src="assets/img/delete_pin_list.png" alt="delete">
-                    <p class="pin-date">14/07/17</p>
-                    <p class="pin-name">"Anniv Papa"</p>
-                    <a class="btn-see-list">Voir la liste</a>
-                </div>
-
+                {% for list in lists %}
+                    <div class="pin-elt">
+                        <img src="assets/img/delete_pin_list.png" alt="delete">
+                        <p class="pin-date">{{ list.date }}</p>
+                        <p class="pin-name">"{{ list.name }}"</p>
+                        <div class="pin-content">{{ list.content }}</div><!-- en display none -->
+                        <a class="btn-see-list">Voir la liste</a><!-- display .pin-content -->
+                    </div>
+                {% endfor %}
             </div>
         </div>
         <div>

@@ -1,10 +1,48 @@
 function listActions() {
-    var pinButton = document.querySelector('#img-pin');
-
     var deleteButton = document.querySelector('#img-delete');
     var ul = document.querySelector('.list ul');
     var firstSelect = document.querySelector('.list ul').childNodes[1];
     var recapList = document.querySelector('#recap-list');
+
+    var pinButton = document.querySelector('#img-pin');
+    var formPinList = document.forms['form-pin'];
+    var inputContent = formPinList.elements['list-content'];
+    var btnClose = document.querySelector('#btn-close');
+    console.log(pinButton, formPinList, inputContent, btnClose);
+
+    function pinList() {
+        var list = document.querySelectorAll('.list select');
+        var products = [];
+        var stringList = '';
+
+        // get value of each select
+        for (var i = 0; i < list.length; i ++) {
+            var element = list[i].options[list[i].selectedIndex].value;
+            if (element !== 'NULL') {
+                products.push(element);
+            }
+        }
+
+        // concatene all values in one string
+        for (var i = 0; i < products.length; i ++) {
+            if (i < products.length - 1) {
+                    stringList += products[i] + ',';
+            }
+            else {
+                stringList += products[i];
+            }
+        }
+
+        inputContent.value = stringList;
+        formPinList.style.display = 'flex';
+    }
+
+    pinButton.onclick = function() {
+        pinList();
+    };
+    btnClose.onclick = function() {
+        formPinList.style.display = 'none';
+    };
 
     function deleteList() {
         // remove all select elements from DOM
@@ -25,20 +63,10 @@ function listActions() {
     deleteButton.onclick = function() {
         deleteList();
     };
+
 }
 
 /* PIN
-
-table list :
-- id (AI)
-- content
-- date
-- username
-
-quand on clique sur bouton :
-- on récupère toutes les valeurs
-- on les concatène avec une virgule dans une string
-- on stocke la string dans la table list['content']
 
 page profil :
 for () // afficher toutes les listes dont username = username du profil

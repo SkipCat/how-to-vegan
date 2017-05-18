@@ -54,7 +54,6 @@ class UserManager {
         $user['birthdate'] = $data['birthdate'];        
         $user['address'] = $data['address'];
         $user['admin'] = null;
-        var_dump($user);
         $this->DBManager->insert('users', $user);
     }
 
@@ -122,5 +121,42 @@ class UserManager {
     public function getAllBaskets() {
         $data = $this->DBManager->findAllSecure("SELECT * FROM baskets");
         return $data;
+    }
+
+    public function getAllLists($username) {
+        $data = $this->DBManager->findAllSecure("SELECT * FROM lists WHERE username = :username", 
+            ['username' => $username]);
+        return $data;
+    }
+
+    public function getRecipeFilters($data) {
+        $filters = $data['filter'];
+        $recipes = $this->getAllRecipes();
+/*
+        $match = 0;
+        foreach ($recipes AS $key => $recipe) {
+            $category = $recipe['category'];
+            if (!empty($filters)) {
+                foreach ($filters AS $key => $filter) {
+                    if (strpos($category, $filter) !== false) {
+                        $match ++;
+                        var_dump($recipe);
+                        return $recipe;
+                    }
+                }
+            }
+        }
+*/
+        var_dump($filters, $recipes);
+        return $filters;
+    }
+
+    public function pinList($data) {
+        $user = $this->getUserById($_SESSION['user_id']);
+        $list['name'] = $data['listname'];
+        $list['content'] = $data['list-content'];
+        $list['date'] = date('d/m/Y h:i:s a', time()); // current date
+        $list['username'] = $user['username'];
+        $this->DBManager->insert('lists', $list);
     }
 }

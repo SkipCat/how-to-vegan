@@ -38,6 +38,24 @@ class DefaultController extends BaseController {
         }
     }
 
+    public function pinAction() {
+        $error = '';
+        if (!empty($_SESSION['user_id'])) {
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $manager = UserManager::getInstance();
+                $user = $manager->getUserById($_SESSION['user_id']);
+                $list = $manager->pinList($_POST);
+                echo $this->redirect('convert');
+            }
+            else {
+                echo $this->renderView('convert.html.twig', ['error' => $error]);
+            }
+        }
+        else {
+            echo $this->redirect('convert');
+        }
+    }
+
     public function basketAction() {
         $manager = UserManager::getInstance();
         $baskets = $manager->getAllBaskets();
@@ -67,6 +85,28 @@ class DefaultController extends BaseController {
         }
         else {
             echo $this->renderView('recipe.html.twig', ['recipes' => $recipes]);
+        }
+    }
+
+    public function filterRecipeAction() {
+        $manager = UserManager::getInstance();
+        $recipes = $manager->getAllRecipes();
+        $filters = $manager->getRecipeFilters($_POST);
+        var_dump($filters);
+
+        if (!empty($_SESSION['user_id'])) {
+            $user = $manager->getUserById($_SESSION['user_id']);
+            echo $this->renderView('recipe.html.twig', [
+                'user' => $user,
+                'recipes' => $recipes,
+                'filters' => $filters,
+            ]);
+        }
+        else {
+            echo $this->renderView('recipe.html.twig', [
+                'recipes' => $recipes,
+                'filters' => $filters
+            ]);
         }
     }
 

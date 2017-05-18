@@ -11,6 +11,7 @@ window.onload = function() {
         convert();
         listActions();
         crush();
+        //modalActions();
     }
 
     if (currentPage.search('convert') !== -1) {
@@ -19,6 +20,7 @@ window.onload = function() {
         header.id = 'header-convert';
         convert();
         listActions();
+        //modalActions();
     }
 
     if (currentPage.search('basket') !== -1) {

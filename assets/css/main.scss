@@ -30,9 +30,9 @@ body {
         background-color: transparent;
     }
 
-    button, a, label, input[type="radio"],
+    button, a, label, 
     input[type="submit"], input[type="image"],
-    input[type="checkbox"], .checkbox-frame {
+    input[type="checkbox"], input[type="radio"] {
         cursor: pointer;
     }
 

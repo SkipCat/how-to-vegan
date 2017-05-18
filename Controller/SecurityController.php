@@ -13,10 +13,11 @@ class SecurityController extends BaseController {
                 $manager = UserManager::getInstance();
                 $user = $manager->getUserById($_SESSION['user_id']);
                 $manager->editProfile($_POST);
-                $this->redirect('profile&username=' . $_POST['username']);
+                $this->redirect('profile');
+                //$this->redirect('profile&username=' . $_POST['username']);
             }
             else {
-                echo $error = 'Un ou plusieurs champs requis vide(s).';
+                $error = 'Un ou plusieurs champs requis vide(s).';
                 echo $this->renderView('profile.html.twig', ['error' => $error]);
                 return false;
             }
@@ -30,10 +31,10 @@ class SecurityController extends BaseController {
         if (!empty($_SESSION['user_id'])) {
             $manager = UserManager::getInstance();
             $user = $manager->getUserById($_SESSION['user_id']);
-            //$profileUser = $manager->getUserById($_GET['id']);
-            //$this->redirect('profile&username=' . $user['username']);
+            $lists = $manager->getAllLists($user['username']);
             echo $this->renderView('profile.html.twig', [
-                'user' => $user,
+                'user'  => $user,
+                'lists' => $lists,
             ]); // get also list, recipes and comments
         }
         else {
