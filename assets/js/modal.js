@@ -29,8 +29,6 @@ function modalActions() {
         for (var i = 0; i < blur.length; i ++) {
             blur[i].classList.remove('blur-elements');
         }
-
-        console.log('close modal');
     }
 
     for (var i in btnOpenModal) {
@@ -38,8 +36,7 @@ function modalActions() {
             openModal();
         };
         var btnCloseModal = document.querySelector('.btn-close');
-        btnCloseModal.onclick = function() {
-            console.log('call for closing modal');                
+        btnCloseModal.onclick = function() {               
             closeModal();
         };
     }

@@ -8,8 +8,7 @@ function listActions() {
     var formPinList = document.forms['form-pin'];
     var inputContent = formPinList.elements['list-content'];
     var btnClose = document.querySelector('.btn-close');
-    console.log(pinButton, formPinList, inputContent, btnClose);
-
+    
     function pinList() {
         var list = document.querySelectorAll('.list select');
         var products = [];
@@ -33,7 +32,6 @@ function listActions() {
         }
 
         if (null !== stringList && '' !== stringList) {
-            console.log(stringList);
             inputContent.value = stringList;
             formPinList.style.display = 'flex';
             //openModal();
@@ -80,10 +78,3 @@ function listActions() {
     };
 
 }
-
-/* PIN
-
-page profil :
-for () // dasn chq liste on split la string et on affiche sous forme de liste
-
-*/

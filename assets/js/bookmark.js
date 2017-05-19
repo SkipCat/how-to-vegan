@@ -8,7 +8,7 @@ window.onload = function() {
 
     if (currentPage.search('home') !== -1) {
         header.id = 'header-home';
-        //convert();
+        convert();
         listActions();
         crush();
     }
@@ -17,7 +17,7 @@ window.onload = function() {
         convertLink.id = 'active-page';
         convertLink.parentNode.childNodes[1].id = 'bookmark';
         header.id = 'header-convert';
-        //convert();
+        convert();
         listActions();
     }
 
@@ -25,7 +25,7 @@ window.onload = function() {
         basketLink.id = 'active-page';
         basketLink.parentNode.childNodes[1].id = 'bookmark';
         header.id = 'header-basket';
-        //anchor();
+        anchor();
     }
 
     if (currentPage.search('recipe') !== -1) {
@@ -38,7 +38,6 @@ window.onload = function() {
 
     if (currentPage.search('profile') !== -1) {
         //header.id = 'header-profile';
-
         var modifyLink = document.querySelector('#modify-link');
         var pinLink = document.querySelector('#pin-link');
         var favoritesLink = document.querySelector('#favorites-link');
