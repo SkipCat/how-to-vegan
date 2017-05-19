@@ -54,7 +54,6 @@ class UserManager {
         $user['birthdate'] = $data['birthdate'];        
         $user['address'] = $data['address'];
         $user['admin'] = null;
-        var_dump($user);
         $this->DBManager->insert('users', $user);
     }
 
@@ -82,6 +81,36 @@ class UserManager {
         return true;
     }
 
+    public function editProfile($data) {
+        if (empty($data['password'])) {
+            $user = $this->getUserById($_SESSION['user_id']);
+            $pass = $user['password'];
+        }
+        else {
+            $pass = $this->userHash($data['password']);
+        }
+        
+        $query = $this->DBManager->findOneSecure("UPDATE users SET 
+            username = :username,
+            email = :email, 
+            password = :password,
+            gender = :gender, 
+            birthdate = :birthdate, 
+            address = :address
+            WHERE id = :id",
+            [
+                'username'  => $data['username'],
+                'email'     => $data['email'],
+                'password'  => $pass,
+                'gender'    => $data['gender'],
+                'birthdate' => $data['birthdate'],
+                'address'   => $data['address'],
+                'id'        => $_SESSION['user_id']
+            ]
+        );
+        return $query;
+    }
+
     /////////////
 
     public function getAllRecipes() {
@@ -92,5 +121,74 @@ class UserManager {
     public function getAllBaskets() {
         $data = $this->DBManager->findAllSecure("SELECT * FROM baskets");
         return $data;
+    }
+
+    public function getAllLists($username) {
+        $data = $this->DBManager->findAllSecure("SELECT * FROM lists WHERE username = :username", 
+            ['username' => $username]);
+        foreach ($data AS $key => $list) {
+            $list['content'] = explode(',', $list['content']);
+        }
+        return $data;
+    }
+
+    public function getRecipeFilters($data) {
+        $filters = $data['filter'];
+        $recipes = $this->getAllRecipes();
+/*
+        $match = 0;
+        foreach ($recipes AS $key => $recipe) {
+            $category = $recipe['category'];
+            if (!empty($filters)) {
+                foreach ($filters AS $key => $filter) {
+                    if (strpos($category, $filter) !== false) {
+                        $match ++;
+                        var_dump($recipe);
+                        return $recipe;
+                    }
+                }
+            }
+        }
+*/
+        var_dump($filters, $recipes);
+        return $filters;
+    }
+
+    public function pinList($data) {
+        $user = $this->getUserById($_SESSION['user_id']);
+        $list['name'] = $data['listname'];
+        $list['content'] = $data['list-content'];
+        $list['date'] = date('d/m/Y h:i:s a', time()); // current date
+        $list['username'] = $user['username'];
+        $this->DBManager->insert('lists', $list);
+    }
+
+    public function deleteList($name) {
+        $query = $this->DBManager->findOneSecure("DELETE FROM lists WHERE name = :name",
+            ['name' => $name]);
+        return $query;
+    }
+
+    public function pinRecipe($data) {
+        $user = $this->getUserById($_SESSION['user_id']);
+        $favorite['id_recipe'] = $data['id_recipe'];
+        $favorite['name'] = $data['name'];
+        $favorite['username'] = $user['username'];
+        $this->DBManager->insert('favorites', $favorite);
+    }
+
+    public function getFavorites($username) {
+        $data = $this->DBManager->findAllSecure("SELECT * FROM recipes
+            LEFT JOIN favorites
+            ON recipes.id = favorites.id_recipe 
+            WHERE username = :username", ['username' => $username]
+        );
+        return $data;
+    }
+
+    public function deleteFavorite($id) {
+        $query = $this->DBManager->findOneSecure("DELETE FROM favorites WHERE id = :id",
+            ['id' => $id]);
+        return $query;
     }
 }

@@ -153,6 +153,16 @@
                 }
             }
         }
+
+        input[type="submit"] {
+            @include policy($main-font, white, 13px);
+            text-align: center;
+            padding: 4px;
+            background: linear-gradient(to bottom, #ff9c33, #ef7205);
+            width: 65px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
     }
 
     #leaf-side {

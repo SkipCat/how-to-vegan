@@ -32,14 +32,12 @@ window.onload = function() {
         recipeLink.id = 'active-page';
         recipeLink.parentNode.childNodes[1].id = 'bookmark';
         header.id = 'header-recipe';
-        carousel();
-        crush();
+        //carousel();
         modalActions();
     }
 
     if (currentPage.search('profile') !== -1) {
         //header.id = 'header-profile';
-
         var modifyLink = document.querySelector('#modify-link');
         var pinLink = document.querySelector('#pin-link');
         var favoritesLink = document.querySelector('#favorites-link');
@@ -61,15 +59,18 @@ window.onload = function() {
         if (currentPage.search('pin') !== -1) {
             pinLink.parentNode.id = 'active-tab';
             pinContent.parentNode.id = 'active-content';
+
         }
         else if (currentPage.search('favorite') !== -1) {
             favoritesLink.parentNode.id = 'active-tab';
             favoritesContent.parentNode.id = 'active-content';
+            modalActions();
         }
         else { // currentPage.search('modify') !== -1 || nothing
             modifyLink.parentNode.id = 'active-tab';
             modifyContent.parentNode.id = 'active-content';
         }
+        displaySavedList();
     }
 
     if (currentPage.search('about') !== -1) {

@@ -6,11 +6,21 @@ use Model\UserManager;
 
 class SecurityController extends BaseController {
 
-    public function profileAction() {
-        if (!empty($_SESSION['user_id'])) {
-            $manager = UserManager::getInstance();
-            $user = $manager->getUserById($_SESSION['user_id']);
-            echo $this->renderView('profile.html.twig', ['user' => $user]); // get also list, recipes and comments
+    public function editProfileAction() {
+        $error = '';
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if(!empty($_POST['username']) || !empty($_POST['email'])) {
+                $manager = UserManager::getInstance();
+                $user = $manager->getUserById($_SESSION['user_id']);
+                $manager->editProfile($_POST);
+                $this->redirect('profile');
+                //$this->redirect('profile&username=' . $_POST['username']);
+            }
+            else {
+                $error = 'Un ou plusieurs champs requis vide(s).';
+                echo $this->renderView('profile.html.twig', ['error' => $error]);
+                return false;
+            }
         }
         else {
             echo $this->redirect('home');
@@ -31,7 +41,7 @@ class SecurityController extends BaseController {
             }
         }
         else {
-            echo $this->renderView('login.html.twig', ['error' => $error]);
+            echo $this->renderView('login_register.html.twig', ['error' => $error]);
         }
     }
 
@@ -54,7 +64,7 @@ class SecurityController extends BaseController {
             }    
         }
         else {
-            echo $this->renderView('register.html.twig', ['error' => $error]);
+            echo $this->renderView('login_register.html.twig', ['error' => $error]);
         }
     }
 }

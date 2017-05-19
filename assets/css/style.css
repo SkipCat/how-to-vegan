@@ -110,6 +110,65 @@
       bottom: 0;
       left: 15%; } }
 
+#form-pin {
+  display: none;
+  width: 300px;
+  height: 200px;
+  top: 30%;
+  left: 3%;
+  position: fixed;
+  z-index: 5;
+  background-color: white;
+  border-radius: 7px;
+  flex-direction: column;
+  align-items: center; }
+  @media screen and (min-width: 321px) {
+    #form-pin {
+      left: 10%; } }
+  @media screen and (min-width: 376px) {
+    #form-pin {
+      left: 15%; } }
+  @media screen and (min-width: 641px) {
+    #form-pin {
+      left: 32%; } }
+  @media screen and (min-width: 769px) {
+    #form-pin {
+      left: 36%; } }
+  @media screen and (min-width: 1025px) {
+    #form-pin {
+      left: 40%; } }
+  #form-pin h3 {
+    font-family: "Signika Semibold";
+    color: #444444;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-top: 0; }
+  #form-pin .btn-close {
+    width: 30px;
+    margin: 5px auto 0 5px; }
+  #form-pin input[type="text"], #form-pin p {
+    font-family: "Signika Regular";
+    color: #444444;
+    font-size: 14px; }
+  #form-pin input[type="text"] {
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    padding-left: 5px;
+    width: 100px; }
+  #form-pin input[type="submit"] {
+    font-family: "Signika Regular";
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    padding: 4px;
+    background: linear-gradient(to bottom, #ff9c33, #ef7205);
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 7px;
+    margin-top: 20px;
+    text-transform: uppercase; }
+
 .list {
   height: 550px;
   background: url("../img/list.png") no-repeat;
@@ -1379,6 +1438,16 @@
         @media screen and (min-width: 641px) {
           #main-recipe .filters #filter-by-category .checkbox-container .checkbox {
             max-width: 100%; } }
+    #main-recipe .filters input[type="submit"] {
+      font-family: "Signika Regular";
+      color: white;
+      font-size: 13px;
+      text-align: center;
+      padding: 4px;
+      background: linear-gradient(to bottom, #ff9c33, #ef7205);
+      width: 65px;
+      border-radius: 5px;
+      margin-top: 20px; }
   #main-recipe #leaf-side {
     display: none;
     position: absolute;
@@ -1640,12 +1709,12 @@
         font-size: 14px;
         text-transform: uppercase; }
     @media screen and (min-width: 641px) {
-      .modal-content .modal-title .kitchen .category {
+      .modal-content .modal-title .kitchen .category-img {
         width: 125px;
         align-self: flex-start;
         position: absolute;
         top: 260px; } }
-    .modal-content .modal-title .kitchen .category img {
+    .modal-content .modal-title .kitchen .category-img img {
       width: 35px;
       margin-right: 7px; }
   .modal-content .modal-desc {
@@ -1795,7 +1864,7 @@
   margin-top: 30px; }
   #modify-content .profile-content > div:not(.gender) {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     white-space: pre; }
   #modify-content .profile-content div:first-child p {
     margin-bottom: 0; }
@@ -1837,7 +1906,8 @@
     font-family: "Signika Regular";
     color: #444444;
     font-size: 14px;
-    margin: 10px 0; }
+    margin: 10px 0;
+    width: 100%; }
   #modify-content input[type="submit"] {
     width: 130px;
     padding: 7px;
@@ -1861,21 +1931,28 @@
   margin-bottom: 10px;
   display: flex;
   flex-direction: column; }
-  #pin-content .pin-elt img {
+  #pin-content .pin-elt input[type="image"] {
     position: relative;
     left: 94%;
     top: -5px;
     width: 20px; }
-  #pin-content .pin-elt .pin-date, #pin-content .pin-elt .pin-name {
-    font-family: "Signika Regular";
+  #pin-content .pin-elt .pin-date, #pin-content .pin-elt .pin-name, #pin-content .pin-elt .pin-content {
     color: #444444;
-    font-size: 14px;
     text-align: center;
     margin: 5px 0; }
   #pin-content .pin-elt .pin-name {
-    font-family: "Signika Semibold"; }
+    font-family: "Signika Semibold";
+    font-size: 16px; }
   #pin-content .pin-elt .pin-date {
+    font-family: "Signika Regular";
+    font-size: 13px;
     margin-top: 0; }
+  #pin-content .pin-elt .pin-content {
+    display: none;
+    font-family: "Signika Light";
+    font-size: 15px;
+    padding: 0;
+    margin-bottom: 15px; }
   #pin-content .pin-elt .btn-see-list {
     padding: 5px;
     width: 90px;
@@ -1889,6 +1966,7 @@
     height: 190px;
     margin-left: 7px;
     margin-right: 7px;
+    margin-top: 0;
     box-shadow: 0 0 10px lightgrey; }
     @media screen and (min-width: 321px) {
       #favorites-content #spotlight-type-recipe .spotlight-recipe {
@@ -1899,6 +1977,11 @@
         height: 200px;
         margin-left: 10px;
         margin-right: 10px; } }
+#favorites-content input[type="image"] {
+  position: relative;
+  left: 85%;
+  top: 15px;
+  width: 20px; }
 
 #modify-content, #pin-content, #favorites-content {
   display: none; }
@@ -2265,6 +2348,262 @@
           text-transform: uppercase;
           margin-top: -10px; }
 
+#main-form {
+  margin-top: -90px;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  position: relative;
+  z-index: -1;
+  background-image: url("../img/back_blur.png"); }
+  @media screen and (min-width: 641px) {
+    #main-form {
+      background: url("../img/back_blur_d.png") 50%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-top: -200px;
+      padding-top: 150px;
+      z-index: 1; } }
+  @media screen and (min-width: 769px) {
+    #main-form {
+      margin-top: -280px; } }
+  #main-form #border-form {
+    display: none; }
+    @media screen and (min-width: 641px) {
+      #main-form #border-form {
+        display: block;
+        position: relative;
+        top: -215px;
+        right: unset;
+        bottom: unset;
+        left: 40px;
+        width: 540px;
+        height: 420px;
+        margin: 0 auto;
+        border: 5px solid #e74a18; } }
+    @media screen and (min-width: 769px) {
+      #main-form #border-form {
+        width: 690px; } }
+  #main-form #container-form {
+    margin-top: 150px;
+    padding: 30px auto;
+    position: relative;
+    z-index: 4;
+    width: 100%; }
+    @media screen and (min-width: 641px) {
+      #main-form #container-form {
+        width: 600px;
+        margin: 0 auto;
+        top: 200px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center; }
+        #main-form #container-form .login, #main-form #container-form .register {
+          height: 100%; } }
+    @media screen and (min-width: 769px) {
+      #main-form #container-form {
+        width: 750px; } }
+    #main-form #container-form .icon-pseudo {
+      background: url("../img/icon_pseudo.png") no-repeat 8px; }
+    #main-form #container-form .icon-password {
+      background: url("../img/icon_password.png") no-repeat 8px; }
+    #main-form #container-form .icon-mail {
+      background: url("../img/icon_mail.png") no-repeat 8px; }
+    #main-form #container-form .icon-adress {
+      background: url("../img/icon_adress.png") no-repeat 8px; }
+    #main-form #container-form .icon-input-img {
+      padding-left: 40px;
+      background-color: #e6e6e6;
+      background-size: 15px;
+      width: 80%;
+      height: 25px;
+      color: unset;
+      border: 2px solid #dadada;
+      border-radius: 7px; }
+    #main-form #container-form .login {
+      display: block;
+      background-color: #efefef;
+      width: 90%;
+      margin: 50px auto 60px auto;
+      border-radius: 10px;
+      padding: 30px auto; }
+      @media screen and (min-width: 641px) {
+        #main-form #container-form .login {
+          height: 480px;
+          margin: 0 auto;
+          border-radius: unset; } }
+      #main-form #container-form .login > p {
+        padding-top: 15px;
+        text-align: center;
+        font-family: "Signika Regular";
+        color: #444444;
+        font-size: 15px; }
+        #main-form #container-form .login > p:after {
+          width: 55px;
+          height: 2px;
+          position: absolute;
+          top: unset;
+          right: 0;
+          bottom: unset;
+          left: 0;
+          content: '';
+          margin: 20px auto;
+          background-color: #e74a18; }
+          @media screen and (min-width: 641px) {
+            #main-form #container-form .login > p:after {
+              right: 50%; } }
+      #main-form #container-form .login .login-form {
+        margin: auto 35px;
+        padding-bottom: 25px; }
+        #main-form #container-form .login .login-form form {
+          display: block;
+          margin: 0 auto; }
+          @media screen and (min-width: 641px) {
+            #main-form #container-form .login .login-form form {
+              height: 400px; } }
+          #main-form #container-form .login .login-form form input {
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0 auto 18px auto;
+            font-family: "SourceSansPro";
+            color: unset;
+            font-size: 15px; }
+          #main-form #container-form .login .login-form form > div a {
+            font-family: "SourceSansPro";
+            color: #e74a18;
+            font-size: 14px; }
+          #main-form #container-form .login .login-form form .input-submit {
+            background-image: linear-gradient(to bottom, #ff9d35, #ee7002);
+            font-family: "Signika Semibold";
+            color: white;
+            font-size: 15px;
+            border-radius: 6px;
+            padding: 5px 15px;
+            width: auto;
+            text-align: center;
+            display: block;
+            margin: 0 auto; }
+            @media screen and (min-width: 641px) {
+              #main-form #container-form .login .login-form form .input-submit {
+                position: relative;
+                top: 246px;
+                right: unset;
+                bottom: unset;
+                left: unset; } }
+            @media screen and (min-width: 769px) {
+              #main-form #container-form .login .login-form form .input-submit {
+                top: 229px; } }
+        #main-form #container-form .login .login-form #link-register {
+          text-align: center;
+          padding: 5px; }
+          @media screen and (min-width: 641px) {
+            #main-form #container-form .login .login-form #link-register {
+              display: none; } }
+          #main-form #container-form .login .login-form #link-register a {
+            font-family: "SourceSansPro";
+            color: #e74a18;
+            font-size: 14px; }
+    #main-form #container-form .register {
+      display: block;
+      background-color: #efefef;
+      width: 90%;
+      margin: 0 auto;
+      border-radius: 10px; }
+      @media screen and (min-width: 641px) {
+        #main-form #container-form .register {
+          height: 480px;
+          border-radius: unset; } }
+      #main-form #container-form .register > p {
+        padding-top: 15px;
+        text-align: center;
+        font-family: "Signika Regular";
+        color: #444444;
+        font-size: 15px; }
+        #main-form #container-form .register > p:after {
+          width: 55px;
+          height: 2px;
+          position: absolute;
+          top: unset;
+          right: 0;
+          bottom: unset;
+          left: 0;
+          content: '';
+          margin: 20px auto;
+          background-color: #e74a18; }
+          @media screen and (min-width: 641px) {
+            #main-form #container-form .register > p:after {
+              left: 50%; } }
+      #main-form #container-form .register .register-form {
+        margin: auto 20px;
+        padding-bottom: 25px; }
+        #main-form #container-form .register .register-form form {
+          display: block;
+          margin: 0 auto 0 20px; }
+          #main-form #container-form .register .register-form form input {
+            width: 95%;
+            box-sizing: border-box;
+            font-family: "SourceSansPro";
+            color: black;
+            font-size: 15px; }
+          #main-form #container-form .register .register-form form span {
+            font-family: "SourceSansPro Italic";
+            color: #e74a18;
+            font-size: 15px; }
+          #main-form #container-form .register .register-form form .birthday-input {
+            display: inline-block;
+            font-family: "SourceSansPro";
+            color: #999999;
+            font-size: 14px; }
+            #main-form #container-form .register .register-form form .birthday-input input {
+              width: 150px;
+              padding: 0;
+              text-align: center; }
+          #main-form #container-form .register .register-form form #gender-label {
+            float: left;
+            font-family: "SourceSansPro";
+            color: #999999;
+            font-size: 14px; }
+          #main-form #container-form .register .register-form form .gender-radio {
+            font-family: "SourceSansPro";
+            color: #999999;
+            font-size: 14px;
+            display: flex;
+            flex-direction: row;
+            align-items: unset;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            padding-left: 12px;
+            position: relative;
+            top: -4px;
+            right: unset;
+            bottom: unset;
+            left: unset; }
+            #main-form #container-form .register .register-form form .gender-radio .radio-input {
+              padding: 4px;
+              width: 85px; }
+              #main-form #container-form .register .register-form form .gender-radio .radio-input input {
+                width: auto; }
+            #main-form #container-form .register .register-form form .gender-radio .gender-icon {
+              width: auto;
+              height: 15px; }
+          #main-form #container-form .register .register-form form .input-submit {
+            background-image: linear-gradient(to bottom, #ff9d35, #ee7002);
+            font-family: "Signika Semibold";
+            color: white;
+            font-size: 15px;
+            border-radius: 6px;
+            padding: 5px 15px;
+            width: auto;
+            text-align: center;
+            display: block;
+            margin: 0 auto; }
+          #main-form #container-form .register .register-form form .required:after {
+            content: '*';
+            font-family: "SourceSansPro Italic";
+            color: #e74a18;
+            font-size: 15px; }
+
 html {
   min-height: 100vh;
   min-width: 100vw; }
@@ -2277,9 +2616,9 @@ body {
   body input, body button {
     border: none;
     background-color: transparent; }
-  body button, body a, body label, body input[type="radio"],
+  body button, body a, body label,
   body input[type="submit"], body input[type="image"],
-  body input[type="checkbox"], body .checkbox-frame {
+  body input[type="checkbox"], body input[type="radio"] {
     cursor: pointer; }
   body .img-to-resize {
     width: 100%; }

@@ -53,12 +53,11 @@ class DBManager {
             else {
                 $first = false;
             }
-            $query .= ':'.$k;
+            $query .= ':' . $k;
         }
         $query .= ')';
         $sth = $dbh->prepare($query);
         $sth->execute($data);
-        var_dump($sth);
         return true;
     }
     

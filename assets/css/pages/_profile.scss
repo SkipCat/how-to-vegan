@@ -54,7 +54,7 @@
     .profile-content {
         > div:not(.gender) {
             display: flex;
-            align-items: center;
+            align-items: baseline;
             white-space: pre;
         }
         div:first-child p {
@@ -101,6 +101,7 @@
     .info {
         @include policy($main-font, $text-color, 14px);
         margin: 10px 0;
+        width: 100%;
     }
 
     input[type="submit"] {
@@ -132,23 +133,33 @@
         display: flex;
         flex-direction: column;
 
-        img {
+        input[type="image"] {
             position: relative;
             left: 94%;
             top: -5px;
             width: 20px;
         }
 
-        .pin-date, .pin-name {
-            @include policy($main-font, $text-color, 14px);
+        .pin-date, .pin-name, .pin-content {
+            color: $text-color;
             text-align: center;
             margin: 5px 0;
         }
         .pin-name {
             font-family: $semibold-font;
+            font-size: 16px;
         }
         .pin-date {
+            font-family: $main-font;
+            font-size: 13px;
             margin-top: 0;
+        }
+        .pin-content {
+            display: none;
+            font-family: $light-font;
+            font-size: 15px;
+            padding: 0;
+            margin-bottom: 15px;
         }
 
         .btn-see-list {
@@ -167,6 +178,7 @@
             @include resize(115px, 190px);
             margin-left: 7px;
             margin-right: 7px;
+            margin-top: 0;
             box-shadow: 0 0 10px lightgrey;
             @media screen and (min-width: 321px) {
                 width: 123px;
@@ -177,6 +189,13 @@
                 margin-right: 10px;
             }
         } 
+    }
+
+    input[type="image"] {
+        position: relative;
+        left: 85%;
+        top: 15px;
+        width: 20px;
     }
 }
 

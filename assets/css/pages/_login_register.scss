@@ -1,0 +1,264 @@
+#main-form{
+    margin-top: -90px;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    position: relative;
+    z-index: -1;
+    background-image: url('../img/back_blur.png');
+    @media screen and (min-width: 641px){
+        background: url('../img/back_blur_d.png') 50%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: -200px;
+        padding-top: 150px;
+        z-index: 1;
+    }
+    @media screen and (min-width: 769px){
+        margin-top: -280px;
+    }
+
+    #border-form{
+        display: none;
+        @media screen and (min-width: 641px){
+            display: block;
+            @include position(relative, -215px, unset, unset, 40px);
+            @include resize(540px, 420px);
+            margin: 0 auto;
+            border: 5px solid $light-red;
+        }
+        @media screen and (min-width: 769px){
+            width: 690px;
+        }
+    }
+
+    #container-form{
+        margin-top: 150px;
+        padding: 30px auto;
+        position: relative;  //relative
+
+        z-index: 4;
+        width: 100%;
+        @media screen and (min-width: 641px){
+            width: 600px;
+            margin: 0 auto;
+            top: 200px;
+            @include flex(row, center, center);
+            .login, .register{
+                height: 100%;
+            }
+        }
+        @media screen and (min-width: 769px){
+            width: 750px;
+        }
+
+        .icon-pseudo{
+            background: url('../img/icon_pseudo.png') no-repeat 8px;
+        }
+
+        .icon-password{
+            background: url('../img/icon_password.png') no-repeat 8px;
+        }
+
+        .icon-mail{
+            background: url('../img/icon_mail.png') no-repeat 8px;
+        }
+
+        .icon-adress{
+            background: url('../img/icon_adress.png') no-repeat 8px;
+        }
+
+        .icon-input-img{
+            padding-left: 40px;
+            background-color: $input-grey;
+            background-size: 15px;
+            @include resize(80%, 25px);
+            @include input(2px, unset, $input-border, 7px);
+        }
+
+        .login{
+            display: block;
+            background-color: $bg-color;
+            width: 90%;
+            margin: 50px auto 60px auto;
+            border-radius: 10px;
+            padding: 30px auto;
+            @media screen and (min-width: 641px){
+                height: 480px;
+                margin: 0 auto;
+                border-radius: unset;
+            }
+
+            > p{
+                padding-top: 15px;
+                text-align: center;
+                @include policy($main-font, $text-color, 15px);
+
+                &:after{
+                    @include resize(55px, 2px);
+                    @include position(absolute, unset, 0, unset, 0);
+                    content:'';
+                    margin: 20px auto;
+                    background-color: $light-red;
+                    @media screen and (min-width: 641px){
+                        right: 50%;
+                    }
+
+                }
+            }
+            .login-form{
+                margin: auto 35px;
+                padding-bottom: 25px;
+
+                form{
+                    display: block;
+                    margin: 0 auto;
+                    @media screen and (min-width: 641px){
+                        height: 400px;
+                    }
+
+                    input{
+                        width: 100%;
+                        box-sizing: border-box;
+                        margin: 0 auto 18px auto;
+                        @include policy($text-font, unset, 15px);
+                    }
+
+                    > div a{
+                        @include policy($text-font, $light-red, 14px);
+                    }
+
+                    .input-submit{
+                        background-image: linear-gradient(to bottom, #ff9d35, #ee7002);
+                        @include policy($semibold-font, white, 15px);
+                        border-radius: 6px;
+                        padding: 5px 15px;
+                        width: auto;
+                        text-align: center;
+                        display: block;
+                        margin: 0 auto;
+                        @media screen and (min-width: 641px){
+                            @include position(relative, 246px, unset, unset, unset);
+                        }
+                        @media screen and (min-width: 769px){
+                            top: 229px;
+                        }
+                    }
+                }
+
+                #link-register{
+                    text-align: center;
+                    padding: 5px;
+                    @media screen and (min-width: 641px){
+                        display: none;
+                    }
+
+                    a{
+                        @include policy($text-font, $light-red, 14px);
+                    }
+                }
+            }
+        }
+
+        .register{
+            display: block;
+            background-color: $bg-color;
+            width: 90%;
+            margin: 0 auto;
+            border-radius: 10px;
+            @media screen and (min-width: 641px){
+                height: 480px;
+                border-radius: unset;
+            }
+
+            > p{
+                padding-top: 15px;
+                text-align: center;
+                @include policy($main-font, $text-color, 15px);
+
+                &:after{
+                    @include resize(55px, 2px);
+                    @include position(absolute, unset, 0, unset, 0);
+                    content:'';
+                    margin: 20px auto;
+                    background-color: $light-red;
+                    @media screen and (min-width: 641px){
+                        left: 50%;
+                    }
+
+                }
+            }
+
+            .register-form{
+                margin: auto 20px;
+                padding-bottom: 25px;
+
+                form{
+                    display: block;
+                    margin:0 auto 0 20px;
+
+                    input{
+                      width: 95%;
+                      box-sizing: border-box;
+                      @include policy($text-font, black, 15px);
+                    }
+
+                    span{
+                        @include policy($text-italic-font, $light-red, 15px);
+                    }
+
+                    .birthday-input{
+                        display: inline-block;
+                        @include policy($text-font, $input-label, 14px);
+                        input{
+                            width: 150px;
+                            padding: 0;
+                            text-align: center;
+                        }
+                    }
+
+                    #gender-label{
+                        float:left;
+                        @include policy($text-font, $input-label, 14px);
+                    }
+
+                    .gender-radio{
+                        @include policy($text-font, $input-label, 14px);
+                        @include flex(row, unset, flex-start);
+                        flex-wrap: wrap;
+                        padding-left: 12px;
+                        @include position(relative, -4px, unset, unset, unset);
+
+                        .radio-input{
+                            padding: 4px;
+                            width: 85px;
+                            input{
+                                width: auto;
+                            }
+                        }
+
+                        .gender-icon{
+                            @include resize(auto, 15px);
+                        }
+                    }
+
+                    .input-submit{
+                        background-image: linear-gradient(to bottom, #ff9d35, #ee7002);
+                        @include policy($semibold-font, white, 15px);
+                        border-radius: 6px;
+                        padding: 5px 15px;
+                        width: auto;
+                        text-align: center;
+                        display: block;
+                        margin: 0 auto;
+                    }
+
+                    .required:after{
+                        content: '*';
+                        @include policy($text-italic-font, $light-red, 15px)
+                    }
+                }
+            }
+        }
+    }
+}

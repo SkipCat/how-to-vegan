@@ -1,0 +1,65 @@
+{% extends 'index.html.twig' %}
+
+{% block content %}
+    <main id="main-form">
+        <div id="container-form">
+            <div class="login">
+                <p>Connexion</p>
+                <div class="login-form">
+                    <form action="?action=login" method="POST">
+                        <input class="icon-pseudo icon-input-img" type="text" name="username" placeholder="Pseudo"><br>
+                        <input class="icon-password icon-input-img" type="password" name="password" placeholder="Mot de passe"><br>
+                        <div><a href="">Mot de passe oublié ?</a></div><br>
+                        <input class="input-submit" type="submit" value="SE CONNECTER">
+                    </form>
+                    <div id="link-register"><a href="">Pas encore inscrit ?</a></div>
+                </div>
+            </div>
+            <div class="register">
+                <p>Inscription</p>
+                <div class="register-form">
+                    <form action="?action=register" method="POST">
+                        <div class="required">
+                            <input class="icon-pseudo icon-input-img" type="text" name="username" placeholder="Pseudo" required>
+                        </div>
+                        <br>
+                        <div class="required">
+                            <input class="icon-mail icon-input-img" type="email" name="email" placeholder="Adresse mail" required>
+                        </div>
+                        <br>
+                        <div class="required">
+                            <input class="icon-password icon-input-img" type="password" name="password" placeholder="Mot de passe" required>
+                        </div>
+                        <br>
+                        <div class="required">
+                            <input class="icon-password icon-input-img" type="password" name="confirm-password" placeholder="Confirmation du mot de passe" required>
+                        </div>
+                        <br>
+                        <div class="address-input">
+                            <input class="icon-adress icon-input-img" type="text" name="address" placeholder="Adresse">
+                        </div>
+                        <br>
+                        <div class="birthday-input">
+                            Date de naissance
+                            <input class="icon-input-img" type="date" name="birthdate" placeholder="01/01/01">
+                        </div>
+                        <br><br>
+                        <span id="gender-label">Sexe</span>
+                        <div class="gender-radio">
+                            <div class="radio-input"><input type="radio" name="gender" value="female">
+                            <img class="gender-icon" src="assets/img/female.png"> Femme</div>
+                            <div class="radio-input"><input type="radio" name="gender" value="male">
+                            <img class="gender-icon" src="assets/img/male.png"> Homme</div>
+                            <div class="radio-input"><input type="radio" name="gender" value="other"> Autre</div>
+                        </div>
+                        <span>* Ces champs sont obligatoires</span>
+                        <br>
+                        <br>
+                        <input class="input-submit" type="submit" value="S'INSCRIRE">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="border-form"></div>
+    </main>
+{% endblock %}

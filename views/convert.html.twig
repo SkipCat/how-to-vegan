@@ -2,17 +2,17 @@
 
 {% block content %}
     <main id="main-convert">
-        <img src="assets/img/brush.png" alt="brush-text" class="brush">
-        <img src="assets/img/big_brush.png" alt="brush-text" class="big-brush">
-        <p class="desc">
+        <img src="assets/img/brush.png" alt="brush-text" class="brush blur">
+        <img src="assets/img/big_brush.png" alt="brush-text" class="big-brush blur">
+        <p class="desc blur">
             How to Vegan est un outil qui vous permet de convertir automatiquement votre liste de
             courses traditionnelle en liste de courses vegan.
             Vous pouvez également ajouter les filtres "bio" et/ou "gluten-free" à votre sélection.
-        </p>        
-        <form name="shoppping-list" id="form-list" class="frame-elt">
+        </p>
+        <form name="shoppping-list" id="form-list" class="frame-elt blur">
             <div class="list">
                 {% if user.username is defined and user.username is not empty %}
-                    <img src="assets/img/pin_list.png" alt="icon pin" id="img-pin" title="Epingler cette liste">
+                    <img src="assets/img/pin_list.png" alt="icon pin" id="img-pin" class="open-modal" title="Epingler cette liste">
                 {% else %}
                     <img style="visibility: hidden;" src="assets/img/pin_list.png" alt="icon pin" id="img-pin" title="Epingler cette liste">
                 {% endif %}
@@ -92,7 +92,7 @@
                 </span>
             </div>
         </form>
-        <div class="mapping">
+        <div class="mapping blur">
             <p class="frame-elt">Situez les boutiques vegan les plus proches de chez vous :</p>
             <form class="localization frame-elt" id="form-localization">
                 <input type="text" placeholder="Indiquez votre adresse" id="input-adress">
@@ -101,4 +101,12 @@
             <div id="map" class="img-to-resize"></div>
         </div>
     </main>
+    <form action="?action=pin" method="POST" name="form-pin" id="form-pin">
+        <img src="assets/img/back_modal.png" class="btn-close" alt="close">
+        <h3>épingler cette liste</h3>
+        <p>Entrez un nom de liste ci-dessous :</p>
+        <input type="text" placeholder="Nom" name="listname">
+        <input type="hidden" name="list-content">
+        <input type="submit" value="épingler">
+    </form>
 {% endblock %}
