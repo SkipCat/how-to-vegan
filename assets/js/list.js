@@ -7,7 +7,7 @@ function listActions() {
     var pinButton = document.querySelector('#img-pin');
     var formPinList = document.forms['form-pin'];
     var inputContent = formPinList.elements['list-content'];
-    var btnClose = document.querySelector('#btn-close');
+    var btnClose = document.querySelector('.btn-close');
     console.log(pinButton, formPinList, inputContent, btnClose);
 
     function pinList() {
@@ -22,7 +22,6 @@ function listActions() {
                 products.push(element);
             }
         }
-
         // concatene all values in one string
         for (var i = 0; i < products.length; i ++) {
             if (i < products.length - 1) {
@@ -33,15 +32,31 @@ function listActions() {
             }
         }
 
-        inputContent.value = stringList;
-        formPinList.style.display = 'flex';
+        if (null !== stringList && '' !== stringList) {
+            console.log(stringList);
+            inputContent.value = stringList;
+            formPinList.style.display = 'flex';
+            //openModal();
+            document.querySelector('body').style.overflow = 'hidden';
+            document.querySelector('header').classList.add('blur-elements');
+            document.querySelector('main').classList.add('blur-elements');
+            document.querySelector('#footer-mobile').classList.add('blur-elements');
+            document.querySelector('#footer-desktop').classList.add('blur-elements');
+        }
     }
 
     pinButton.onclick = function() {
         pinList();
     };
+
     btnClose.onclick = function() {
         formPinList.style.display = 'none';
+        //closeModal();
+        document.querySelector('body').style.overflow = 'auto';
+        document.querySelector('header').classList.remove('blur-elements');
+        document.querySelector('main').classList.remove('blur-elements');
+        document.querySelector('#footer-mobile').classList.remove('blur-elements');
+        document.querySelector('#footer-desktop').classList.remove('blur-elements');
     };
 
     function deleteList() {
@@ -69,7 +84,6 @@ function listActions() {
 /* PIN
 
 page profil :
-for () // afficher toutes les listes dont username = username du profil
 for () // dasn chq liste on split la string et on affiche sous forme de liste
 
 */

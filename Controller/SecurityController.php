@@ -27,21 +27,6 @@ class SecurityController extends BaseController {
         }
     }
 
-    public function profileAction() {
-        if (!empty($_SESSION['user_id'])) {
-            $manager = UserManager::getInstance();
-            $user = $manager->getUserById($_SESSION['user_id']);
-            $lists = $manager->getAllLists($user['username']);
-            echo $this->renderView('profile.html.twig', [
-                'user'  => $user,
-                'lists' => $lists,
-            ]); // get also list, recipes and comments
-        }
-        else {
-            echo $this->redirect('home');
-        }
-    }
-
     public function loginAction() {
         $error = '';
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -56,7 +41,7 @@ class SecurityController extends BaseController {
             }
         }
         else {
-            echo $this->renderView('login.html.twig', ['error' => $error]);
+            echo $this->renderView('login_register.html.twig', ['error' => $error]);
         }
     }
 
@@ -79,7 +64,7 @@ class SecurityController extends BaseController {
             }    
         }
         else {
-            echo $this->renderView('register.html.twig', ['error' => $error]);
+            echo $this->renderView('login_register.html.twig', ['error' => $error]);
         }
     }
 }

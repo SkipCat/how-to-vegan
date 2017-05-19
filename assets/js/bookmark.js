@@ -8,34 +8,31 @@ window.onload = function() {
 
     if (currentPage.search('home') !== -1) {
         header.id = 'header-home';
-        convert();
+        //convert();
         listActions();
         crush();
-        //modalActions();
     }
 
     if (currentPage.search('convert') !== -1) {
         convertLink.id = 'active-page';
         convertLink.parentNode.childNodes[1].id = 'bookmark';
         header.id = 'header-convert';
-        convert();
+        //convert();
         listActions();
-        //modalActions();
     }
 
     if (currentPage.search('basket') !== -1) {
         basketLink.id = 'active-page';
         basketLink.parentNode.childNodes[1].id = 'bookmark';
         header.id = 'header-basket';
-        anchor();
+        //anchor();
     }
 
     if (currentPage.search('recipe') !== -1) {
         recipeLink.id = 'active-page';
         recipeLink.parentNode.childNodes[1].id = 'bookmark';
         header.id = 'header-recipe';
-        carousel();
-        crush();
+        //carousel();
         modalActions();
     }
 
@@ -63,15 +60,18 @@ window.onload = function() {
         if (currentPage.search('pin') !== -1) {
             pinLink.parentNode.id = 'active-tab';
             pinContent.parentNode.id = 'active-content';
+
         }
         else if (currentPage.search('favorite') !== -1) {
             favoritesLink.parentNode.id = 'active-tab';
             favoritesContent.parentNode.id = 'active-content';
+            modalActions();
         }
         else { // currentPage.search('modify') !== -1 || nothing
             modifyLink.parentNode.id = 'active-tab';
             modifyContent.parentNode.id = 'active-content';
         }
+        displaySavedList();
     }
 
     if (currentPage.search('about') !== -1) {

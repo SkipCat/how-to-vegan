@@ -66,7 +66,7 @@
             <ul class="rslides">
                 <li class="spotlight-container-recipe">
                     {% for recipe in recipes %}
-                        {% if filters is not empty %}
+                        {#{% if filters is not empty %}
                                 {% if element in recipe.category %}
                                     <div class="spotlight-container-img spotlight-recipe blur {{ recipe.category }}">
                                         <img class="spotlight-img" src="{{ recipe.img }}" alt="frame picture">
@@ -273,7 +273,7 @@
                                         </div>
                                     </div>
                                 {% endif %}
-                        {% else %}
+                        {% else %}#}
                             <div class="spotlight-container-img spotlight-recipe blur">
                                 <img class="spotlight-img" src="{{ recipe.img }}" alt="frame picture">
                                 <div class="container-desc">
@@ -302,15 +302,19 @@
                                         <p><span>Cuisson:</span> {{ recipe.baking }}min</p>
                                         <p><span>Total:</span> {{ recipe.preparation + recipe.baking }}min</p>
                                     </div>
-                                    <a href="#modal_{{ recipe.id }}" class="open-modal">Voir plus</a>
+                                    <a href="#modal-{{ recipe.id }}" class="open-modal">Voir plus</a>
                                 </div>
                             </div>
-                            <div id="modal_{{ recipe.id }}" class="modal">
+                            <div id="modal-{{ recipe.id }}" class="modal">
                                 <div class="modal-block" >
                                     <a class="close" href="#main-recipe">
                                         <img src="assets/img/back_modal.png" alt="Fermer" title="Fermer la fenêtre" class="btn-in-modal btn-close">
                                     </a>
-                                    <img src="assets/img/heart_modal.png" alt="Aimer" title="Aimer cette recette" class="btn-in-modal btn-crush">
+                                    <form action="?action=crush" method="POST">
+                                        <input type="hidden" name="id_recipe" value="{{ recipe.id }}">
+                                        <input type="hidden" name="name" value="{{ recipe.name }}">
+                                        <input type="image" src="assets/img/heart_modal.png" alt="Aimer" title="Aimer cette recette" class="btn-in-modal btn-crush">    
+                                    </form>
                                     <div class="modal-img">
                                         <img src="{{ recipe.img }}" alt="{{ recipe.img }}">
                                         <div class="time">
@@ -331,9 +335,14 @@
                                                         <p class="author">Le staff</p>
                                                     </div>
                                                 </div>
-                                                <div class="category">
-                                                    <img src="assets/img/category_vegan.png" alt="vegan">
-                                                    <img src="assets/img/category_gluten_free.png" alt="gluten free">
+                                                <div class="category-img">
+                                                    <img src="assets/img/category_vegan.png" alt="icon vegan">
+                                                    {% if 'gluten-free' in recipe.category %}
+                                                        <img src="assets/img/category_gluten_free.png" alt="icon gluten free">
+                                                    {% endif %}
+                                                    {% if 'bio' in recipe.category %}
+                                                        <img src="assets/img/category_bio.png" alt="icon bio">
+                                                    {% endif %}
                                                 </div>
                                             </div>
                                         </div>
@@ -368,7 +377,6 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        -->
                                         <div class="modal-similars">
                                             <h3>Recettes similaires</h3>
                                             <hr>
@@ -475,10 +483,11 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        -->
                                     </div>
                                 </div>
                             </div>
-                        {% endif %}
+                        {#{% endif %}#}
                     {% endfor %}
                 </li>
                 <!--

@@ -38,24 +38,6 @@ class DefaultController extends BaseController {
         }
     }
 
-    public function pinAction() {
-        $error = '';
-        if (!empty($_SESSION['user_id'])) {
-            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                $manager = UserManager::getInstance();
-                $user = $manager->getUserById($_SESSION['user_id']);
-                $list = $manager->pinList($_POST);
-                echo $this->redirect('convert');
-            }
-            else {
-                echo $this->renderView('convert.html.twig', ['error' => $error]);
-            }
-        }
-        else {
-            echo $this->redirect('convert');
-        }
-    }
-
     public function basketAction() {
         $manager = UserManager::getInstance();
         $baskets = $manager->getAllBaskets();
@@ -130,6 +112,93 @@ class DefaultController extends BaseController {
         }
         else {
             echo $this->renderView('about.html.twig');
+        }
+    }
+
+    public function profileAction() {
+        if (!empty($_SESSION['user_id'])) {
+            $manager = UserManager::getInstance();
+            $user = $manager->getUserById($_SESSION['user_id']);
+            $lists = $manager->getAllLists($user['username']);
+            $recipes = $manager->getFavorites($user['username']);
+            echo $this->renderView('profile.html.twig', [
+                'user'  => $user,
+                'lists' => $lists,
+                'recipes' => $recipes,
+            ]); // get also comments
+        }
+        else {
+            echo $this->redirect('home');
+        }
+    }
+
+    public function pinAction() {
+        $error = '';
+        if (!empty($_SESSION['user_id'])) {
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $manager = UserManager::getInstance();
+                $user = $manager->getUserById($_SESSION['user_id']);
+                $list = $manager->pinList($_POST);
+                echo $this->redirect('convert');
+            }
+            else {
+                echo $this->renderView('convert.html.twig', ['error' => $error]);
+            }
+        }
+        else {
+            echo $this->redirect('convert');
+        }
+    }
+
+    public function deleteListAction() {
+        $error = '';
+        if (!empty($_SESSION['user_id'])) {
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $manager = UserManager::getInstance();
+                $manager->deleteList($_POST['listname']);
+                echo $this->redirect('profile');
+            }
+            else {
+                echo $this->renderView('profile', ['error' => $error]);
+            }
+        }
+        else {
+            echo $this->redirect('home');
+        }
+    }
+
+    public function crushAction() {
+        $error = '';
+        if (!empty($_SESSION['user_id'])) {
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $manager = UserManager::getInstance();
+                $user = $manager->getUserById($_SESSION['user_id']);
+                $manager->pinRecipe($_POST);
+                echo $this->redirect('recipe');
+            }
+            else {
+                echo $this->renderView('recipe.html.twig', ['error' => $error]);
+            }
+        }
+        else {
+            echo $this->redirect('recipe');
+        }
+    }
+
+    public function deleteFavoriteAction() {
+        $error = '';
+        if (!empty($_SESSION['user_id'])) {
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $manager = UserManager::getInstance();
+                $manager->deleteFavorite($_POST['id']);
+                echo $this->redirect('profile');
+            }
+            else {
+                echo $this->renderView('profile', ['error' => $error]);
+            }
+        }
+        else {
+            echo $this->redirect('home');
         }
     }
 }

@@ -126,6 +126,9 @@ class UserManager {
     public function getAllLists($username) {
         $data = $this->DBManager->findAllSecure("SELECT * FROM lists WHERE username = :username", 
             ['username' => $username]);
+        foreach ($data AS $key => $list) {
+            $list['content'] = explode(',', $list['content']);
+        }
         return $data;
     }
 
@@ -158,5 +161,34 @@ class UserManager {
         $list['date'] = date('d/m/Y h:i:s a', time()); // current date
         $list['username'] = $user['username'];
         $this->DBManager->insert('lists', $list);
+    }
+
+    public function deleteList($name) {
+        $query = $this->DBManager->findOneSecure("DELETE FROM lists WHERE name = :name",
+            ['name' => $name]);
+        return $query;
+    }
+
+    public function pinRecipe($data) {
+        $user = $this->getUserById($_SESSION['user_id']);
+        $favorite['id_recipe'] = $data['id_recipe'];
+        $favorite['name'] = $data['name'];
+        $favorite['username'] = $user['username'];
+        $this->DBManager->insert('favorites', $favorite);
+    }
+
+    public function getFavorites($username) {
+        $data = $this->DBManager->findAllSecure("SELECT * FROM recipes
+            LEFT JOIN favorites
+            ON recipes.id = favorites.id_recipe 
+            WHERE username = :username", ['username' => $username]
+        );
+        return $data;
+    }
+
+    public function deleteFavorite($id) {
+        $query = $this->DBManager->findOneSecure("DELETE FROM favorites WHERE id = :id",
+            ['id' => $id]);
+        return $query;
     }
 }
