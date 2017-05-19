@@ -1,3 +1,10 @@
+#header-basket {
+    @media screen and (min-width: 641px) {
+        background-image: url('../img/bg_basket.png');
+        height: 225px;
+    }
+}
+
 #main-basket {
     margin-top: 15px;
 
@@ -28,7 +35,7 @@
 }
 
 #category {
-    @include resize(100%, 325px);
+    width: 100%;
 
     > div:first-child img{
         display: none;
@@ -214,13 +221,14 @@
         margin: 0;
 
         #basketImg{
-          display: block;
-          margin: 0 auto;
+            width: 350px;
+            display: block;
+            margin: 0 auto;
         }
     }
 
     .step {
-        margin-top: 40px;
+        margin-top: 100px;
         @include flex(row, center, center);
         flex-wrap: wrap;
 
@@ -290,27 +298,44 @@
                 @include resize(50px, auto);
             }
         }
-        > img{
+
+        > img {
             display: none;
         }
-        .category-arrow{
+
+        .category-arrow {
             display: flex;
-            background-color: $dark-green;
             width: 250px;
             padding: 5px 0;
             border-bottom-left-radius: 15px;
             border-bottom-right-radius: 15px;
 
-            > img{
+            .green-arrow-down, .white-arrow-down {
                 margin-left: auto;
                 margin-right: auto;
+            }
+            .white-arrow-down {
+                display: none;
+            }
+        }
+    }
+
+    #category .category:hover, #category .category:active {
+        .category-arrow {
+            background-color: $dark-green;
+            .green-arrow-down {
+                display: none;
+            }
+            .white-arrow-down {
                 display: block;
             }
         }
     }
+
     #basket {
-      margin-top: 200px;
-      color: red;
+        margin-top: 100px;
+        color: red;
+
         .basket {
             @include resize(200px, 250px);
             margin: 25px 50px;
@@ -318,76 +343,88 @@
             background-color: unset;
             box-shadow: unset;
 
-
             .basket-desc, > img, .popButtons div {
                 display: none;
             }
-            img{
+
+            img {
                 @include resize(100%, 100%);
                 border-radius: 5px;
             }
-            &:hover{
+            &:hover {
                 box-shadow: 0 0 10px lightgrey;
 
-                .desc_basket .popButtons div{
+                .desc_basket .popButtons div {
                     background-color: white;
                     display: unset;
                 }
             }
-            .desc_basket{
+
+            .desc_basket {
                 @include flex(column, center, space-around);
                 background: url('../img/frame_basket.png') no-repeat;
                 background-size: 200px 250px;
                 width: 100%;
-                .popButtons{
+
+                .popButtons {
                     @include flex(row, center, center);
                     @include resize(80px, 40px);
                     margin-top: 10px;
 
-                    div{
+                    div {
                         @include resize(60%, 60%);
                         margin: 0 1px;
                         padding: 5px 10px;
                         position: relative;
                         float: left;
-                        img{
+
+                        img {
                             margin-top: 5px;
                             @include resize(15px, 15px);
                         }
-                        &:first-child{
+
+                        &:first-child {
                             border-bottom-left-radius: 12px;
                             border-top-left-radius: 12px;
                             box-shadow: -3px 0 10px lightgrey;
                         }
-                        &:last-child{
+
+                        &:last-child {
                             border-bottom-right-radius: 12px;
                             border-top-right-radius: 12px;
                             box-shadow: 3px 0 10px lightgrey;
                         }
                     }
                 }
-                > img{
+
+                > img {
                     @include resize(auto, auto);
                     max-height: 70px;
                 }
-                .basketPrice{
+
+                .basketPrice {
                     margin: 0;
                     @include policy($bold-font, $dark-green, unset);
                 }
-                .name{
+
+                .name {
                     margin:0;
                 }
-                > div:last-child{
+
+                > div:last-child {
                     text-align: center;
-                    div{
+                    div {
                         display: inline-block;
                     }
                 }
             }
 
-
+            .desc_basket:hover, .desc_basket:active {
+                box-shadow: 0 0 10px lightgrey;
+            }
         }
     }
+
     #details {
         .details-title {
             margin-bottom: 25px;
@@ -478,22 +515,19 @@
 
 @media screen and (min-width: 769px) {
     #category{
-        @include resize(90%, 325px);
-        margin: 0 5%;
+        width: 90%;
+        margin: 50px 5% 0 5%;
     }
     #details #allIngredients{
         @include resize(80%, unset);
     }
 }
+
 @media screen and (min-width: 1025px) {
-    #category{
-        @include resize(90%, auto);
-        margin: 0 5%;
-    }
-    #basket{
+    #basket {
         margin-top: 40px;
     }
-    #details #allIngredients{
+    #details #allIngredients {
         @include resize(90%, unset);
     }
 }

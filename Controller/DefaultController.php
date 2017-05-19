@@ -5,6 +5,8 @@ namespace Controller;
 use Model\UserManager;
 
 class DefaultController extends BaseController {
+
+    //echo mysqli_client_encoding();
     
     public function homeAction() {
         $manager = UserManager::getInstance();
