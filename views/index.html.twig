@@ -28,8 +28,7 @@
                     <a href="?action=profile">
                         <img src="assets/img/profile.png" alt="icon profile" id="btn-profile" class="btn-menu">
                     </a>
-                {% endif %}
-                {% if user.username is not defined and user.username is empty %}
+                {% else %}
                     <a href="?action=login">
                         <img src="assets/img/login.png" alt="icon login" id="btn-login" class="btn-menu">
                     </a>
@@ -58,14 +57,17 @@
             </nav>
             <div class="profile-login">
                 {% if user.username is defined and user.username is not empty %}
-                    <a href="?action=profile">
-                        <img src="assets/img/profile.png" alt="icon profile" id="btn-profile" class="btn-menu">
-                        <p>{{ user.username|e }}</p>
-                    </a>
+                    <img src="assets/img/profile.png" alt="icon profile" id="btn-profile" class="btn-menu">
+                    <div>
+                        <a href="?action=profile">
+                            <p>{{ user.username }}</p>
+                        </a>
+                        <a href="?action=logout" id="btn-logout" class="logout">Se déconnecter</a>
+                    </div>
                 {% else %}
                     <a href="?action=login">
-                        <img src="assets/img/login.png" alt="icon login" id="btn-login" class="btn-menu">
-                        <p>Se connecter</p>
+                        <img src="assets/img/login.png" alt="icon login" class="btn-menu">
+                        Se connecter
                     </a>
                 {% endif %}
             </div>

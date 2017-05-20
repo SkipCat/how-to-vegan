@@ -1,5 +1,6 @@
 function modalActions() {
     var btnOpenModal = document.querySelectorAll('.open-modal');
+    var btnCloseModal = document.querySelectorAll('.btn-close');
 
     var body = document.querySelector('body');
     var header = document.querySelector('header');
@@ -31,13 +32,14 @@ function modalActions() {
         }
     }
 
-    for (var i in btnOpenModal) {
+    for (var i = 0; i < btnOpenModal.length; i ++) {
         btnOpenModal[i].onclick = function() {
             openModal();
-        };
-        var btnCloseModal = document.querySelector('.btn-close');
-        btnCloseModal.onclick = function() {               
-            closeModal();
+            for (var i = 0; i < btnCloseModal.length; i ++) {
+                btnCloseModal[i].onclick = function() {               
+                    closeModal();
+                };
+            }
         };
     }
 }

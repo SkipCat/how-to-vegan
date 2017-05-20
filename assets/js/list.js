@@ -57,6 +57,7 @@ function listActions() {
         document.querySelector('#footer-desktop').classList.remove('blur-elements');
     };
 
+    /*
     function deleteList() {
         // remove all select elements from DOM
         while (ul.firstChild) {
@@ -72,9 +73,10 @@ function listActions() {
         firstSelect.childNodes[1].value = 'NULL';
         li.appendChild(firstSelect);
     }
+    */
 
     deleteButton.onclick = function() {
-        deleteList();
+        location.reload();
     };
 
 }

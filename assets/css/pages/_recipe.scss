@@ -61,14 +61,18 @@
             }
 
             button {
+                margin-top: 20px;
                 @include policy($main-font, white, 13px);
                 text-align: center;
                 padding: 4px;
                 background: linear-gradient(to bottom, #ff9c33, #ef7205);
                 width: 65px;
                 border-radius: 5px;
-                margin-bottom: 20px;
                 align-self: center;
+                @media screen and (min-width: 641px) {
+                    margin-top: 0;
+                    margin-bottom: 20px;
+                }
             }
         }
 

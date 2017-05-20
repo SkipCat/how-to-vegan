@@ -113,20 +113,6 @@
             <div class="spotlight-container-basket">
                 {% for basket in baskets %}
                     <div class="spotlight-container-img">
-                        <div class="basket-buttons">
-                            {% if user.username is defined and user.username is not empty %}
-                                <div class="crush">
-                                    <img src="assets/img/heart.png" alt="icon heart" class="btn-crush">
-                                </div>
-                            {% else %}
-                                <div style="visibility: hidden;" class="crush">
-                                    <img src="assets/img/heart.png" alt="icon heart" class="btn-crush">
-                                </div>
-                            {% endif %}
-                            <div class="open-modal">
-                                <img src="assets/img/open_modal.png" alt="icon open">
-                            </div>
-                        </div>
                         <img class="spotlight-img" src="assets/img/frame_picture_basket.png" alt="frame picture">
                         <div class="spotlight-basket">
                             <p class="price">{{ basket.price }}&euro;</p>

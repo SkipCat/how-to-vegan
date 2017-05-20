@@ -198,35 +198,6 @@
 
     .spotlight-img {
         @include resize(100%, 50%);
-        margin-top: -19px;
-    }
-    
-    .basket-buttons {
-        @include flex(row, center, space-between);
-        @include resize(62px, auto);
-        @include position(relative, 10px, 0, 0, 0);
-
-        div {
-            background-color: white;
-            @include resize(30px, 20px);
-            @include flex(row, center, center);
-        }
-        div:hover {
-            box-shadow: 0 0 10px lightgrey;
-        }
-
-        .crush {
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
-        }
-        .open-modal {
-            border-top-right-radius: 10px;
-            border-bottom-right-radius: 10px;
-        }
-
-        img {
-            @include resize(12px, auto);
-        }
     }
 
     .spotlight-basket {

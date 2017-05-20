@@ -1,9 +1,6 @@
 {% extends 'index.html.twig' %}
 
 {% block content %}
-    <a href="?action=logout" id="btn-logout" class="blur">
-        <img src="assets/img/logout.png" alt="logout">
-    </a>
     <main id="main-profile">
         <nav class="blur">
             <div>
@@ -320,8 +317,8 @@
             </div>
         </div>
     </main>
-
-    <script>
-
-    </script>
+    <form action="?action=deleteProfile" method="POST">
+        <input type="password" name="password">
+        <input type="submit" value="Supprimer ce compte">
+    </form>
 {% endblock %}

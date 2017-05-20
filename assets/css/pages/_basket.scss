@@ -168,6 +168,8 @@
     .click-basket {
         @include policy($text-font, $text-color, 15px);
         font-style: italic;
+        text-transform: none;
+        font-weight: normal;
     }
     .click-basket-desktop {
         display: none;
@@ -359,7 +361,7 @@
             background-color: unset;
             box-shadow: unset;
 
-            .basket-desc, > img, .popButtons div {
+            .basket-desc, > img {
                 display: none;
             }
 
@@ -367,13 +369,9 @@
                 @include resize(100%, 100%);
                 border-radius: 5px;
             }
+            
             &:hover {
                 box-shadow: 0 0 10px lightgrey;
-
-                .desc_basket .popButtons div {
-                    background-color: white;
-                    display: unset;
-                }
             }
 
             .desc_basket {
@@ -381,37 +379,6 @@
                 background: url('../img/frame_basket.png') no-repeat;
                 background-size: 200px 250px;
                 width: 100%;
-
-                .popButtons {
-                    @include flex(row, center, center);
-                    @include resize(80px, 40px);
-                    margin-top: 10px;
-
-                    div {
-                        @include resize(60%, 60%);
-                        margin: 0 1px;
-                        padding: 5px 10px;
-                        position: relative;
-                        float: left;
-
-                        img {
-                            margin-top: 5px;
-                            @include resize(15px, 15px);
-                        }
-
-                        &:first-child {
-                            border-bottom-left-radius: 12px;
-                            border-top-left-radius: 12px;
-                            box-shadow: -3px 0 10px lightgrey;
-                        }
-
-                        &:last-child {
-                            border-bottom-right-radius: 12px;
-                            border-top-right-radius: 12px;
-                            box-shadow: 3px 0 10px lightgrey;
-                        }
-                    }
-                }
 
                 > img {
                     @include resize(auto, auto);
@@ -470,25 +437,29 @@
             border-bottom-left-radius: 15px;
             border-bottom-right-radius: 15px;
         }
-        #allIngredients{
+
+        #allIngredients {
             background-color: $bg-grey;
             @include resize(80%, unset);
             @include flex(row, center, center);
             flex-wrap: wrap;
             margin-top: 50px;
             border-radius: 30px;
-            > p{
+
+            > p {
                 display: unset;
                 width: 90%;
                 @include policy($bold-font, unset, 14px);
                 text-transform: uppercase;
                 margin-bottom: 30px;
-                span{
+                
+                span {
                     border-bottom: 2px solid $light-red;
                     padding-bottom: 4px;
                 }
             }
         }
+
         .ingredient {
             display: none;
             background-color: white;
@@ -513,13 +484,15 @@
                     top: -30px;
                     left: -100px;
                 }
-                .ingr-text-desc{
+
+                .ingr-text-desc {
                     @include policy($main-font, unset, 13px);
                     text-transform: uppercase;
                     top: -20px;
                     display: unset;
                     position: relative;
                 }
+
                 .ingredient-text {
                     @include policy($main-font, $grey, 12px);
                     margin-top: -10px;
