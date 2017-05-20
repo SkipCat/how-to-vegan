@@ -26,6 +26,7 @@ window.onload = function() {
         basketLink.parentNode.childNodes[1].id = 'bookmark';
         header.id = 'header-basket';
         anchor();
+        sortingBaskets();
     }
 
     if (currentPage.search('recipe') !== -1) {
@@ -34,6 +35,7 @@ window.onload = function() {
         header.id = 'header-recipe';
         //carousel();
         modalActions();
+        sortingRecipes();
     }
 
     if (currentPage.search('profile') !== -1) {

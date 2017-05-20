@@ -21,7 +21,7 @@
         padding-bottom: 25px;
         text-align: center;
         @media screen and (min-width: 641px) {
-            @include position(absolute, 380px, 0, 0, 15px); // fixed ?
+            @include position(absolute, 285px, 0, 0, 15px); // fixed ?
             @include resize(125px, 320px);
             text-align: left;
             align-items: left;
@@ -29,7 +29,7 @@
             background-color: transparent;
         }
         @media screen and (min-width: 769px) {
-            top: 480px;
+            top: 340px;
             width: 140px;
         }
         @media screen and (min-width: 1025px) {
@@ -38,7 +38,7 @@
             width: 150px;
         }
 
-        > div {
+        #filter-submit {
             @include flex(column, center, space-between);
             text-align: left;
             @media screen and (min-width: 641px) {
@@ -153,16 +153,16 @@
                 }
             }
         }
+    }
 
-        input[type="submit"] {
-            @include policy($main-font, white, 13px);
-            text-align: center;
-            padding: 4px;
-            background: linear-gradient(to bottom, #ff9c33, #ef7205);
-            width: 65px;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
+    button {
+        @include policy($main-font, white, 13px);
+        text-align: center;
+        padding: 4px;
+        background: linear-gradient(to bottom, #ff9c33, #ef7205);
+        width: 65px;
+        border-radius: 5px;
+        margin-top: 20px;
     }
 
     #leaf-side {
@@ -170,16 +170,19 @@
         position: absolute;
         width: 140px;
         left: 0;
-        top: 655px;
+        top: 585px;
         z-index: -2;
         @media screen and (min-width: 641px) {
             display: block;
         }
         @media screen and (min-width: 769px) {
-            top: 780px;
+            top: 675px;
         }
         @media screen and (min-width: 769px) {
-            top: 800px;
+            top: 685px;
+        }
+        @media screen and (min-width: 1025px) {
+            top: 825px;
         }
     }
 
@@ -197,6 +200,9 @@
 
         .spotlight-container-recipe {
             max-width: 595px;
+            @media screen and (min-width: 641px) {
+                margin-bottom: 25px;
+            }
             @media screen and (min-width: 769px) {
                 max-width: 710px;
             }
@@ -244,61 +250,6 @@
             @media screen and (min-width: 769px) {
                 font-size: 16px;
             }
-        }
-    }
-}
-
-.rslides {
-    padding-left: 0;
-
-    li {
-        -webkit-backface-visibility: hidden;
-        position: absolute;
-        display: none;
-        width: 100%;
-        left: 0;
-        top: 0;
-    }
-
-    li:first-child {
-        position: relative;
-        display: block;
-        float: left;
-    }
-}
-.rslides1_on{
-    display: flex;
-}
-
-.choose-page {
-    @include flex(row, center, space-between);
-    width: 10%;
-    align-items: center;
-    margin-right: 5%;
-    margin-top: 20px;
-    z-index: 1;
-
-    img {
-        @include resize(10px, 15px);
-    }
-
-    p {
-        @include policy($bold-font, $text-color, 14px);
-        text-transform: uppercase;
-    }
-
-    .container-bullets {
-        @include flex(row, center, space-between);
-        width: 65px;
-
-        .bullet {
-            background-color: #bfbcbc;
-            @include resize(8px, 8px);
-            border-radius: 50%;
-        }
-
-        #bullet-active {
-            background-color: #414141;
         }
     }
 }

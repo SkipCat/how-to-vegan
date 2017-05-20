@@ -138,10 +138,13 @@
     @include flex(column, unset, space-between);
     @include policy($list-font, $text-color, 20px);
     @media screen and (min-width: 376px) {
-        height: 562px;
+        @include resize(300px, 400px);
+        margin-left: auto;
+        margin-right: auto;
     }
     @media screen and (min-width: 641px) {
-        @include resize(300px, 400px);
+        margin-left: 0;
+        margin-right: 0;
     }
     @media screen and (min-width: 769px) {
         @include resize(380px, 510px);
@@ -165,16 +168,12 @@
         width: 60px;
         @include flex(row, center, space-between);
         @media screen and (min-width: 376px) {
-            margin-top: 114%;
-            margin-left: 82%;
+            margin-top: 332px;
+            margin-left: 240px;
         }
-        @media screen and (min-width: 641px) {
-            margin-top: 45%;
-            margin-left: 32.5%;
-        }
-        @media screen and (min-width: 1025px) {
-            margin-top: 38%;
-            margin-left: 27%;   
+        @media screen and (min-width: 769px) {
+            margin-top: 430px;
+            margin-left: 310px;
         }
     }
 
@@ -262,6 +261,7 @@
     }
     @media screen and (min-width: 376px) {
         margin-top: 0;
+        margin-right: 85px;        
     }
     @media screen and (min-width: 641px) {
         margin-left: 60px;

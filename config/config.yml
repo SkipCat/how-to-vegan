@@ -7,7 +7,6 @@ routes:
     deleteFavorite: 'Default:deleteFavorite'
     basket:         'Default:basket'
     recipe:         'Default:recipe'
-    filterRecipe:   'Default:filterRecipe'
     about:          'Default:about'
     contact:        'Default:contact'
     profile:        'Default:profile'    

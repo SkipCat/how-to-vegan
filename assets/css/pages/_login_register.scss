@@ -3,7 +3,7 @@
     padding-top: 60px;
     padding-bottom: 40px;
     position: relative;
-    z-index: -1;
+    z-index: 0;
     background-image: url('../img/back_blur.png');
     @media screen and (min-width: 641px){
         background: url('../img/back_blur_d.png') 50%;

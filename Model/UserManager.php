@@ -123,6 +123,11 @@ class UserManager {
         return $data;
     }
 
+    public function getAllIngredients(){
+        $data = $this->DBManager->findAllSecure("SELECT * FROM ingredients");
+        return $data;
+    }
+
     public function getAllLists($username) {
         $data = $this->DBManager->findAllSecure("SELECT * FROM lists WHERE username = :username", 
             ['username' => $username]);
@@ -130,28 +135,6 @@ class UserManager {
             $list['content'] = explode(',', $list['content']);
         }
         return $data;
-    }
-
-    public function getRecipeFilters($data) {
-        $filters = $data['filter'];
-        $recipes = $this->getAllRecipes();
-/*
-        $match = 0;
-        foreach ($recipes AS $key => $recipe) {
-            $category = $recipe['category'];
-            if (!empty($filters)) {
-                foreach ($filters AS $key => $filter) {
-                    if (strpos($category, $filter) !== false) {
-                        $match ++;
-                        var_dump($recipe);
-                        return $recipe;
-                    }
-                }
-            }
-        }
-*/
-        var_dump($filters, $recipes);
-        return $filters;
     }
 
     public function pinList($data) {
