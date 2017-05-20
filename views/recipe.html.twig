@@ -4,52 +4,54 @@
     <main id="main-recipe">
         <div class="filters blur">
             <h3>Filtrer par</h3>
-            <form id="filter-submit">
-                <div class="filter-type" id="filter-in-order">
-                    <h3>Type de recette :</h3>
-                    <div class="checkbox-container">
-                        <div class="checkbox">
-                            <input type="checkbox" value="starter" name="myFilters" id="starter">
-                            <div class="checkbox-frame"></div>
-                            <label for="starter" class="filter-js">Entrée</label>
-                        </div>
-                        <div class="checkbox">
-                            <input type="checkbox" value="main" name="myFilters" id="main">
-                            <div class="checkbox-frame"></div>
-                            <label for="main" class="filter-js">Plat</label>
-                        </div>
-                        <div class="checkbox">
-                            <input type="checkbox" value="dessert" name="myFilters" id="dessert">
-                            <div class="checkbox-frame"></div>
-                            <label for="dessert" class="filter-js">Dessert</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="filter-type" id="filter-by-category">
-                    <h3>Préférence alimentaire :</h3>
-                    <div class="checkbox-container">
-                        <div class="checkbox">
-                            <input type="checkbox" value="vegan" name="myFilters" id="vegan">
-                            <div class="checkbox-frame"></div>
-                            <img src="assets/img/category_vegan.png" alt="vegan icon">
-                            <label for="vegan" class="filter-js">Vegan</label>
-                        </div>
-                        <div class="checkbox">
-                            <input type="checkbox" value="bio" name="myFilters" id="bio">
-                            <div class="checkbox-frame"></div>
-                            <img src="assets/img/category_bio.png" alt="vegan icon">
-                            <label for="bio" class="filter-js">Bio</label>
-                        </div>
-                        <div class="checkbox">
-                            <input type="checkbox" value="gluten-free" name="myFilters" id="gluten-free">
-                            <div class="checkbox-frame"></div>
-                            <img src="assets/img/category_gluten_free.png" alt="vegan icon">
-                            <label for="gluten-free" class="filter-js">Gluten free</label>
+            <div class="form-filters">
+                <form id="filter-submit">
+                    <div class="filter-type" id="filter-in-order">
+                        <h3>Type de recette :</h3>
+                        <div class="checkbox-container">
+                            <div class="checkbox">
+                                <input type="checkbox" value="starter" name="myFilters" id="starter">
+                                <div class="checkbox-frame"></div>
+                                <label for="starter" class="filter-js">Entrée</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" value="main" name="myFilters" id="main">
+                                <div class="checkbox-frame"></div>
+                                <label for="main" class="filter-js">Plat</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" value="dessert" name="myFilters" id="dessert">
+                                <div class="checkbox-frame"></div>
+                                <label for="dessert" class="filter-js">Dessert</label>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </form>
-            <button id="submit">OK</button>
+                    <div class="filter-type" id="filter-by-category">
+                        <h3>Préférence alimentaire :</h3>
+                        <div class="checkbox-container">
+                            <div class="checkbox">
+                                <input type="checkbox" value="vegan" name="myFilters" id="vegan">
+                                <div class="checkbox-frame"></div>
+                                <img src="assets/img/category_vegan.png" alt="vegan icon">
+                                <label for="vegan" class="filter-js">Vegan</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" value="bio" name="myFilters" id="bio">
+                                <div class="checkbox-frame"></div>
+                                <img src="assets/img/category_bio.png" alt="vegan icon">
+                                <label for="bio" class="filter-js">Bio</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" value="gluten-free" name="myFilters" id="gluten-free">
+                                <div class="checkbox-frame"></div>
+                                <img src="assets/img/category_gluten_free.png" alt="vegan icon">
+                                <label for="gluten-free" class="filter-js">Gluten free</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <button id="submit">OK</button>
+            </div>
         </div>
         <div class="spotlight-type" id="spotlight-type-recipe">
             <div class="recipe-presentation blur">

@@ -1357,22 +1357,38 @@
         top: 500px;
         left: 30px;
         width: 150px; } }
-    #main-recipe .filters #filter-submit {
+    #main-recipe .filters .form-filters {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      text-align: left; }
+      flex-direction: column; }
       @media screen and (min-width: 641px) {
-        #main-recipe .filters #filter-submit {
+        #main-recipe .filters .form-filters {
           width: 100%;
           background-color: white;
           border-radius: 7px;
-          box-shadow: 0 0 10px lightgrey;
-          padding: 5px 5px 15px 5px; } }
-      @media screen and (min-width: 1025px) {
-        #main-recipe .filters #filter-submit {
-          padding-left: 2px; } }
+          box-shadow: 0 0 10px lightgrey; } }
+      #main-recipe .filters .form-filters #filter-submit {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left; }
+        @media screen and (min-width: 641px) {
+          #main-recipe .filters .form-filters #filter-submit {
+            padding: 5px 5px 15px 5px; } }
+        @media screen and (min-width: 1025px) {
+          #main-recipe .filters .form-filters #filter-submit {
+            padding-left: 2px; } }
+      #main-recipe .filters .form-filters button {
+        font-family: "Signika Regular";
+        color: white;
+        font-size: 13px;
+        text-align: center;
+        padding: 4px;
+        background: linear-gradient(to bottom, #ff9c33, #ef7205);
+        width: 65px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        align-self: center; }
     #main-recipe .filters h3 {
       font-family: "Signika Bold";
       color: #444444;
@@ -1459,16 +1475,6 @@
         @media screen and (min-width: 641px) {
           #main-recipe .filters #filter-by-category .checkbox-container .checkbox {
             max-width: 100%; } }
-  #main-recipe button {
-    font-family: "Signika Regular";
-    color: white;
-    font-size: 13px;
-    text-align: center;
-    padding: 4px;
-    background: linear-gradient(to bottom, #ff9c33, #ef7205);
-    width: 65px;
-    border-radius: 5px;
-    margin-top: 20px; }
   #main-recipe #leaf-side {
     display: none;
     position: absolute;
