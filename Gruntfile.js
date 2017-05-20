@@ -27,6 +27,7 @@ module.exports = function(grunt) {
 						'assets/js/list.js',
 						'assets/js/profile.js',
 						'assets/js/anchor.js',
+						'assets/js/sorting.js',
 						//'assets/js/carousel/responsiveslides.js',
 						//'assets/js/carousel/carousel.js',
 						'assets/js/bookmark.js',

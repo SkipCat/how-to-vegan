@@ -551,6 +551,19 @@
     border: 0;
     margin: 7px 0 0 0;
     background-color: #bbbbbb; }
+#details .click-basket {
+  font-family: "SourceSansPro";
+  color: #444444;
+  font-size: 15px;
+  font-style: italic; }
+#details .click-basket-desktop {
+  display: none; }
+  @media screen and (min-width: 641px) {
+    #details .click-basket-desktop {
+      display: block; } }
+@media screen and (min-width: 641px) {
+  #details .click-basket-mobile {
+    display: none; } }
 #details #allIngredients {
   display: flex;
   flex-direction: column;
@@ -559,7 +572,7 @@
   #details #allIngredients > p {
     display: none; }
 #details .ingredient {
-  display: flex;
+  display: none;
   background-color: white;
   width: 92%;
   height: 100px;
@@ -802,7 +815,7 @@
         border-bottom: 2px solid #e74a18;
         padding-bottom: 4px; }
   #details .ingredient {
-    display: flex;
+    display: none;
     background-color: white;
     width: 420px;
     height: 120px;
@@ -1344,21 +1357,21 @@
         top: 500px;
         left: 30px;
         width: 150px; } }
-    #main-recipe .filters > div {
+    #main-recipe .filters #filter-submit {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
       text-align: left; }
       @media screen and (min-width: 641px) {
-        #main-recipe .filters > div {
+        #main-recipe .filters #filter-submit {
           width: 100%;
           background-color: white;
           border-radius: 7px;
           box-shadow: 0 0 10px lightgrey;
           padding: 5px 5px 15px 5px; } }
       @media screen and (min-width: 1025px) {
-        #main-recipe .filters > div {
+        #main-recipe .filters #filter-submit {
           padding-left: 2px; } }
     #main-recipe .filters h3 {
       font-family: "Signika Bold";
@@ -1446,16 +1459,16 @@
         @media screen and (min-width: 641px) {
           #main-recipe .filters #filter-by-category .checkbox-container .checkbox {
             max-width: 100%; } }
-    #main-recipe .filters input[type="submit"] {
-      font-family: "Signika Regular";
-      color: white;
-      font-size: 13px;
-      text-align: center;
-      padding: 4px;
-      background: linear-gradient(to bottom, #ff9c33, #ef7205);
-      width: 65px;
-      border-radius: 5px;
-      margin-top: 20px; }
+  #main-recipe button {
+    font-family: "Signika Regular";
+    color: white;
+    font-size: 13px;
+    text-align: center;
+    padding: 4px;
+    background: linear-gradient(to bottom, #ff9c33, #ef7205);
+    width: 65px;
+    border-radius: 5px;
+    margin-top: 20px; }
   #main-recipe #leaf-side {
     display: none;
     position: absolute;

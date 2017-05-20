@@ -43,16 +43,21 @@ class DefaultController extends BaseController {
     public function basketAction() {
         $manager = UserManager::getInstance();
         $baskets = $manager->getAllBaskets();
+        $ingredients = $manager->getAllIngredients();
 
         if (!empty($_SESSION['user_id'])) {
             $user = $manager->getUserById($_SESSION['user_id']);
             echo $this->renderView('basket.html.twig', [
                 'user' => $user,
-                'baskets' => $baskets
+                'baskets' => $baskets,
+                'ingredients' => $ingredients
             ]);
         }
         else {
-            echo $this->renderView('basket.html.twig', ['baskets' => $baskets]);
+            echo $this->renderView('basket.html.twig', [
+                'baskets' => $baskets,
+                'ingredients' => $ingredients
+            ]);
         }
     }
 
@@ -69,28 +74,6 @@ class DefaultController extends BaseController {
         }
         else {
             echo $this->renderView('recipe.html.twig', ['recipes' => $recipes]);
-        }
-    }
-
-    public function filterRecipeAction() {
-        $manager = UserManager::getInstance();
-        $recipes = $manager->getAllRecipes();
-        $filters = $manager->getRecipeFilters($_POST);
-        var_dump($filters);
-
-        if (!empty($_SESSION['user_id'])) {
-            $user = $manager->getUserById($_SESSION['user_id']);
-            echo $this->renderView('recipe.html.twig', [
-                'user' => $user,
-                'recipes' => $recipes,
-                'filters' => $filters,
-            ]);
-        }
-        else {
-            echo $this->renderView('recipe.html.twig', [
-                'recipes' => $recipes,
-                'filters' => $filters
-            ]);
         }
     }
 
