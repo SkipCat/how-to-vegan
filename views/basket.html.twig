@@ -104,16 +104,12 @@
                 <a href="#details" class="basket {{ basket.category_id }}" id="paniers">
                     <img src="{{ basket.img }}" alt="basket">
                     <div class="desc_basket {{ basket.category }}" id="{{ basket.id }}">
-                        <div class="popButtons">
-                            <div><img src="assets/img/heart_red.png"></div>
-                            <div><img src="assets/img/open_modal.png"></div>
-                        </div>
                         <img src="{{ basket.img }}">
                         <p class="basketPrice">{{ basket.price }}</p>
                         <p class="name">{{ basket.name }}</p>
                         <div>
                             <div class="category-img">
-                                {% if 'glutten-free' in basket.category %}
+                                {% if 'gluten-free' in basket.category %}
                                     <div class="category-indicator category-gluten-free">Gluten Free</div>
                                 {% endif %}
                                 {% if 'bio' in basket.category %}

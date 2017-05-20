@@ -14,7 +14,16 @@ routes:
     crush:          'Security:crush'
     deleteList:     'Security:deleteList'
     deleteFavorite: 'Security:deleteFavorite'
+    deleteProfile:  'Security:deleteProfile'
     admin:          'Admin:admin'
+    deleteUser:     'Admin:deleteUser'
+    addAdmin:       'Admin:addAdmin'
+    addRecipe:      'Admin:addRecipe'
+    addBasket:      'Admin:addBasket'
+    addIngredient:  'Admin:addIngredient'
+    deleteBasket:   'Admin:deleteBasket'
+    deleteRecipe:   'Admin:deleteRecipe'
+    deleteIngredient: 'Admin:deleteIngredient'
 
 defaut_route: 'home'
 

@@ -239,8 +239,8 @@
         height: 350px; } }
     @media screen and (min-width: 376px) {
       .list ul {
-        margin: 44px 15px auto 25px;
-        margin-top: 44px;
+        margin: 44px 15px auto 14px;
+        margin-top: 38px;
         height: 400px; } }
     @media screen and (min-width: 641px) {
       .list ul {
@@ -276,10 +276,10 @@
   width: 100px;
   height: auto;
   position: relative;
-  top: initial;
+  top: -110px;
   right: 0;
-  bottom: 90px;
-  left: 0; }
+  bottom: 0;
+  left: -15px; }
   @media screen and (min-width: 321px) {
     #img-leaf {
       bottom: 25px; } }
@@ -555,7 +555,9 @@
   font-family: "SourceSansPro";
   color: #444444;
   font-size: 15px;
-  font-style: italic; }
+  font-style: italic;
+  text-transform: none;
+  font-weight: normal; }
 #details .click-basket-desktop {
   display: none; }
   @media screen and (min-width: 641px) {
@@ -708,7 +710,7 @@
       border-radius: unset;
       background-color: unset;
       box-shadow: unset; }
-      #basket .basket .basket-desc, #basket .basket > img, #basket .basket .popButtons div {
+      #basket .basket .basket-desc, #basket .basket > img {
         display: none; }
       #basket .basket img {
         width: 100%;
@@ -716,9 +718,6 @@
         border-radius: 5px; }
       #basket .basket:hover {
         box-shadow: 0 0 10px lightgrey; }
-        #basket .basket:hover .desc_basket .popButtons div {
-          background-color: white;
-          display: unset; }
       #basket .basket .desc_basket {
         display: flex;
         flex-direction: column;
@@ -727,33 +726,6 @@
         background: url("../img/frame_basket.png") no-repeat;
         background-size: 200px 250px;
         width: 100%; }
-        #basket .basket .desc_basket .popButtons {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: center;
-          width: 80px;
-          height: 40px;
-          margin-top: 10px; }
-          #basket .basket .desc_basket .popButtons div {
-            width: 60%;
-            height: 60%;
-            margin: 0 1px;
-            padding: 5px 10px;
-            position: relative;
-            float: left; }
-            #basket .basket .desc_basket .popButtons div img {
-              margin-top: 5px;
-              width: 15px;
-              height: 15px; }
-            #basket .basket .desc_basket .popButtons div:first-child {
-              border-bottom-left-radius: 12px;
-              border-top-left-radius: 12px;
-              box-shadow: -3px 0 10px lightgrey; }
-            #basket .basket .desc_basket .popButtons div:last-child {
-              border-bottom-right-radius: 12px;
-              border-top-right-radius: 12px;
-              box-shadow: 3px 0 10px lightgrey; }
         #basket .basket .desc_basket > img {
           width: auto;
           height: auto;
@@ -1053,39 +1025,7 @@
       max-width: 715px; } }
   .spotlight-container-basket .spotlight-img {
     width: 100%;
-    height: 50%;
-    margin-top: -19px; }
-  .spotlight-container-basket .basket-buttons {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 62px;
-    height: auto;
-    position: relative;
-    top: 10px;
-    right: 0;
-    bottom: 0;
-    left: 0; }
-    .spotlight-container-basket .basket-buttons div {
-      background-color: white;
-      width: 30px;
-      height: 20px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center; }
-    .spotlight-container-basket .basket-buttons div:hover {
-      box-shadow: 0 0 10px lightgrey; }
-    .spotlight-container-basket .basket-buttons .crush {
-      border-top-left-radius: 10px;
-      border-bottom-left-radius: 10px; }
-    .spotlight-container-basket .basket-buttons .open-modal {
-      border-top-right-radius: 10px;
-      border-bottom-right-radius: 10px; }
-    .spotlight-container-basket .basket-buttons img {
-      width: 12px;
-      height: auto; }
+    height: 50%; }
   .spotlight-container-basket .spotlight-basket {
     display: flex;
     flex-direction: column;
@@ -1379,6 +1319,7 @@
           #main-recipe .filters .form-filters #filter-submit {
             padding-left: 2px; } }
       #main-recipe .filters .form-filters button {
+        margin-top: 20px;
         font-family: "Signika Regular";
         color: white;
         font-size: 13px;
@@ -1387,8 +1328,11 @@
         background: linear-gradient(to bottom, #ff9c33, #ef7205);
         width: 65px;
         border-radius: 5px;
-        margin-bottom: 20px;
         align-self: center; }
+        @media screen and (min-width: 641px) {
+          #main-recipe .filters .form-filters button {
+            margin-top: 0;
+            margin-bottom: 20px; } }
     #main-recipe .filters h3 {
       font-family: "Signika Bold";
       color: #444444;
@@ -2639,9 +2583,9 @@ header {
         display: none; } }
     header .icons-menu .btn-menu {
       position: absolute;
-      width: 20px;
-      height: auto;
-      right: 40px; }
+      height: 30px;
+      right: 40px;
+      top: 25px; }
   header .logo img {
     width: 80px;
     height: auto; }
@@ -2695,34 +2639,53 @@ header {
     display: none; }
     @media screen and (min-width: 641px) {
       header .profile-login {
-        display: flex; } }
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 85px;
+        right: 35px;
+        bottom: initial;
+        left: initial; } }
+    @media screen and (min-width: 769px) {
+      header .profile-login {
+        position: absolute;
+        top: 37px;
+        right: 50px;
+        bottom: initial;
+        left: initial; } }
+    header .profile-login div {
+      display: flex;
+      flex-direction: column; }
+    @media screen and (min-width: 641px) {
+      header .profile-login .btn-menu {
+        margin-right: 10px;
+        height: 28px; } }
+    @media screen and (min-width: 769px) {
+      header .profile-login .btn-menu {
+        height: 32px; } }
+    header .profile-login #btn-profile {
+      margin-right: 5px; }
     header .profile-login a {
       display: flex;
       align-items: center;
       align-self: flex-start;
-      text-transform: none;
       font-family: "Signika Regular";
       color: white;
-      font-size: 16px;
-      position: absolute;
-      top: 80px;
-      right: 35px;
-      bottom: initial;
-      left: initial; }
+      font-size: 13px; }
       @media screen and (min-width: 769px) {
         header .profile-login a {
-          position: absolute;
-          top: 53px;
-          right: 50px;
-          bottom: initial;
-          left: initial;
-          top: 30px; } }
-      header .profile-login a .btn-menu {
-        width: 20px;
-        height: 21px; }
-        @media screen and (min-width: 641px) {
-          header .profile-login a .btn-menu {
-            margin-right: 10px; } }
+          font-size: 16px; } }
+      header .profile-login a p {
+        margin: 0;
+        text-transform: uppercase; }
+    header .profile-login a:hover {
+      text-decoration: underline; }
+    header .profile-login .logout {
+      font-style: italic;
+      font-size: 12px; }
+      @media screen and (min-width: 769px) {
+        header .profile-login .logout {
+          font-size: 14px; } }
 
 main {
   flex-grow: 1; }

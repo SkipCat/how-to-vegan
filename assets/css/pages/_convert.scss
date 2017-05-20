@@ -187,8 +187,8 @@
             height: 350px;
         }
         @media screen and (min-width: 376px) {
-            margin: 44px 15px auto 25px;
-            margin-top: 44px;
+            margin: 44px 15px auto 14px;
+            margin-top: 38px;
             height: 400px;
         }
         @media screen and (min-width: 641px) {
@@ -239,7 +239,7 @@
 
 #img-leaf {
     @include resize(100px, auto);
-    @include position(relative, initial, 0, 90px, 0);
+    @include position(relative, -110px, 0, 0, -15px);
     @media screen and (min-width: 321px) {
         bottom: 25px;
     }

@@ -6,25 +6,6 @@ use Model\UserManager;
 
 class SecurityController extends BaseController {
 
-    public function editProfileAction() {
-        $error = '';
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if(!empty($_POST['username']) || !empty($_POST['email'])) {
-                $manager = UserManager::getInstance();
-                $user = $manager->getUserById($_SESSION['user_id']);
-                $manager->editProfile($_POST);
-                $this->redirect('profile');
-            }
-            else {
-                $error = 'Un ou plusieurs champs requis vide(s).';
-                echo $this->renderView('profile.html.twig', ['error' => $error]);
-            }
-        }
-        else {
-            echo $this->redirect('home');
-        }
-    }
-
     public function loginAction() {
         $error = '';
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -57,9 +38,9 @@ class SecurityController extends BaseController {
                 echo $this->redirect('login');
             }
             else {
-                echo $result = 'Username already exist';
-                return false;
-            }    
+                $error = 'Username already exist';
+                echo $this->renderView('login_register.html.twig', ['error' => $error]);
+            }
         }
         else {
             echo $this->renderView('login_register.html.twig', ['error' => $error]);
@@ -79,7 +60,46 @@ class SecurityController extends BaseController {
             ]); // get also comments
         }
         else {
-            echo $this->renderView('login');
+            echo $this->redirect('login');
+        }
+    }
+
+    public function editProfileAction() {
+        $error = '';
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if(!empty($_POST['username']) || !empty($_POST['email'])) {
+                $manager = UserManager::getInstance();
+                $user = $manager->getUserById($_SESSION['user_id']);
+                $manager->editProfile($_POST);
+                $this->redirect('profile');
+            }
+            else {
+                $error = 'Un ou plusieurs champs requis vide(s).';
+                echo $this->renderView('profile.html.twig', ['error' => $error]);
+            }
+        }
+        else {
+            echo $this->redirect('home');
+        }
+    }
+
+    public function deleteProfileAction() {
+        if (!empty($_SESSION['user_id'])) {
+            $manager = UserManager::getInstance();
+            $user = $manager->getUserById($_SESSION['user_id']);
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                if ($manager->userCheckDelete($_POST)) {
+                    $user = $manager->deleteProfile($_SESSION['user_id']);
+                    echo $this->redirect('register');
+                }
+            }
+            else {
+                $error = 'Votre requête n\'a pas pu aboutir';
+                echo $this->renderView('profile.html.twig', ['error' => $error]);
+            }
+        }
+        else {
+            echo $this->redirect('login');
         }
     }
 

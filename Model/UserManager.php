@@ -48,11 +48,13 @@ class UserManager {
     
     public function userRegister($data) {
         $user['username'] = $data['username'];
-        $user['password'] = $this->userHash($data['password']);
         $user['email'] = $data['email'];
-        $user['gender'] = $data['gender'];
-        $user['birthdate'] = $data['birthdate'];        
+        if ($data['password'] == $data['confirm-password']) {
+            $user['password'] = $this->userHash($data['password']); 
+        }
         $user['address'] = $data['address'];
+        $user['birthdate'] = $data['birthdate'];              
+        $user['gender'] = $data['gender'];
         $user['admin'] = null;
         $this->DBManager->insert('users', $user);
     }
@@ -108,6 +110,27 @@ class UserManager {
                 'id'        => $_SESSION['user_id']
             ]
         );
+        return $query;
+    }
+
+    public function userCheckDelete($data) {
+        if (empty($data['password'])) {
+            return false;
+        }
+        $user = $this->getUserById($_SESSION['user_id']);
+        if ($user === false) {
+            return false;
+        }
+        if (!password_verify($data['password'], $user['password'])) {
+            return false;
+        }
+        return true;
+    }
+
+    public function deleteProfile($id) {
+        $query = $this->DBManager->findOneSecure("DELETE FROM users WHERE id = :id",
+            ['id' => $id]);
+        var_dump($query);
         return $query;
     }
 

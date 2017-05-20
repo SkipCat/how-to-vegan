@@ -10,7 +10,6 @@ window.onload = function() {
         header.id = 'header-home';
         convert();
         listActions();
-        crush();
     }
 
     if (currentPage.search('convert') !== -1) {
@@ -33,7 +32,6 @@ window.onload = function() {
         recipeLink.id = 'active-page';
         recipeLink.parentNode.childNodes[1].id = 'bookmark';
         header.id = 'header-recipe';
-        //carousel();
         modalActions();
         sortingRecipes();
     }
@@ -68,7 +66,7 @@ window.onload = function() {
             favoritesContent.parentNode.id = 'active-content';
             modalActions();
         }
-        else { // currentPage.search('modify') !== -1 || nothing
+        else { // modify or something else
             modifyLink.parentNode.id = 'active-tab';
             modifyContent.parentNode.id = 'active-content';
         }
