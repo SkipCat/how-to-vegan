@@ -14,7 +14,7 @@ routes:
     crush:          'Security:crush'
     deleteList:     'Security:deleteList'
     deleteFavorite: 'Security:deleteFavorite'
-    admin:          'Security:admin'
+    admin:          'Admin:admin'
 
 defaut_route: 'home'
 
