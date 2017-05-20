@@ -38,18 +38,37 @@
             width: 150px;
         }
 
-        #filter-submit {
-            @include flex(column, center, space-between);
-            text-align: left;
+        .form-filters {
+            display: flex;
+            flex-direction: column;
+
             @media screen and (min-width: 641px) {
                 width: 100%;
                 background-color: white;
                 border-radius: 7px;
                 box-shadow: 0 0 10px lightgrey;
-                padding: 5px 5px 15px 5px;
             }
-            @media screen and (min-width: 1025px) {
-                padding-left: 2px;
+
+            #filter-submit {
+                @include flex(column, center, space-between);
+                text-align: left;
+                @media screen and (min-width: 641px) {
+                    padding: 5px 5px 15px 5px;
+                }
+                @media screen and (min-width: 1025px) {
+                    padding-left: 2px;
+                }
+            }
+
+            button {
+                @include policy($main-font, white, 13px);
+                text-align: center;
+                padding: 4px;
+                background: linear-gradient(to bottom, #ff9c33, #ef7205);
+                width: 65px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+                align-self: center;
             }
         }
 
@@ -153,16 +172,6 @@
                 }
             }
         }
-    }
-
-    button {
-        @include policy($main-font, white, 13px);
-        text-align: center;
-        padding: 4px;
-        background: linear-gradient(to bottom, #ff9c33, #ef7205);
-        width: 65px;
-        border-radius: 5px;
-        margin-top: 20px;
     }
 
     #leaf-side {
