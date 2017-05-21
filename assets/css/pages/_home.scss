@@ -62,24 +62,6 @@
     }
 }
 
-.category-indicator {
-    padding: 3px;
-    border-radius: 10px;
-    text-align: center;
-    @include policy($light-font, white, 10px);
-}
-
-.category-bio {
-    background-color: $light-red;
-    width: 20px;
-}
-
-.category-gluten-free {
-    background-color: $light-green;
-    width: 60px;
-}
-
-
 .presentation {
     @media screen and (min-width: 641px) {
         @include resize(300px, 360px);
@@ -186,23 +168,62 @@
     }
 
     .spotlight-img {
-        @include resize(auto, 100%);
+        @include resize(100%, 50%);
     }
+    .spotlight-container-img-basket{
+        display: flex;
+        @include resize(200px, 250px);
+        margin: 25px 20px;
 
-    .spotlight-basket {
-        @include flex(column, center, center);
-        @media screen and (min-width: 769px) {
-            @include resize(100%, 105px);
-        }
+        .spotlight-frame{
+        	  @include flex(column, center, space-around);
+            background: url('../img/frame_basket.png') no-repeat;
+            background-size: 200px 250px;
+            width: 100%;
 
-        .price {
-            @include policy($main-font, $dark-green, 14px);
-            margin: 0;
-        }
-        .name {
-            @include policy($light-font, $text-color, 14px);
-            span {
-                font-family: $semibold-font;
+            > img {
+                display: block;
+                @include resize(auto, auto);
+                max-height: 70px;
+                margin: 30px 0;
+            }
+
+            .price{
+                margin: 0;
+                @include policy($semibold-font, $dark-green, unset);
+            }
+
+            .name{
+                margin: 0;
+                @include policy($main-font, $text-color, 15px);
+            }
+
+            > div:last-child {
+                text-align: center;
+                div {
+                    display: inline-block;
+                }
+            }
+
+            &:hover, &:active{
+                box-shadow: 0 0 10px lightgrey;
+            }
+
+            .category-indicator {
+                padding: 3px;
+                border-radius: 10px;
+                text-align: center;
+                @include policy($light-font, white, 10px);
+            }
+
+            .category-bio {
+                background-color: $light-red;
+                width: 20px;
+            }
+
+            .category-gluten-free {
+                background-color: $light-green;
+                width: 60px;
             }
         }
     }
@@ -214,21 +235,12 @@
     background-color: white;
     border-radius: 5px;
     margin: 25px 10px 0 10px;
+    padding: 3px;
     @media screen and (min-width: 641px) {
         margin: 60px 18px 0 18px;
     }
     @media screen and (min-width: 769px) {
         @include resize(195px, 215px);
-    }
-
-    > div:first-child{
-        width: 100%;
-        background-color: #bbbbbb;
-        height: 50%;
-        display: flex;
-        justify-content: center;
-        border-top-right-radius: 5px;
-        border-top-left-radius: 5px;
     }
 
     .container-category-indicator {

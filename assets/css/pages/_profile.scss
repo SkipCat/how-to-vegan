@@ -1,331 +1,402 @@
 #header-profile {
-    @media screen and (min-width: 641px) {
-        background-image: url('../img/bg_basket.png');
-        height: 160px;
-    }
+  @media screen and (min-width: 641px) {
+    background-image: url('../img/bg_basket.png');
+    height: 160px;
+  }
 }
 
 #logout-profile {
-    display: flex;
-    align-items: center;
-    margin-left: 20px;
-    @media screen and (min-width: 641px) {
-        display: none;
-    }
-    
-    img {
-        margin-right: 10px;
-    }
-    p {
-        @include policy($semibold-font, $text-color, 14px);
-        text-transform: uppercase; 
-    }
-    p:hover {
-        text-decoration: underline;
-    }
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  @media screen and (min-width: 641px) {
+    display: none;
+  }
+
+  img {
+    margin-right: 10px;
+  }
+  p {
+    @include policy($semibold-font, $text-color, 14px);
+    text-transform: uppercase;
+  }
+  p:hover {
+    text-decoration: underline;
+  }
 }
 
 #bg-profile {
-    @media screen and (min-width: 641px) {
-        @include resize(100%, 470px);
-        background-image: url('../img/back_profile.png');
-        background-size: cover;
-        display: flex;
-    }
+  @media screen and (min-width: 641px) {
+    @include resize(100%, 470px);
+    background-image: url('../img/back_profile.png');
+    background-repeat: no-repeat;
+    background-size: 800px;
+    background-position: center center;
+    display: flex;
+  }
 }
 
 #main-profile {
-    background-color: white;
-    border-radius: 15px;
-    margin: 15px;
-    padding: 15px;
-    @media screen and (min-width: 641px) {
-        height: 325px;
-        margin-left: 15%;
-        margin-right: 15%;
-        margin-top: 60px;
-        padding-left: 25px;
-        box-shadow: 0 0 10px lightgrey;
+  background-color: white;
+  border-radius: 15px;
+  margin: 15px;
+  padding: 15px;
+  @media screen and (min-width: 641px) {
+    height: 350px;
+    margin-left: 27%;
+    margin-right: 27%;
+    margin-top: 60px;
+    padding-left: 25px;
+    box-shadow: 0 0 10px lightgrey;
+  }
+
+  nav {
+    width: 100%;
+    margin-top: 10px;
+    @include flex(row, center, space-around);
+
+    a {
+      @include policy($main-font, $grey, 15px);
+      text-transform: uppercase;
+    }
+    hr {
+      display: none;
     }
 
-    nav {
-        width: 100%;
-        margin-top: 10px;
-        @include flex(row, center, space-around);
-
-        a {
-            @include policy($main-font, $grey, 15px);
-            text-transform: uppercase;
-        }
-        hr {
-            display: none;
-        }
-
-        #active-tab {
-            a {
-                @include policy($semibold-font, $text-color, 15px);
-            }
-            hr {
-                display: block;
-                border: 0;
-                height: 3px;
-                width: 50px;
-                background: $light-red;
-                margin: 0;
-            }
-        }
+    #active-tab {
+      a {
+        @include policy($semibold-font, $text-color, 15px);
+      }
+      hr {
+        display: block;
+        border: 0;
+        height: 3px;
+        width: 50px;
+        background: $light-red;
+        margin: 0;
+      }
     }
+  }
 
-    input[type="submit"], .btn-see-list {
-        @include policy($semibold-font, white, 14px);
-        text-align: center;
-        background: linear-gradient(#ff9c33, #ef7205);
-        border-radius: 3px;
-        align-self: center;
-    }
+  input[type="submit"], .btn-see-list {
+    @include policy($semibold-font, white, 14px);
+    text-align: center;
+    background: linear-gradient(#ff9c33, #ef7205);
+    border-radius: 3px;
+    align-self: center;
+  }
 }
 
 #modify-content {
-    margin-top: 30px;
+  margin-top: 30px;
 
-    .profile-content {
-        @media screen and (min-width: 641px) {
-            display: flex;
-            height: 100%;
-        }
-
-        .firstname, .email, .birthdate, .address {
-            display: flex;
-            align-items: baseline;
-        }
-
-        > p {
-            @include policy($text-font, $text-color, 13px);
-            font-style: italic;
-            margin-top: 0;
-        }
-
-        .gender {
-            @include flex(row, baseline, flex-start);
-
-            > p {
-                width: 100px;
-            }
-
-            .choose-gender {
-                display: flex;
-                flex-wrap: wrap;
-
-                div {
-                    display: flex;
-                    align-items: center;
-                    @media screen and (min-width: 641px) {
-                        padding-left: 15px;
-                    }
-                }
-
-                label {
-                    @include flex(row, center, flex-start);
-                    width: 75px;
-
-                    p {
-                        margin: 5px 0;
-                        padding-left: 5px;
-                    }
-                }
-
-                img {
-                    height: 20px;
-                }
-            }
-        }
-
-        .password {
-            display: flex;
-            flex-direction: column;
-            
-            .click-modify, .enter-modify {
-                display: flex;
-            }
-
-            .enter-modify {
-                display: none;
-                flex-direction: column;
-
-                input:first-child {
-                    margin: 0;
-                }
-                input:last-child {
-                    margin-top: 0;
-                }
-            }
-        }
-
-        .column {
-            display: flex;
-            flex-direction: column;
-            
-        }
+  .profile-content {
+    @media screen and (min-width: 641px) {
+      display: flex;
+      height: 100%;
     }
 
-    .name {
-        @include policy($bold-font, $text-color, 13px);
-        text-transform: uppercase;
-        margin: 10px 0;
+    .firstname, .email, .birthdate, .address {
+      display: flex;
+      align-items: baseline;
+    }
+    .email {
+      margin-top: 20px;
     }
 
-    .info {
-        @include policy($main-font, $text-color, 14px);
-        margin: 10px 0 11px 0;
-        padding-left: 10px;
-        width: 150px;
+    > p {
+      @include policy($text-font, $text-color, 13px);
+      font-style: italic;
+      margin-top: 0;
     }
 
-    .link {
-        color: $light-red;
-    }
+    .gender {
+      @include flex(row, baseline, flex-start);
+      margin-top: 20px;
 
-    input[type="submit"] {
-        width: 130px;
-        padding: 7px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-top: 20px;
-        margin-bottom: 10px;
-        @media screen and (min-width: 641px) {
-            margin-top: auto;
+      > p {
+        width: 100px;
+      }
+
+      .choose-gender {
+        display: flex;
+        flex-wrap: wrap;
+
+        div {
+          display: flex;
+          align-items: center;
+          @media screen and (min-width: 641px) {
+            padding-left: 15px;
+          }
         }
+
+        label {
+          @include flex(row, center, flex-start);
+          width: 75px;
+
+          p {
+            margin: 5px 0;
+            padding-left: 5px;
+          }
+        }
+
+        img {
+          height: 20px;
+        }
+      }
     }
+
+    .password {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+
+      .click-modify, .enter-modify {
+        display: flex;
+      }
+
+      .enter-modify {
+        display: none;
+        flex-direction: column;
+
+        input:first-child {
+          margin: 0;
+        }
+        input:last-child {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+
+    }
+  }
+
+  .name {
+    @include policy($bold-font, $text-color, 13px);
+    text-transform: uppercase;
+    margin: 10px 0;
+  }
+
+  .info {
+    @include policy($main-font, $text-color, 14px);
+    margin: 10px 0 11px 0;
+    padding-left: 10px;
+    width: 150px;
+  }
+
+  .link {
+    color: $light-red;
+  }
+
+  input[type="submit"] {
+    width: 130px;
+    padding: 7px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    margin-bottom: 45px;
+    @media screen and (min-width: 641px) {
+      margin-top: auto;
+    }
+  }
 }
 
 #pin-content, #favorites-content {
-    > p {
-        @include policy($light-font, $text-color, 15px);
-        margin-top: 30px;
-        margin-bottom: 35px;
-        span {
-            font-family: $semibold-font;
-        }
+  > p {
+    @include policy($light-font, $text-color, 15px);
+    margin-top: 30px;
+    margin-bottom: 35px;
+    span {
+      font-family: $semibold-font;
     }
+  }
 }
 
 #pin-content {
-    @media screen and (min-width: 641px) {
-        height: 350px;
-    }
+  @media screen and (min-width: 641px) {
+    height: 350px;
+  }
 
-    .container-lists {
-        display: flex;
-        flex-wrap: wrap;
-    }
+  .container-lists {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-    .pin-elt {
-        background-color: $bg-color;
-        border-radius: 10px;
-        margin: 10px auto;
-        display: flex;
-        flex-direction: column;
-        width: 250px;
-        @media screen and (min-width: 641px) {
-            width: 230px;
-            //height: 95px;
-        }
-
-        input[type="image"] {
-            position: relative;
-            left: 94%;
-            top: -5px;
-            width: 20px;
-        }
-
-        .pin-date, .pin-name, .pin-content {
-            @include policy($main-font, $text-color, 14px);
-            text-align: center;
-            margin: 5px 0;
-        }
-        .pin-name {
-            font-family: $semibold-font;
-        }
-        .pin-date {
-            margin-top: 0;
-        }
-
-        .pin-content {
-            padding-left: 0;
-        }
-
-        .btn-see-list {
-            padding: 5px;
-            width: 90px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-    }
-}
-
-#pin-content:target {
-    display: block;
-}
-#pin-content::-webkit-scrollbar {
-    @media screen and (min-width: 641px) {
-        width: 7px;
-    }
-    @media screen and (min-width: 769px) {
-        width: 10px;
-    }
-}
-#pin-content::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  .pin-elt {
+    background-color: $bg-color;
     border-radius: 10px;
-}
-#pin-content::-webkit-scrollbar-thumb {
-    background-color: lightgrey;
-    border-radius: 3px;
-}
-
-#favorites-content {
-    #spotlight-type-recipe {
-        padding: 0;
-        .spotlight-recipe {
-            @include resize(115px, 190px);
-            margin: 0 7px 25px 7px;
-            box-shadow: 0 0 10px lightgrey;
-            @media screen and (min-width: 321px) {
-                width: 123px;
-            }
-            @media screen and (min-width: 376px) {
-                @include resize(135px, 200px);
-                margin-left: 10px;
-                margin-right: 10px;
-            }
-            @media screen and (min-width: 769px){
-                width: 200px;
-                height: 250px;
-            }
-        }
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    @media screen and (min-width: 641px) {
+      width: 230px;
+      //height: 95px;
     }
 
     input[type="image"] {
-        position: relative;
-        left: 85%;
-        top: 15px;
-        width: 20px;
+      position: relative;
+      left: 94%;
+      top: -5px;
+      width: 20px;
     }
+
+    .pin-date, .pin-name, .pin-content {
+      @include policy($main-font, $text-color, 14px);
+      text-align: center;
+      margin: 5px 0;
+    }
+    .pin-name {
+      font-family: $semibold-font;
+    }
+    .pin-date {
+      margin-top: 0;
+    }
+
+    .pin-content {
+      padding-left: 0;
+    }
+
+    .btn-see-list {
+      padding: 5px;
+      width: 90px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+#pin-content:target {
+  display: block;
+}
+
+#pin-content::-webkit-scrollbar {
+  @media screen and (min-width: 641px) {
+    width: 7px;
+  }
+  @media screen and (min-width: 769px) {
+    width: 10px;
+  }
+}
+
+#pin-content::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+#pin-content::-webkit-scrollbar-thumb {
+  background-color: lightgrey;
+  border-radius: 3px;
+}
+
+#favorites-content {
+  #spotlight-type-recipe {
+    padding: 0;
+    .spotlight-recipe {
+      @include resize(115px, 190px);
+      margin: 0 7px 25px 7px;
+      box-shadow: 0 0 10px lightgrey;
+      @media screen and (min-width: 321px) {
+        width: 123px;
+      }
+      @media screen and (min-width: 376px) {
+        @include resize(135px, 200px);
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      @media screen and (min-width: 769px) {
+        width: 200px;
+        height: 250px;
+      }
+    }
+  }
+
+  input[type="image"] {
+    position: relative;
+    left: 85%;
+    top: 15px;
+    width: 20px;
+  }
 }
 
 #modify-content, #pin-content, #favorites-content {
-    display: none;
+  display: none;
 }
 
 #active-content {
-    @media screen and (min-width: 641px) {
-        height: 80%;
-    }
+  @media screen and (min-width: 641px) {
+    height: 80%;
+  }
 }
 
 #active-content #modify-content, #active-content #pin-content,
 #active-content #favorites-content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+form#delete-account {
+  @include flex(column, center, space-between);
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+  margin-bottom: 50px;
+  @media screen and (min-width: 641px) {
+    margin-top: 50px;
+  }
+
+  h3 {
+    @include policy($bold-font, $text-color, 16px);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+  }
+
+  hr {
+    display: block;
+    border: 0;
+    height: 3px;
+    width: 50px;
+    background: $light-red;
+    margin: 0;
+  }
+
+  p {
+    @include policy($text-font, $text-color, 14px);
+  }
+
+  input[type="password"] {
+    @include policy($light-font, $text-color, 14px);
+    width: 200px;
+    padding-bottom: 2px;
+    border-bottom: 1.5px solid #818181;
+  }
+
+  input[type="submit"] {
+    @include policy($semibold-font, $light-red, 14px);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    border: 1px solid $light-red;
+    border-radius: 3px;
+  }
+  input[type="submit"]:hover {
+    text-decoration: underline;
+  }
+
+}
+
+#admin-link {
+  margin-top: 20px;
+  text-align: right;
+  margin-left: auto;
+
+  a {
+    @include policy($main-font, #77a513, 16px);
+    font-style: italic;
+  }
 }

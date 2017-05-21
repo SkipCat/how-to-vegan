@@ -18,6 +18,7 @@ routes:
     admin:          'Admin:admin'
     deleteUser:     'Admin:deleteUser'
     addAdmin:       'Admin:addAdmin'
+    removeAdmin:    'Admin:removeAdmin'
     addRecipe:      'Admin:addRecipe'
     addBasket:      'Admin:addBasket'
     addIngredient:  'Admin:addIngredient'

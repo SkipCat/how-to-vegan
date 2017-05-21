@@ -8,8 +8,6 @@ window.onload = function() {
 
     if (currentPage.search('home') !== -1) {
         header.id = 'header-home';
-        //convert();
-        //listActions();
         carousel();
         modalActions();
     }
@@ -93,7 +91,6 @@ window.onload = function() {
 
     if (currentPage.search('admin') !== -1) {
         header.id = 'header-admin';
+        anchorAdmin();
     }
-
-
 };

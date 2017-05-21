@@ -83,6 +83,33 @@ class AdminController extends BaseController {
         }
     }
 
+    public function removeAdminAction() {
+        $error = '';
+        $userManager = UserManager::getInstance();
+        $adminManager = AdminManager::getInstance();
+        $admin = $userManager->getUserById($_SESSION['user_id']);
+
+        if (!empty($_SESSION['user_id']) && $admin['admin'] == 'superadmin') {
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $user = $userManager->getUserByUsername($_POST['username']);
+                if ($user['admin'] == 'admin' && $user['admin'] !== 'superadmin') {
+                    $adminManager->removeAdmin($user['username']);
+                    echo $this->redirect('admin');
+                }
+                else {
+                    $error = 'Cet utilisateur n\'est pas administrateur';
+                    echo $this->renderView('admin.html.twig', ['error' => $error]);
+                }
+            }
+            else {
+                echo $this->renderView('admin.html.twig', ['error' => $error]);
+            }
+        }
+        else {
+            echo $this->redirect('home');            
+        }
+    }
+
     public function addBasketAction() {
         $error = '';
         if (!empty($_SESSION['user_id'])) {

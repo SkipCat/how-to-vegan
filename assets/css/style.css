@@ -1802,7 +1802,7 @@
   padding: 15px; }
   @media screen and (min-width: 641px) {
     #main-profile {
-      height: 325px;
+      height: 350px;
       margin-left: 15%;
       margin-right: 15%;
       margin-top: 60px;
@@ -1923,7 +1923,8 @@
     margin-bottom: 10px; }
     @media screen and (min-width: 641px) {
       #modify-content input[type="submit"] {
-        margin-top: auto; } }
+        margin-top: auto;
+        margin-bottom: 45px; } }
 
 #pin-content > p, #favorites-content > p {
   font-family: "Signika Light";
@@ -2029,6 +2030,64 @@
   display: flex;
   flex-direction: column;
   height: 100%; }
+
+form#delete-account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+  margin-bottom: 40px; }
+  @media screen and (min-width: 641px) {
+    form#delete-account {
+      margin-top: 50px; } }
+  form#delete-account h3 {
+    font-family: "Signika Bold";
+    color: #444444;
+    font-size: 16px;
+    margin-bottom: 5px;
+    text-transform: uppercase; }
+  form#delete-account hr {
+    display: block;
+    border: 0;
+    height: 3px;
+    width: 50px;
+    background: #e74a18;
+    margin: 0; }
+  form#delete-account p {
+    font-family: "SourceSansPro";
+    color: #444444;
+    font-size: 14px; }
+  form#delete-account input[type="password"] {
+    font-family: "Signika Light";
+    color: #444444;
+    font-size: 14px;
+    width: 200px;
+    padding-bottom: 2px;
+    border-bottom: 1.5px solid #818181; }
+  form#delete-account input[type="submit"] {
+    font-family: "Signika Semibold";
+    color: #e74a18;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    border: 1px solid #e74a18;
+    border-radius: 3px; }
+  form#delete-account input[type="submit"]:hover {
+    text-decoration: underline; }
+
+#admin-link {
+  margin-top: 20px;
+  text-align: right;
+  margin-left: auto; }
+  #admin-link a {
+    font-family: "Signika Regular";
+    color: #77a513;
+    font-size: 16px;
+    font-style: italic; }
 
 @media screen and (min-width: 641px) {
   #header-about {
@@ -3024,7 +3083,8 @@ header {
         top: 85px;
         right: 35px;
         bottom: initial;
-        left: initial; } }
+        left: initial;
+        z-index: 10; } }
     @media screen and (min-width: 769px) {
       header .profile-login {
         position: absolute;
