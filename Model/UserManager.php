@@ -91,10 +91,8 @@ class UserManager {
         else {
             if (password_verify($data['old-pass'], $user['password'])) {
                 $pass = $this->userHash($data['new-pass']);
-                echo 'password verify OK';
             }
             else {
-                echo 'password verify false';
                 return false;
             }
         }
@@ -117,7 +115,6 @@ class UserManager {
                 'id'        => $_SESSION['user_id']
             ]
         );
-        var_dump($query);
         return $query;
     }
 

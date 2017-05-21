@@ -87,7 +87,9 @@ window.onload = function() {
         header.id = 'header-modal';
     }
 
-    if (currentPage.search('admin') !== -1) {
-
+    if (currentPage.search('login') !== -1 || currentPage.search('register') !== -1) {
+        header.id = 'header-login';
     }
+
+
 };

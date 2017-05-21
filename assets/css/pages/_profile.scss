@@ -5,12 +5,23 @@
     }
 }
 
-#btn-logout {
-    text-align: center;
-    display: block;
-
+.logout {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    @media screen and (min-width: 641px) {
+        display: none;
+    }
+    
     img {
-        width: 30px;
+        margin-right: 10px;
+    }
+    p {
+        @include policy($semibold-font, $text-color, 14px);
+        text-transform: uppercase; 
+    }
+    p:hover {
+        text-decoration: underline;
     }
 }
 
