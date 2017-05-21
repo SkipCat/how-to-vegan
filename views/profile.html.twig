@@ -24,88 +24,94 @@
             <div class="blur">
                 <form action="?action=editProfile" method="POST" id="modify-content">
                     <div class="profile-content">
-                        <div class="firstname">
-                            <p class="name">Pseudo : </p>
-                            <input type="text" class="info" value="{{ user.username }}" name="username">
-                        </div>
-                        <div class="email">
-                            <p class="name">Email : </p>
-                            <input type="email" class="info" value="{{ user.email }}" name="email">
-                        </div>
-                        <div class="password">
-                            <div class="click-modify">
-                                <p class="name">Mot de passe : </p>
-                                <p class="info link">Modifier le mot de passe</p>
+                        <div class="column">
+                            <div class="firstname">
+                                <p class="name">Pseudo : </p>
+                                <input type="text" class="info" value="{{ user.username }}" name="username">
                             </div>
-                            <div class="enter-modify">
-                                <input type="password" class="info" placeholder="Mot de passe actuel" name="old-pass">
-                                <input type="password" class="info" placeholder="Nouveau mot de passe" name="new-pass">
+                            <div class="email">
+                                <p class="name">Email : </p>
+                                <input type="email" class="info" value="{{ user.email }}" name="email">
                             </div>
-                        </div>
-                        <div class="gender">
-                            <p class="name">Genre : </p>
-                            <div class="choose-gender">
-                                <div>
-                                    {% if user.gender == 'female' %}
-                                        <input type="radio" value="female" id="female" name="gender" checked>
-                                    {% else %}
-                                        <input type="radio" value="female" id="female" name="gender">
-                                    {% endif %}
-                                    <label for="female">
-                                        <img src="assets/img/female.png">
-                                        <p class="info">Femme</p>
-                                    </label>
+                            <div class="password">
+                                <div class="click-modify">
+                                    <p class="name">Mot de passe : </p>
+                                    <p class="info link">Modifier le mot de passe</p>
                                 </div>
-                                <div>
-                                    {% if user.gender == 'male' %}
-                                        <input type="radio" value="male" id="male" name="gender" checked>
-                                    {% else %}
-                                        <input type="radio" value="male" id="male" name="gender">
-                                    {% endif %}
-                                    <label for="male">
-                                        <img src="assets/img/male.png">
-                                        <p class="info">Homme</p>
-                                    </label>
-                                </div>
-                                <div>
-                                    {% if user.gender == 'other' %}
-                                        <input type="radio" value="other" id="other" name="gender" checked>
-                                    {% else %}
-                                        <input type="radio" value="other" id="other" name="gender">
-                                    {% endif %}
-                                    <label for="other">
-                                        <p class="info">Autre</p>
-                                    </label>
+                                <div class="enter-modify">
+                                    <input type="password" class="info" placeholder="Mot de passe actuel" name="old-pass">
+                                    <input type="password" class="info" placeholder="Nouveau mot de passe" name="new-pass">
                                 </div>
                             </div>
+                            <div class="gender">
+                                <p class="name">Genre : </p>
+                                <div class="choose-gender">
+                                    <div>
+                                        {% if user.gender == 'female' %}
+                                            <input type="radio" value="female" id="female" name="gender" checked>
+                                        {% else %}
+                                            <input type="radio" value="female" id="female" name="gender">
+                                        {% endif %}
+                                        <label for="female">
+                                            <img src="assets/img/female.png">
+                                            <p class="info">Femme</p>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        {% if user.gender == 'male' %}
+                                            <input type="radio" value="male" id="male" name="gender" checked>
+                                        {% else %}
+                                            <input type="radio" value="male" id="male" name="gender">
+                                        {% endif %}
+                                        <label for="male">
+                                            <img src="assets/img/male.png">
+                                            <p class="info">Homme</p>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        {% if user.gender == 'other' %}
+                                            <input type="radio" value="other" id="other" name="gender" checked>
+                                        {% else %}
+                                            <input type="radio" value="other" id="other" name="gender">
+                                        {% endif %}
+                                        <label for="other">
+                                            <p class="info">Autre</p>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="birthdate">
-                            <p class="name">Date de naissance : </p>
-                            <input type="date" class="info" value="{{ user.birthdate }}" name="birthdate">
-                        </div>
-                        <div class="address">
-                            <p class="name">Adresse : </p>
-                            <input type="text" class="info" value="{{ user.address }}" name="address">
+                        <div class="column">
+                            <div class="birthdate">
+                                <p class="name">Date de naissance : </p>
+                                <input type="date" class="info" value="{{ user.birthdate }}" name="birthdate">
+                            </div>
+                            <div class="address">
+                                <p class="name">Adresse : </p>
+                                <input type="text" class="info" value="{{ user.address }}" name="address">
+                            </div>
+                            <input type="submit" value="Enregistrer">
                         </div>
                     </div>
-                    <input type="submit" value="Enregistrer">
                 </form>
             </div>
             <div class="blur">
                 <div id="pin-content">
                     <p>vos listes de <span>courses</span></p>
-                    {% for list in lists %}
-                        <form action="?action=deleteList" method="POST" class="pin-elt">
-                            <input type="image" src="assets/img/delete_pin_list.png">
-                            <p class="pin-date">{{ list.date }}</p>
-                            <p class="pin-name">"{{ list.name }}"</p>
-                            <input type="hidden" name="listname" value="{{ list.name }}">
-                            <ul class="pin-content" id="content-modal-{{ list.id }}">
-                                {{ list.content }}
-                            </ul>
-                            <a href="#content-modal-{{ list.id }}" class="btn-see-list">Voir la liste</a>
-                        </form>
-                    {% endfor %}
+                    <div class="container-lists">
+                        {% for list in lists %}
+                            <form action="?action=deleteList" method="POST" class="pin-elt">
+                                <input type="image" src="assets/img/delete_pin_list.png">
+                                <p class="pin-date">{{ list.date }}</p>
+                                <p class="pin-name">"{{ list.name }}"</p>
+                                <input type="hidden" name="listname" value="{{ list.name }}">
+                                <ul class="pin-content" id="content-modal-{{ list.id }}">
+                                    {{ list.content }}
+                                </ul>
+                                <a href="#content-modal-{{ list.id }}" class="btn-see-list">Voir la liste</a>
+                            </form>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
             <div>

@@ -26,10 +26,12 @@
 }
 
 #bg-profile {
-    @include resize(100%, 470px);
-    background-image: url('../img/back_profile.png');
-    background-size: cover;
-    display: flex;
+    @media screen and (min-width: 641px) {
+        @include resize(100%, 470px);
+        background-image: url('../img/back_profile.png');
+        background-size: cover;
+        display: flex;
+    }
 }
 
 #main-profile {
@@ -37,13 +39,13 @@
     border-radius: 15px;
     margin: 15px;
     padding: 15px;
-    @media screen and (min-width: 641px){
-        height: 350px;
+    @media screen and (min-width: 641px) {
+        height: 325px;
         margin-left: 15%;
         margin-right: 15%;
-    }
-    @media screen and (min-width: 769px){
-        width: 600px;
+        margin-top: 60px;
+        padding-left: 25px;
+        box-shadow: 0 0 10px lightgrey;
     }
 
     nav {
@@ -87,12 +89,15 @@
     margin-top: 30px;
 
     .profile-content {
+        @media screen and (min-width: 641px) {
+            display: flex;
+            height: 100%;
+        }
+
         .firstname, .email, .birthdate, .address {
             display: flex;
             align-items: baseline;
-            white-space: pre;
         }
-        
 
         > p {
             @include policy($text-font, $text-color, 13px);
@@ -141,7 +146,6 @@
             
             .click-modify, .enter-modify {
                 display: flex;
-                white-space: pre;
             }
 
             .enter-modify {
@@ -156,10 +160,16 @@
                 }
             }
         }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            
+        }
     }
 
     .name {
-        @include policy($semibold-font, $text-color, 14px);
+        @include policy($bold-font, $text-color, 13px);
         text-transform: uppercase;
         margin: 10px 0;
     }
@@ -175,10 +185,6 @@
         color: $light-red;
     }
 
-    input[type="date"] {
-        width: 100px;
-    }
-
     input[type="submit"] {
         width: 130px;
         padding: 7px;
@@ -186,6 +192,9 @@
         letter-spacing: 1px;
         margin-top: 20px;
         margin-bottom: 10px;
+        @media screen and (min-width: 641px) {
+            margin-top: auto;
+        }
     }
 }
 
@@ -193,6 +202,7 @@
     > p {
         @include policy($light-font, $text-color, 15px);
         margin-top: 30px;
+        margin-bottom: 35px;
         span {
             font-family: $semibold-font;
         }
@@ -203,17 +213,22 @@
     @media screen and (min-width: 641px) {
         height: 350px;
     }
+
+    .container-lists {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
     .pin-elt {
         background-color: $bg-color;
         border-radius: 10px;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin: 10px auto;
         display: flex;
         flex-direction: column;
-        @media screen and (min-width: 641px){
-            width: 300px;
-            margin: 10px auto;
-            height: 95px;
+        width: 250px;
+        @media screen and (min-width: 641px) {
+            width: 230px;
+            //height: 95px;
         }
 
         input[type="image"] {
@@ -227,9 +242,6 @@
             @include policy($main-font, $text-color, 14px);
             text-align: center;
             margin: 5px 0;
-            @media screen and (min-width: 641px){
-                margin: 0;
-            }
         }
         .pin-name {
             font-family: $semibold-font;
@@ -247,9 +259,6 @@
             width: 90px;
             margin-top: 10px;
             margin-bottom: 10px;
-            @media screen and (min-width: 641px){
-                margin: 0;
-            }
         }
     }
 }
@@ -258,7 +267,6 @@
     display: block;
 }
 #pin-content::-webkit-scrollbar {
-    width: 3px;
     @media screen and (min-width: 641px) {
         width: 7px;
     }
@@ -280,8 +288,7 @@
         padding: 0;
         .spotlight-recipe {
             @include resize(115px, 190px);
-            margin-left: 7px;
-            margin-right: 7px;
+            margin: 0 7px 25px 7px;
             box-shadow: 0 0 10px lightgrey;
             @media screen and (min-width: 321px) {
                 width: 123px;
@@ -297,6 +304,7 @@
             }
         }
     }
+
     input[type="image"] {
         position: relative;
         left: 85%;
@@ -308,8 +316,16 @@
 #modify-content, #pin-content, #favorites-content {
     display: none;
 }
+
+#active-content {
+    @media screen and (min-width: 641px) {
+        height: 80%;
+    }
+}
+
 #active-content #modify-content, #active-content #pin-content,
 #active-content #favorites-content {
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
