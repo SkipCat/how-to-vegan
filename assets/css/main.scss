@@ -134,7 +134,8 @@ header {
         @media screen and (min-width: 641px) {
             display: flex;
             align-items: center;
-            @include position(absolute, 85px, 35px, initial, initial);        
+            @include position(absolute, 85px, 35px, initial, initial);
+            z-index: 10;      
         }
         @media screen and (min-width: 769px) {
             @include position(absolute, 37px, 50px, initial, initial);   

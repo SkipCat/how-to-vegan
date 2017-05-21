@@ -22,6 +22,11 @@
                 </div>
             </nav>
             <div class="blur">
+                {% if user.admin == 'admin' or user.admin == 'superadmin' %}
+                    <div id="admin-link">
+                        <a href="?action=admin">Accéder au panneau d'administration</a>
+                    </div>
+                {% endif %}
                 <form action="?action=editProfile" method="POST" id="modify-content">
                     <div class="profile-content">
                         <div class="column">
@@ -335,4 +340,11 @@
             </div>
         </main>
     </div>
+    <form action="?action=deleteProfile" method="POST" id="delete-account">
+        <h3>Supprimer le compte</h3>
+        <hr>
+        <p>Attention, cette action clôturera définitivement votre compte.</p>
+        <input type="password" placeholder="Entrez votre mot de passe" name="password">
+        <input type="submit" value="Supprimer">
+    </form>
 {% endblock %}

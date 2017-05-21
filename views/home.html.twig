@@ -35,20 +35,20 @@
             </div>
             <div class="spotlight-container-basket">
                 {% for basket in baskets %}
-                    <div class="spotlight-container-img">
-                        <div>
+                    <div class="spotlight-container-img-basket">
+                        <div class="spotlight-frame">
                             <img class="spotlight-img" src="{{ basket.img }}" alt="frame picture">
-                        </div>
-                        <div class="spotlight-basket">
                             <p class="price">{{ basket.price }}&euro;</p>
                             <p class="name"><span>{{ basket.name }}</span></p>
-                            <div class="container-category-indicator">
-                                {% if 'bio' in basket.category %}
-                                    <div class="category-indicator category-bio">Bio</div>
-                                {% endif %}
-                                {% if 'gluten-free' in basket.category %}
-                                    <div class="category-indicator category-gluten-free">Gluten Free</div>
-                                {% endif %}
+                            <div>
+                                <div class="container-category-indicator">
+                                    {% if 'bio' in basket.category %}
+                                        <div class="category-indicator category-bio">Bio</div>
+                                    {% endif %}
+                                    {% if 'gluten-free' in basket.category %}
+                                        <div class="category-indicator category-gluten-free">Gluten Free</div>
+                                    {% endif %}
+                                </div>
                             </div>
                         </div>
                     </div>

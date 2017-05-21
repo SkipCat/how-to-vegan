@@ -38,6 +38,17 @@ class AdminManager {
         }
     }
 
+    public function removeAdmin($username) {
+        $user = $this->DBManager->findOneSecure("UPDATE users SET admin = 'NULL' WHERE username = :username",
+            ['username' => $username]);
+        if ($user['admin'] !== 'admin' && $user['admin'] !== 'superadmin') {
+            return $user;
+        }
+        else {
+            return false;
+        }
+    }
+
     public function addRecipe($data) {
         $user['image'] = 'assets/img/' . $_FILES['uploads_file']['name'];
         $user['name'] = $data['name_recipe'];

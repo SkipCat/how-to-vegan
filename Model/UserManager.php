@@ -135,7 +135,6 @@ class UserManager {
     public function deleteProfile($id) {
         $query = $this->DBManager->findOneSecure("DELETE FROM users WHERE id = :id",
             ['id' => $id]);
-        var_dump($query);
         return $query;
     }
 

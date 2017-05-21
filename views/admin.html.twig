@@ -10,25 +10,26 @@
             </div>
             <nav>
                 <div class="adds">
-                    <a>Ajout de recette</a>
-                    <a>Ajout de panier</a>
-                    <a>Ajout d'ingrédient</a>
+                    <a href="#addrecipe" class="for-anchor">Ajout de recette</a>
+                    <a href="#addbasket" class="for-anchor">Ajout de panier</a>
+                    <a href="#addingredient" class="for-anchor">Ajout d'ingrédient</a>
                 </div>
                 <div class="rm-and-users">
-                    <a>Suppression de recette</a>
-                    <a>Suppression de panier</a>
-                    <a>Suppression d'ingrédient</a>
-                    <a>Gestion des utilisateurs</a>
+                    <a href="#delrecipe" class="for-anchor">Suppression de recette</a>
+                    <a href="#delbasket" class="for-anchor">Suppression de panier</a>
+                    <a href="#delingredient" class="for-anchor">Suppression d'ingrédient</a>
+                    <a href="#userctrl" class="for-anchor">Gestion des utilisateurs</a>
                 </div>
-            </div>
         </div>
-        <form class="contents add-recipe" action="?action=addRecipe" method="POST" enctype="multipart/form-data">
+        </div>
+        <form class="contents add-recipe" action="?action=addRecipe" method="POST" enctype="multipart/form-data"
+              id="addrecipe">
             <div class="title">
                 <h3>Ajouter une recette</h3>
                 <hr>
             </div>
             <div class="content">
-                <div class="line"> 
+                <div class="line">
                     <div class="part">
                         <h3>Image de la recette</h3>
                         <input type="file" id="uploads_file" name="uploads_file" accept="image/*">
@@ -83,7 +84,8 @@
                 <input type="submit" value="Ajouter" class="submit">
             </div>
         </form>
-        <form class="contents add-basket" action="?action=addBasket" method="POST" enctype="multipart/form-data">
+        <form id="addbasket" class="contents add-basket" action="?action=addBasket" method="POST"
+              enctype="multipart/form-data">
             <div class="title">
                 <h3>Ajouter un panier</h3>
                 <hr>
@@ -140,10 +142,11 @@
                 {% endfor %}
             </ul>
         </div>
-        <form class="contents add-ingredient" action="?action=addIngredient" method="POST" enctype="multipart/form-data">
+        <form id="addingredient" class="contents add-ingredient" action="?action=addIngredient" method="POST"
+              enctype="multipart/form-data">
             <div class="title">
                 <h3>Ajouter un ingrédient</h3>
-                <hr>                
+                <hr>
                 <p>
                     Pour ajouter un ingrédient à un panier, rentrer dans le champ en dessous l'"id"
                     correspondant au panier (voir 'Liste des paniers' ci-dessus).
@@ -171,10 +174,11 @@
                         <textarea name="description"></textarea>
                     </div>
                 </div>
-                <input type="submit" value="Ajouter"  class="submit">
+                <input type="submit" value="Ajouter" class="submit">
             </div>
         </form>
-        <form class="contents rm-recipe" action="?action=deleteRecipe" method="POST" enctype="multipart/form-data">
+        <form id="delrecipe" class="contents rm-recipe" action="?action=deleteRecipe" method="POST"
+              enctype="multipart/form-data">
             <div class="title">
                 <h3>Supprimer une recette</h3>
                 <hr>
@@ -193,7 +197,8 @@
                 </div>
             </div>
         </form>
-        <form class="contents rm-basket" action="?action=deleteBasket" method="POST" enctype="multipart/form-data">
+        <form id="delbasket" class="contents rm-basket" action="?action=deleteBasket" method="POST"
+              enctype="multipart/form-data">
             <div class="title">
                 <h3>Supprimer un panier</h3>
                 <hr>
@@ -212,7 +217,8 @@
                 </div>
             </div>
         </form>
-        <form class="contents rm-ingredient" action="?action=deleteIngredient" method="POST" enctype="multipart/form-data">
+        <form id="delingredient" class="contents rm-ingredient" action="?action=deleteIngredient" method="POST"
+              enctype="multipart/form-data">
             <div class="title">
                 <h3>Supprimer un ingrédient</h3>
                 <hr>
@@ -231,7 +237,7 @@
                 </div>
             </div>
         </form>
-        <div class="contents users-management">
+        <div id="userctrl" class="contents users-management">
             <div class="title">
                 <h3>Gestion des utilisateurs</h3>
                 <hr>
@@ -245,8 +251,12 @@
                             <div class="user-action">
                                 {% if user.admin == 'admin' %}
                                     {% if admin.admin == 'superadmin' %}
-                                        <!-- retirer les droits admin-btn -->
-                                        <form action="?action=deleteUser" method="POST" class="form-admin" id="form-delete-admin">
+                                        <form action="?action=removeAdmin" method="POST" class="form-admin">
+                                            <input type="hidden" name="username" value="{{ user.username }}">
+                                            <input type="submit" value="Retirer les droits" class="admin-btn">
+                                        </form>
+                                        <form action="?action=deleteUser" method="POST" class="form-admin"
+                                              id="form-delete-admin">
                                             <input type="hidden" name="username" value="{{ user.username }}">
                                             <input type="submit" value="Supprimer" class="delete-btn">
                                         </form>
@@ -254,11 +264,13 @@
                                 {% elseif user.admin == 'superadmin' %}
                                     <p>Statut inchangeable</p>
                                 {% else %}
-                                    <form action="?action=addAdmin" method="POST" class="form-admin" id="form-add-admin">
+                                    <form action="?action=addAdmin" method="POST" class="form-admin"
+                                          id="form-add-admin">
                                         <input type="hidden" name="username" value="{{ user.username }}">
                                         <input type="submit" value="Nommer administrateur" class="admin-btn">
                                     </form>
-                                    <form action="?action=deleteUser" method="POST" class="form-admin" id="form-delete-admin">
+                                    <form action="?action=deleteUser" method="POST" class="form-admin"
+                                          id="form-delete-admin">
                                         <input type="hidden" name="username" value="{{ user.username }}">
                                         <input type="submit" value="Supprimer" class="delete-btn">
                                     </form>
