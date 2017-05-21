@@ -83,6 +83,7 @@ header {
 
     nav {
         width: 100%;
+        z-index: 10;
         @include flex(row, baseline, space-around);
         @media screen and (min-width: 641px) {
             align-items: center;

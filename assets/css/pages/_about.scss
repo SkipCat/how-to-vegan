@@ -17,20 +17,6 @@
         top: -210px;
     }
 
-    /*
-    #about-d{
-        display: none;
-        @media screen and (min-width: 641px){
-            display: unset;
-            margin-top: -20px;
-            @include resize(100%, auto);
-        }
-        @media screen and (min-width: 1251px) {
-            margin-top: -50px;
-        }
-    }
-    */
-
     #about-m{
         @include resize(100%, auto);
         @media screen and (min-width: 376px){

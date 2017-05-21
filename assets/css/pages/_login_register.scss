@@ -1,24 +1,28 @@
-#main-form{
+#header-login {
+    position: relative;
+    z-index: 1;
+}
+
+#main-form {
     margin-top: -90px;
     padding-top: 60px;
     padding-bottom: 40px;
     position: relative;
     z-index: 0;
     background-image: url('../img/back_blur.png');
-    @media screen and (min-width: 641px){
+    @media screen and (min-width: 641px) {
         background: url('../img/back_blur_d.png') 50%;
         height: 100%;
         background-repeat: no-repeat;
         background-size: cover;
         margin-top: -200px;
-        padding-top: 150px;
         z-index: 1;
     }
-    @media screen and (min-width: 769px){
+    @media screen and (min-width: 769px) {
         margin-top: -280px;
     }
 
-    #border-form{
+    #border-form {
         display: none;
         @media screen and (min-width: 641px){
             display: block;
@@ -33,7 +37,7 @@
     }
 
     #container-form{
-        margin-top: 150px;
+        margin-top: 60px;
         padding: 30px auto;
         position: relative;  //relative
 
@@ -64,11 +68,11 @@
             background: url('../img/icon_mail.png') no-repeat 8px;
         }
 
-        .icon-adress{
+        .icon-adress {
             background: url('../img/icon_adress.png') no-repeat 8px;
         }
 
-        .icon-input-img{
+        .icon-input-img {
             padding-left: 40px;
             background-color: $input-grey;
             background-size: 15px;
@@ -76,11 +80,11 @@
             @include input(2px, unset, $input-border, 7px);
         }
 
-        .login{
+        .login {
             display: block;
             background-color: $bg-color;
             width: 90%;
-            margin: 50px auto 60px auto;
+            margin: 50px auto 45px auto;
             border-radius: 10px;
             padding: 30px auto;
             @media screen and (min-width: 641px){

@@ -71,12 +71,11 @@ class SecurityController extends BaseController {
                 $manager = UserManager::getInstance();
                 $user = $manager->getUserById($_SESSION['user_id']);
                 $manager->editProfile($_POST);
-                echo 'updated';
-                //echo $this->redirect('profile');
+                echo $this->redirect('profile');
             }
             else {
-                echo $error = 'Un ou plusieurs champs requis vide(s).';
-                //echo $this->renderView('profile.html.twig', ['error' => $error]);
+                $error = 'Un ou plusieurs champs requis vide(s).';
+                echo $this->renderView('profile.html.twig', ['error' => $error]);
             }
         }
         else {
