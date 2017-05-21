@@ -104,10 +104,12 @@
 
             {% for basket in baskets %}
                 <a href="#details" class="basket {{ basket.category_id }}" id="paniers">
-                    <img src="{{ basket.img }}" alt="basket">
+                    <div class="basket-div-img">
+                        <img src="{{ basket.img }}" alt="basket">
+                    </div>
                     <div class="desc_basket {{ basket.category }}" id="{{ basket.id }}">
                         <img src="{{ basket.img }}">
-                        <p class="basketPrice">{{ basket.price }}&euro;</p>
+                        <p class="basketPrice">{{ basket.price }}</p>
                         <p class="name">{{ basket.name }}</p>
                         <div>
                             <div class="category-img">
@@ -142,7 +144,9 @@
                 <p class="click-basket click-basket-desktop">Cliquez sur un panier pour voir ses ingrédients.</p>
                 {% for ingredient in ingredients %}
                     <div class="ingredient {{ ingredient.id_basket }}">
-                        <img src="{{ ingredient.img }}" alt="carot">
+                        <div class="image-ingredient">
+                            <img src="{{ ingredient.img }}" alt="carot">
+                        </div>
                         <div class="ingredient-desc">
                             <p class="ingredient-name">{{ ingredient.name }}</p>
                             <p class="ingr-text-desc">description</p>
