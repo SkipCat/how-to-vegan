@@ -62,6 +62,24 @@
     }
 }
 
+.category-indicator {
+    padding: 3px;
+    border-radius: 10px;
+    text-align: center;
+    @include policy($light-font, white, 10px);
+}
+
+.category-bio {
+    background-color: $light-red;
+    width: 20px;
+}
+
+.category-gluten-free {
+    background-color: $light-green;
+    width: 60px;
+}
+
+
 .presentation {
     @media screen and (min-width: 641px) {
         @include resize(300px, 360px);
@@ -90,7 +108,7 @@
         padding: 20px;
         @media screen and (min-width: 769px) {
             width: 350px;
-            padding-left: 100px;            
+            padding-left: 100px;
         }
         @media screen and (min-width: 1025px) {
             padding-left: 0;
@@ -168,7 +186,7 @@
     }
 
     .spotlight-img {
-        @include resize(100%, 50%);
+        @include resize(auto, 100%);
     }
 
     .spotlight-basket {
@@ -196,12 +214,21 @@
     background-color: white;
     border-radius: 5px;
     margin: 25px 10px 0 10px;
-    padding: 3px;
     @media screen and (min-width: 641px) {
         margin: 60px 18px 0 18px;
     }
     @media screen and (min-width: 769px) {
         @include resize(195px, 215px);
+    }
+
+    > div:first-child{
+        width: 100%;
+        background-color: #bbbbbb;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
     }
 
     .container-category-indicator {
@@ -306,7 +333,7 @@
             }
         }
     }
-}   
+}
 
 .container-desc {
     @include flex(column, center, space-between);
@@ -393,6 +420,6 @@
 
 #spotlight-type-recipe {
     @media screen and (min-width: 641px) {
-        padding-top: 50px;    
+        padding-top: 50px;
     }
 }

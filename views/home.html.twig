@@ -36,7 +36,9 @@
             <div class="spotlight-container-basket">
                 {% for basket in baskets %}
                     <div class="spotlight-container-img">
-                        <img class="spotlight-img" src="{{ basket.img }}" alt="frame picture">
+                        <div>
+                            <img class="spotlight-img" src="{{ basket.img }}" alt="frame picture">
+                        </div>
                         <div class="spotlight-basket">
                             <p class="price">{{ basket.price }}&euro;</p>
                             <p class="name"><span>{{ basket.name }}</span></p>
@@ -109,7 +111,7 @@
                             <form action="?action=crush" method="POST">
                                 <input type="hidden" name="id_recipe" value="{{ recipe.id }}">
                                 <input type="hidden" name="name" value="{{ recipe.name }}">
-                                <input type="image" src="assets/img/heart_modal.png" alt="Aimer" title="Aimer cette recette" class="btn-in-modal btn-crush">    
+                                <input type="image" src="assets/img/heart_modal.png" alt="Aimer" title="Aimer cette recette" class="btn-in-modal btn-crush">
                             </form>
                             <div class="modal-img">
                                 <img src="{{ recipe.img }}" alt="{{ recipe.img }}">
@@ -122,7 +124,7 @@
                             </div>
                             <div class="modal-content">
                                 <div class="modal-title">
-                                    <h2>{{ recipe.name }}</h2>                
+                                    <h2>{{ recipe.name }}</h2>
                                     <div class="kitchen">
                                         <div class="chief">
                                             <img src="assets/img/chief.png" alt="chief icon">
