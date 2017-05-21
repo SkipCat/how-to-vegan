@@ -1,6 +1,307 @@
 #header-admin {
+    background-image: url('../img/bg_admin_mobile.png');
+    height: 254px;
+    @media screen and (min-width: 321px) {
+        height: 275px;
+    }
+    @media screen and (min-width: 376px) {
+        height: 300px;
+    }
     @media screen and (min-width: 641px) {
-        background-image: url('../img/bg_basket.png');
-        height: 160px;
+        background-image: url('../img/bg_admin_desktop.png');
+        height: 275px;
+    }
+    @media screen and (min-width: 769px) {
+        height: 350px;
+    }
+    @media screen and (min-width: 1025px) {
+        height: 425px;
+    }
+
+    .icons-menu {
+        margin-top: 15px;
+    }
+
+    nav {
+        margin-bottom: auto;
+        margin-top: 25px;
+        @media screen and (min-width: 376px) {
+            margin-top: 40px;
+        }
+        @media screen and (min-width: 641px) {
+            margin-top: 15px;
+            margin-bottom: 0;
+        }
+    }
+}
+
+#main-admin {
+    @include flex(column, center, space-between);
+    
+    h1 {
+        @include policy($semibold-font, white, 18px);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: absolute;
+        top: 190px;
+        @media screen and (min-width: 321px) {
+            top: 200px;
+        }
+        @media screen and (min-width: 376px) {
+            top: 220px;
+        }
+        @media screen and (min-width: 426px) {
+            font-size: 24px;
+            top: 215px;
+        }
+        @media screen and (min-width: 641px) {
+            font-size: 30px;
+            top: 160px;
+        }
+        @media screen and (min-width: 769px) {
+            font-size: 34px;
+            top: 195px;
+        }
+        @media screen and (min-width: 1025px) {
+            font-size: 40px;
+            top: 225px;
+        }
+    }
+}
+
+.table-of-contents {
+    @include flex(column, center, space-between);
+    align-self: center;
+    margin-top: 10px;
+
+    .title {
+        @include flex(column, center, space-between);
+        p {
+            margin-bottom: 5px;
+        }
+        p:first-child {
+            @include policy($light-font, $text-color, 18px);
+            span {
+                font-family: $semibold-font;
+            }
+        }
+        p:last-child {
+            @include policy($semibold-font, $grey, 18px);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 0;
+        }
+    }
+
+    nav {
+        margin-top: 25px;
+        @include flex(column, center, space-between);
+        @media screen and (min-width: 641px) {
+            flex-direction: row;
+            width: 350px;
+            align-items: baseline;
+        }
+
+        div {
+            @include flex(column, center, space-between);
+        }
+
+        a {
+            @include policy($light-font, $text-color, 16px);
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.contents {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: 641px) {
+        margin-top: 75px;
+    }
+    @media screen and (min-width: 1025px) {
+        margin-top: 100px;
+    }
+
+    .line {
+        @media screen and (min-width: 641px) {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .subline {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .center-line {
+            @media screen and (min-width: 641px) {
+                margin-right: 40px;
+            }
+        }
+
+        .right-line {
+            @media screen and (min-width: 641px) {
+                margin-right: 60px;
+            }
+        }
+    }
+
+    .title {
+        @include flex(column, center, space-between);
+        h3 {
+            @include policy($semibold-font, $text-color, 16px);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        hr {
+            display: block;
+            border: 0;
+            height: 3px;
+            width: 75px;
+            background: #e74a18;
+            margin: 0;
+        }
+    }
+
+    .content {
+        background-color: #fafafa;
+        display: flex;
+        flex-direction: column;
+        margin-top: 25px;
+        padding: 0 15px;
+        @media screen and (min-width: 641px) {
+            padding: 0 40px;
+        }
+        @media screen and (min-width: 769px) {
+            width: 75%;
+            align-self: center;
+            border-radius: 10px;
+        }
+        @media screen and (min-width: 1025px) {
+            width: 55%;
+        }
+
+        .part {
+            h3 {
+                @include policy($bold-font, $text-color, 16px);
+                margin-top: 30px;
+            }
+
+            input[type="text"], input[type="number"] {
+                border-bottom: 1.5px solid #818181;
+                padding-bottom: 3px;
+                padding-left: 5px;
+                width: 90%;
+                @include policy($light-font, $text-color, 14px);
+            }
+
+            input[type="file"] {
+                @include policy($main-font, $text-color, 12px);
+            }
+
+            select {
+                @include policy($main-font, $text-color, 14px);
+            }
+
+            select {
+                padding: 3px;
+                background-color: white;
+            }
+
+            textarea {
+                @include resize(97%, 115px);
+                border: none;
+                box-shadow: 0 0 5px lightgrey;
+            }
+
+            .recipe, .basket, .ingredient, .user {
+                display: flex;
+                flex-direction: column;
+                @media screen and (min-width: 641px) {
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+
+                .list-name {
+                    @include policy($main-font, $text-color, 14px);
+                }
+
+                .delete-btn, .admin-btn {
+                    font-family: $bold-font;
+                    font-size: 14px;
+                }
+                .delete-btn:hover, .admin-btn:hover {
+                    text-decoration: underline;
+                }
+                .delete-btn {
+                    color: $light-red;
+                    text-align: right;
+                }
+                .admin-btn {
+                    color: #77a513;
+                }
+            }
+
+            .user .user-action {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            hr {
+                display: block;
+                border: 0;
+                height: 1px;
+                width: 100%;
+                background: $hr-color;
+            }
+        }
+        
+        .submit {
+            @include policy($semibold-font, white, 14px);
+            text-transform: uppercase;
+            background-color: $light-red;
+            width: 100px;
+            padding: 5px;
+            border-radius: 10px;
+            align-self: center;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+    }
+
+    p:not(.list-name) {
+        @include policy($text-font, $text-color, 14px);
+        font-style: italic;
+    }
+}
+
+.ingredients-list {
+    ul {
+        align-self: center;
+        padding-left: 0;
+    }
+    li {
+        @include policy($text-font, $text-color, 14px);
+    }
+}
+
+.add-ingredient p {
+    margin: 15px 15px 0 15px;
+    text-align: justify;
+    @media screen and (min-width: 641px) {
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+}
+
+.users-management {
+    margin-bottom: 25px;
+    @media screen and (min-width: 641px) {
+        margin-bottom: 50px;
     }
 }

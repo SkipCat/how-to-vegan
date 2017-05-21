@@ -91,5 +91,9 @@ window.onload = function() {
         header.id = 'header-login';
     }
 
+    if (currentPage.search('admin') !== -1) {
+        header.id = 'header-admin';
+    }
+
 
 };

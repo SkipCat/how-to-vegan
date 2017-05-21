@@ -399,7 +399,8 @@
   z-index: 2; }
 .mapping input[type="image"] {
   width: 20px;
-  height: auto; }
+  height: auto;
+  z-index: 10; }
 .mapping #map {
   width: auto;
   height: 300px; }
@@ -1725,35 +1726,29 @@
     background-image: url("../img/bg_basket.png");
     height: 160px; } }
 
-.logout {
+#logout-profile {
   display: flex;
   align-items: center;
   margin-left: 20px; }
   @media screen and (min-width: 641px) {
-    .logout {
+    #logout-profile {
       display: none; } }
-  .logout img {
+  #logout-profile img {
     margin-right: 10px; }
-  .logout p {
+  #logout-profile p {
     font-family: "Signika Semibold";
     color: #444444;
     font-size: 14px;
     text-transform: uppercase; }
-  .logout p:hover {
+  #logout-profile p:hover {
     text-decoration: underline; }
 
-.back-profile {
-  display: none; }
-  @media screen and (min-width: 641px) {
-    .back-profile {
-      background-image: url("../img/back_profile.png");
-      background-repeat: no-repeat;
-      background-position: 50% 0%;
-      height: 100%;
-      display: block;
-      padding-top: 610px;
-      margin: 0 auto;
-      position: relative; } }
+#bg-profile {
+  width: 100%;
+  height: 470px;
+  background-image: url("../img/back_profile.png");
+  background-size: cover;
+  display: flex; }
 
 #main-profile {
   background-color: white;
@@ -1762,10 +1757,9 @@
   padding: 15px; }
   @media screen and (min-width: 641px) {
     #main-profile {
-      margin: 15px auto -300px auto;
-      width: 600px;
-      position: relative;
-      top: -570px; } }
+      height: 350px;
+      margin-left: 15%;
+      margin-right: 15%; } }
   @media screen and (min-width: 769px) {
     #main-profile {
       width: 600px; } }
@@ -1888,6 +1882,9 @@
   #pin-content > p span, #favorites-content > p span {
     font-family: "Signika Semibold"; }
 
+@media screen and (min-width: 641px) {
+  #pin-content {
+    height: 350px; } }
 #pin-content .pin-elt {
   background-color: #efefef;
   border-radius: 10px;
@@ -1900,24 +1897,26 @@
       width: 300px;
       margin: 10px auto;
       height: 95px; } }
-  #pin-content .pin-elt img {
+  #pin-content .pin-elt input[type="image"] {
     position: relative;
     left: 94%;
     top: -5px;
     width: 20px; }
-  #pin-content .pin-elt .pin-date, #pin-content .pin-elt .pin-name {
+  #pin-content .pin-elt .pin-date, #pin-content .pin-elt .pin-name, #pin-content .pin-elt .pin-content {
     font-family: "Signika Regular";
     color: #444444;
     font-size: 14px;
     text-align: center;
     margin: 5px 0; }
     @media screen and (min-width: 641px) {
-      #pin-content .pin-elt .pin-date, #pin-content .pin-elt .pin-name {
+      #pin-content .pin-elt .pin-date, #pin-content .pin-elt .pin-name, #pin-content .pin-elt .pin-content {
         margin: 0; } }
   #pin-content .pin-elt .pin-name {
     font-family: "Signika Semibold"; }
   #pin-content .pin-elt .pin-date {
     margin-top: 0; }
+  #pin-content .pin-elt .pin-content {
+    padding-left: 0; }
   #pin-content .pin-elt .btn-see-list {
     padding: 5px;
     width: 90px;
@@ -1926,6 +1925,26 @@
     @media screen and (min-width: 641px) {
       #pin-content .pin-elt .btn-see-list {
         margin: 0; } }
+
+#pin-content:target {
+  display: block; }
+
+#pin-content::-webkit-scrollbar {
+  width: 3px; }
+  @media screen and (min-width: 641px) {
+    #pin-content::-webkit-scrollbar {
+      width: 7px; } }
+  @media screen and (min-width: 769px) {
+    #pin-content::-webkit-scrollbar {
+      width: 10px; } }
+
+#pin-content::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px; }
+
+#pin-content::-webkit-scrollbar-thumb {
+  background-color: lightgrey;
+  border-radius: 3px; }
 
 #favorites-content #spotlight-type-recipe {
   padding: 0; }
@@ -2565,10 +2584,282 @@
             color: #e74a18;
             font-size: 15px; }
 
-@media screen and (min-width: 641px) {
-  #header-admin {
-    background-image: url("../img/bg_basket.png");
-    height: 160px; } }
+#header-admin {
+  background-image: url("../img/bg_admin_mobile.png");
+  height: 254px; }
+  @media screen and (min-width: 321px) {
+    #header-admin {
+      height: 275px; } }
+  @media screen and (min-width: 376px) {
+    #header-admin {
+      height: 300px; } }
+  @media screen and (min-width: 641px) {
+    #header-admin {
+      background-image: url("../img/bg_admin_desktop.png");
+      height: 275px; } }
+  @media screen and (min-width: 769px) {
+    #header-admin {
+      height: 350px; } }
+  @media screen and (min-width: 1025px) {
+    #header-admin {
+      height: 425px; } }
+  #header-admin .icons-menu {
+    margin-top: 15px; }
+  #header-admin nav {
+    margin-bottom: auto;
+    margin-top: 25px; }
+    @media screen and (min-width: 376px) {
+      #header-admin nav {
+        margin-top: 40px; } }
+    @media screen and (min-width: 641px) {
+      #header-admin nav {
+        margin-top: 15px;
+        margin-bottom: 0; } }
+
+#main-admin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; }
+  #main-admin h1 {
+    font-family: "Signika Semibold";
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 190px; }
+    @media screen and (min-width: 321px) {
+      #main-admin h1 {
+        top: 200px; } }
+    @media screen and (min-width: 376px) {
+      #main-admin h1 {
+        top: 220px; } }
+    @media screen and (min-width: 426px) {
+      #main-admin h1 {
+        font-size: 24px;
+        top: 215px; } }
+    @media screen and (min-width: 641px) {
+      #main-admin h1 {
+        font-size: 30px;
+        top: 160px; } }
+    @media screen and (min-width: 769px) {
+      #main-admin h1 {
+        font-size: 34px;
+        top: 195px; } }
+    @media screen and (min-width: 1025px) {
+      #main-admin h1 {
+        font-size: 40px;
+        top: 225px; } }
+
+.table-of-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  align-self: center;
+  margin-top: 10px; }
+  .table-of-contents .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; }
+    .table-of-contents .title p {
+      margin-bottom: 5px; }
+    .table-of-contents .title p:first-child {
+      font-family: "Signika Light";
+      color: #444444;
+      font-size: 18px; }
+      .table-of-contents .title p:first-child span {
+        font-family: "Signika Semibold"; }
+    .table-of-contents .title p:last-child {
+      font-family: "Signika Semibold";
+      color: #bbbbbb;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-top: 0; }
+  .table-of-contents nav {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; }
+    @media screen and (min-width: 641px) {
+      .table-of-contents nav {
+        flex-direction: row;
+        width: 350px;
+        align-items: baseline; } }
+    .table-of-contents nav div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between; }
+    .table-of-contents nav a {
+      font-family: "Signika Light";
+      color: #444444;
+      font-size: 16px;
+      margin-top: 5px;
+      margin-bottom: 5px; }
+
+.contents {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column; }
+  @media screen and (min-width: 641px) {
+    .contents {
+      margin-top: 75px; } }
+  @media screen and (min-width: 1025px) {
+    .contents {
+      margin-top: 100px; } }
+  @media screen and (min-width: 641px) {
+    .contents .line {
+      display: flex;
+      justify-content: space-between;
+      width: 100%; } }
+  .contents .line .subline {
+    display: flex;
+    flex-direction: column; }
+  @media screen and (min-width: 641px) {
+    .contents .line .center-line {
+      margin-right: 40px; } }
+  @media screen and (min-width: 641px) {
+    .contents .line .right-line {
+      margin-right: 60px; } }
+  .contents .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; }
+    .contents .title h3 {
+      font-family: "Signika Semibold";
+      color: #444444;
+      font-size: 16px;
+      text-transform: uppercase;
+      margin-bottom: 5px; }
+    .contents .title hr {
+      display: block;
+      border: 0;
+      height: 3px;
+      width: 75px;
+      background: #e74a18;
+      margin: 0; }
+  .contents .content {
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    padding: 0 15px; }
+    @media screen and (min-width: 641px) {
+      .contents .content {
+        padding: 0 40px; } }
+    @media screen and (min-width: 769px) {
+      .contents .content {
+        width: 75%;
+        align-self: center;
+        border-radius: 10px; } }
+    @media screen and (min-width: 1025px) {
+      .contents .content {
+        width: 55%; } }
+    .contents .content .part h3 {
+      font-family: "Signika Bold";
+      color: #444444;
+      font-size: 16px;
+      margin-top: 30px; }
+    .contents .content .part input[type="text"], .contents .content .part input[type="number"] {
+      border-bottom: 1.5px solid #818181;
+      padding-bottom: 3px;
+      padding-left: 5px;
+      width: 90%;
+      font-family: "Signika Light";
+      color: #444444;
+      font-size: 14px; }
+    .contents .content .part input[type="file"] {
+      font-family: "Signika Regular";
+      color: #444444;
+      font-size: 12px; }
+    .contents .content .part select {
+      font-family: "Signika Regular";
+      color: #444444;
+      font-size: 14px; }
+    .contents .content .part select {
+      padding: 3px;
+      background-color: white; }
+    .contents .content .part textarea {
+      width: 97%;
+      height: 115px;
+      border: none;
+      box-shadow: 0 0 5px lightgrey; }
+    .contents .content .part .recipe, .contents .content .part .basket, .contents .content .part .ingredient, .contents .content .part .user {
+      display: flex;
+      flex-direction: column; }
+      @media screen and (min-width: 641px) {
+        .contents .content .part .recipe, .contents .content .part .basket, .contents .content .part .ingredient, .contents .content .part .user {
+          flex-direction: row;
+          justify-content: space-between; } }
+      .contents .content .part .recipe .list-name, .contents .content .part .basket .list-name, .contents .content .part .ingredient .list-name, .contents .content .part .user .list-name {
+        font-family: "Signika Regular";
+        color: #444444;
+        font-size: 14px; }
+      .contents .content .part .recipe .delete-btn, .contents .content .part .recipe .admin-btn, .contents .content .part .basket .delete-btn, .contents .content .part .basket .admin-btn, .contents .content .part .ingredient .delete-btn, .contents .content .part .ingredient .admin-btn, .contents .content .part .user .delete-btn, .contents .content .part .user .admin-btn {
+        font-family: "Signika Bold";
+        font-size: 14px; }
+      .contents .content .part .recipe .delete-btn:hover, .contents .content .part .recipe .admin-btn:hover, .contents .content .part .basket .delete-btn:hover, .contents .content .part .basket .admin-btn:hover, .contents .content .part .ingredient .delete-btn:hover, .contents .content .part .ingredient .admin-btn:hover, .contents .content .part .user .delete-btn:hover, .contents .content .part .user .admin-btn:hover {
+        text-decoration: underline; }
+      .contents .content .part .recipe .delete-btn, .contents .content .part .basket .delete-btn, .contents .content .part .ingredient .delete-btn, .contents .content .part .user .delete-btn {
+        color: #e74a18;
+        text-align: right; }
+      .contents .content .part .recipe .admin-btn, .contents .content .part .basket .admin-btn, .contents .content .part .ingredient .admin-btn, .contents .content .part .user .admin-btn {
+        color: #77a513; }
+    .contents .content .part .user .user-action {
+      display: flex;
+      justify-content: space-between; }
+    .contents .content .part hr {
+      display: block;
+      border: 0;
+      height: 1px;
+      width: 100%;
+      background: #dadada; }
+    .contents .content .submit {
+      font-family: "Signika Semibold";
+      color: white;
+      font-size: 14px;
+      text-transform: uppercase;
+      background-color: #e74a18;
+      width: 100px;
+      padding: 5px;
+      border-radius: 10px;
+      align-self: center;
+      margin-top: 25px;
+      margin-bottom: 15px; }
+  .contents p:not(.list-name) {
+    font-family: "SourceSansPro";
+    color: #444444;
+    font-size: 14px;
+    font-style: italic; }
+
+.ingredients-list ul {
+  align-self: center;
+  padding-left: 0; }
+.ingredients-list li {
+  font-family: "SourceSansPro";
+  color: #444444;
+  font-size: 14px; }
+
+.add-ingredient p {
+  margin: 15px 15px 0 15px;
+  text-align: justify; }
+  @media screen and (min-width: 641px) {
+    .add-ingredient p {
+      margin-left: 80px;
+      margin-right: 80px; } }
+
+.users-management {
+  margin-bottom: 25px; }
+  @media screen and (min-width: 641px) {
+    .users-management {
+      margin-bottom: 50px; } }
 
 html {
   min-height: 100vh;
@@ -2638,7 +2929,7 @@ header {
       header nav {
         align-items: center;
         align-self: flex-start;
-        margin-top: 20px;
+        margin-top: 15px;
         width: 80%;
         margin-left: auto;
         margin-right: auto; } }
@@ -2733,25 +3024,6 @@ main {
   margin-left: 8%;
   margin-right: 8%; }
 
-/*
-.parallax {
-    height: 100vh;
-    overflow-y: auto;
-    perspective: 1px;
-
-    .parallax-background {
-        -webkit-transform: translateZ(-1px);
-        transform: translateZ(-1px) scale(2);
-        // content {
-            //     transform: translate(-50%, -50%);
-    }
-    .parallax-foreground {
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
-         //   transform: translate(-50%, -50%)
-    }
-}
-*/
 footer {
   background-color: #e74919; }
   footer span.howtovegan {
