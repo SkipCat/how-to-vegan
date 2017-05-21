@@ -57,24 +57,6 @@ function listActions() {
         document.querySelector('#footer-desktop').classList.remove('blur-elements');
     };
 
-    /*
-    function deleteList() {
-        // remove all select elements from DOM
-        while (ul.firstChild) {
-            ul.removeChild(ul.firstChild);
-        }
-        
-        // create default select element
-        var li = document.createElement('li');
-        li.className = 'shop-li';
-        //li = ul.insertBefore(li, recapList);
-        ul.appendChild(li);
-        
-        firstSelect.childNodes[1].value = 'NULL';
-        li.appendChild(firstSelect);
-    }
-    */
-
     deleteButton.onclick = function() {
         location.reload();
     };
