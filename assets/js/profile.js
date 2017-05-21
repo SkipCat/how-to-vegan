@@ -11,7 +11,6 @@ function displaySavedList() {
 function modifyPassword() {
     var pModify = document.querySelector('.password .link');
     var divModify = document.querySelector('.password div:last-child');
-    console.log(pModify, divModify);
 
     pModify.onclick = function() {
         divModify.style.display = 'flex';

@@ -57,7 +57,7 @@ class SecurityController extends BaseController {
                 'user'  => $user,
                 'lists' => $lists,
                 'recipes' => $recipes,
-            ]); // get also comments
+            ]);
         }
         else {
             echo $this->redirect('login');
