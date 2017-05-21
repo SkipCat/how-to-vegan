@@ -1743,12 +1743,13 @@
   #logout-profile p:hover {
     text-decoration: underline; }
 
-#bg-profile {
-  width: 100%;
-  height: 470px;
-  background-image: url("../img/back_profile.png");
-  background-size: cover;
-  display: flex; }
+@media screen and (min-width: 641px) {
+  #bg-profile {
+    width: 100%;
+    height: 470px;
+    background-image: url("../img/back_profile.png");
+    background-size: cover;
+    display: flex; } }
 
 #main-profile {
   background-color: white;
@@ -1757,12 +1758,12 @@
   padding: 15px; }
   @media screen and (min-width: 641px) {
     #main-profile {
-      height: 350px;
+      height: 325px;
       margin-left: 15%;
-      margin-right: 15%; } }
-  @media screen and (min-width: 769px) {
-    #main-profile {
-      width: 600px; } }
+      margin-right: 15%;
+      margin-top: 60px;
+      padding-left: 25px;
+      box-shadow: 0 0 10px lightgrey; } }
   #main-profile nav {
     width: 100%;
     margin-top: 10px;
@@ -1799,10 +1800,13 @@
 
 #modify-content {
   margin-top: 30px; }
+  @media screen and (min-width: 641px) {
+    #modify-content .profile-content {
+      display: flex;
+      height: 100%; } }
   #modify-content .profile-content .firstname, #modify-content .profile-content .email, #modify-content .profile-content .birthdate, #modify-content .profile-content .address {
     display: flex;
-    align-items: baseline;
-    white-space: pre; }
+    align-items: baseline; }
   #modify-content .profile-content > p {
     font-family: "SourceSansPro";
     color: #444444;
@@ -1840,8 +1844,7 @@
     display: flex;
     flex-direction: column; }
     #modify-content .profile-content .password .click-modify, #modify-content .profile-content .password .enter-modify {
-      display: flex;
-      white-space: pre; }
+      display: flex; }
     #modify-content .profile-content .password .enter-modify {
       display: none;
       flex-direction: column; }
@@ -1849,10 +1852,13 @@
         margin: 0; }
       #modify-content .profile-content .password .enter-modify input:last-child {
         margin-top: 0; }
+  #modify-content .profile-content .column {
+    display: flex;
+    flex-direction: column; }
   #modify-content .name {
-    font-family: "Signika Semibold";
+    font-family: "Signika Bold";
     color: #444444;
-    font-size: 14px;
+    font-size: 13px;
     text-transform: uppercase;
     margin: 10px 0; }
   #modify-content .info {
@@ -1864,8 +1870,6 @@
     width: 150px; }
   #modify-content .link {
     color: #e74a18; }
-  #modify-content input[type="date"] {
-    width: 100px; }
   #modify-content input[type="submit"] {
     width: 130px;
     padding: 7px;
@@ -1873,30 +1877,35 @@
     letter-spacing: 1px;
     margin-top: 20px;
     margin-bottom: 10px; }
+    @media screen and (min-width: 641px) {
+      #modify-content input[type="submit"] {
+        margin-top: auto; } }
 
 #pin-content > p, #favorites-content > p {
   font-family: "Signika Light";
   color: #444444;
   font-size: 15px;
-  margin-top: 30px; }
+  margin-top: 30px;
+  margin-bottom: 35px; }
   #pin-content > p span, #favorites-content > p span {
     font-family: "Signika Semibold"; }
 
 @media screen and (min-width: 641px) {
   #pin-content {
     height: 350px; } }
+#pin-content .container-lists {
+  display: flex;
+  flex-wrap: wrap; }
 #pin-content .pin-elt {
   background-color: #efefef;
   border-radius: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px auto;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  width: 250px; }
   @media screen and (min-width: 641px) {
     #pin-content .pin-elt {
-      width: 300px;
-      margin: 10px auto;
-      height: 95px; } }
+      width: 230px; } }
   #pin-content .pin-elt input[type="image"] {
     position: relative;
     left: 94%;
@@ -1908,9 +1917,6 @@
     font-size: 14px;
     text-align: center;
     margin: 5px 0; }
-    @media screen and (min-width: 641px) {
-      #pin-content .pin-elt .pin-date, #pin-content .pin-elt .pin-name, #pin-content .pin-elt .pin-content {
-        margin: 0; } }
   #pin-content .pin-elt .pin-name {
     font-family: "Signika Semibold"; }
   #pin-content .pin-elt .pin-date {
@@ -1922,21 +1928,16 @@
     width: 90px;
     margin-top: 10px;
     margin-bottom: 10px; }
-    @media screen and (min-width: 641px) {
-      #pin-content .pin-elt .btn-see-list {
-        margin: 0; } }
 
 #pin-content:target {
   display: block; }
 
-#pin-content::-webkit-scrollbar {
-  width: 3px; }
-  @media screen and (min-width: 641px) {
-    #pin-content::-webkit-scrollbar {
-      width: 7px; } }
-  @media screen and (min-width: 769px) {
-    #pin-content::-webkit-scrollbar {
-      width: 10px; } }
+@media screen and (min-width: 641px) {
+  #pin-content::-webkit-scrollbar {
+    width: 7px; } }
+@media screen and (min-width: 769px) {
+  #pin-content::-webkit-scrollbar {
+    width: 10px; } }
 
 #pin-content::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -1951,8 +1952,7 @@
   #favorites-content #spotlight-type-recipe .spotlight-recipe {
     width: 115px;
     height: 190px;
-    margin-left: 7px;
-    margin-right: 7px;
+    margin: 0 7px 25px 7px;
     box-shadow: 0 0 10px lightgrey; }
     @media screen and (min-width: 321px) {
       #favorites-content #spotlight-type-recipe .spotlight-recipe {
@@ -1976,10 +1976,15 @@
 #modify-content, #pin-content, #favorites-content {
   display: none; }
 
+@media screen and (min-width: 641px) {
+  #active-content {
+    height: 80%; } }
+
 #active-content #modify-content, #active-content #pin-content,
 #active-content #favorites-content {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  height: 100%; }
 
 @media screen and (min-width: 641px) {
   #header-about {
