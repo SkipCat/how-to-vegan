@@ -411,7 +411,7 @@
 @media screen and (min-width: 641px) {
   #header-basket {
     background-image: url("../img/bg_basket.png");
-    height: 225px; } }
+    height: 160px; } }
 
 #main-basket {
   margin-top: 15px; }
@@ -844,59 +844,36 @@
   #header-home {
     height: 425px; } }
 
-#main-home #form-list {
-  margin-bottom: 30px; }
+#main-home .rslides {
+  position: absolute;
+  padding: 0;
+  top: 75%; }
+  @media screen and (min-width: 321px) {
+    #main-home .rslides {
+      top: 70%; } }
+  @media screen and (min-width: 376px) {
+    #main-home .rslides {
+      top: 65%; } }
+  @media screen and (min-width: 426px) {
+    #main-home .rslides {
+      top: 60%; } }
   @media screen and (min-width: 641px) {
-    #main-home #form-list {
-      width: 300px;
-      position: absolute;
-      top: 155px;
-      right: 5%;
-      bottom: 0;
-      left: initial; }
-      #main-home #form-list #img-leaf {
-        display: none; } }
+    #main-home .rslides {
+      width: 450px;
+      top: 75px;
+      right: 0; } }
   @media screen and (min-width: 769px) {
-    #main-home #form-list {
-      right: 12%; }
-      #main-home #form-list .list {
-        width: 380px;
-        height: 510px; } }
+    #main-home .rslides {
+      width: 550px;
+      top: 50px; } }
   @media screen and (min-width: 1025px) {
-    #main-home #form-list {
-      top: 125px; } }
-  @media screen and (min-width: 641px) {
-    #main-home #form-list #img-pin {
-      top: 7%; } }
-  @media screen and (min-width: 769px) {
-    #main-home #form-list #img-pin {
-      top: 11%; } }
-  @media screen and (min-width: 641px) {
-    #main-home #form-list ul {
-      margin-left: 14px;
-      margin-top: 19px; } }
-  @media screen and (min-width: 769px) {
-    #main-home #form-list ul {
-      margin-left: 21px;
-      margin-top: 34px; }
-      #main-home #form-list ul select {
-        font-size: 20px; } }
-  @media screen and (min-width: 641px) {
-    #main-home #form-list #img-delete {
-      margin-left: 69%;
-      margin-top: 114%; } }
-  @media screen and (min-width: 769px) {
-    #main-home #form-list #img-delete {
-      margin-left: 92%;
-      margin-top: 144%; } }
-  #main-home #form-list .convert {
-    margin-left: auto; }
-    @media screen and (min-width: 641px) {
-      #main-home #form-list .convert {
-        margin-top: -12px; } }
-    @media screen and (min-width: 769px) {
-      #main-home #form-list .convert {
-        margin-left: 125px; } }
+    #main-home .rslides {
+      width: 650px;
+      top: 35px; } }
+  #main-home .rslides li {
+    list-style-type: none; }
+  #main-home .rslides img {
+    width: 100%; }
 #main-home #leaf-side {
   display: none;
   width: 100px;
@@ -935,17 +912,17 @@
     height: auto; } }
 .presentation img {
   display: none; }
-  @media screen and (min-width: 769px) {
-    .presentation img {
-      display: block;
-      width: 260px;
-      height: auto; } }
   @media screen and (min-width: 1025px) {
     .presentation img {
+      display: block;
       width: 300px;
       height: auto; } }
 .presentation div {
   padding: 20px; }
+  @media screen and (min-width: 769px) {
+    .presentation div {
+      width: 350px;
+      padding-left: 100px; } }
   @media screen and (min-width: 1025px) {
     .presentation div {
       padding-left: 0; } }
@@ -1234,7 +1211,17 @@
   justify-content: center; }
 
 #spotlight-type-basket {
+  margin-top: 340px;
   background-color: #f7f7f7; }
+  @media screen and (min-width: 321px) {
+    #spotlight-type-basket {
+      margin-top: 400px; } }
+  @media screen and (min-width: 376px) {
+    #spotlight-type-basket {
+      margin-top: 450px; } }
+  @media screen and (min-width: 426px) {
+    #spotlight-type-basket {
+      margin-top: 550px; } }
   @media screen and (min-width: 641px) {
     #spotlight-type-basket {
       padding-top: 80px;
@@ -1747,16 +1734,47 @@
   -ms-filter: blur(5px);
   filter: blur(5px); }
 
-#btn-logout img {
-  width: 30px; }
+@media screen and (min-width: 641px) {
+  #header-profile {
+    background-image: url("../img/bg_basket.png");
+    height: 160px; } }
+
+#btn-logout {
+  text-align: center;
+  display: block; }
+  #btn-logout img {
+    width: 30px; }
+
+.back-profile {
+  display: none; }
+  @media screen and (min-width: 641px) {
+    .back-profile {
+      background-image: url("../img/back_profile.png");
+      background-repeat: no-repeat;
+      background-position: 50% 0%;
+      height: 100%;
+      display: block;
+      padding-top: 610px;
+      margin: 0 auto;
+      position: relative; } }
 
 #main-profile {
   background-color: white;
-  border-radius: 5px;
+  border-radius: 15px;
   margin: 15px;
   padding: 15px; }
+  @media screen and (min-width: 641px) {
+    #main-profile {
+      margin: 15px auto -300px auto;
+      width: 600px;
+      position: relative;
+      top: -570px; } }
+  @media screen and (min-width: 769px) {
+    #main-profile {
+      width: 600px; } }
   #main-profile nav {
     width: 100%;
+    margin-top: 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1769,7 +1787,7 @@
     #main-profile nav hr {
       display: none; }
     #main-profile nav #active-tab a {
-      font-family: "Signika Bold";
+      font-family: "Signika Semibold";
       color: #444444;
       font-size: 15px; }
     #main-profile nav #active-tab hr {
@@ -1790,12 +1808,10 @@
 
 #modify-content {
   margin-top: 30px; }
-  #modify-content .profile-content > div:not(.gender) {
+  #modify-content .profile-content .firstname, #modify-content .profile-content .email, #modify-content .profile-content .birthdate, #modify-content .profile-content .address {
     display: flex;
     align-items: baseline;
     white-space: pre; }
-  #modify-content .profile-content div:first-child p {
-    margin-bottom: 0; }
   #modify-content .profile-content > p {
     font-family: "SourceSansPro";
     color: #444444;
@@ -1806,36 +1822,59 @@
     display: flex;
     flex-direction: row;
     align-items: baseline;
-    justify-content: space-between; }
+    justify-content: flex-start; }
+    #modify-content .profile-content .gender > p {
+      width: 100px; }
     #modify-content .profile-content .gender .choose-gender {
       display: flex;
-      flex-wrap: wrap;
-      width: 80%; }
+      flex-wrap: wrap; }
       #modify-content .profile-content .gender .choose-gender div {
         display: flex;
         align-items: center; }
+        @media screen and (min-width: 641px) {
+          #modify-content .profile-content .gender .choose-gender div {
+            padding-left: 15px; } }
       #modify-content .profile-content .gender .choose-gender label {
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-around;
+        justify-content: flex-start;
         width: 75px; }
         #modify-content .profile-content .gender .choose-gender label p {
-          margin: 5px 0; }
+          margin: 5px 0;
+          padding-left: 5px; }
       #modify-content .profile-content .gender .choose-gender img {
         height: 20px; }
+  #modify-content .profile-content .password {
+    display: flex;
+    flex-direction: column; }
+    #modify-content .profile-content .password .click-modify, #modify-content .profile-content .password .enter-modify {
+      display: flex;
+      white-space: pre; }
+    #modify-content .profile-content .password .enter-modify {
+      display: none;
+      flex-direction: column; }
+      #modify-content .profile-content .password .enter-modify input:first-child {
+        margin: 0; }
+      #modify-content .profile-content .password .enter-modify input:last-child {
+        margin-top: 0; }
   #modify-content .name {
-    font-family: "Signika Bold";
+    font-family: "Signika Semibold";
     color: #444444;
-    font-size: 13px;
+    font-size: 14px;
     text-transform: uppercase;
     margin: 10px 0; }
   #modify-content .info {
     font-family: "Signika Regular";
     color: #444444;
     font-size: 14px;
-    margin: 10px 0;
-    width: 100%; }
+    margin: 10px 0 11px 0;
+    padding-left: 10px;
+    width: 150px; }
+  #modify-content .link {
+    color: #e74a18; }
+  #modify-content input[type="date"] {
+    width: 100px; }
   #modify-content input[type="submit"] {
     width: 130px;
     padding: 7px;
@@ -1850,7 +1889,7 @@
   font-size: 15px;
   margin-top: 30px; }
   #pin-content > p span, #favorites-content > p span {
-    font-family: "Signika Bold"; }
+    font-family: "Signika Semibold"; }
 
 #pin-content .pin-elt {
   background-color: #efefef;
@@ -1859,33 +1898,37 @@
   margin-bottom: 10px;
   display: flex;
   flex-direction: column; }
-  #pin-content .pin-elt input[type="image"] {
+  @media screen and (min-width: 641px) {
+    #pin-content .pin-elt {
+      width: 300px;
+      margin: 10px auto;
+      height: 95px; } }
+  #pin-content .pin-elt img {
     position: relative;
     left: 94%;
     top: -5px;
     width: 20px; }
-  #pin-content .pin-elt .pin-date, #pin-content .pin-elt .pin-name, #pin-content .pin-elt .pin-content {
+  #pin-content .pin-elt .pin-date, #pin-content .pin-elt .pin-name {
+    font-family: "Signika Regular";
     color: #444444;
+    font-size: 14px;
     text-align: center;
     margin: 5px 0; }
+    @media screen and (min-width: 641px) {
+      #pin-content .pin-elt .pin-date, #pin-content .pin-elt .pin-name {
+        margin: 0; } }
   #pin-content .pin-elt .pin-name {
-    font-family: "Signika Semibold";
-    font-size: 16px; }
+    font-family: "Signika Semibold"; }
   #pin-content .pin-elt .pin-date {
-    font-family: "Signika Regular";
-    font-size: 13px;
     margin-top: 0; }
-  #pin-content .pin-elt .pin-content {
-    display: none;
-    font-family: "Signika Light";
-    font-size: 15px;
-    padding: 0;
-    margin-bottom: 15px; }
   #pin-content .pin-elt .btn-see-list {
     padding: 5px;
     width: 90px;
     margin-top: 10px;
     margin-bottom: 10px; }
+    @media screen and (min-width: 641px) {
+      #pin-content .pin-elt .btn-see-list {
+        margin: 0; } }
 
 #favorites-content #spotlight-type-recipe {
   padding: 0; }
@@ -1894,7 +1937,6 @@
     height: 190px;
     margin-left: 7px;
     margin-right: 7px;
-    margin-top: 0;
     box-shadow: 0 0 10px lightgrey; }
     @media screen and (min-width: 321px) {
       #favorites-content #spotlight-type-recipe .spotlight-recipe {
@@ -1905,6 +1947,10 @@
         height: 200px;
         margin-left: 10px;
         margin-right: 10px; } }
+    @media screen and (min-width: 769px) {
+      #favorites-content #spotlight-type-recipe .spotlight-recipe {
+        width: 200px;
+        height: 250px; } }
 #favorites-content input[type="image"] {
   position: relative;
   left: 85%;
@@ -2531,6 +2577,11 @@
             font-family: "SourceSansPro Italic";
             color: #e74a18;
             font-size: 15px; }
+
+@media screen and (min-width: 641px) {
+  #header-admin {
+    background-image: url("../img/bg_basket.png");
+    height: 160px; } }
 
 html {
   min-height: 100vh;

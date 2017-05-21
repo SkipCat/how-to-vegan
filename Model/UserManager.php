@@ -84,14 +84,21 @@ class UserManager {
     }
 
     public function editProfile($data) {
-        if (empty($data['password'])) {
-            $user = $this->getUserById($_SESSION['user_id']);
+        $user = $this->getUserById($_SESSION['user_id']);
+        if (empty($data['old-pass']) || empty($data['new-pass'])) {
             $pass = $user['password'];
         }
         else {
-            $pass = $this->userHash($data['password']);
+            if (password_verify($data['old-pass'], $user['password'])) {
+                $pass = $this->userHash($data['new-pass']);
+                echo 'password verify OK';
+            }
+            else {
+                echo 'password verify false';
+                return false;
+            }
         }
-        
+
         $query = $this->DBManager->findOneSecure("UPDATE users SET 
             username = :username,
             email = :email, 
@@ -110,6 +117,7 @@ class UserManager {
                 'id'        => $_SESSION['user_id']
             ]
         );
+        var_dump($query);
         return $query;
     }
 

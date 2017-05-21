@@ -1,6 +1,7 @@
 {% extends 'index.html.twig' %}
 
 {% block content %}
+    <div class="back-profile"></div>
     <main id="main-profile">
         <nav class="blur">
             <div>
@@ -28,8 +29,14 @@
                         <input type="email" class="info" value="{{ user.email }}" name="email">
                     </div>
                     <div class="password">
-                        <p class="name">Mot de passe : </p>
-                        <input type="password" class="info" placeholder="Modifier le mot de passe" name="password">
+                        <div class="click-modify">
+                            <p class="name">Mot de passe : </p>
+                            <p class="info link">Modifier le mot de passe</p>
+                        </div>
+                        <div class="enter-modify">
+                            <input type="password" class="info" placeholder="Mot de passe actuel" name="old-pass">
+                            <input type="password" class="info" placeholder="Nouveau mot de passe" name="new-pass">
+                        </div>
                     </div>
                     <div class="gender">
                         <p class="name">Genre : </p>
@@ -72,7 +79,7 @@
                         <p class="name">Date de naissance : </p>
                         <input type="date" class="info" value="{{ user.birthdate }}" name="birthdate">
                     </div>
-                    <div class="adress">
+                    <div class="address">
                         <p class="name">Adresse : </p>
                         <input type="text" class="info" value="{{ user.address }}" name="address">
                     </div>
@@ -155,7 +162,7 @@
                                     </div>
                                     <div class="modal-content">
                                         <div class="modal-title">
-                                            <h2>{{ recipe.name }}</h2>                
+                                            <h2>{{ recipe.name }}</h2>
                                             <div class="kitchen">
                                                 <div class="chief">
                                                     <img src="assets/img/chief.png" alt="chief icon">
@@ -189,14 +196,14 @@
                                             <div class="comment">
                                                 <p>Jean Pierre D.</p>
                                                 <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                                                     Minima blanditiis architecto temporibus odio illum saepe dolorum, pariatur.
                                                 </p>
                                             </div>
                                             <div class="comment">
                                                 <p>Jean Pierre D.</p>
                                                 <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                                                     Minima blanditiis architecto temporibus odio illum saepe dolorum, pariatur.
                                                 </p>
                                             </div>
@@ -317,8 +324,8 @@
             </div>
         </div>
     </main>
-    <form action="?action=deleteProfile" method="POST">
-        <input type="password" name="password">
-        <input type="submit" value="Supprimer ce compte">
-    </form>
+
+    <script>
+
+    </script>
 {% endblock %}

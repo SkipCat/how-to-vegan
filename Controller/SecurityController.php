@@ -15,7 +15,7 @@ class SecurityController extends BaseController {
                 echo $this->redirect('home');
             }
             else {
-                echo $result = 'Invalid username or password';
+                echo $result = 'Pseudo ou mot de passe invalide';
                 return false;
             }
         }
@@ -71,11 +71,12 @@ class SecurityController extends BaseController {
                 $manager = UserManager::getInstance();
                 $user = $manager->getUserById($_SESSION['user_id']);
                 $manager->editProfile($_POST);
-                $this->redirect('profile');
+                echo 'updated';
+                //echo $this->redirect('profile');
             }
             else {
-                $error = 'Un ou plusieurs champs requis vide(s).';
-                echo $this->renderView('profile.html.twig', ['error' => $error]);
+                echo $error = 'Un ou plusieurs champs requis vide(s).';
+                //echo $this->renderView('profile.html.twig', ['error' => $error]);
             }
         }
         else {
