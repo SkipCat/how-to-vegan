@@ -8,8 +8,10 @@ window.onload = function() {
 
     if (currentPage.search('home') !== -1) {
         header.id = 'header-home';
-        convert();
-        listActions();
+        //convert();
+        //listActions();
+        carousel();
+        modalActions();
     }
 
     if (currentPage.search('convert') !== -1) {
@@ -37,7 +39,8 @@ window.onload = function() {
     }
 
     if (currentPage.search('profile') !== -1) {
-        //header.id = 'header-profile';
+        header.id = 'header-profile';
+
         var modifyLink = document.querySelector('#modify-link');
         var pinLink = document.querySelector('#pin-link');
         var favoritesLink = document.querySelector('#favorites-link');
@@ -69,6 +72,7 @@ window.onload = function() {
         else { // modify or something else
             modifyLink.parentNode.id = 'active-tab';
             modifyContent.parentNode.id = 'active-content';
+            modifyPassword();
         }
         displaySavedList();
     }
@@ -81,5 +85,9 @@ window.onload = function() {
     
     if (currentPage.search('modal') !== -1) {
         header.id = 'header-modal';
+    }
+
+    if (currentPage.search('admin') !== -1) {
+
     }
 };
