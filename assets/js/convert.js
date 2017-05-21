@@ -43,7 +43,6 @@ function convert() {
         var newProduct = product.clone();
         $('<li></li>').addClass('shop-li').insertBefore($('#recap-list'));
         ($('li').last()).append(newProduct);
-        console.log('new select');
 
         // select click
         newProduct.each(function() {
