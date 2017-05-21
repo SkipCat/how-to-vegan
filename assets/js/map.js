@@ -1,4 +1,4 @@
-    
+
 var paris = {lat: 48.866667, lng: 2.333333};
 
 var markers = [
@@ -118,7 +118,7 @@ window.initMap = function() {
 }
 
 function geocodeAddress(geocoder, resultsMap) {
-    var address = document.getElementById('form-localization').value;
+    var address = document.getElementById('input-adress').value;
     geocoder.geocode({'address': address}, function (results, status) {
         if (status === 'OK') {
             resultsMap.setCenter(results[0].geometry.location);

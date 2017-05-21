@@ -399,7 +399,8 @@
   z-index: 2; }
 .mapping input[type="image"] {
   width: 20px;
-  height: auto; }
+  height: auto;
+  z-index: 10; }
 .mapping #map {
   width: auto;
   height: 300px; }
@@ -1725,35 +1726,29 @@
     background-image: url("../img/bg_basket.png");
     height: 160px; } }
 
-.logout {
+#logout-profile {
   display: flex;
   align-items: center;
   margin-left: 20px; }
   @media screen and (min-width: 641px) {
-    .logout {
+    #logout-profile {
       display: none; } }
-  .logout img {
+  #logout-profile img {
     margin-right: 10px; }
-  .logout p {
+  #logout-profile p {
     font-family: "Signika Semibold";
     color: #444444;
     font-size: 14px;
     text-transform: uppercase; }
-  .logout p:hover {
+  #logout-profile p:hover {
     text-decoration: underline; }
 
-.back-profile {
-  display: none; }
-  @media screen and (min-width: 641px) {
-    .back-profile {
-      background-image: url("../img/back_profile.png");
-      background-repeat: no-repeat;
-      background-position: 50% 0%;
-      height: 100%;
-      display: block;
-      padding-top: 610px;
-      margin: 0 auto;
-      position: relative; } }
+#bg-profile {
+  width: 100%;
+  height: 470px;
+  background-image: url("../img/back_profile.png");
+  background-size: cover;
+  display: flex; }
 
 #main-profile {
   background-color: white;
@@ -1762,10 +1757,9 @@
   padding: 15px; }
   @media screen and (min-width: 641px) {
     #main-profile {
-      margin: 15px auto -300px auto;
-      width: 600px;
-      position: relative;
-      top: -570px; } }
+      height: 350px;
+      margin-left: 15%;
+      margin-right: 15%; } }
   @media screen and (min-width: 769px) {
     #main-profile {
       width: 600px; } }
@@ -1888,6 +1882,9 @@
   #pin-content > p span, #favorites-content > p span {
     font-family: "Signika Semibold"; }
 
+@media screen and (min-width: 641px) {
+  #pin-content {
+    height: 350px; } }
 #pin-content .pin-elt {
   background-color: #efefef;
   border-radius: 10px;
@@ -1900,24 +1897,26 @@
       width: 300px;
       margin: 10px auto;
       height: 95px; } }
-  #pin-content .pin-elt img {
+  #pin-content .pin-elt input[type="image"] {
     position: relative;
     left: 94%;
     top: -5px;
     width: 20px; }
-  #pin-content .pin-elt .pin-date, #pin-content .pin-elt .pin-name {
+  #pin-content .pin-elt .pin-date, #pin-content .pin-elt .pin-name, #pin-content .pin-elt .pin-content {
     font-family: "Signika Regular";
     color: #444444;
     font-size: 14px;
     text-align: center;
     margin: 5px 0; }
     @media screen and (min-width: 641px) {
-      #pin-content .pin-elt .pin-date, #pin-content .pin-elt .pin-name {
+      #pin-content .pin-elt .pin-date, #pin-content .pin-elt .pin-name, #pin-content .pin-elt .pin-content {
         margin: 0; } }
   #pin-content .pin-elt .pin-name {
     font-family: "Signika Semibold"; }
   #pin-content .pin-elt .pin-date {
     margin-top: 0; }
+  #pin-content .pin-elt .pin-content {
+    padding-left: 0; }
   #pin-content .pin-elt .btn-see-list {
     padding: 5px;
     width: 90px;
@@ -1926,6 +1925,26 @@
     @media screen and (min-width: 641px) {
       #pin-content .pin-elt .btn-see-list {
         margin: 0; } }
+
+#pin-content:target {
+  display: block; }
+
+#pin-content::-webkit-scrollbar {
+  width: 3px; }
+  @media screen and (min-width: 641px) {
+    #pin-content::-webkit-scrollbar {
+      width: 7px; } }
+  @media screen and (min-width: 769px) {
+    #pin-content::-webkit-scrollbar {
+      width: 10px; } }
+
+#pin-content::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px; }
+
+#pin-content::-webkit-scrollbar-thumb {
+  background-color: lightgrey;
+  border-radius: 3px; }
 
 #favorites-content #spotlight-type-recipe {
   padding: 0; }

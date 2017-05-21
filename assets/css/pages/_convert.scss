@@ -325,7 +325,6 @@
     }
 }
 
-
 .mapping {
     p {
         @include policy($main-font, $text-color, 16px);
@@ -354,6 +353,7 @@
 
     input[type="image"] {
         @include resize(20px, auto);
+        z-index: 10;
     }
 
     #map {

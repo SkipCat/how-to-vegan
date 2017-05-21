@@ -1,335 +1,332 @@
 {% extends 'index.html.twig' %}
 
 {% block content %}
-    <div class="back-profile"></div>
-    <a href="?action=logout" class="logout">
+    <a href="?action=logout" id="logout-profile">
         <img src="assets/img/logout.png">
         <p href="?action=logout">Se déconnecter</p>
     </a>
-    <main id="main-profile">
-        <nav class="blur">
-            <div>
-                <a href="#modify-content" id="modify-link">Profil</a>
-                <hr>
-            </div>
-            <div >
-                <a href="#pin-content" id="pin-link">épinglés</a>
-                <hr>
-            </div>
-            <div >
-                <a href="#favorites-content" id="favorites-link">Favoris</a>
-                <hr>
-            </div>
-        </nav>
-        <div class="blur">
-            <form action="?action=editProfile" method="POST" id="modify-content">
-                <div class="profile-content">
-                    <div class="firstname">
-                        <p class="name">Pseudo : </p>
-                        <input type="text" class="info" value="{{ user.username }}" name="username">
-                    </div>
-                    <div class="email">
-                        <p class="name">Email : </p>
-                        <input type="email" class="info" value="{{ user.email }}" name="email">
-                    </div>
-                    <div class="password">
-                        <div class="click-modify">
-                            <p class="name">Mot de passe : </p>
-                            <p class="info link">Modifier le mot de passe</p>
-                        </div>
-                        <div class="enter-modify">
-                            <input type="password" class="info" placeholder="Mot de passe actuel" name="old-pass">
-                            <input type="password" class="info" placeholder="Nouveau mot de passe" name="new-pass">
-                        </div>
-                    </div>
-                    <div class="gender">
-                        <p class="name">Genre : </p>
-                        <div class="choose-gender">
-                            <div>
-                                {% if user.gender == 'female' %}
-                                    <input type="radio" value="female" id="female" name="gender" checked>
-                                {% else %}
-                                    <input type="radio" value="female" id="female" name="gender">
-                                {% endif %}
-                                <label for="female">
-                                    <img src="assets/img/female.png">
-                                    <p class="info">Femme</p>
-                                </label>
-                            </div>
-                            <div>
-                                {% if user.gender == 'male' %}
-                                    <input type="radio" value="male" id="male" name="gender" checked>
-                                {% else %}
-                                    <input type="radio" value="male" id="male" name="gender">
-                                {% endif %}
-                                <label for="male">
-                                    <img src="assets/img/male.png">
-                                    <p class="info">Homme</p>
-                                </label>
-                            </div>
-                            <div>
-                                {% if user.gender == 'other' %}
-                                    <input type="radio" value="other" id="other" name="gender" checked>
-                                {% else %}
-                                    <input type="radio" value="other" id="other" name="gender">
-                                {% endif %}
-                                <label for="other">
-                                    <p class="info">Autre</p>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="birthdate">
-                        <p class="name">Date de naissance : </p>
-                        <input type="date" class="info" value="{{ user.birthdate }}" name="birthdate">
-                    </div>
-                    <div class="address">
-                        <p class="name">Adresse : </p>
-                        <input type="text" class="info" value="{{ user.address }}" name="address">
-                    </div>
+    <div id="bg-profile">
+        <main id="main-profile">
+            <nav class="blur">
+                <div>
+                    <a href="#modify-content" id="modify-link">Profil</a>
+                    <hr>
                 </div>
-                <input type="submit" value="Enregistrer">
-            </form>
-        </div>
-        <div class="blur">
-            <div id="pin-content">
-                <p>vos listes de <span>courses</span></p>
-                {% for list in lists %}
-                    <form action="?action=deleteList" method="POST" class="pin-elt">
-                        <input type="image" src="assets/img/delete_pin_list.png">
-                        <p class="pin-date">{{ list.date }}</p>
-                        <p class="pin-name">"{{ list.name }}"</p>
-                        <input type="hidden" name="listname" value="{{ list.name }}">
-                        <ul class="pin-content" id="content-modal-{{ list.id }}">
-                            {{ list.content }}
-                        </ul>
-                        <a href="#content-modal-{{ list.id }}" class="btn-see-list">Voir la liste</a>
-                    </form>
-                {% endfor %}
-            </div>
-        </div>
-        <div>
-            <div id="favorites-content">
-                <p class="blur">vos <span>recettes</span> coup de coeur !</p>
-                <div class="spotlight-type" id="spotlight-type-recipe">
-                    <div class="spotlight-container-recipe">
-                        {% for recipe in recipes %}
-                            <form action="?action=deleteFavorite" method="POST">
-                                <input type="image" src="assets/img/delete_pin_list.png">
-                                <input type="hidden" name="id" value="{{ recipe.id }}">
-                                <div class="spotlight-container-img spotlight-recipe blur">
-                                    <img class="spotlight-img" src="{{ recipe.img }}" alt="frame picture">
-                                    <div class="container-desc">
-                                        <p class="recipe-title">{{ recipe.name }}</p>
-                                        <div class="kitchen">
-                                            <div class="recipe-author">
-                                                <img src="assets/img/chief.png" alt="chief icon">
-                                                <div>
-                                                    <p class="proposed-by">Proposé par</p>
-                                                    <p class="author">Le staff</p>
-                                                </div>
-                                            </div>
-                                            <div class="category-img">
-                                                <img src="assets/img/category_vegan.png" alt="icon vegan">
-                                                {% if 'gluten-free' in recipe.category %}
-                                                    <img src="assets/img/category_gluten_free.png" alt="icon gluten free">
-                                                {% endif %}
-                                                {% if 'bio' in recipe.category %}
-                                                    <img src="assets/img/category_bio.png" alt="icon bio">
-                                                {% endif %}
-                                            </div>
-                                        </div>
-                                        <div class="time">
-                                            <img src="assets/img/alarm.png" alt="alarm icon">
-                                            <p><span>Prep:</span> {{ recipe.preparation }}min</p>
-                                            <p><span>Cuisson:</span> {{ recipe.baking }}min</p>
-                                            <p><span>Total:</span> {{ recipe.preparation + recipe.baking }}min</p>
-                                        </div>
-                                        <a href="#modal-{{ recipe.id }}" class="open-modal">Voir plus</a>
-                                    </div>
+                <div >
+                    <a href="#pin-content" id="pin-link">épinglés</a>
+                    <hr>
+                </div>
+                <div >
+                    <a href="#favorites-content" id="favorites-link">Favoris</a>
+                    <hr>
+                </div>
+            </nav>
+            <div class="blur">
+                <form action="?action=editProfile" method="POST" id="modify-content">
+                    <div class="profile-content">
+                        <div class="firstname">
+                            <p class="name">Pseudo : </p>
+                            <input type="text" class="info" value="{{ user.username }}" name="username">
+                        </div>
+                        <div class="email">
+                            <p class="name">Email : </p>
+                            <input type="email" class="info" value="{{ user.email }}" name="email">
+                        </div>
+                        <div class="password">
+                            <div class="click-modify">
+                                <p class="name">Mot de passe : </p>
+                                <p class="info link">Modifier le mot de passe</p>
+                            </div>
+                            <div class="enter-modify">
+                                <input type="password" class="info" placeholder="Mot de passe actuel" name="old-pass">
+                                <input type="password" class="info" placeholder="Nouveau mot de passe" name="new-pass">
+                            </div>
+                        </div>
+                        <div class="gender">
+                            <p class="name">Genre : </p>
+                            <div class="choose-gender">
+                                <div>
+                                    {% if user.gender == 'female' %}
+                                        <input type="radio" value="female" id="female" name="gender" checked>
+                                    {% else %}
+                                        <input type="radio" value="female" id="female" name="gender">
+                                    {% endif %}
+                                    <label for="female">
+                                        <img src="assets/img/female.png">
+                                        <p class="info">Femme</p>
+                                    </label>
                                 </div>
-                            </form>
-                            <div id="modal-{{ recipe.id }}" class="modal">
-                                <div class="modal-block" >
-                                    <a class="close" href="#main-recipe">
-                                        <img src="assets/img/back_modal.png" alt="Fermer" title="Fermer la fenêtre" class="btn-in-modal btn-close">
-                                    </a>
-                                    <img src="assets/img/heart_modal.png" alt="Aimer" title="Aimer cette recette" class="btn-in-modal btn-crush">
-                                    <div class="modal-img">
-                                        <img src="{{ recipe.img }}" alt="{{ recipe.img }}">
-                                        <div class="time">
-                                            <img src="assets/img/alarm.png" alt="alarm">
-                                            <p><span>Préparation</span> : {{ recipe.preparation }}min</p>
-                                            <p><span>Cuisson</span> : {{ recipe.baking }}min</p>
-                                            <p><span>Total</span> : {{ recipe.preparation + recipe.baking }}min</p>
-                                        </div>
-                                    </div>
-                                    <div class="modal-content">
-                                        <div class="modal-title">
-                                            <h2>{{ recipe.name }}</h2>
+                                <div>
+                                    {% if user.gender == 'male' %}
+                                        <input type="radio" value="male" id="male" name="gender" checked>
+                                    {% else %}
+                                        <input type="radio" value="male" id="male" name="gender">
+                                    {% endif %}
+                                    <label for="male">
+                                        <img src="assets/img/male.png">
+                                        <p class="info">Homme</p>
+                                    </label>
+                                </div>
+                                <div>
+                                    {% if user.gender == 'other' %}
+                                        <input type="radio" value="other" id="other" name="gender" checked>
+                                    {% else %}
+                                        <input type="radio" value="other" id="other" name="gender">
+                                    {% endif %}
+                                    <label for="other">
+                                        <p class="info">Autre</p>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="birthdate">
+                            <p class="name">Date de naissance : </p>
+                            <input type="date" class="info" value="{{ user.birthdate }}" name="birthdate">
+                        </div>
+                        <div class="address">
+                            <p class="name">Adresse : </p>
+                            <input type="text" class="info" value="{{ user.address }}" name="address">
+                        </div>
+                    </div>
+                    <input type="submit" value="Enregistrer">
+                </form>
+            </div>
+            <div class="blur">
+                <div id="pin-content">
+                    <p>vos listes de <span>courses</span></p>
+                    {% for list in lists %}
+                        <form action="?action=deleteList" method="POST" class="pin-elt">
+                            <input type="image" src="assets/img/delete_pin_list.png">
+                            <p class="pin-date">{{ list.date }}</p>
+                            <p class="pin-name">"{{ list.name }}"</p>
+                            <input type="hidden" name="listname" value="{{ list.name }}">
+                            <ul class="pin-content" id="content-modal-{{ list.id }}">
+                                {{ list.content }}
+                            </ul>
+                            <a href="#content-modal-{{ list.id }}" class="btn-see-list">Voir la liste</a>
+                        </form>
+                    {% endfor %}
+                </div>
+            </div>
+            <div>
+                <div id="favorites-content">
+                    <p class="blur">vos <span>recettes</span> coup de coeur !</p>
+                    <div class="spotlight-type" id="spotlight-type-recipe">
+                        <div class="spotlight-container-recipe">
+                            {% for recipe in recipes %}
+                                <form action="?action=deleteFavorite" method="POST">
+                                    <input type="image" src="assets/img/delete_pin_list.png">
+                                    <input type="hidden" name="id" value="{{ recipe.id }}">
+                                    <div class="spotlight-container-img spotlight-recipe blur">
+                                        <img class="spotlight-img" src="{{ recipe.img }}" alt="frame picture">
+                                        <div class="container-desc">
+                                            <p class="recipe-title">{{ recipe.name }}</p>
                                             <div class="kitchen">
-                                                <div class="chief">
+                                                <div class="recipe-author">
                                                     <img src="assets/img/chief.png" alt="chief icon">
                                                     <div>
                                                         <p class="proposed-by">Proposé par</p>
                                                         <p class="author">Le staff</p>
                                                     </div>
                                                 </div>
-                                                <div class="category">
-                                                    <img src="assets/img/category_vegan.png" alt="vegan">
-                                                    <img src="assets/img/category_gluten_free.png" alt="gluten free">
+                                                <div class="category-img">
+                                                    <img src="assets/img/category_vegan.png" alt="icon vegan">
+                                                    {% if 'gluten-free' in recipe.category %}
+                                                        <img src="assets/img/category_gluten_free.png" alt="icon gluten free">
+                                                    {% endif %}
+                                                    {% if 'bio' in recipe.category %}
+                                                        <img src="assets/img/category_bio.png" alt="icon bio">
+                                                    {% endif %}
                                                 </div>
                                             </div>
+                                            <div class="time">
+                                                <img src="assets/img/alarm.png" alt="alarm icon">
+                                                <p><span>Prep:</span> {{ recipe.preparation }}min</p>
+                                                <p><span>Cuisson:</span> {{ recipe.baking }}min</p>
+                                                <p><span>Total:</span> {{ recipe.preparation + recipe.baking }}min</p>
+                                            </div>
+                                            <a href="#modal-{{ recipe.id }}" class="open-modal">Voir plus</a>
                                         </div>
-                                        <div class="modal-desc">
-                                            <div class="ingredients">
-                                                <h3>Ingrédients</h3>
+                                    </div>
+                                </form>
+                                <div id="modal-{{ recipe.id }}" class="modal">
+                                    <div class="modal-block" >
+                                        <a class="close" href="#main-recipe">
+                                            <img src="assets/img/back_modal.png" alt="Fermer" title="Fermer la fenêtre" class="btn-in-modal btn-close">
+                                        </a>
+                                        <img src="assets/img/heart_modal.png" alt="Aimer" title="Aimer cette recette" class="btn-in-modal btn-crush">
+                                        <div class="modal-img">
+                                            <img src="{{ recipe.img }}" alt="{{ recipe.img }}">
+                                            <div class="time">
+                                                <img src="assets/img/alarm.png" alt="alarm">
+                                                <p><span>Préparation</span> : {{ recipe.preparation }}min</p>
+                                                <p><span>Cuisson</span> : {{ recipe.baking }}min</p>
+                                                <p><span>Total</span> : {{ recipe.preparation + recipe.baking }}min</p>
+                                            </div>
+                                        </div>
+                                        <div class="modal-content">
+                                            <div class="modal-title">
+                                                <h2>{{ recipe.name }}</h2>
+                                                <div class="kitchen">
+                                                    <div class="chief">
+                                                        <img src="assets/img/chief.png" alt="chief icon">
+                                                        <div>
+                                                            <p class="proposed-by">Proposé par</p>
+                                                            <p class="author">Le staff</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="category">
+                                                        <img src="assets/img/category_vegan.png" alt="vegan">
+                                                        <img src="assets/img/category_gluten_free.png" alt="gluten free">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-desc">
+                                                <div class="ingredients">
+                                                    <h3>Ingrédients</h3>
+                                                    <hr>
+                                                    <p>{{ recipe.ingredients }}</p>
+                                                </div>
+                                                <div class="recipe">
+                                                    <h3>Recette</h3>
+                                                    <hr>
+                                                    <p>{{ recipe.recipe }}</p>
+                                                </div>
+                                            </div>
+                                            <!--
+                                            <div class="modal-comments">
+                                                <h3>Commentaires</h3>
                                                 <hr>
-                                                <p>{{ recipe.ingredients }}</p>
+                                                <div class="comment">
+                                                    <p>Jean Pierre D.</p>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                        Minima blanditiis architecto temporibus odio illum saepe dolorum, pariatur.
+                                                    </p>
+                                                </div>
+                                                <div class="comment">
+                                                    <p>Jean Pierre D.</p>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                        Minima blanditiis architecto temporibus odio illum saepe dolorum, pariatur.
+                                                    </p>
+                                                </div>
                                             </div>
-                                            <div class="recipe">
-                                                <h3>Recette</h3>
+                                            -->
+                                            <div class="modal-similars">
+                                                <h3>Recettes similaires</h3>
                                                 <hr>
-                                                <p>{{ recipe.recipe }}</p>
-                                            </div>
-                                        </div>
-                                        <!--
-                                        <div class="modal-comments">
-                                            <h3>Commentaires</h3>
-                                            <hr>
-                                            <div class="comment">
-                                                <p>Jean Pierre D.</p>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                    Minima blanditiis architecto temporibus odio illum saepe dolorum, pariatur.
-                                                </p>
-                                            </div>
-                                            <div class="comment">
-                                                <p>Jean Pierre D.</p>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                    Minima blanditiis architecto temporibus odio illum saepe dolorum, pariatur.
-                                                </p>
-                                            </div>
-                                        </div>
-                                        -->
-                                        <div class="modal-similars">
-                                            <h3>Recettes similaires</h3>
-                                            <hr>
-                                            <div class="spotlight-container-recipe">
-                                                <div class="spotlight-container-img spotlight-recipe">
-                                                    <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
-                                                    <div class="container-desc">
-                                                        <p class="recipe-title">Gâteau coco</p>
-                                                        <div class="kitchen">
-                                                            <div class="recipe-author">
-                                                                <img src="assets/img/chief.png" alt="chief icon">
-                                                                <div>
-                                                                    <p class="proposed-by">Proposé par</p>
-                                                                    <p class="author">Le staff</p>
+                                                <div class="spotlight-container-recipe">
+                                                    <div class="spotlight-container-img spotlight-recipe">
+                                                        <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
+                                                        <div class="container-desc">
+                                                            <p class="recipe-title">Gâteau coco</p>
+                                                            <div class="kitchen">
+                                                                <div class="recipe-author">
+                                                                    <img src="assets/img/chief.png" alt="chief icon">
+                                                                    <div>
+                                                                        <p class="proposed-by">Proposé par</p>
+                                                                        <p class="author">Le staff</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="category-img">
+                                                                    <img src="assets/img/category_vegan.png" alt="icon vegan">
                                                                 </div>
                                                             </div>
-                                                            <div class="category-img">
-                                                                <img src="assets/img/category_vegan.png" alt="icon vegan">
+                                                            <div class="time">
+                                                                <img src="assets/img/alarm.png" alt="alarm icon">
+                                                                <p><span>Prep:</span> 15min</p>
+                                                                <p><span>Cuisson:</span> 30min</p>
+                                                                <p><span>Total:</span> 45min</p>
                                                             </div>
+                                                            <a href="#modal-recipe" class="open-modal">Voir plus</a>
                                                         </div>
-                                                        <div class="time">
-                                                            <img src="assets/img/alarm.png" alt="alarm icon">
-                                                            <p><span>Prep:</span> 15min</p>
-                                                            <p><span>Cuisson:</span> 30min</p>
-                                                            <p><span>Total:</span> 45min</p>
-                                                        </div>
-                                                        <a href="#modal-recipe" class="open-modal">Voir plus</a>
                                                     </div>
-                                                </div>
-                                                <div class="spotlight-container-img spotlight-recipe">
-                                                    <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
-                                                    <div class="container-desc">
-                                                        <p class="recipe-title">Gâteau coco</p>
-                                                        <div class="kitchen">
-                                                            <div class="recipe-author">
-                                                                <img src="assets/img/chief.png" alt="chief icon">
-                                                                <div>
-                                                                    <p class="proposed-by">Proposé par</p>
-                                                                    <p class="author">Le staff</p>
+                                                    <div class="spotlight-container-img spotlight-recipe">
+                                                        <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
+                                                        <div class="container-desc">
+                                                            <p class="recipe-title">Gâteau coco</p>
+                                                            <div class="kitchen">
+                                                                <div class="recipe-author">
+                                                                    <img src="assets/img/chief.png" alt="chief icon">
+                                                                    <div>
+                                                                        <p class="proposed-by">Proposé par</p>
+                                                                        <p class="author">Le staff</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="category-img">
+                                                                    <img src="assets/img/category_vegan.png" alt="icon vegan">
                                                                 </div>
                                                             </div>
-                                                            <div class="category-img">
-                                                                <img src="assets/img/category_vegan.png" alt="icon vegan">
+                                                            <div class="time">
+                                                                <img src="assets/img/alarm.png" alt="alarm icon">
+                                                                <p><span>Prep:</span> 15min</p>
+                                                                <p><span>Cuisson:</span> 30min</p>
+                                                                <p><span>Total:</span> 45min</p>
                                                             </div>
+                                                            <a href="#modal-recipe" class="open-modal">Voir plus</a>
                                                         </div>
-                                                        <div class="time">
-                                                            <img src="assets/img/alarm.png" alt="alarm icon">
-                                                            <p><span>Prep:</span> 15min</p>
-                                                            <p><span>Cuisson:</span> 30min</p>
-                                                            <p><span>Total:</span> 45min</p>
-                                                        </div>
-                                                        <a href="#modal-recipe" class="open-modal">Voir plus</a>
                                                     </div>
-                                                </div>
-                                                <div class="spotlight-container-img spotlight-recipe">
-                                                    <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
-                                                    <div class="container-desc">
-                                                        <p class="recipe-title">Gâteau coco</p>
-                                                        <div class="kitchen">
-                                                            <div class="recipe-author">
-                                                                <img src="assets/img/chief.png" alt="chief icon">
-                                                                <div>
-                                                                    <p class="proposed-by">Proposé par</p>
-                                                                    <p class="author">Le staff</p>
+                                                    <div class="spotlight-container-img spotlight-recipe">
+                                                        <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
+                                                        <div class="container-desc">
+                                                            <p class="recipe-title">Gâteau coco</p>
+                                                            <div class="kitchen">
+                                                                <div class="recipe-author">
+                                                                    <img src="assets/img/chief.png" alt="chief icon">
+                                                                    <div>
+                                                                        <p class="proposed-by">Proposé par</p>
+                                                                        <p class="author">Le staff</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="category-img">
+                                                                    <img src="assets/img/category_vegan.png" alt="icon vegan">
                                                                 </div>
                                                             </div>
-                                                            <div class="category-img">
-                                                                <img src="assets/img/category_vegan.png" alt="icon vegan">
+                                                            <div class="time">
+                                                                <img src="assets/img/alarm.png" alt="alarm icon">
+                                                                <p><span>Prep:</span> 15min</p>
+                                                                <p><span>Cuisson:</span> 30min</p>
+                                                                <p><span>Total:</span> 45min</p>
                                                             </div>
+                                                            <a href="#modal-recipe" class="open-modal">Voir plus</a>
                                                         </div>
-                                                        <div class="time">
-                                                            <img src="assets/img/alarm.png" alt="alarm icon">
-                                                            <p><span>Prep:</span> 15min</p>
-                                                            <p><span>Cuisson:</span> 30min</p>
-                                                            <p><span>Total:</span> 45min</p>
-                                                        </div>
-                                                        <a href="#modal-recipe" class="open-modal">Voir plus</a>
                                                     </div>
-                                                </div>
-                                                <div class="spotlight-container-img spotlight-recipe">
-                                                    <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
-                                                    <div class="container-desc">
-                                                        <p class="recipe-title">Gâteau coco</p>
-                                                        <div class="kitchen">
-                                                            <div class="recipe-author">
-                                                                <img src="assets/img/chief.png" alt="chief icon">
-                                                                <div>
-                                                                    <p class="proposed-by">Proposé par</p>
-                                                                    <p class="author">Le staff</p>
+                                                    <div class="spotlight-container-img spotlight-recipe">
+                                                        <img class="spotlight-img" src="assets/img/cake.png" alt="frame picture">
+                                                        <div class="container-desc">
+                                                            <p class="recipe-title">Gâteau coco</p>
+                                                            <div class="kitchen">
+                                                                <div class="recipe-author">
+                                                                    <img src="assets/img/chief.png" alt="chief icon">
+                                                                    <div>
+                                                                        <p class="proposed-by">Proposé par</p>
+                                                                        <p class="author">Le staff</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="category-img">
+                                                                    <img src="assets/img/category_vegan.png" alt="icon vegan">
                                                                 </div>
                                                             </div>
-                                                            <div class="category-img">
-                                                                <img src="assets/img/category_vegan.png" alt="icon vegan">
+                                                            <div class="time">
+                                                                <img src="assets/img/alarm.png" alt="alarm icon">
+                                                                <p><span>Prep:</span> 15min</p>
+                                                                <p><span>Cuisson:</span> 30min</p>
+                                                                <p><span>Total:</span> 45min</p>
                                                             </div>
+                                                            <a href="#modal-recipe" class="open-modal">Voir plus</a>
                                                         </div>
-                                                        <div class="time">
-                                                            <img src="assets/img/alarm.png" alt="alarm icon">
-                                                            <p><span>Prep:</span> 15min</p>
-                                                            <p><span>Cuisson:</span> 30min</p>
-                                                            <p><span>Total:</span> 45min</p>
-                                                        </div>
-                                                        <a href="#modal-recipe" class="open-modal">Voir plus</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        {% endfor %}
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
-
-    <script>
-
-    </script>
+        </main>
+    </div>
 {% endblock %}
