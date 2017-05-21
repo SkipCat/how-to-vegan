@@ -2,6 +2,277 @@
 
 {% block content %}
     <main id="main-admin">
+        <h1>Big Brother is watching you</h1>
+        <div class="table-of-contents">
+            <div class="title">
+                <p>page d'<span>administration</span></p>
+                <p>sommaire</p>
+            </div>
+            <nav>
+                <div class="adds">
+                    <a>Ajout de recette</a>
+                    <a>Ajout de panier</a>
+                    <a>Ajout d'ingrédient</a>
+                </div>
+                <div class="rm-and-users">
+                    <a>Suppression de recette</a>
+                    <a>Suppression de panier</a>
+                    <a>Suppression d'ingrédient</a>
+                    <a>Gestion des utilisateurs</a>
+                </div>
+            </div>
+        </div>
+        <form class="contents add-recipe" action="?action=addRecipe" method="POST" enctype="multipart/form-data">
+            <div class="title">
+                <h3>Ajouter une recette</h3>
+                <hr>
+            </div>
+            <div class="content">
+                <div class="line"> 
+                    <div class="part">
+                        <h3>Image de la recette</h3>
+                        <input type="file" id="uploads_file" name="uploads_file" accept="image/*">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="100000000">
+                    </div>
+                    <div class="part center-line">
+                        <h3>Nom de la recette</h3>
+                        <input type="text" name="name_recipe" placeholder="Pudding de Chia">
+                    </div>
+                    <div class="part">
+                        <h3>Filtres de la recette</h3>
+                        <select name="category">
+                            <option value="NULL">Sélectionnez une catégorie</option>
+                            <optgroup label="Entrée">
+                                <option value="starter vegan">Vegan</option>
+                                <option value="starter bio">Bio</option>
+                                <option value="starter gluten-free">Gluten-free</option>
+                            </optgroup>
+                            <optgroup label="Plat">
+                                <option value="main vegan">Vegan</option>
+                                <option value="main bio">Bio</option>
+                                <option value="main gluten-free">Gluten-free</option>
+                            </optgroup>
+                            <optgroup label="Dessert">
+                                <option value="dessert vegan">Vegan</option>
+                                <option value="dessert bio">Bio</option>
+                                <option value="dessert gluten-free">Gluten-free</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+                <div class="line">
+                    <div class="subline">
+                        <div class="part">
+                            <h3>Temps de préparation (min)</h3>
+                            <input type="number" name="preparation" placeholder="10 min">
+                        </div>
+                        <div class="part">
+                            <h3>Temps de cuisson</h3>
+                            <input type="number" name="baking" placeholder="10 min">
+                        </div>
+                    </div>
+                    <div class="part">
+                        <h3>Ingrédients</h3>
+                        <textarea name="ingredients"></textarea>
+                    </div>
+                    <div class="part">
+                        <h3>Préparation</h3>
+                        <textarea name="recipe"></textarea>
+                    </div>
+                </div>
+                <input type="submit" value="Ajouter" class="submit">
+            </div>
+        </form>
+        <form class="contents add-basket" action="?action=addBasket" method="POST" enctype="multipart/form-data">
+            <div class="title">
+                <h3>Ajouter un panier</h3>
+                <hr>
+            </div>
+            <div class="content">
+                <div class="line">
+                    <div class="part">
+                        <h3>Image du panier</h3>
+                        <input type="file" id="uploads_file" name="uploads_file" accept="image/*">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="100000000">
+                    </div>
+                    <div class="part center-line">
+                        <h3>Nom du panier</h3>
+                        <input type="text" name="name_basket" placeholder="Pudding de Chia">
+                    </div>
+                    <div class="part right-line">
+                        <h3>Prix du panier</h3>
+                        <input type="number" name="price" placeholder="~ 42&euro;">
+                    </div>
+                </div>
+                <div class="line">
+                    <div class="part">
+                        <h3>Catégorie du panier</h3>
+                        <select name="category">
+                            <option value="NULL">Sélectionnez une catégorie</option>
+                            <option value="bio">Bio</option>
+                            <option value="gluten-free">Gluten-free</option>
+                            <option value="bio gluten-free">Bio et Gluten-free</option>
+                        </select>
+                    </div>
+                    <div class="part">
+                        <h3>Catégorie du filtre</h3>
+                        <p>(Même que ci-dessus.)</p>
+                        <select name="category_id">
+                            <option value="NULL">Sélectionnez une catégorie</option>
+                            <option value="vegan">Vegan</option>
+                            <option value="bio">Bio</option>
+                            <option value="gluten-free">Gluten-free</option>
+                            <option value="bio_gf">Bio et Gluten-free</option>
+                        </select>
+                    </div>
+                </div>
+                <input type="submit" value="Ajouter" class="submit">
+            </div>
+        </form>
+        <div class="contents ingredients-list">
+            <div class="title">
+                <h3>Liste des paniers</h3>
+                <hr>
+            </div>
+            <ul>
+                {% for basket in baskets %}
+                    <li>{{ basket.name }} -- id : {{ basket.id }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <form class="contents add-ingredient" action="?action=addIngredient" method="POST" enctype="multipart/form-data">
+            <div class="title">
+                <h3>Ajouter un ingrédient</h3>
+                <hr>                
+                <p>
+                    Pour ajouter un ingrédient à un panier, rentrer dans le champ en dessous l'"id"
+                    correspondant au panier (voir 'Liste des paniers' ci-dessus).
+                </p>
+            </div>
+            <div class="content">
+                <div class="line">
+                    <div class="part">
+                        <h3>Numéro du panier</h3>
+                        <input type="number" name="id_basket" placeholder="5">
+                    </div>
+                    <div class="subline">
+                        <div class="part">
+                            <h3>Image de l'ingrédient</h3>
+                            <input type="file" id="uploads_file" name="uploads_file" accept="image/*">
+                            <input type="hidden" name="MAX_FILE_SIZE" value="100000000">
+                        </div>
+                        <div class="part">
+                            <h3>Nom de l'ingrédient</h3>
+                            <input type="text" name="name_ingredient" placeholder="Pudding de Chia">
+                        </div>
+                    </div>
+                    <div class="part">
+                        <h3>Description de l'ingrédient</h3>
+                        <textarea name="description"></textarea>
+                    </div>
+                </div>
+                <input type="submit" value="Ajouter"  class="submit">
+            </div>
+        </form>
+        <form class="contents rm-recipe" action="?action=deleteRecipe" method="POST" enctype="multipart/form-data">
+            <div class="title">
+                <h3>Supprimer une recette</h3>
+                <hr>
+            </div>
+            <div class="content">
+                <div class="part">
+                    <h3>Nom de la recette</h3>
+                    {% for recipe in recipes %}
+                        <div class="recipe">
+                            <p class="list-name">{{ recipe.name }}</p>
+                            <input type="hidden" value="{{ recipe.name }}" name="name_delete_recipe">
+                            <input type="submit" value="Supprimer" class="delete-btn">
+                        </div>
+                        <hr>
+                    {% endfor %}
+                </div>
+            </div>
+        </form>
+        <form class="contents rm-basket" action="?action=deleteBasket" method="POST" enctype="multipart/form-data">
+            <div class="title">
+                <h3>Supprimer un panier</h3>
+                <hr>
+            </div>
+            <div class="content">
+                <div class="part">
+                    <h3>Nom du panier</h3>
+                    {% for basket in baskets %}
+                        <div class="basket">
+                            <p class="list-name">{{ basket.name }}</p>
+                            <input type="hidden" value="{{ basket.name }}" name="name_delete_basket">
+                            <input type="submit" value="Supprimer" class="delete-btn">
+                        </div>
+                        <hr>
+                    {% endfor %}
+                </div>
+            </div>
+        </form>
+        <form class="contents rm-ingredient" action="?action=deleteIngredient" method="POST" enctype="multipart/form-data">
+            <div class="title">
+                <h3>Supprimer un ingrédient</h3>
+                <hr>
+            </div>
+            <div class="content">
+                <div class="part">
+                    <h3>Nom de l'ingrédient</h3>
+                    {% for ingredient in ingredients %}
+                        <div class="ingredient">
+                            <p class="list-name">{{ ingredient.name }}</p>
+                            <input type="hidden" value="{{ ingredient.name }}" name="name_delete_ingredient">
+                            <input type="submit" value="Supprimer" class="delete-btn">
+                        </div>
+                        <hr>
+                    {% endfor %}
+                </div>
+            </div>
+        </form>
+        <div class="contents users-management">
+            <div class="title">
+                <h3>Gestion des utilisateurs</h3>
+                <hr>
+            </div>
+            <div class="content">
+                <div class="part">
+                    <h3>Nom de l'utilisateur</h3>
+                    {% for user in users %}
+                        <div class="user">
+                            <p class="list-name">{{ user.username }}</p>
+                            <div class="user-action">
+                                {% if user.admin == 'admin' %}
+                                    {% if admin.admin == 'superadmin' %}
+                                        <!-- retirer les droits admin-btn -->
+                                        <form action="?action=deleteUser" method="POST" class="form-admin" id="form-delete-admin">
+                                            <input type="hidden" name="username" value="{{ user.username }}">
+                                            <input type="submit" value="Supprimer" class="delete-btn">
+                                        </form>
+                                    {% endif %}
+                                {% elseif user.admin == 'superadmin' %}
+                                    <p>Statut inchangeable</p>
+                                {% else %}
+                                    <form action="?action=addAdmin" method="POST" class="form-admin" id="form-add-admin">
+                                        <input type="hidden" name="username" value="{{ user.username }}">
+                                        <input type="submit" value="Nommer administrateur" class="admin-btn">
+                                    </form>
+                                    <form action="?action=deleteUser" method="POST" class="form-admin" id="form-delete-admin">
+                                        <input type="hidden" name="username" value="{{ user.username }}">
+                                        <input type="submit" value="Supprimer" class="delete-btn">
+                                    </form>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <hr>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </main>
+
+        <!--
         <ul>
             {% for user in users %}
                 <li>
@@ -29,7 +300,6 @@
                 </li>
             {% endfor %}
         </ul>
-        <h1>AJOUTER DES ELEMENTS</h1>
         <div>
             <h2>Ajouter une recette</h2>
             <form action="?action=addRecipe" method="POST" name="recipe-form" enctype="multipart/form-data">
@@ -69,8 +339,6 @@
                 <input type="submit">
             </form>
         </div>
-        <hr>
-        <hr>
         <div>
             <h2>Ajouter un Panier</h2>
             <form action="?action=addBasket" method="POST" name="basket-form" enctype="multipart/form-data">
@@ -97,8 +365,6 @@
                 </select><br>
                 <input type="submit">
             </form>
-            <hr>
-            <hr>
             <div>
                 <h2>Liste des paniers</h2>
                 <ul>
@@ -119,9 +385,6 @@
                     <input type="textarea" name="description"><br>
                     <input type="submit">
                 </form>
-                <br><br>
-                <hr>
-                <hr>
                 <br><br>
                 <h1>SUPPRIMER DES ELEMENTS</h1>
                 <div>
@@ -170,4 +433,5 @@
             </div>
         </div>
     </main>
+    -->
 {% endblock %}

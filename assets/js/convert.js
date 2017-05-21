@@ -30,7 +30,7 @@ function convert() {
             }
         });
     });
-        
+
     function disableOptions() {
         $('option').prop('disabled', false);
         $.each(disabled, function(key, val) {
@@ -43,10 +43,10 @@ function convert() {
         var newProduct = product.clone();
         $('<li></li>').addClass('shop-li').insertBefore($('#recap-list'));
         ($('li').last()).append(newProduct);
-        console.log('new select'); 
+        console.log('new select');
 
         // select click
-        newProduct.each(function() {           
+        newProduct.each(function() {
             $(this).on('click', function() {
                 if ($('select').last().val() != 'NULL') {
                     $('input[type="submit"]').prop('disabled', false);
@@ -90,6 +90,7 @@ function convert() {
         $('select').each(function(){
             var value =  $(this).find("option:selected").text();
             shoppingList.push(value);
+            $('.submit input[type="submit"]').prop('disabled', true);
         });
 
         $.ajax({
@@ -115,9 +116,10 @@ function convert() {
                                 }
                                 else if ($.inArray('Bio', filterList) !== -1) {
                                     $('#recap-list').append('<li></li>').addClass('result-li');
-                                    ($('li').last()).addClass('result-li').append(result[i].bio + '<br>'); 
+                                    ($('li').last()).addClass('result-li').append(result[i].bio + '<br>');
                                 }
                                 else if ($.inArray('Gluten-free', filterList) !== -1) {
+                                    $('#recap-list').append('<li></li>').addClass('result-li');
                                     ($('li').last()).addClass('result-li').append(result[i].gluten + '<br>');
                                 }
                             }
