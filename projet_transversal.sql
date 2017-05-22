@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Dim 21 Mai 2017 à 21:50
+-- Généré le :  Lun 22 Mai 2017 à 11:32
 -- Version du serveur :  5.7.14
 -- Version de PHP :  7.0.10
 
@@ -64,7 +64,8 @@ CREATE TABLE `favorites` (
 
 INSERT INTO `favorites` (`id`, `id_recipe`, `name`, `username`) VALUES
 (3, 2, 'seitan faï¿½on poulet tikka massala', 'skipcat'),
-(4, 1, 'gï¿½teau coco', 'clement2');
+(4, 1, 'gï¿½teau coco', 'clement2'),
+(5, 21, 'Flocon d\'avoine CrÃ©meux aux fruits', 'clement2');
 
 -- --------------------------------------------------------
 
@@ -133,8 +134,11 @@ INSERT INTO `recipes` (`id`, `img`, `name`, `category`, `preparation`, `baking`,
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `birthdate` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `gender` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `admin` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -142,10 +146,10 @@ CREATE TABLE `users` (
 -- Contenu de la table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `email`, `admin`) VALUES
-(2, 'Clement', '$2y$10$c2FsdHlzYWx0eXNhbHR5curG1OB/ga4Eo4z6DkMf21or1pjeYoNme', 'jean@aol.com', 'admin'),
-(3, 'clement2', '$2y$10$wMsKBtoiVgbPx3lzUoCQse0A2qWBWcd4UYN17Sw/MXDG2cXdvKyPi', 'clement.caira@gmail.com', 'admin'),
-(34, 'admin', 'admin', 'admin@admin.com', 'admin');
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `address`, `birthdate`, `gender`, `admin`) VALUES
+(1, 'test', 'test@supinternet.fr', '$2y$10$CzXQ08UXphRz9pWHh1asaO7xXbC5DXK.8AHI2X/z7Ifj3AxsS1ePW', 'test', '2018-02-02', 'female', NULL),
+(2, 'admin', 'admin@supinternet.fr', '$2y$10$SV3Vyy042CLBZV3q.F2hU.FxP6A1Lev76G3fQ00E5tPPBTndcfwCu', 'admin', '2016-01-01', 'female', 'admin'),
+(3, 'superadmin', 'superadmin@supinternet.fr', '$2y$10$wvz5ueYm16tm8wB09gYUxO/YeQHYs./r9Kd/YpOxjqgR4Z9RMN7/q', 'superadmin', '2016-01-01', 'other', 'superadmin');
 
 --
 -- Index pour les tables exportées
@@ -214,7 +218,7 @@ ALTER TABLE `recipes`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

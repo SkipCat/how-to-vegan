@@ -57,6 +57,7 @@ class UserManager {
         $user['gender'] = $data['gender'];
         $user['admin'] = null;
         $this->DBManager->insert('users', $user);
+        var_dump($user);
     }
 
     public function userCheckLogin($data) {
