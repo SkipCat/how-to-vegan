@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 22 Mai 2017 à 11:32
+-- Généré le :  Lun 22 Mai 2017 à 12:07
 -- Version du serveur :  5.7.14
 -- Version de PHP :  7.0.10
 
@@ -99,6 +99,20 @@ INSERT INTO `ingredients` (`id`, `id_basket`, `img`, `name`, `description`) VALU
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `lists`
+--
+
+CREATE TABLE `lists` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `content` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `date` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `recipes`
 --
 
@@ -176,6 +190,12 @@ ALTER TABLE `ingredients`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `lists`
+--
+ALTER TABLE `lists`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `recipes`
 --
 ALTER TABLE `recipes`
@@ -209,6 +229,11 @@ ALTER TABLE `favorites`
 --
 ALTER TABLE `ingredients`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+--
+-- AUTO_INCREMENT pour la table `lists`
+--
+ALTER TABLE `lists`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pour la table `recipes`
 --
