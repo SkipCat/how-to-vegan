@@ -27,10 +27,10 @@
 
 #bg-profile {
   @media screen and (min-width: 641px) {
-    @include resize(100%, 470px);
+    @include resize(100%, 525px);
     background-image: url('../img/back_profile.png');
     background-repeat: no-repeat;
-    background-size: 800px;
+    background-size: 870px;
     background-position: center center;
     display: flex;
   }
@@ -42,10 +42,10 @@
   margin: 15px;
   padding: 15px;
   @media screen and (min-width: 641px) {
-    height: 350px;
-    margin-left: 27%;
-    margin-right: 27%;
-    margin-top: 60px;
+    height: 390px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 45px;
     padding-left: 25px;
     box-shadow: 0 0 10px lightgrey;
   }
@@ -85,6 +85,33 @@
     border-radius: 3px;
     align-self: center;
   }
+
+  .container-lists, #spotlight-type-recipe {
+    @media screen and (min-width: 641px) {
+      overflow-y: scroll;
+    }
+  }
+  .container-lists:target, #spotlight-type-recipe:target {
+    display: block;
+  }
+  .container-lists::-webkit-scrollbar,
+  #spotlight-type-recipe::-webkit-scrollbar {
+    @media screen and (min-width: 641px) {
+      width: 5px;
+    }
+  }
+  .container-lists::-webkit-scrollbar-track,
+  #spotlight-type-recipe::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+  .container-lists::-webkit-scrollbar-thumb,
+  #spotlight-type-recipe::-webkit-scrollbar-thumb {
+    background-color: lightgrey;
+    border-radius: 3px;
+    background-color: $light-red;  
+  }
+
 }
 
 #modify-content {
@@ -270,32 +297,10 @@
   }
 }
 
-#pin-content:target {
-  display: block;
-}
-
-#pin-content::-webkit-scrollbar {
-  @media screen and (min-width: 641px) {
-    width: 7px;
-  }
-  @media screen and (min-width: 769px) {
-    width: 10px;
-  }
-}
-
-#pin-content::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-}
-
-#pin-content::-webkit-scrollbar-thumb {
-  background-color: lightgrey;
-  border-radius: 3px;
-}
-
 #favorites-content {
   #spotlight-type-recipe {
     padding: 0;
+    
     .spotlight-recipe {
       @include resize(115px, 190px);
       margin: 0 7px 25px 7px;
@@ -310,7 +315,14 @@
       }
       @media screen and (min-width: 769px) {
         width: 200px;
-        height: 250px;
+        height: 275px;
+      }
+    }
+
+    .spotlight-img {
+      height: 80px;
+      @media screen and (min-width: 769px) {
+        height: 120px;
       }
     }
   }

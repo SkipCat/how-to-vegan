@@ -251,11 +251,29 @@
         margin: 34px 35px auto 22px; }
         .list ul select {
           font-size: 20px; } }
+    .list ul .shop-li {
+      margin-bottom: 9px; }
+      @media screen and (min-width: 321px) {
+        .list ul .shop-li {
+          margin-bottom: 17px; } }
+      @media screen and (min-width: 376px) {
+        .list ul .shop-li {
+          margin-bottom: 7px; } }
+      @media screen and (min-width: 769px) {
+        .list ul .shop-li {
+          margin-bottom: 18px; } }
     .list ul .result-li {
       font-family: "DK Pimpernel";
       color: #444444;
       font-size: inherit;
-      letter-spacing: 2px; }
+      letter-spacing: 2px;
+      margin-bottom: 11px; }
+      @media screen and (min-width: 321px) {
+        .list ul .result-li {
+          margin-bottom: 19px; } }
+      @media screen and (min-width: 376px) {
+        .list ul .result-li {
+          margin-bottom: 9px; } }
     .list ul select {
       background-color: transparent;
       border: none;
@@ -446,7 +464,6 @@
         display: block;
         margin: 0 auto; } }
   #main-basket .step {
-    margin-top: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -491,6 +508,8 @@
       @media screen and (min-width: 641px) {
         #main-basket .step .tableBasket {
           display: flex; } }
+  #main-basket .step:nth-child(3), #main-basket .step:last-child {
+    margin-top: 75px; }
   #main-basket #category {
     width: 100%; }
     @media screen and (min-width: 769px) {
@@ -573,17 +592,18 @@
               #main-basket #category .flex-category .category .category-names .green-border {
                 display: none; } }
         #main-basket #category .flex-category .category .category-img {
-          width: 170px;
+          width: 125px;
           height: auto; }
           @media screen and (min-width: 641px) {
             #main-basket #category .flex-category .category .category-img {
-              text-align: center; } }
+              text-align: center;
+              width: 160px; } }
           #main-basket #category .flex-category .category .category-img img {
             width: 35px;
             height: auto; }
             @media screen and (min-width: 641px) {
               #main-basket #category .flex-category .category .category-img img {
-                width: 50px; } }
+                width: 45px; } }
         #main-basket #category .flex-category .category > img {
           width: 12px;
           height: auto; }
@@ -625,7 +645,6 @@
       width: 300px;
       height: 130px;
       margin-top: 15px;
-      margin-bottom: 15px;
       display: flex;
       background-color: white;
       border-radius: 20px;
@@ -696,12 +715,11 @@
             #main-basket #basket .basket .desc_basket:hover, #main-basket #basket .basket .desc_basket:active {
               box-shadow: 0 0 10px lightgrey; } }
   #main-basket #details {
-    margin-bottom: 100px; }
+    margin-bottom: 50px; }
     #main-basket #details .details-title {
       font-family: "Signika Light";
       color: #444444;
-      font-size: 15px;
-      margin-bottom: 25px; }
+      font-size: 15px; }
       @media screen and (min-width: 641px) {
         #main-basket #details .details-title {
           display: none; } }
@@ -750,7 +768,8 @@
           justify-content: center;
           flex-wrap: wrap;
           margin-top: 50px;
-          border-radius: 30px; } }
+          border-radius: 30px;
+          padding-bottom: 25px; } }
       @media screen and (min-width: 1025px) {
         #main-basket #details #allIngredients {
           width: 90%;
@@ -765,37 +784,51 @@
             color: unset;
             font-size: 14px;
             text-transform: uppercase;
-            margin: 30px 0; }
+            margin: 15px 0; }
             #main-basket #details #allIngredients > p span {
               border-bottom: 2px solid #e74a18;
               padding-bottom: 4px; } }
+      #main-basket #details #allIngredients > p:first-child {
+        margin-top: 30px; }
+      @media screen and (min-width: 769px) {
+        #main-basket #details #allIngredients > div {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          width: 90%; } }
+      @media screen and (min-width: 1025px) {
+        #main-basket #details #allIngredients > div {
+          width: 78%; } }
     #main-basket #details .ingredient {
       display: none;
       background-color: white;
-      width: 92%;
+      width: 275px;
       height: 100px;
       margin: 10px 0 10px 0;
       box-shadow: 0 0 10px lightgrey;
       display: flex;
-      justify-content: center;
       align-items: center; }
       @media screen and (min-width: 641px) {
         #main-basket #details .ingredient {
           width: 450px;
-          height: 120px;
-          margin: 30px 10px;
-          border-radius: 15px; } }
+          height: 120px; } }
+      @media screen and (min-width: 769px) {
+        #main-basket #details .ingredient {
+          width: 350px;
+          height: 120px; } }
+      @media screen and (min-width: 1025px) {
+        #main-basket #details .ingredient {
+          width: 450px;
+          height: 120px; } }
       #main-basket #details .ingredient .image-ingredient {
-        width: 120px;
+        width: 100px;
         height: 100%;
-        background-color: #bbbbbb;
-        display: flex;
-        justify-content: center;
-        align-items: center; }
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center; }
         @media screen and (min-width: 641px) {
           #main-basket #details .ingredient .image-ingredient {
-            border-bottom-left-radius: 15px;
-            border-top-left-radius: 15px; } }
+            width: 150px; } }
       #main-basket #details .ingredient img {
         width: 100px; }
         @media screen and (min-width: 641px) {
@@ -804,45 +837,30 @@
             margin: 30px 10px;
             border-radius: 0; } }
       #main-basket #details .ingredient .ingredient-desc {
-        padding: 5px;
-        height: 80%; }
+        padding: 10px;
+        height: 90%; }
         #main-basket #details .ingredient .ingredient-desc .ingredient-name {
           font-family: "Signika Regular";
           color: #78a514;
-          font-size: 13px;
+          font-size: 14px;
           margin-top: 0; }
           @media screen and (min-width: 641px) {
             #main-basket #details .ingredient .ingredient-desc .ingredient-name {
-              font-family: "Signika Regular";
-              color: #444444;
-              font-size: 14px;
-              font-style: italic;
-              margin-top: 0;
-              position: relative;
-              top: -35px;
-              left: -120px; } }
-        #main-basket #details .ingredient .ingredient-desc .ingr-text-desc {
-          display: none; }
-          @media screen and (min-width: 641px) {
-            #main-basket #details .ingredient .ingredient-desc .ingr-text-desc {
-              font-family: "Signika Regular";
-              color: unset;
-              font-size: 13px;
-              text-transform: uppercase;
-              top: -20px;
-              display: unset;
-              position: relative; } }
+              font-size: 16px; } }
         #main-basket #details .ingredient .ingredient-desc .ingredient-text {
           font-family: "Signika Regular";
           color: #78a514;
           font-size: 12px;
           margin: 0; }
-          @media screen and (min-width: 641px) {
-            #main-basket #details .ingredient .ingredient-desc .ingredient-text {
-              font-family: "Signika Regular";
-              color: #bbbbbb;
-              font-size: 12px;
-              margin-top: -10px; } }
+    #main-basket #details .ingredient:first-child {
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px; }
+    #main-basket #details .ingredient:last-child {
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px; }
+    @media screen and (min-width: 769px) {
+      #main-basket #details .ingredient:first-child, #main-basket #details .ingredient:last-child {
+        border-radius: 0; } }
 
 @media screen and (min-width: 641px) {
   #header-home {
@@ -851,6 +869,9 @@
 @media screen and (min-width: 769px) {
   #header-home {
     height: 425px; } }
+@media screen and (min-width: 1025px) {
+  #header-home {
+    height: 500px; } }
 
 #main-home .rslides {
   position: absolute;
@@ -886,17 +907,17 @@
   display: none;
   width: 100px;
   position: absolute;
-  top: 1280px;
+  top: 1385px;
   right: 0; }
   @media screen and (min-width: 641px) {
     #main-home #leaf-side {
       display: block; } }
   @media screen and (min-width: 769px) {
     #main-home #leaf-side {
-      top: 1500px; } }
-  @media screen and (min-width: 769px) {
+      top: 1515px; } }
+  @media screen and (min-width: 1025px) {
     #main-home #leaf-side {
-      top: 1475px; } }
+      top: 1590px; } }
 
 @media screen and (min-width: 641px) {
   .presentation {
@@ -1140,8 +1161,16 @@
         height: 290px; } }
     .spotlight-container-recipe .spotlight-recipe .spotlight-img {
       width: 100%;
-      height: auto;
-      margin-bottom: auto; }
+      height: 100px;
+      margin-bottom: auto;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center; }
+      @media screen and (min-width: 769px) {
+        .spotlight-container-recipe .spotlight-recipe .spotlight-img {
+          height: 130px; } }
     .spotlight-container-recipe .spotlight-recipe .recipe-title {
       margin: 0;
       font-family: "Signika Semibold";
@@ -1553,9 +1582,6 @@
   @media screen and (min-width: 641px) {
     .modal::-webkit-scrollbar {
       width: 7px; } }
-  @media screen and (min-width: 769px) {
-    .modal::-webkit-scrollbar {
-      width: 10px; } }
 
 .modal::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -1795,10 +1821,10 @@
 @media screen and (min-width: 641px) {
   #bg-profile {
     width: 100%;
-    height: 470px;
+    height: 525px;
     background-image: url("../img/back_profile.png");
     background-repeat: no-repeat;
-    background-size: 800px;
+    background-size: 870px;
     background-position: center center;
     display: flex; } }
 
@@ -1809,10 +1835,10 @@
   padding: 15px; }
   @media screen and (min-width: 641px) {
     #main-profile {
-      height: 350px;
-      margin-left: 27%;
-      margin-right: 27%;
-      margin-top: 60px;
+      height: 390px;
+      margin-left: 20%;
+      margin-right: 20%;
+      margin-top: 45px;
       padding-left: 25px;
       box-shadow: 0 0 10px lightgrey; } }
   #main-profile nav {
@@ -1848,6 +1874,24 @@
     background: linear-gradient(#ff9c33, #ef7205);
     border-radius: 3px;
     align-self: center; }
+  @media screen and (min-width: 641px) {
+    #main-profile .container-lists, #main-profile #spotlight-type-recipe {
+      overflow-y: scroll; } }
+  #main-profile .container-lists:target, #main-profile #spotlight-type-recipe:target {
+    display: block; }
+  @media screen and (min-width: 641px) {
+    #main-profile .container-lists::-webkit-scrollbar,
+    #main-profile #spotlight-type-recipe::-webkit-scrollbar {
+      width: 5px; } }
+  #main-profile .container-lists::-webkit-scrollbar-track,
+  #main-profile #spotlight-type-recipe::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px; }
+  #main-profile .container-lists::-webkit-scrollbar-thumb,
+  #main-profile #spotlight-type-recipe::-webkit-scrollbar-thumb {
+    background-color: lightgrey;
+    border-radius: 3px;
+    background-color: #e74a18; }
 
 #modify-content {
   margin-top: 30px; }
@@ -1984,24 +2028,6 @@
     margin-top: 10px;
     margin-bottom: 10px; }
 
-#pin-content:target {
-  display: block; }
-
-@media screen and (min-width: 641px) {
-  #pin-content::-webkit-scrollbar {
-    width: 7px; } }
-@media screen and (min-width: 769px) {
-  #pin-content::-webkit-scrollbar {
-    width: 10px; } }
-
-#pin-content::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  border-radius: 10px; }
-
-#pin-content::-webkit-scrollbar-thumb {
-  background-color: lightgrey;
-  border-radius: 3px; }
-
 #favorites-content #spotlight-type-recipe {
   padding: 0; }
   #favorites-content #spotlight-type-recipe .spotlight-recipe {
@@ -2021,7 +2047,12 @@
     @media screen and (min-width: 769px) {
       #favorites-content #spotlight-type-recipe .spotlight-recipe {
         width: 200px;
-        height: 250px; } }
+        height: 275px; } }
+  #favorites-content #spotlight-type-recipe .spotlight-img {
+    height: 80px; }
+    @media screen and (min-width: 769px) {
+      #favorites-content #spotlight-type-recipe .spotlight-img {
+        height: 120px; } }
 #favorites-content input[type="image"] {
   position: relative;
   left: 85%;
@@ -2099,9 +2130,11 @@ form#delete-account {
     font-size: 16px;
     font-style: italic; }
 
-@media screen and (min-width: 641px) {
-  #header-about {
-    background-image: url("../img/bg_about.png"); } }
+#header-about {
+  padding-bottom: 35px; }
+  @media screen and (min-width: 641px) {
+    #header-about {
+      background-image: url("../img/bg_about.png"); } }
 
 #subheader-about {
   position: relative;
@@ -3066,7 +3099,7 @@ header {
         height: 30px;
         background-color: #e74a18;
         position: relative;
-        top: -55px;
+        top: -47px;
         right: 0;
         bottom: 0;
         left: 0;
@@ -3098,7 +3131,7 @@ header {
     @media screen and (min-width: 769px) {
       header .profile-login {
         position: absolute;
-        top: 37px;
+        top: 30px;
         right: 50px;
         bottom: initial;
         left: initial; } }

@@ -196,12 +196,12 @@
                                                 <div class="ingredients">
                                                     <h3>Ingrédients</h3>
                                                     <hr>
-                                                    <p>{{ recipe.ingredients }}</p>
+                                                    <p>{{ recipe.ingredients|raw }}</p>
                                                 </div>
                                                 <div class="recipe">
                                                     <h3>Recette</h3>
                                                     <hr>
-                                                    <p>{{ recipe.recipe }}</p>
+                                                    <p>{{ recipe.recipe|raw }}</p>
                                                 </div>
                                             </div>
                                             <!--
@@ -224,6 +224,7 @@
                                                 </div>
                                             </div>
                                             -->
+                                            <!--
                                             <div class="modal-similars">
                                                 <h3>Recettes similaires</h3>
                                                 <hr>
@@ -330,6 +331,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            -->
                                         </div>
                                     </div>
                                 </div>

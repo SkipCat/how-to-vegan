@@ -6,6 +6,9 @@
     @media screen and (min-width: 769px) {
         height: 425px;
     }
+    @media screen and (min-width: 1025px) {
+        height: 500px;
+    }
 }
 
 #main-home {
@@ -48,16 +51,16 @@
         display: none;
         width: 100px;
         position: absolute;
-        top: 1280px;
+        top: 1385px;
         right: 0;
         @media screen and (min-width: 641px) {
             display: block;
         }
         @media screen and (min-width: 769px) {
-            top: 1500px;
+            top: 1515px;
         }
-        @media screen and (min-width: 769px) {
-            top: 1475px;
+        @media screen and (min-width: 1025px) {
+            top: 1590px;
         }
     }
 }
@@ -300,8 +303,17 @@
         }
 
         .spotlight-img {
-            @include resize(100%, auto);
+            @include resize(100%, 100px);
             margin-bottom: auto;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            // background-image set in inline style with Twig
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            @media screen and (min-width: 769px) {
+                height: 130px;
+            }
         }
 
         .recipe-title {
