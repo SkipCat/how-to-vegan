@@ -167,7 +167,7 @@
     flex-wrap: wrap;
     max-width: 665px;
     @media screen and (min-width: 769px) {
-        max-width: 715px;
+        max-width: 735px;
     }
 
     .spotlight-img {
@@ -178,7 +178,7 @@
         @include resize(200px, 250px);
         margin: 25px 20px;
 
-        .spotlight-frame{
+        .spotlight-frame {
         	  @include flex(column, center, space-around);
             background: url('../img/frame_basket.png') no-repeat;
             background-size: 200px 250px;
@@ -191,12 +191,13 @@
                 margin: 30px 0;
             }
 
-            .price{
+            .price {
                 margin: 0;
+                margin-top: 5px;
                 @include policy($semibold-font, $dark-green, unset);
             }
 
-            .name{
+            .name {
                 margin: 0;
                 @include policy($main-font, $text-color, 15px);
             }
