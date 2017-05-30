@@ -203,13 +203,28 @@
         }
 
         .shop-li {
-            //margin-bottom: 23px;
+            margin-bottom: 9px;
+            @media screen and (min-width: 321px) {
+                margin-bottom: 17px;
+            }
+            @media screen and (min-width: 376px) {
+                margin-bottom: 7px;
+            }
+            @media screen and (min-width: 769px) {
+                margin-bottom: 18px;
+            }
         }
 
         .result-li {
             @include policy($list-font, $text-color, inherit);
-            //margin-bottom: 21.5px;
             letter-spacing: 2px;
+            margin-bottom: 11px;
+            @media screen and (min-width: 321px) {
+                margin-bottom: 19px;
+            }
+            @media screen and (min-width: 376px) {
+                margin-bottom: 9px;
+            }
         }
 
         select {

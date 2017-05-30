@@ -52,8 +52,7 @@
         }
     }
 
-    .step{
-        margin-top: 80px;
+    .step {
         @include flex(column, center, space-between);
         @media screen and (min-width: 641px) {
             margin-top: 100px;
@@ -101,6 +100,9 @@
                 display: flex;
             }
         }
+    }
+    .step:nth-child(3), .step:last-child {
+        margin-top: 75px;        
     }
 
     #category {
@@ -170,15 +172,16 @@
                 }
 
                 .category-img {
-                    @include resize(170px, auto);
+                    @include resize(125px, auto);
                     @media screen and (min-width: 641px) {
                         text-align: center;
+                        width: 160px;
                     }
 
                     img {
                         @include resize(35px, auto);
                         @media screen and (min-width: 641px) {
-                            width: 50px;
+                            width: 45px;
                         }
                     }
                 }
@@ -234,7 +237,8 @@
         @media screen and (min-width: 641px) {
             margin-top: 100px;
             color: red;
-            .details-title{
+
+            .details-title {
                 display: none;
             }
         }
@@ -242,7 +246,6 @@
         .basket {
             @include resize(300px, 130px);
             margin-top: 15px;
-            margin-bottom: 15px;
             display: flex;
             background-color: white;
             border-radius: 20px;
@@ -255,7 +258,7 @@
                 box-shadow: unset;
             }
 
-            .basket-div-img{
+            .basket-div-img {
                 @include resize(150px, auto);
                 display: flex;
                 justify-content: center;
@@ -270,8 +273,6 @@
                     display: none;
                 }
             }
-
-
 
             .frameBasket{
                 display: none;
@@ -294,6 +295,7 @@
                     margin: 0;
                     @include policy($main-font, $text-color, 15px);
                 }
+
                 @media screen and (min-width: 641px) {
                     @include flex(column, center, space-around);
                     background: url('../img/frame_basket.png') no-repeat;
@@ -327,11 +329,10 @@
     }
 
     #details {
-        margin-bottom: 100px;
+        margin-bottom: 50px;
 
         .details-title {
             @include policy($light-font, $text-color, 15px);
-            margin-bottom: 25px;
             @media screen and (min-width: 641px) {
                 display: none;
             }
@@ -385,19 +386,20 @@
                 flex-wrap: wrap;
                 margin-top: 50px;
                 border-radius: 30px;
+                padding-bottom: 25px;
             }
             @media screen and (min-width: 1025px) {
                 @include resize(90%, unset);
             }
 
-            > p{
+            > p {
                 display: none;
                 @media screen and (min-width: 641px) {
                     display: unset;
                     width: 90%;
                     @include policy($semibold-font, unset, 14px);
                     text-transform: uppercase;
-                    margin: 30px 0;
+                    margin: 15px 0;
 
                     span {
                         border-bottom: 2px solid $light-red;
@@ -406,33 +408,51 @@
                 }
             }
 
+            > p:first-child {
+                margin-top: 30px;
+            }
+
+            > div {
+                @media screen and (min-width: 769px) {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                    width: 90%;
+                }
+                @media screen and (min-width: 1025px) {
+                    width: 78%;
+                }
+            }
         }
 
         .ingredient {
             display: none;
             background-color: white;
-            @include resize(92%, 100px);
+            @include resize(275px, 100px);
             margin: 10px 0 10px 0;
             box-shadow: 0 0 10px lightgrey;
             display: flex;
-            justify-content: center;
             align-items: center;
             @media screen and (min-width: 641px) {
                 @include resize(450px, 120px);
-                margin: 30px 10px;
-                border-radius: 15px;
             }
-            .image-ingredient{
-                @include resize(120px, 100%);
-                background-color: #bbbbbb;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            @media screen and (min-width: 769px) {
+                @include resize(350px, 120px);
+            }
+            @media screen and (min-width: 1025px) {
+                @include resize(450px, 120px);
+            }
+
+            .image-ingredient {
+                @include resize(100px, 100%);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
                 @media screen and (min-width: 641px) {
-                    border-bottom-left-radius: 15px;
-                    border-top-left-radius: 15px;
+                    width: 150px;
                 }
             }
+
             img {
                 width: 100px;
                 @media screen and (min-width: 641px) {
@@ -442,43 +462,36 @@
                 }
             }
 
-
             .ingredient-desc {
-                padding: 5px;
-                height: 80%;
+                padding: 10px;
+                height: 90%;
 
                 .ingredient-name {
-                    @include policy($main-font, $dark-green, 13px);
+                    @include policy($main-font, $dark-green, 14px);
                     margin-top: 0;
                     @media screen and (min-width: 641px) {
-                        @include policy($main-font, $text-color, 14px);
-                        font-style: italic;
-                        margin-top: 0;
-                        position: relative;
-                        top: -35px;
-                        left: -120px;
-                    }
-                }
-
-                .ingr-text-desc {
-                    display: none;
-                    @media screen and (min-width: 641px) {
-                        @include policy($main-font, unset, 13px);
-                        text-transform: uppercase;
-                        top: -20px;
-                        display: unset;
-                        position: relative;
+                        font-size: 16px;
                     }
                 }
 
                 .ingredient-text {
                     @include policy($main-font, $dark-green, 12px);
                     margin: 0;
-                    @media screen and (min-width: 641px) {
-                        @include policy($main-font, $grey, 12px);
-                        margin-top: -10px;
-                    }
                 }
+            }
+        }
+
+        .ingredient:first-child {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        .ingredient:last-child {
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        .ingredient:first-child, .ingredient:last-child {
+            @media screen and (min-width: 769px) {
+                border-radius: 0;
             }
         }
     }

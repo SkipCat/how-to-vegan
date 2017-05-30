@@ -142,20 +142,18 @@
             <div id="allIngredients">
                 <p><span>Les ingré</span>dients</p>
                 <p class="click-basket click-basket-desktop">Cliquez sur un panier pour voir ses ingrédients.</p>
-                {% for ingredient in ingredients %}
-                    <div class="ingredient {{ ingredient.id_basket }}">
-                        <div class="image-ingredient">
-                            <img src="{{ ingredient.img }}" alt="carot">
+                <div>
+                    {% for ingredient in ingredients %}
+                        <div class="ingredient {{ ingredient.id_basket }}">
+                            <div class="image-ingredient" style="background-image: url('{{ ingredient.img }}');">
+                            </div>
+                            <div class="ingredient-desc">
+                                <p class="ingredient-name">{{ ingredient.name }}</p>
+                                <p class="ingredient-text">{{ ingredient.description }}</p>
+                            </div>
                         </div>
-                        <div class="ingredient-desc">
-                            <p class="ingredient-name">{{ ingredient.name }}</p>
-                            <p class="ingr-text-desc">description</p>
-                            <p class="ingredient-text">
-                                {{ ingredient.description }}
-                            </p>
-                        </div>
-                    </div>
-                {% endfor %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </main>

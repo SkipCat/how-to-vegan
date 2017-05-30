@@ -73,7 +73,7 @@
             <div class="spotlight-container-recipe">
                 {% for recipe in recipes %}
                     <div class="spotlight-container-img spotlight-recipe blur">
-                        <img class="spotlight-img" src="{{ recipe.img }}" alt="frame picture">
+                        <div class="spotlight-img" style="background-image: url('{{ recipe.img }}');"></div>
                         <div class="container-desc">
                             <p class="recipe-title">{{ recipe.name }}</p>
                             <div class="kitchen">
@@ -148,12 +148,12 @@
                                     <div class="ingredients">
                                         <h3>Ingrédients</h3>
                                         <hr>
-                                        <p>{{ recipe.ingredients }}</p>
+                                        <p>{{ recipe.ingredients|raw }}</p>
                                     </div>
                                     <div class="recipe">
                                         <h3>Recette</h3>
                                         <hr>
-                                        <p>{{ recipe.recipe }}</p>
+                                        <p>{{ recipe.recipe|raw }}</p>
                                     </div>
                                 </div>
                             </div>
