@@ -432,7 +432,6 @@
             @include resize(275px, 100px);
             margin: 10px 0 10px 0;
             box-shadow: 0 0 10px lightgrey;
-            display: flex;
             align-items: center;
             @media screen and (min-width: 641px) {
                 @include resize(450px, 120px);
@@ -466,6 +465,7 @@
             .ingredient-desc {
                 padding: 10px;
                 height: 90%;
+                width: 80%;
 
                 .ingredient-name {
                     @include policy($main-font, $dark-green, 14px);

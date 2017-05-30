@@ -173,16 +173,18 @@
     .spotlight-img {
         @include resize(100%, 50%);
     }
+    
     .spotlight-container-img-basket{
         display: flex;
         @include resize(200px, 250px);
         margin: 25px 20px;
 
         .spotlight-frame {
-        	  @include flex(column, center, space-around);
+        	@include flex(column, center, space-around);
             background: url('../img/frame_basket.png') no-repeat;
             background-size: 200px 250px;
             width: 100%;
+            border-radius: 5px;
 
             > img {
                 display: block;
