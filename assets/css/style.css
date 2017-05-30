@@ -1882,6 +1882,14 @@
       margin-top: 45px;
       padding-left: 25px;
       box-shadow: 0 0 10px lightgrey; } }
+  @media screen and (min-width: 769px) {
+    #main-profile {
+      margin-left: 23%;
+      margin-right: 23%; } }
+  @media screen and (min-width: 105px) {
+    #main-profile {
+      margin-left: 30%;
+      margin-right: 30%; } }
   #main-profile nav {
     width: 100%;
     margin-top: 10px;
