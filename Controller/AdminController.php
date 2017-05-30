@@ -20,7 +20,7 @@ class AdminController extends BaseController {
             if ($admin['admin'] == 'admin' || $admin['admin'] == 'superadmin') {
                 echo $this->renderView('admin.html.twig', [
                     'users'       => $users,
-                    'admin'       => $admin,
+                    'user'        => $admin,
                     'recipes'     => $recipes,
                     'baskets'     => $baskets,
                     'ingredients' => $ingredients,

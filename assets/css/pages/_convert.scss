@@ -301,19 +301,26 @@
             display: none;
         }
 
-        input[type="checkbox"]:checked + label,
-        input[type="checkbox"] + label:active {
-            color: white;
-            background-color: $light-red;
-            border-color: transparent;
-        }
-
         label {
             background-color: #e6e6e6;
             border: 1px solid #c9c9c9;
             border-radius: 5px;
             padding: 4px 10px;
             @include policy($main-font, $text-color, 14px);
+        }
+
+        input[type="checkbox"]:checked + label,
+        input[type="checkbox"] + label:active {
+            color: white;
+            border-color: transparent;
+        }
+        input[type="checkbox"]:checked + #label-filter-bio,
+        input[type="checkbox"] + #label-filter-bio:active {
+            background-color: $light-red;            
+        }
+        input[type="checkbox"]:checked + #label-filter-gluten,
+        input[type="checkbox"] + #label-filter-gluten:active {
+            background-color: $light-green;            
         }
     }
 
