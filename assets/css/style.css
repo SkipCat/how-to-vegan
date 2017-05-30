@@ -251,6 +251,18 @@
         margin: 34px 35px auto 22px; }
         .list ul select {
           font-size: 20px; } }
+    .list ul .your-list {
+      margin: 0;
+      margin-bottom: 11px; }
+      @media screen and (min-width: 321px) {
+        .list ul .your-list {
+          margin-bottom: 21px; } }
+      @media screen and (min-width: 376px) {
+        .list ul .your-list {
+          margin-bottom: 10px; } }
+      @media screen and (min-width: 769px) {
+        .list ul .your-list {
+          margin-bottom: 21px; } }
     .list ul .shop-li {
       margin-bottom: 9px; }
       @media screen and (min-width: 321px) {
@@ -274,6 +286,9 @@
       @media screen and (min-width: 376px) {
         .list ul .result-li {
           margin-bottom: 9px; } }
+      @media screen and (min-width: 769px) {
+        .list ul .result-li {
+          margin-bottom: 20px; } }
     .list ul select {
       background-color: transparent;
       border: none;
@@ -374,7 +389,8 @@
     border: 1.5px solid #78a514;
     border-radius: 5px;
     padding: 5px;
-    text-align: left; }
+    text-align: left;
+    margin-bottom: 15px; }
     .convert .submit h3 {
       margin: 0; }
     .convert .submit input[type="submit"] {
@@ -392,6 +408,13 @@
       right: 5px;
       bottom: 0;
       left: 0; }
+  .convert .see-your-list {
+    font-family: "Signika Semibold";
+    color: #78a514;
+    font-size: 14px;
+    font-style: italic; }
+  .convert .see-your-list:hover {
+    text-decoration: underline; }
 
 .mapping p {
   font-family: "Signika Regular";
@@ -1555,7 +1578,14 @@
           text-align: center; } }
       @media screen and (min-width: 769px) {
         #main-recipe .recipe-presentation p {
-          font-size: 16px; } }
+          font-size: 15px; } }
+    #main-recipe .recipe-presentation .see-your-favorite {
+      font-family: "Signika Semibold";
+      color: #e74a18;
+      font-size: 14px;
+      font-style: italic; }
+    #main-recipe .recipe-presentation .see-your-favorite:hover {
+      text-decoration: underline; }
 
 #header-modal {
   background-color: transparent; }
