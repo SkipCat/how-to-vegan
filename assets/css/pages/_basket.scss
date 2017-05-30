@@ -445,7 +445,7 @@
 
             .image-ingredient {
                 @include resize(100px, 100%);
-                background-size: cover;
+                background-size: contain;
                 background-repeat: no-repeat;
                 background-position: center;
                 @media screen and (min-width: 641px) {
@@ -469,15 +469,16 @@
 
                 .ingredient-name {
                     @include policy($main-font, $dark-green, 14px);
-                    margin-top: 0;
+                    margin: 0;
                     @media screen and (min-width: 641px) {
                         font-size: 16px;
                     }
                 }
 
                 .ingredient-text {
-                    @include policy($main-font, $dark-green, 12px);
+                    @include policy($main-font, $text-color, 12px);
                     margin: 0;
+                    text-align: justify;
                 }
             }
         }

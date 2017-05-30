@@ -63,9 +63,11 @@
                     <br>
                     Sélectionnez les filtres selon vos envies et enfilez votre tablier !
                 </p>
-                <a href="?action=profile#favorite-content" class="see-your-favorite frame-elt">
-                    Accéder à vos listes épinglées
-                </a>
+                {% if user.username is defined and user.username is not empty %}
+                    <a href="?action=profile#favorite-content" class="see-your-favorite frame-elt">
+                        Accéder à vos listes épinglées
+                    </a>
+                {% endif %}
             </div>
             <div class="spotlight-container-recipe">
                 {% for recipe in recipes %}
