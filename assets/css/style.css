@@ -352,7 +352,7 @@
     .convert .filters input[type="checkbox"] + label:active, .convert .submit input[type="checkbox"]:checked + label,
     .convert .submit input[type="checkbox"] + label:active {
       color: white;
-      background-color: #9ec550;
+      background-color: #e74a18;
       border-color: transparent; }
     .convert .filters label, .convert .submit label {
       background-color: #e6e6e6;
@@ -653,7 +653,7 @@
         #main-basket #basket .basket {
           width: 200px;
           height: 250px;
-          margin: 25px 50px;
+          margin: 25px 35px;
           border-radius: unset;
           background-color: unset;
           box-shadow: unset; } }
@@ -683,6 +683,7 @@
           display: none; }
         #main-basket #basket .basket .desc_basket .basketPrice {
           margin: 0;
+          margin-top: 5px;
           font-family: "Signika Semibold";
           color: #78a514;
           font-size: unset; }
@@ -700,7 +701,7 @@
             background: url("../img/frame_basket.png") no-repeat;
             background-size: 200px 250px;
             width: 100%; }
-            #main-basket #basket .basket .desc_basket, #main-basket #basket .basket .desc_basket .name, #main-basket #basket .basket .desc_basket .basketPrice {
+            #main-basket #basket .basket .desc_basket, #main-basket #basket .basket .desc_basket .name {
               margin: 0; }
             #main-basket #basket .basket .desc_basket > img {
               display: block;
@@ -1028,7 +1029,7 @@
   max-width: 665px; }
   @media screen and (min-width: 769px) {
     .spotlight-container-basket {
-      max-width: 715px; } }
+      max-width: 735px; } }
   .spotlight-container-basket .spotlight-img {
     width: 100%;
     height: 50%; }
@@ -1053,6 +1054,7 @@
         margin: 30px 0; }
       .spotlight-container-basket .spotlight-container-img-basket .spotlight-frame .price {
         margin: 0;
+        margin-top: 5px;
         font-family: "Signika Semibold";
         color: #78a514;
         font-size: unset; }
@@ -2030,6 +2032,9 @@
 
 #favorites-content #spotlight-type-recipe {
   padding: 0; }
+  @media screen and (min-width: 769px) {
+    #favorites-content #spotlight-type-recipe {
+      padding-top: 75px; } }
   #favorites-content #spotlight-type-recipe .spotlight-recipe {
     width: 115px;
     height: 190px;
@@ -2058,6 +2063,9 @@
   left: 85%;
   top: 15px;
   width: 20px; }
+  @media screen and (min-width: 769px) {
+    #favorites-content input[type="image"] {
+      left: 89%; } }
 
 #modify-content, #pin-content, #favorites-content {
   display: none; }

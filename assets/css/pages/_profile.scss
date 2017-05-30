@@ -300,7 +300,10 @@
 #favorites-content {
   #spotlight-type-recipe {
     padding: 0;
-    
+    @media screen and (min-width: 769px) {
+      padding-top: 75px;
+    }
+
     .spotlight-recipe {
       @include resize(115px, 190px);
       margin: 0 7px 25px 7px;
@@ -332,6 +335,9 @@
     left: 85%;
     top: 15px;
     width: 20px;
+    @media screen and (min-width: 769px) {
+      left: 89%;
+    }
   }
 }
 
