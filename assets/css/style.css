@@ -814,7 +814,6 @@
       height: 100px;
       margin: 10px 0 10px 0;
       box-shadow: 0 0 10px lightgrey;
-      display: flex;
       align-items: center; }
       @media screen and (min-width: 641px) {
         #main-basket #details .ingredient {
@@ -846,7 +845,8 @@
             border-radius: 0; } }
       #main-basket #details .ingredient .ingredient-desc {
         padding: 10px;
-        height: 90%; }
+        height: 90%;
+        width: 80%; }
         #main-basket #details .ingredient .ingredient-desc .ingredient-name {
           font-family: "Signika Regular";
           color: #78a514;
@@ -1052,7 +1052,8 @@
       justify-content: space-around;
       background: url("../img/frame_basket.png") no-repeat;
       background-size: 200px 250px;
-      width: 100%; }
+      width: 100%;
+      border-radius: 5px; }
       .spotlight-container-basket .spotlight-container-img-basket .spotlight-frame > img {
         display: block;
         width: auto;
