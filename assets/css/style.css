@@ -348,12 +348,6 @@
       font-size: 16px; }
     .convert .filters input[type="checkbox"], .convert .submit input[type="checkbox"] {
       display: none; }
-    .convert .filters input[type="checkbox"]:checked + label,
-    .convert .filters input[type="checkbox"] + label:active, .convert .submit input[type="checkbox"]:checked + label,
-    .convert .submit input[type="checkbox"] + label:active {
-      color: white;
-      background-color: #e74a18;
-      border-color: transparent; }
     .convert .filters label, .convert .submit label {
       background-color: #e6e6e6;
       border: 1px solid #c9c9c9;
@@ -362,6 +356,19 @@
       font-family: "Signika Regular";
       color: #444444;
       font-size: 14px; }
+    .convert .filters input[type="checkbox"]:checked + label,
+    .convert .filters input[type="checkbox"] + label:active, .convert .submit input[type="checkbox"]:checked + label,
+    .convert .submit input[type="checkbox"] + label:active {
+      color: white;
+      border-color: transparent; }
+    .convert .filters input[type="checkbox"]:checked + #label-filter-bio,
+    .convert .filters input[type="checkbox"] + #label-filter-bio:active, .convert .submit input[type="checkbox"]:checked + #label-filter-bio,
+    .convert .submit input[type="checkbox"] + #label-filter-bio:active {
+      background-color: #e74a18; }
+    .convert .filters input[type="checkbox"]:checked + #label-filter-gluten,
+    .convert .filters input[type="checkbox"] + #label-filter-gluten:active, .convert .submit input[type="checkbox"]:checked + #label-filter-gluten,
+    .convert .submit input[type="checkbox"] + #label-filter-gluten:active {
+      background-color: #9ec550; }
   .convert .submit {
     color: inherit;
     border: 1.5px solid #78a514;
