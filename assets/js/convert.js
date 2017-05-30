@@ -98,9 +98,12 @@ function convert() {
             dataType: 'json',
             success: function(result) { // CAUTION: json already parsed
                 $('.list li').css('display', 'none');
+                $('#recap-list').append('<p></p>');
+                $('#recap-list p').addClass('your-list');
+                $('.your-list').append('Votre liste convertie :');
 
                 for (var i in result) {
-                    for(var j in shoppingList) {
+                    for (var j in shoppingList) {
                         if (i == shoppingList[j]) {
                             if (filterList.length > 0) { // if filter(s) checked
                                 if ($.inArray('Bio', filterList) !== -1 && $.inArray('Gluten-free', filterList) !== -1) {

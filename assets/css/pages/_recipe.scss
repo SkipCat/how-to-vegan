@@ -261,8 +261,16 @@
                 text-align: center;
             }
             @media screen and (min-width: 769px) {
-                font-size: 16px;
+                font-size: 15px;
             }
+        }
+
+        .see-your-favorite {
+            @include policy($semibold-font, $light-red, 14px);
+            font-style: italic;
+        }
+        .see-your-favorite:hover {
+            text-decoration: underline;
         }
     }
 }
