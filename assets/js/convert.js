@@ -46,7 +46,7 @@ function convert() {
 
         // select click
         newProduct.each(function() {
-            $(this).on('click', function() {
+            $(this).change(function() {
                 if ($('select').last().val() != 'NULL') {
                     $('input[type="submit"]').prop('disabled', false);
                     createSelect();
@@ -66,7 +66,7 @@ function convert() {
 
     // for 1rst select
     product.each(function() {
-        $(this).on('click', function() {
+        $(this).change(function() {
             if ($(this).val() != 'NULL') {
                 $('input[type="submit"]').prop('disabled', false); // unlock button submit
 
